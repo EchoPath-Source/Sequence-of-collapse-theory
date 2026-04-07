@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{natbib}
+
+\title{A Color-Dependent Structure in SPARC Rotation-Curve Residuals}
+\author{Antoine L. Shephard (Echo Mirrowen)}
+\affil{Independent Researcher}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Using the public SPARC rotation-curve mass-model decompositions, we define an ``apparent dark residual''
+$f_{\rm DM}(r) = 1 - V_{\rm bar}^2(r) / V_{\rm obs}^2(r)$ with
+$V_{\rm bar}^2 = V_{\rm gas}^2 + V_{\rm disk}^2 + V_{\rm bulge}^2$.
+We summarize $f_{\rm DM}$ at multiple radii and test for correlations with WISE-based stellar mass and the optical--IR color $g-W1$.
+Across the SPARC--WISE overlap sample, $f_{\rm DM}$ exhibits a strong monotonic dependence on $g-W1$ that strengthens when restricting to
+high-quality rotation curves and disk-dominated systems, and persists at standardized radii ($2R_{\rm eff}$ and $2.2R_d$).
+We provide the merged dataset and scripts sufficient to reproduce all figures and statistics.
+\end{abstract}
+
+\section{Data}
+We use the SPARC sample and associated rotation-curve mass models \citep{Lelli2016}.
+For each galaxy we use the SPARC \texttt{rotmod} decomposition (rotation curve and baryonic contributions) to compute $f_{\rm DM}(r)$.
+We cross-match galaxies with WISE-based stellar masses and $g-W1$ color from \citep{Duey2025}.
+Rotation-curve quality flags and structural radii ($R_{\rm eff}$, $R_d$) are taken from SPARC Table~1 \citep{Lelli2016}.
+
+\section{Residual definition and summary metrics}
+For each radius point in the SPARC \texttt{rotmod} files we compute
+\begin{equation}
+f_{\rm DM}(r) \equiv 1 - \frac{V_{\rm bar}^2(r)}{V_{\rm obs}^2(r)},\qquad
+V_{\rm bar}^2(r)=V_{\rm gas}^2(r)+V_{\rm disk}^2(r)+V_{\rm bulge}^2(r).
+\end{equation}
+We report four summary metrics:
+(i) the mean of $f_{\rm DM}$ over the outer 25\% in radius ($\langle f_{\rm DM}\rangle_{\rm outer}$),
+(ii) the value at the outermost measured point ($f_{\rm DM, last}$),
+(iii) $f_{\rm DM}(2R_{\rm eff})$, and (iv) $f_{\rm DM}(2.2R_d)$ (linear interpolation within each galaxy's measured range).
+
+To reduce morphology confounding, we define a disk-dominated subset using the outer bulge contribution fraction
+$\langle V_{\rm bulge}^2 / V_{\rm bar}^2\rangle_{\rm outer} \le 0.05$.
+We also test a high-quality subset using the SPARC quality flag $Q=1$.
+
+\section{Results}
+Figure~\ref{fig:main} shows the relationship between $\langle f_{\rm DM}\rangle_{\rm outer}$ and $g-W1$ for the full matched sample and for the disk-dominated, $Q=1$ subset.
+The monotonic correlation strengthens under these restrictions and remains significant for alternative residual summaries, including standardized radii.
+A brief statistical summary is provided in the accompanying \texttt{CSV} artifact and can be reproduced by the provided scripts.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{../../docs/observations/figures/fdm_outer_vs_gw1_all.png}\hfill
+\includegraphics[width=0.48\linewidth]{../../docs/observations/figures/fdm_outer_vs_gw1_disk_Q1.png}
+\caption{Left: SPARC--WISE matched sample, outer-mean residual $\langle f_{\rm DM}\rangle_{\rm outer}$ versus $g-W1$.
+Right: disk-dominated and high-quality subset (outer bulge fraction $\le 0.05$ and SPARC $Q=1$).}
+\label{fig:main}
+\end{figure}
+
+\section{Discussion}
+The observed color dependence implies that the Newtonian mismatch between baryonic mass models and observed rotation curves is structured with
+stellar-population / formation proxies (here, $g-W1$) and not purely random scatter.
+Because $g-W1$ correlates with stellar mass and morphology, the results should be interpreted as a phenomenological constraint on rotation-curve residual structure.
+Future work can extend this analysis with explicit morphology controls and alternative stellar-population indicators.
+
+\section{Reproducibility}
+We include (i) a merged dataset (\texttt{docs/observations/data/sparc\_wise\_fdm\_with\_Q\_and\_radii.csv})
+containing all derived residual metrics and matched properties, and (ii) repository notes sufficient to reconstruct the analysis pipeline.
+All plots in this note can be regenerated from SPARC public data products \citep{Lelli2016} and the WISE stellar-mass tables \citep{Duey2025}.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -50,6 +50,18 @@ Includes:
 - CMB anomaly correlation tests
 - fine-structure constant spatial variation re-analysis
 - GW memory comparison to GR predictions
+- PNT two-timescale dark-energy / Hubble-window feasibility modeling
+
+Current linked package:
+
+```text
+papers/pnt-dark-energy-hubble-window/
+```
+
+This package currently frames PNT as a two-timescale dark-energy model:
+
+- prompt exhaust channel: EDE-like transient, toy-model sound-horizon shift, Boltzmann-code follow-up target
+- memory-residue channel: late-time w(z), void-filament differential, DESI-facing observational track
 
 ## Recommended file plan
 
@@ -67,6 +79,7 @@ experiments/
 └─ cosmology/
    ├─ sparc-meta-analysis-plan.md
    ├─ hubble-memory-drag.md
+   ├─ pnt-dark-energy-window.md
    ├─ cmb-anomaly-test.md
    └─ gw-memory-test.md
 ```
@@ -75,3 +88,5 @@ experiments/
 
 No raw OSF artifacts have been imported yet.
 This folder currently serves as the structural landing zone for those materials.
+
+The PNT dark-energy / Hubble-window paper package has been added under `papers/`; the next experiment-side addition should be a reproducible cosmology notebook or an experiment-facing `experiments/cosmology/pnt-dark-energy-window.md` plan.

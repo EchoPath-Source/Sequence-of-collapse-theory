@@ -46,22 +46,31 @@ Needed additions:
 ### 5. Cosmology / Observational Tests
 Includes:
 - SPARC age-dependent rotation curves
+- Pantheon+ environment-dependent H0 test
 - Hubble tension memory-drag analysis
 - CMB anomaly correlation tests
 - fine-structure constant spatial variation re-analysis
 - GW memory comparison to GR predictions
 - PNT two-timescale dark-energy / Hubble-window feasibility modeling
 
-Current linked package:
+Current linked packages:
 
 ```text
 papers/pnt-dark-energy-hubble-window/
+experiments/cosmology/sparc-analysis-plan.md
+experiments/cosmology/pantheon-environment-h0-test.md
 ```
 
-This package currently frames PNT as a two-timescale dark-energy model:
+The PNT package currently frames PNT as a two-timescale dark-energy model:
 
 - prompt exhaust channel: EDE-like transient, toy-model sound-horizon shift, Boltzmann-code follow-up target
 - memory-residue channel: late-time w(z), void-filament differential, DESI-facing observational track
+
+The Pantheon+ environment test provides an independent expansion-side check of the void-versus-filament prediction:
+
+```text
+Delta_H0 = H0_void - H0_filament > 0
+```
 
 ## Recommended file plan
 
@@ -69,6 +78,7 @@ This package currently frames PNT as a two-timescale dark-energy model:
 experiments/
 ├─ README.md
 ├─ osf/
+│  ├─ preregistration-package-index.md
 │  ├─ prereg-summary.md
 │  ├─ mzi-protocol-v1.md
 │  └─ materials-and-measures.md
@@ -77,7 +87,8 @@ experiments/
 │  ├─ mach-zehnder-consciousness-test.md
 │  └─ delayed-choice-notes.md
 └─ cosmology/
-   ├─ sparc-meta-analysis-plan.md
+   ├─ sparc-analysis-plan.md
+   ├─ pantheon-environment-h0-test.md
    ├─ hubble-memory-drag.md
    ├─ pnt-dark-energy-window.md
    ├─ cmb-anomaly-test.md
@@ -86,7 +97,7 @@ experiments/
 
 ## Status note
 
-No raw OSF artifacts have been imported yet.
+Raw OSF artifacts are indexed but not yet fully converted into Markdown.
 This folder currently serves as the structural landing zone for those materials.
 
-The PNT dark-energy / Hubble-window paper package has been added under `papers/`; the next experiment-side addition should be a reproducible cosmology notebook or an experiment-facing `experiments/cosmology/pnt-dark-energy-window.md` plan.
+The PNT dark-energy / Hubble-window paper package has been added under `papers/`; the next experiment-side additions should be reproducible cosmology notebooks and data-schema notes for SPARC and Pantheon+.

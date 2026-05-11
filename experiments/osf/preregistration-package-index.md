@@ -10,9 +10,32 @@
 | Source | Import status | Intended repo use |
 |---|---|---|
 | `OSF_Home_Page_Book_of_Sacred_Science.md` | direct import target | OSF landing page / project overview |
-| `OSF_Preregistration_Excerpt_v1.1_clean.docx` | direct import target | clean preregistration excerpt |
+| `OSF_Preregistration_Excerpt_v1.1_clean.docx` | direct import target | clean consciousness-collapse preregistration excerpt |
+| `OSF_Preregistration_Excerpt_v1.1_clean-1.docx` | duplicate/direct import check | duplicate or revised copy of v1.1 excerpt; verify before conversion |
 | `OSF_Prereg_SoCT_PM_v061_and_SPARC_Plan.pdf` | split import target | SoCT-PM prereg + SPARC analysis plan |
 | `OSF_Prereg_Combined_v061.pdf` | archive/direct import target | combined preregistration snapshot |
+| `SOC_PreReg_Draft-3.docx` | direct import target | SPARC memory-field prereg draft |
+| `SOC_Paper1_OSF_PreReg.md` | imported | formal Paper 1 SPARC preregistration Markdown |
+
+---
+
+## Imported Prereg Artifacts
+
+```text
+experiments/cosmology/sparc-memory-field-preregistration-v0-1.md
+```
+
+This file is now the strongest current prereg artifact for Paper 1. It contains:
+
+- age-dependent rotation-curve hypothesis;
+- memory-field Hamiltonian and kernel;
+- SPARC data plan;
+- inclusion/exclusion criteria;
+- primary and secondary predictions;
+- null/falsification criteria;
+- statistical analysis plan;
+- expected outcomes;
+- figure and code plan.
 
 ---
 
@@ -22,10 +45,11 @@ The OSF package should convert broad SoCT claims into preregistered, adversarial
 
 Priority lanes:
 
-1. Conscious-access / MZI visibility protocol.
-2. Modified double-slit storage/deletion/access protocol.
-3. SPARC collapse-memory gravity analysis plan.
-4. Preregistered exclusion criteria, SESOI, and statistical analysis plan.
+1. SPARC age-dependent rotation-curve / memory-field preregistration.
+2. Conscious-access / MZI visibility protocol.
+3. Modified double-slit storage/deletion/access protocol.
+4. Pantheon+ environment-dependent H0 protocol.
+5. Preregistered exclusion criteria, SESOI, and statistical analysis plans.
 
 ---
 
@@ -41,6 +65,8 @@ experiments/osf/
 
 experiments/cosmology/
   sparc-analysis-plan.md
+  sparc-memory-field-preregistration-v0-1.md
+  pantheon-environment-h0-test.md
 
 experiments/quantum/
   mach-zehnder-consciousness-test.md
@@ -59,8 +85,8 @@ Each prereg protocol should eventually define:
 - independent variables;
 - covariates;
 - exclusion criteria;
-- blinding plan;
-- randomization plan;
+- blinding plan where applicable;
+- randomization plan where applicable;
 - deletion/storage/access protocol where relevant;
 - SESOI or minimum effect size of interest;
 - sample size or power rationale;
@@ -72,8 +98,12 @@ Each prereg protocol should eventually define:
 
 ## Current Status
 
-This index is a scaffold. The raw OSF materials are not yet fully converted into Markdown.
+The SPARC Paper 1 preregistration has been converted into a repo artifact.
 
-Immediate next step:
+Still needed:
 
-> Convert the clean preregistration excerpt and combined v061 materials into versioned Markdown files, preserving original wording where experimental commitments matter.
+1. Convert the clean v1.1 consciousness-collapse preregistration excerpt.
+2. Convert the combined v061 OSF preregistration snapshot.
+3. Convert the OSF homepage text.
+4. Reconcile duplicate `OSF_Preregistration_Excerpt_v1.1_clean` files.
+5. Add notebook/code scaffolds for SPARC and Pantheon+ before analysis.

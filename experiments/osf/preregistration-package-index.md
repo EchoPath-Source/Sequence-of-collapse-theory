@@ -5,6 +5,27 @@
 
 ---
 
+## Live OSF Project Registry
+
+The canonical OSF project-link registry is maintained at:
+
+```text
+experiments/osf/osf-project-links.md
+```
+
+Current OSF project links tracked there:
+
+```text
+https://osf.io/tv3gh/overview
+https://osf.io/mxt7h/overview
+https://osf.io/z3wct/overview
+https://osf.io/tb9nq
+```
+
+Before using any OSF page as a formal preregistration citation, verify title, DOI/registration status, latest file set, and public visibility.
+
+---
+
 ## Source Files
 
 | Source | Import status | Intended repo use |
@@ -58,6 +79,7 @@ Priority lanes:
 ```text
 experiments/osf/
   preregistration-package-index.md
+  osf-project-links.md
   osf-home-page.md
   preregistration-excerpt-v1-1.md
   combined-prereg-v061.md
@@ -100,10 +122,13 @@ Each prereg protocol should eventually define:
 
 The SPARC Paper 1 preregistration has been converted into a repo artifact.
 
+The four current OSF project links have been added to `experiments/osf/osf-project-links.md`.
+
 Still needed:
 
-1. Convert the clean v1.1 consciousness-collapse preregistration excerpt.
-2. Convert the combined v061 OSF preregistration snapshot.
-3. Convert the OSF homepage text.
-4. Reconcile duplicate `OSF_Preregistration_Excerpt_v1.1_clean` files.
-5. Add notebook/code scaffolds for SPARC and Pantheon+ before analysis.
+1. Verify the exact title/role/registration status of each OSF project link.
+2. Convert the clean v1.1 consciousness-collapse preregistration excerpt.
+3. Convert the combined v061 OSF preregistration snapshot.
+4. Convert the OSF homepage text.
+5. Reconcile duplicate `OSF_Preregistration_Excerpt_v1.1_clean` files.
+6. Add notebook/code scaffolds for SPARC and Pantheon+ before analysis.

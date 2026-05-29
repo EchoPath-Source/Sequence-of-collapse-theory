@@ -1,7 +1,7 @@
-# SPARC Data Notes
+# SPARC Derived Data
 
 **Status:** scaffold pending source files / links  
-**Purpose:** document the provenance of every dataset used in the SPARC age / missing-mass analysis.
+**Purpose:** document the provenance and reproducibility path for every SPARC-derived table used in the age / missing-mass analysis.
 
 ## Rules
 
@@ -14,30 +14,71 @@ Do not add derived or cleaned tables without documenting:
 5. cleaning steps,
 6. whether the table is raw, cleaned, merged, or derived.
 
-## Expected inputs
+## Required primary derived files
 
-| Dataset | Role | Status |
-|---|---|---|
-| SPARC rotation-curve data | Galaxy rotation curves and baryonic components | pending |
-| SPARC galaxy properties table | Distances, luminosities, gas/stars, morphology where available | pending |
-| Stellar-population age source | Age proxy or derived stellar ages | pending |
-| Environment catalog | Group/satellite/field controls | pending |
-| Surface-brightness / morphology variables | Confound controls | pending |
-
-## Data handling policy
-
-- Prefer source links and scripts over committing large raw datasets if licensing is uncertain.
-- Commit small cleaned/derived tables only when license allows and provenance is explicit.
-- Keep exploratory derived files separate from publication-ready files.
-- Include a column dictionary for every derived table.
-
-## Planned derived tables
+The two highest-priority derived datasets are:
 
 ```text
-sparc_age_dm_merged.csv
-correlation_table.csv
-bootstrap_results.csv
-regression_controls.csv
+observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv
+observations/sparc/data/sparc_age_fdm_data.csv
 ```
 
-Each derived table should eventually have a matching metadata note.
+These files are not currently generated in-repo. They should be committed only after the derivation path is documented and the source provenance is clear.
+
+## Expected file roles
+
+### `sparc_wise_inner_outer_fdm_split.csv`
+
+Primary radial-decomposition table. This should contain one row per usable galaxy with WISE-derived age or stellar-population proxy fields, inner and outer dark-matter-fraction estimates, and any quality-control flags used in the radial split.
+
+Recommended minimum columns:
+
+```text
+galaxy_id
+age_proxy_gyr
+mass_proxy
+surface_brightness_proxy
+r_inner_definition
+r_outer_definition
+fdm_inner
+fdm_outer
+fdm_outer_error
+quality_flag
+source_notes
+```
+
+### `sparc_age_fdm_data.csv`
+
+Primary age-versus-outer-dark-fraction table used for the core correlation and memory-fit analyses.
+
+Recommended minimum columns:
+
+```text
+galaxy_id
+age_proxy_gyr
+fdm_outer
+fdm_outer_error
+mass_proxy
+rmax
+vmax
+surface_brightness_proxy
+environment_label
+interaction_flag
+quality_flag
+source_notes
+```
+
+## Regenerated outputs
+
+The analysis notebook or script should regenerate:
+
+```text
+observations/sparc/results/inner_outer_correlation_summary.csv
+observations/sparc/results/correlation_table.csv
+observations/sparc/results/bootstrap_results.csv
+observations/sparc/figures/
+```
+
+## Integrity rule
+
+Do not treat visually extracted values, screenshots, or LLM-assisted estimates as production data. They may be described in internal notes only and must be replaced by reproducible tables before manuscript-level claims are made.

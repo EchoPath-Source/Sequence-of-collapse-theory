@@ -10,6 +10,20 @@ Core narrative and structural documents.
 - `source-corpus.md` — index of source documents already folded into the repo
 - `theory-overview.md` — concise research-facing summary of the framework
 - `book-of-collapse-article-map.md` — maps long-form article/book material into modular research topics
+- `theory-notes/` — clearly labeled speculative/conceptual extension notes
+
+### docs/theory-notes/
+
+Home for speculative theory scaffolds that may later become formal papers, simulations, or experimental proposals.
+
+Current notes:
+
+- `quark-projection-hypothesis.md`
+- `dimensional-bridge-principle.md`
+- `planck-cell-unfolding-hypothesis.md`
+- `threshold-unfolding-principle.md`
+
+These notes should remain clearly labeled as conceptual/speculative until they are mathematically formalized or tied to falsifiable predictions.
 
 ## experiments/
 

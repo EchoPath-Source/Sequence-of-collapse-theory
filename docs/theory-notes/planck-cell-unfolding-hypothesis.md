@@ -2,7 +2,7 @@
 
 **Status:** Speculative theory note / conceptual extension  
 **Framework:** Sequence of Collapse Theory, Planck Nucleation Theory, Threshold Unfolding Principle  
-**Related topics:** Big Bang origin, black-hole bounce cosmology, compactified geometry, causal manifold nucleation
+**Related topics:** Big Bang origin, black-hole bounce cosmology, compactified geometry, causal manifold nucleation, metric expansion
 
 ## Core question
 
@@ -36,6 +36,30 @@ or:
 
 > inside becomes outside
 
+## Metric expansion interpretation
+
+This hypothesis also offers a conceptual explanation for why cosmological expansion is described as the expansion of space itself rather than galaxies moving outward through pre-existing space.
+
+In standard cosmology, sufficiently distant unbound galaxies recede because the spacetime metric expands. They are not primarily moving through space like debris from an explosion; the distances between them increase because the scale factor of the universe changes. Bound systems such as galaxies, solar systems, atoms, and local structures do not expand in the same way because their local binding forces dominate over the large-scale expansion.
+
+The Planck Cell Unfolding Hypothesis reframes this as a consequence of dimensional externalization:
+
+> Matter does not expand into space. Space is the unfolded geometry through which matter becomes separated.
+
+If the Big Bang is the unfolding of a completed compactified state, then cosmic expansion is the continuing relaxation or extension of the newly externalized manifold. Galaxies are local stabilized condensations within that manifold. The distances between them increase because the underlying geometry continues to unfold, not because each galaxy is actively flying through an older container-space.
+
+A compact sequence is:
+
+1. Closed compactified Planck-cell-like state
+2. Threshold completion
+3. Hidden through-direction opens
+4. Spacetime manifold unfolds
+5. Scale factor increases
+6. Unbound intergalactic distances grow
+7. Local bound structures remain stabilized
+
+This does not replace the standard metric description. It attempts to give the metric expansion a deeper substrate interpretation inside PNT/SoCT.
+
 ## Relation to Planck Nucleation Theory
 
 Planck Nucleation Theory treats Planck cells as fundamental information packets and compactified dimensional interiors. In that context, black holes can be interpreted as successful nucleations: from the exterior they appear as black holes; from the interior they may appear as Big Bang-like causal beginnings.
@@ -66,8 +90,9 @@ For this hypothesis to become more than metaphor, several things would need to b
 3. A mechanism by which internal geometry becomes external manifold geometry.
 4. A connection to black-hole bounce or causal inversion models.
 5. A way for inherited constants or boundary conditions to be encoded in the unfolding.
-6. A possible observable signature in CMB anomalies, constants, gravitational-wave memory, or black-hole information transfer.
+6. A relation between dimensional unfolding and the cosmological scale factor.
+7. A possible observable signature in CMB anomalies, constants, gravitational-wave memory, large-scale expansion history, or black-hole information transfer.
 
 ## Summary
 
-The Planck Cell Unfolding Hypothesis proposes that the Big Bang may have been the dimensional unfolding of a completed compactified Planck-cell-like state. The universe did not expand into pre-existing space; space became available through the unfolding itself. This note links PNT, black-hole bounce cosmology, and the Threshold Unfolding Principle into a single cosmogenesis mechanism.
+The Planck Cell Unfolding Hypothesis proposes that the Big Bang may have been the dimensional unfolding of a completed compactified Planck-cell-like state. The universe did not expand into pre-existing space; space became available through the unfolding itself. Cosmic expansion may therefore be interpreted as the continued metric relaxation of that newly unfolded geometry. This note links PNT, black-hole bounce cosmology, metric expansion, and the Threshold Unfolding Principle into a single cosmogenesis mechanism.

@@ -14,7 +14,7 @@ This repo is intended to become the central home for:
 
 ## Current scope
 
-This initial setup organizes the theory into a clean research structure using existing project materials already available across the working corpus.
+This setup organizes the theory into a clean research structure using existing project materials already available across the working corpus.
 
 At this stage, the repo includes:
 
@@ -25,9 +25,10 @@ At this stage, the repo includes:
 - an experiments hub
 - a simulations hub
 - validation and bibliography notes
-- a PNT dark-energy / Hubble-window working paper package
 - an empirical exploration summary for the SPARC / effective-G / Pantheon+ phase
 - data and notebook scaffolds for reproducible cosmology tests
+- OSF companion text files
+- paper/protocol hubs for P1, P2, P3, and P4
 
 ## Working core claims
 
@@ -38,6 +39,98 @@ At this stage, the repo includes:
 5. **Cross-domain implication**: the theory propagates into cosmology, gravity, measurement theory, cognition, spatial computation, and experimental design.
 
 ## Active research packages
+
+### P1 — Memory-Field Gravity / SPARC / SoCT-PM
+
+P1 is the empirical-gravity track. It explores whether gravity can be modeled as an accumulated collapse-memory effect and uses SPARC rotation curves as an initial validation anchor.
+
+Repo hub:
+
+```text
+papers/p1-memory-field-gravity-sparc/
+```
+
+OSF companion text:
+
+```text
+osf/p1-memory-field-gravity-sparc.md
+```
+
+Primary focus:
+
+- gravity as accumulated collapse history;
+- memory-field residuals and effective gravitational behavior;
+- SPARC rotation-curve analysis;
+- SoCT-PM simulation planning;
+- comparison against baryons-only, dark-matter-halo, and MOND-like baselines.
+
+### P2 — PNT Dark Energy / Hubble Window
+
+P2 is the Planck Nucleation Theory dark-energy and Hubble-window track.
+
+Repo hub:
+
+```text
+papers/pnt-dark-energy-hubble-window/
+```
+
+It currently includes:
+
+- `working-draft-v0-1.md` — physics-first P2 paper skeleton for Planck Nucleation Theory as a two-timescale dark-energy model.
+- `toy-model-results-v0-1.md` — summary of the prompt-exhaust / Early-Dark-Energy feasibility toy calculations.
+
+Core conclusion of this package:
+
+> PNT naturally separates into a short-lived prompt exhaust channel and a long-lived memory-residue channel. The prompt channel can produce an EDE-like transient but does not yet demonstrate full Hubble-tension resolution in minimal toy models. The late memory component is the stronger near-term publishable track, with predicted w(z) evolution and void-versus-filament differentials.
+
+### P3 — Causal Inversion / Directional Memory Cosmology
+
+P3 is the parent-universe, bounce, and directional-memory cosmology track.
+
+Repo hub:
+
+```text
+papers/p3-causal-inversion-directional-memory/
+```
+
+OSF companion text:
+
+```text
+osf/p3-causal-inversion-directional-memory.md
+```
+
+Primary focus:
+
+- Causal Inversion Hypothesis;
+- Kerr-to-Cosmos geometry;
+- parent-universe memory;
+- CMB preferred-axis and anisotropy tests;
+- parity asymmetry, hemispherical power imbalance, and low-l alignment questions.
+
+### P4 — Observer-Dependent Decoherence / CGDS / SOC-MZI
+
+P4 is the quantum-observer and consciousness-gated measurement track.
+
+Repo hub:
+
+```text
+papers/p4-observer-dependent-decoherence-cgds/
+```
+
+OSF companion text:
+
+```text
+osf/p4-cgds-observer-decoherence.md
+```
+
+Primary focus:
+
+- Consciousness-Gated Double-Slit (CGDS);
+- machine-only versus conscious-access measurement conditions;
+- SOC-MZI / Mach-Zehnder extensions;
+- delayed-choice and quantum-eraser reinterpretations;
+- awareness-conditioned quantum computing;
+- quantum brain-field coupling proposals.
 
 ### Empirical exploration package
 
@@ -90,30 +183,31 @@ notebooks/sparc_memory_fit_plan.md
 notebooks/pantheon_environment_h0_fit_plan.md
 ```
 
-### PNT dark energy / Hubble-window package
+### Literature-positioning note
 
-The first dedicated paper package has been added under:
-
-```text
-papers/pnt-dark-energy-hubble-window/
-```
-
-It currently includes:
-
-- `working-draft-v0-1.md` — physics-first P2 paper skeleton for Planck Nucleation Theory as a two-timescale dark-energy model.
-- `toy-model-results-v0-1.md` — summary of the prompt-exhaust / Early-Dark-Energy feasibility toy calculations.
-
-Core conclusion of this package:
-
-> PNT naturally separates into a short-lived prompt exhaust channel and a long-lived memory-residue channel. The prompt channel can produce an EDE-like transient but does not yet demonstrate full Hubble-tension resolution in minimal toy models. The late memory component is the stronger near-term publishable track, with predicted w(z) evolution and void-versus-filament differentials.
-
-The repo also includes a literature-positioning note:
+The repo includes a literature-positioning note:
 
 ```text
 references/consensus-pnt-soct-literature-positioning.md
 ```
 
 This file preserves the current Consensus-based claim calibration for SoCT, SOC-MZI, PNT, and the PNT dark-energy track.
+
+## OSF alignment
+
+The OSF mapping file is preserved under:
+
+```text
+osf/OSF_PROJECT_MAP.md
+```
+
+Current OSF/repo alignment:
+
+- **P1** — Memory-Field Gravity / SPARC / SoCT-PM
+- **P2** — PNT Dark Energy / Hubble Window
+- **P3** — Causal Inversion / Directional Memory Cosmology
+- **P4** — CGDS / Observer-Dependent Decoherence / SOC-MZI
+- **P5** — future SoCT comprehensive synthesis
 
 ## Proposed long-term repo structure
 
@@ -136,6 +230,11 @@ Sequence-of-collapse-theory/
 ├─ references/
 │  ├─ bibliography-and-validation-notes.md
 │  └─ consensus-pnt-soct-literature-positioning.md
+├─ osf/
+│  ├─ OSF_PROJECT_MAP.md
+│  ├─ p1-memory-field-gravity-sparc.md
+│  ├─ p3-causal-inversion-directional-memory.md
+│  └─ p4-cgds-observer-decoherence.md
 ├─ data/
 │  ├─ README.md
 │  ├─ sparc/
@@ -146,31 +245,29 @@ Sequence-of-collapse-theory/
 │  └─ pantheon_environment_h0_fit_plan.md
 ├─ figures/              # future charts, diagrams, render-ready visuals
 └─ papers/
-   └─ pnt-dark-energy-hubble-window/
-      ├─ working-draft-v0-1.md
-      └─ toy-model-results-v0-1.md
+   ├─ p1-memory-field-gravity-sparc/
+   ├─ pnt-dark-energy-hubble-window/
+   ├─ p3-causal-inversion-directional-memory/
+   ├─ p4-observer-dependent-decoherence-cgds/
+   └─ p5-soct-synthesis/          # future
 ```
 
 ## Next recommended additions
 
-1. Add OSF preregistration text and links.
+1. Add repo-backed OSF links after the OSF pages are updated.
 2. Add reproducible SPARC derived tables and nonlinear memory-fit notebook.
 3. Add Pantheon+ source notes, environment cross-match output, and covariance-aware H0 fitting notebook.
 4. Add PM simulation parameter logs and H-split result summaries.
 5. Add any existing simulation charts, CSVs, notebooks, or screenshots.
-6. Split the theory into publication-ready paper folders:
-   - foundational theory
-   - mathematical formalization
-   - cosmology / gravity
-   - consciousness experiments
-7. Add a reproducible PNT-EDE toy-model notebook corresponding to `toy-model-results-v0-1.md`.
-8. Add a SPARC radial-decomposition plan and results folder for the P1 empirical anchor paper.
+6. Add a reproducible PNT-EDE toy-model notebook corresponding to `toy-model-results-v0-1.md`.
+7. Add SPARC radial-decomposition plan and results folder for the P1 empirical anchor paper.
+8. Add physics-facing outlines for P1, P3, and P4.
+9. Create the future P5 comprehensive synthesis folder.
 
 ## Status
 
-Initial theory repo scaffold created.
+Initial theory repo scaffold created and expanded.
+
 This is a **documentation-first baseline** ready for further imports from project threads, local files, Google Drive, OSF, and future simulation outputs.
 
-The first PNT/P2 package has now been added to preserve the two-timescale dark-energy framing, toy-model conclusions, and literature-positioning guidance.
-
-The empirical exploration package now preserves the SPARC / effective-G / PM / Pantheon+ phase as an internal pre-publication research synthesis with data and notebook scaffolds for reproducibility.
+The P1, P2, P3, and P4 tracks now have a clearer repo/OSF alignment, with P2 holding the most developed working-paper package and P1/P3/P4 now established as structured hubs ready for draft imports.

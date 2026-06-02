@@ -25,7 +25,11 @@ At this stage, the repo includes:
 - an experiments hub
 - a simulations hub
 - validation and bibliography notes
+- a canonical parameter ledger
+- a dark-sector taxonomy
 - an empirical exploration summary for the SPARC / effective-G / Pantheon+ phase
+- a formal SOC localization-memory Hamiltonian scaffold
+- parent-child directional-transfer simulation summaries
 - data and notebook scaffolds for reproducible cosmology tests
 - OSF companion text files
 - paper/protocol hubs for P1, P2, P3, and P4
@@ -35,8 +39,38 @@ At this stage, the repo includes:
 1. **First Collapse**: light / photon-mediated decoherence begins the narrowing of possibility into structure.
 2. **Second Collapse**: conscious observation finalizes experienced reality.
 3. **Memory Field**: collapse events leave accumulated spacetime imprint, modeled as a memory field.
-4. **Shephard-Mirrowen Hamiltonian**: extension of standard Hamiltonian formalism with memory coupling.
+4. **SOC Localization-Memory Hamiltonian**: extension of standard Hamiltonian formalism with localization, memory coupling, and observer-state coupling.
 5. **Cross-domain implication**: the theory propagates into cosmology, gravity, measurement theory, cognition, spatial computation, and experimental design.
+
+## Current canonical equation scaffold
+
+The current repo-facing Hamiltonian scaffold is:
+
+```text
+H_SOC = H_free + H_loc + lambda_M M(x,t) O_M + lambda_c Phi_c(x,t) O_c
+```
+
+with memory evolution:
+
+```text
+partial M / partial t = alpha C(x,t) - beta M(x,t) + D_M nabla^2 M
+```
+
+and collapse-intensity proxy:
+
+```text
+C(x,t) = A(x,t) |<Psi | O_c | Psi>|^2
+```
+
+Canonical file:
+
+```text
+papers/math/soc-localization-memory-hamiltonian.md
+```
+
+Claim boundary:
+
+> This Hamiltonian is a formal scaffold for separating memory-field and observer-state hypotheses into testable channels. It does not prove the theory.
 
 ## Active research packages
 
@@ -99,13 +133,23 @@ OSF companion text:
 osf/p3-causal-inversion-directional-memory.md
 ```
 
-Primary focus:
+Simulation hub:
 
-- Causal Inversion Hypothesis;
-- Kerr-to-Cosmos geometry;
-- parent-universe memory;
-- CMB preferred-axis and anisotropy tests;
-- parity asymmetry, hemispherical power imbalance, and low-l alignment questions.
+```text
+simulations/parent-child-transfer/
+```
+
+Current simulation artifacts:
+
+```text
+simulations/parent-child-transfer/README.md
+simulations/parent-child-transfer/real-space-bounce-transfer-v4-1.md
+simulations/parent-child-transfer/kernel-robustness-summary.md
+```
+
+Current v4.1 simulation claim boundary:
+
+> Real-space bounce-transfer toy models show robust directional inheritance across the tested kernel configurations, motivating multi-seed and null-model follow-up. This does not confirm physical parent-child universe transfer.
 
 ### P4 — Observer-Dependent Decoherence / CGDS / SOC-MZI
 
@@ -130,7 +174,22 @@ Primary focus:
 - SOC-MZI / Mach-Zehnder extensions;
 - delayed-choice and quantum-eraser reinterpretations;
 - awareness-conditioned quantum computing;
+- quantum memory hysteresis;
+- post-observation aftereffect tests;
+- attention-state gradient tests;
 - quantum brain-field coupling proposals.
+
+### Dark-sector taxonomy
+
+The current dark-sector taxonomy is preserved under:
+
+```text
+docs/dark-sector-taxonomy.md
+```
+
+Purpose:
+
+> Keep ordinary matter, dark matter, dark energy, PNT prompt exhaust, memory residue, and parent-child inheritance distinct so the framework does not conflate separate mechanisms.
 
 ### Empirical exploration package
 
@@ -153,34 +212,11 @@ Working phenomenological model:
 G_eff(x,t) = G_0 [1 + alpha M(x,t)]
 ```
 
-with a minimal memory accumulation form:
-
-```math
-M(t) = 1 - exp(-t/tau)
-```
-
 Primary observational tracks:
 
 ```text
 SPARC: older systems -> higher outer f_DM
 Pantheon+: H0_void > H0_filament
-```
-
-Claim boundary:
-
-> This package is internal and pre-publication. It records modest empirical signals, simulation alignment, and locked pipeline logic, but does not claim confirmation of SoCT, PNT, or modified gravity.
-
-Related scaffolds:
-
-```text
-data/README.md
-data/sparc/README.md
-data/pantheon/README.md
-data/pantheon/covariance-notes.md
-data/pantheon/environment-labels-schema.md
-notebooks/README.md
-notebooks/sparc_memory_fit_plan.md
-notebooks/pantheon_environment_h0_fit_plan.md
 ```
 
 ### Literature-positioning note
@@ -214,42 +250,30 @@ Current OSF/repo alignment:
 ```text
 Sequence-of-collapse-theory/
 ├─ README.md
+├─ PREDICTIONS.md
 ├─ docs/
 │  ├─ repo-map.md
 │  ├─ source-corpus.md
 │  ├─ theory-overview.md
 │  ├─ book-of-collapse-article-map.md
+│  ├─ dark-sector-taxonomy.md
+│  ├─ canonical-parameter-ledger.md
 │  └─ empirical-exploration-thread-summary-v0-1.md
 ├─ experiments/
-│  ├─ README.md
-│  └─ cosmology/
-│     ├─ sparc-analysis-plan.md
-│     └─ pantheon-environment-h0-test.md
 ├─ simulations/
-│  └─ README.md
+│  └─ parent-child-transfer/
 ├─ references/
-│  ├─ bibliography-and-validation-notes.md
-│  └─ consensus-pnt-soct-literature-positioning.md
 ├─ osf/
-│  ├─ OSF_PROJECT_MAP.md
-│  ├─ p1-memory-field-gravity-sparc.md
-│  ├─ p3-causal-inversion-directional-memory.md
-│  └─ p4-cgds-observer-decoherence.md
 ├─ data/
-│  ├─ README.md
-│  ├─ sparc/
-│  └─ pantheon/
 ├─ notebooks/
-│  ├─ README.md
-│  ├─ sparc_memory_fit_plan.md
-│  └─ pantheon_environment_h0_fit_plan.md
-├─ figures/              # future charts, diagrams, render-ready visuals
+├─ figures/
 └─ papers/
+   ├─ math/
    ├─ p1-memory-field-gravity-sparc/
    ├─ pnt-dark-energy-hubble-window/
    ├─ p3-causal-inversion-directional-memory/
    ├─ p4-observer-dependent-decoherence-cgds/
-   └─ p5-soct-synthesis/          # future
+   └─ p5-soct-synthesis/
 ```
 
 ## Next recommended additions
@@ -258,11 +282,12 @@ Sequence-of-collapse-theory/
 2. Add reproducible SPARC derived tables and nonlinear memory-fit notebook.
 3. Add Pantheon+ source notes, environment cross-match output, and covariance-aware H0 fitting notebook.
 4. Add PM simulation parameter logs and H-split result summaries.
-5. Add any existing simulation charts, CSVs, notebooks, or screenshots.
-6. Add a reproducible PNT-EDE toy-model notebook corresponding to `toy-model-results-v0-1.md`.
-7. Add SPARC radial-decomposition plan and results folder for the P1 empirical anchor paper.
-8. Add physics-facing outlines for P1, P3, and P4.
-9. Create the future P5 comprehensive synthesis folder.
+5. Add parent-child transfer parameter logs, null-model definitions, and multi-seed outputs.
+6. Add any existing simulation charts, CSVs, notebooks, or screenshots.
+7. Add a reproducible PNT-EDE toy-model notebook corresponding to `toy-model-results-v0-1.md`.
+8. Add SPARC radial-decomposition plan and results folder for the P1 empirical anchor paper.
+9. Add physics-facing outlines for P1, P3, and P4.
+10. Create the future P5 comprehensive synthesis folder.
 
 ## Status
 
@@ -270,4 +295,4 @@ Initial theory repo scaffold created and expanded.
 
 This is a **documentation-first baseline** ready for further imports from project threads, local files, Google Drive, OSF, and future simulation outputs.
 
-The P1, P2, P3, and P4 tracks now have a clearer repo/OSF alignment, with P2 holding the most developed working-paper package and P1/P3/P4 now established as structured hubs ready for draft imports.
+The P1, P2, P3, and P4 tracks now have a clearer repo/OSF alignment. P2 currently holds the most developed working-paper package, while P1/P3/P4 are structured hubs ready for draft imports, reproducible notebooks, and stronger validation artifacts.

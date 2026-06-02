@@ -10,6 +10,7 @@ Core narrative and structural documents.
 - `source-corpus.md` — index of source documents already folded into the repo
 - `theory-overview.md` — concise research-facing summary of the framework
 - `book-of-collapse-article-map.md` — maps long-form article/book material into modular research topics
+- `empirical-exploration-thread-summary-v0-1.md` — internal synthesis of the SPARC / effective-G / PM / Pantheon+ empirical phase
 - `theory-notes/` — clearly labeled speculative/conceptual extension notes
 
 ### docs/theory-notes/
@@ -36,6 +37,7 @@ Planned contents:
 - delayed-choice reinterpretation notes
 - quantum-computing observer-condition tests
 - protocol versions, amendments, and materials lists
+- cosmology analysis plans for SPARC, Pantheon+, Hubble-memory-drag, CMB, GW, and PNT dark-energy tracks
 
 ## simulations/
 
@@ -50,6 +52,8 @@ Planned contents:
 - validation charts
 - black-hole / CMB / memory-field simulation notes
 - imported screenshots and result summaries
+- effective-G / memory-kernel toy models
+- PM void-filament H-split parameter logs
 
 ## references/
 
@@ -65,7 +69,17 @@ Planned contents:
 
 ## data/
 
-Reserved for raw or semi-processed files.
+Reserved for raw, semi-processed, and derived files.
+
+Current scaffolds:
+
+```text
+data/README.md
+data/sparc/README.md
+data/pantheon/README.md
+data/pantheon/covariance-notes.md
+data/pantheon/environment-labels-schema.md
+```
 
 Examples:
 
@@ -74,10 +88,20 @@ Examples:
 - observational datasets
 - simulation outputs
 - processed parameter summaries
+- covariance notes and row-order validation notes
+- environment-label cross-match tables
 
 ## notebooks/
 
 Reserved for reproducible code analysis.
+
+Current scaffolds:
+
+```text
+notebooks/README.md
+notebooks/sparc_memory_fit_plan.md
+notebooks/pantheon_environment_h0_fit_plan.md
+```
 
 Examples:
 
@@ -85,6 +109,8 @@ Examples:
 - Hubble tension environment analysis
 - CMB anomaly correlation tests
 - symbolic or numeric memory-kernel experiments
+- nonlinear memory-timescale estimation
+- covariance-aware H0 fitting
 
 ## figures/
 
@@ -119,3 +145,4 @@ When importing materials from threads or external files:
 3. Label speculative material clearly.
 4. Keep reproducible data and code separate from philosophical commentary.
 5. Add provenance notes so each imported artifact can be traced back to its source.
+6. Do not represent synthetic signal injections, visual parameter estimates, or LLM summaries as real-data detections.

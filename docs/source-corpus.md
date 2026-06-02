@@ -93,6 +93,47 @@ Recommended future destination:
 
 ---
 
+### 5. Empirical Exploration Thread — SPARC / Effective-G / Pantheon+
+**Status:** internal thread synthesis, pre-publication  
+**Use in repo:** empirical research-program anchor and reproducibility roadmap
+
+Primary repo artifact:
+
+```text
+docs/empirical-exploration-thread-summary-v0-1.md
+```
+
+Key material extracted:
+
+- SPARC age versus outer dark-matter-fraction working signal;
+- effective-G / memory-kernel model:
+
+```math
+G_eff(x,t) = G_0 [1 + alpha M(x,t)]
+```
+
+- exponential memory accumulation model:
+
+```math
+M(t) = 1 - exp(-t/tau)
+```
+
+- velocity-shift bridge from baryonic prediction to apparent dark fraction;
+- PM simulation interpretation of void-filament H-split behavior;
+- Pantheon+ covariance-aware environment-dependent H0 pipeline;
+- research-integrity boundary separating measured signals, simulations, preregistered tests, and speculative substrate theory.
+
+Recommended future destination:
+
+- `data/sparc/`
+- `data/pantheon/`
+- `notebooks/`
+- `simulations/memory-kernel/`
+- `simulations/cosmology/`
+- future `papers/cosmology/`
+
+---
+
 ## Not yet imported as data files
 
 The repo is currently **documentation-seeded**, not **dataset-seeded**.
@@ -106,11 +147,16 @@ Still needed:
 - notebook exports
 - paper drafts in clean markdown
 - bibliography in cite-ready format
+- SPARC derived age/f_DM table
+- Pantheon+ environment-label cross-match output
+- PM simulation parameter logs
 
 ## Import priorities next
 
-1. OSF experiment files and prereg text
-2. SPARC-related notes, tables, and notebooks
-3. Any charts or screenshots tied to SOC validation
-4. A clean manuscript for the Unified Physics Framework
-5. A clean references file with formal citations
+1. SPARC-related notes, tables, and notebooks
+2. Pantheon+ source notes, environment labels, and covariance-aware notebook
+3. PM simulation parameter logs and H-split summaries
+4. OSF experiment files and prereg text
+5. Any charts or screenshots tied to SOC validation
+6. A clean manuscript for the Unified Physics Framework
+7. A clean references file with formal citations

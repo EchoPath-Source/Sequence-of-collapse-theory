@@ -98,6 +98,28 @@ Note:
 
 ---
 
+## Parent-Child Transfer Simulation Metrics
+
+| Symbol / quantity | Meaning | Current value | Units | Status | Source / notes |
+|---|---|---:|---|---|---|
+| `alignment_signal_v4_0` | v4.0 quadrupole alignment for signal child field | 0.968 | dimensionless | toy-model | `simulations/parent-child-transfer/real-space-bounce-transfer-v4-1.md` |
+| `alignment_null_v4_0` | v4.0 quadrupole alignment for null field | 0.073 | dimensionless | toy-model | Same source. |
+| `delta_alignment_v4_0` | signal-null quadrupole alignment delta | +0.894 | dimensionless | toy-model | Strong positive exploratory result. |
+| `ratio_signal_v4_0` | v4.0 anisotropy ratio for signal | 0.648 | dimensionless | diagnostic | Ratio metric considered kernel-contaminated. |
+| `ratio_null_v4_0` | v4.0 anisotropy ratio for null | 1.225 | dimensionless | diagnostic | Null exceeded signal on ratio metric. |
+| `delta_ratio_v4_0` | signal-null anisotropy-ratio delta | -0.577 | dimensionless | diagnostic/fail | Preserved as failed diagnostic metric. |
+| `N_kernel_v4_1` | kernel configurations tested | 20 | configurations | toy-model | `simulations/parent-child-transfer/kernel-robustness-summary.md` |
+| `N_strong_positive_v4_1` | configurations with delta > 0.1 | 19 | configurations | toy-model | Strong-positive threshold is provisional. |
+| `N_weak_positive_v4_1` | positive but weak configurations | 1 | configuration | toy-model | Positive but below strong threshold. |
+| `N_negative_v4_1` | negative deltas | 0 | configurations | toy-model | No null-beating-signal cases reported. |
+| `mean_delta_alignment_v4_1` | mean alignment advantage across kernel scan | ~+0.583 | dimensionless | toy-model | Approximate reported mean. Needs CSV reproduction. |
+
+Claim boundary:
+
+> These values document an exploratory toy-model signal. They should not be used as empirical evidence until code, random seeds, null models, CSV outputs, and multi-seed tests are committed.
+
+---
+
 ## Memory Kernel Parameters
 
 | Symbol | Meaning | Current value | Units | Status | Notes |
@@ -128,3 +150,5 @@ Note:
 4. Add SPARC radial-decomposition exact provenance.
 5. Add Pantheon environment-H0 fitted values once available.
 6. Add thermalization `tau_ex` calculation results.
+7. Replace parent-child transfer summary values with CSV-linked reproducible outputs once available.
+8. Add multi-seed parent-child transfer statistics when run.

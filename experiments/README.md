@@ -47,6 +47,7 @@ Needed additions:
 Includes:
 - SPARC age-dependent rotation curves
 - Pantheon+ environment-dependent H0 test
+- effective-G / memory-kernel phenomenology
 - Hubble tension memory-drag analysis
 - CMB anomaly correlation tests
 - fine-structure constant spatial variation re-analysis
@@ -57,20 +58,37 @@ Current linked packages:
 
 ```text
 papers/pnt-dark-energy-hubble-window/
+docs/empirical-exploration-thread-summary-v0-1.md
 experiments/cosmology/sparc-analysis-plan.md
 experiments/cosmology/pantheon-environment-h0-test.md
+data/sparc/README.md
+data/pantheon/README.md
+notebooks/sparc_memory_fit_plan.md
+notebooks/pantheon_environment_h0_fit_plan.md
 ```
 
-The PNT package currently frames PNT as a two-timescale dark-energy model:
+The empirical exploration package currently frames the strongest near-term cosmology route as:
 
-- prompt exhaust channel: EDE-like transient, toy-model sound-horizon shift, Boltzmann-code follow-up target
-- memory-residue channel: late-time w(z), void-filament differential, DESI-facing observational track
+```text
+history-dependent effective gravity -> exponential memory accumulation -> age-dependent outer velocity excess -> environment-dependent expansion residuals
+```
+
+The SPARC track tests whether older systems show stronger outer apparent dark fraction:
+
+```math
+f_DM(t) = f_0 + A_mem(1 - exp(-t/tau))
+```
 
 The Pantheon+ environment test provides an independent expansion-side check of the void-versus-filament prediction:
 
 ```text
 Delta_H0 = H0_void - H0_filament > 0
 ```
+
+The PNT package currently frames PNT as a two-timescale dark-energy model:
+
+- prompt exhaust channel: EDE-like transient, toy-model sound-horizon shift, Boltzmann-code follow-up target
+- memory-residue channel: late-time w(z), void-filament differential, DESI-facing observational track
 
 ## Recommended file plan
 
@@ -100,4 +118,16 @@ experiments/
 Raw OSF artifacts are indexed but not yet fully converted into Markdown.
 This folder currently serves as the structural landing zone for those materials.
 
-The PNT dark-energy / Hubble-window paper package has been added under `papers/`; the next experiment-side additions should be reproducible cosmology notebooks and data-schema notes for SPARC and Pantheon+.
+The next experiment-side additions should be reproducible cosmology notebooks, SPARC derived tables, Pantheon+ source notes, environment cross-match outputs, and PM simulation parameter logs.
+
+## Research boundary
+
+Cosmology-track experiment notes should distinguish:
+
+- thread-level observations;
+- reproducible data results;
+- simulation outputs;
+- synthetic signal injections;
+- speculative substrate interpretations.
+
+Only reproducible data results should be used as manuscript evidence.

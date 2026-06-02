@@ -33,6 +33,10 @@ This file is intended to prevent SoCT/PNT from becoming an ideas dump. Each pred
 | P10 | Gravitational-wave memory residuals may contain collapse-history signatures. | GW astronomy | Deviations or residual patterns correlate with memory-field dynamics or black-hole nucleation boundary conditions. | `proposed` | No residual structure beyond GR/noise after robust analysis. | Long-term test. |
 | P11 | Black holes may function as memory-compression / nucleation boundary nodes. | PNT / black-hole physics | Black-hole observables should constrain nucleation thresholds and memory compression behavior. | `speculative / proposed` | No consistent link between black-hole properties and PNT predictions can be derived. | Needs formal calculation before empirical claim. |
 | P12 | Born-rule randomness may be operationally valid but interpretable as projection from hidden collapse geometry. | Quantum foundations | Standard Born rule holds except possibly tiny structured deviations under extreme/controlled conditions. | `speculative` | No structured deviations are found; interpretation remains philosophical only. | Should not be overclaimed as new physics without data. |
+| P13 | Quantum memory hysteresis may occur after structured collapse histories. | Quantum foundations / memory-field tests | Prior collapse history changes later coherence/visibility beyond standard apparatus/environment effects. | `proposed` | No history-dependent residual appears after full environmental, thermal, timing, and apparatus controls. | Derived from `M(x,t)` source-decay term in `papers/math/soc-localization-memory-hamiltonian.md`. |
+| P14 | Conscious-access measurement may differ from machine-only recording under controlled delayed-access conditions. | Quantum foundations / double-slit / MZI | Recorded-but-unaccessed data and consciously accessed data produce distinguishable visibility/decoherence profiles. | `proposed` | Blinded tests show machine-only and conscious-access conditions are statistically equivalent under preregistered power. | Core SOC discriminator; should be handled conservatively. |
+| P15 | Observation may leave a measurable short-lived post-observation aftereffect. | Quantum foundations / QRNG / MZI | Post-observation blocks retain weak residual bias or visibility shift before returning to baseline. | `proposed` | No temporal residual beyond apparatus drift, noise, or multiple-comparison effects. | Derived from memory persistence term `M(x,t + Delta t) > 0`. |
+| P16 | Attention-state gradients may produce graded observer-state effects. | Consciousness / quantum foundations | Distracted, neutral, and coherent attention conditions produce monotonic or threshold differences in collapse/noise/coherence metrics. | `proposed` | No monotonic or threshold relation after blinded protocols and physiological controls. | Operationalizes `A(x,t)` rather than treating observation as binary. |
 
 ## Recently added candidate-result artifacts
 
@@ -42,6 +46,9 @@ This file is intended to prevent SoCT/PNT from becoming an ideas dump. Each pred
 | SPARC inner/outer radial decomposition | `observations/sparc/results/inner_outer_radial_decomposition_summary.md` | In the clean Disk+Q=1 subset, WISE-color/formation proxy correlations are stronger in outer fDM than inner fDM. |
 | SPARC inner/outer correlation CSV | `observations/sparc/results/inner_outer_correlation_summary.csv` | Machine-readable summary of subset correlations for all/Q=1/disk/disk+Q=1. |
 | PNT void-filament H0 mechanism | `papers/pnt-dark-energy-hubble-window/void-filament-h0-mechanism.md` | Toy model for environment-dependent dark-energy contribution to local H0. |
+| SOC localization-memory Hamiltonian | `papers/math/soc-localization-memory-hamiltonian.md` | Formal scaffold separating free dynamics, localization coupling, memory-field coupling, and observer-state coupling. |
+| Parent-child transfer v4.1 summary | `simulations/parent-child-transfer/real-space-bounce-transfer-v4-1.md` | Documents the real-space transfer architecture, metric correction, and kernel-robust directional inheritance result. |
+| Parent-child kernel robustness summary | `simulations/parent-child-transfer/kernel-robustness-summary.md` | Preserves the 20-kernel robustness scan and required follow-up tests. |
 
 ## Philosophical / metaphysical extensions
 
@@ -62,7 +69,8 @@ These are tracked separately because they are not currently empirical claims.
 4. Run Pantheon+ void/filament H0 test using full covariance.
 5. Formalize PNT dark-energy / Hubble-tension calculation.
 6. Write conservative MZI observer-decoherence preregistration.
-7. Keep metaphysical extensions clearly labeled as interpretation, not empirical proof.
+7. Run parent-child transfer multi-seed and expanded-null tests.
+8. Keep metaphysical extensions clearly labeled as interpretation, not empirical proof.
 
 ## Rule for adding new predictions
 

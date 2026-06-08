@@ -1,188 +1,107 @@
-# SPARC Outer Mass Discrepancy Analysis — SoCT Framework
+# SPARC Outer Mass Discrepancy Analysis
 
-**Status:** Candidate empirical result / derived SPARC artifact  
-**Source thread artifact:** `soct_outer_dm_analysis.txt`  
-**Dataset:** SPARC / Rotmod LTG sample, N = 175 galaxies  
-**Proxy:** `fdm_outer` = apparent dark matter fraction, mean of last 3 rotation-curve radii  
-**Claim level:** Candidate pattern consistent with SoCT; not proof.
+**Status:** preliminary observational result / candidate empirical artifact  
+**Dataset:** SPARC / Rotmod LTG sample  
+**Sample size:** N = 175 galaxies  
+**Metric:** `fdm_outer` = apparent dark-matter fraction proxy, computed as the mean of the last three rotation-curve radii  
+**Claim level:** exploratory; not proof of SoCT
 
----
+## Summary
 
-## Executive Summary
+This note preserves the outer mass-discrepancy result used in the Sequence of Collapse Theory (SoCT) / gravitational-memory track. The result is useful because it asks whether central baryonic brightness alone explains the apparent dark residual in the outer rotation curve.
 
-The outer mass discrepancy analysis reports that outer SPARC rotation-curve regions are strongly skewed toward high inferred dark matter fraction, while the correlation between outer dark fraction and central disk surface brightness is weak and not statistically significant.
+The conservative conclusion is:
 
-This supports a conservative SoCT-facing interpretation:
+> Central baryonic brightness alone does not strongly predict the outer apparent dark residual. This leaves environment, formation history, halo assembly, and memory-field interpretations as open competing explanations.
 
-> Central baryonic brightness alone does not explain outer mass discrepancy in this derived SPARC sample. The result motivates testing environmental and formation-history variables, especially filament/void classification and inner/outer radial decomposition.
-
----
-
-## Distribution Characteristics
-
-Reported values:
+## Distribution of outer apparent dark fraction
 
 ```text
-Mean fdm_outer:     0.700 ± 0.189
-Median fdm_outer:   0.754
-Range:              [0.043, 0.927]
-Q1:                 0.658
-Q2:                 0.754
-Q3:                 0.828
-Skewness:          -1.709
-Kurtosis:           2.800
+Mean fdm_outer:    0.700 ± 0.189
+Median fdm_outer:  0.754
+Range:             [0.043, 0.927]
+Q1:                0.658
+Q2:                0.754
+Q3:                0.828
+Skewness:         -1.709
+Kurtosis:          2.800
 ```
 
----
-
-## Bimodality / Population Split
-
-Reported categories:
+## Bimodality / population structure
 
 ```text
-DM-dominated, fdm > 0.7:        111 galaxies, 63.4%
-Baryon-dominated, fdm < 0.3:     10 galaxies, 5.7%
-Intermediate, 0.3 <= fdm <= 0.7: 54 galaxies, 30.9%
+DM-dominated outer regions (fdm_outer > 0.7):       111 / 175 = 63.4%
+Baryon-dominated outer regions (fdm_outer < 0.3):    10 / 175 = 5.7%
+Intermediate (0.3 <= fdm_outer <= 0.7):              54 / 175 = 30.9%
 ```
 
 Interpretation:
 
-- Strong skew toward dark-matter-dominated outer regions.
-- Small but important population of baryon-dominated outer systems.
-- Possible two-channel behavior, but this remains exploratory until tested against environment, morphology, and feedback histories.
+- The sample is strongly skewed toward dark-residual-dominated outer regions.
+- A small but non-negligible baryon-dominated outer population exists.
+- This supports a two-channel interpretation: most systems retain strong outer residuals, while a minority appear baryon-dominated or strongly feedback/structure-modified.
 
----
-
-## Correlation With Baryonic Properties
-
-Reported correlations:
+## Correlations with baryonic / curve properties
 
 ```text
-fdm_outer vs SB0_disk: r = -0.093, p = 0.223, not significant
-fdm_outer vs Vmax:     r = +0.034, p = 0.657, not significant
-fdm_outer vs Rmax:     r = +0.168, p = 0.026, weak/significant
+fdm_outer vs SB0_disk:   r = -0.093, p = 0.223   not significant
+fdm_outer vs Vmax:       r = +0.034, p = 0.657   not significant
+fdm_outer vs Rmax:       r = +0.168, p = 0.026   weak but significant
 ```
 
 Interpretation:
 
-- Weak negative correlation with central brightness.
-- Essentially no correlation with Vmax.
-- Weak positive relationship with Rmax.
-- High scatter dominates, suggesting central disk properties alone do not predict the outer residual.
+- The relationship with central disk surface brightness is weak and non-significant.
+- The relationship with maximum velocity is essentially absent.
+- The relationship with curve extent is weak but significant.
+- Outer residuals are not simply predicted by central disk brightness.
 
----
-
-## Brightness-Stratified Means
-
-Reported outer dark fraction by central disk surface-brightness quartile:
+## Brightness-stratified comparison
 
 ```text
-SB0 Quartile 1, faintest:   0.723, n = 44
-SB0 Quartile 2:             0.721, n = 44
-SB0 Quartile 3:             0.687, n = 43
-SB0 Quartile 4, brightest:  0.667, n = 44
-Delta Q1-Q4:               +0.056
+SB0 Quartile 1 (faintest):   0.723  (n = 44)
+SB0 Quartile 2:              0.721  (n = 44)
+SB0 Quartile 3:              0.687  (n = 43)
+SB0 Quartile 4 (brightest):  0.667  (n = 44)
+
+Delta(Q1 - Q4):              +0.056
 ```
 
-Interpretation:
+Faint galaxies show slightly higher outer apparent dark fractions, but the effect is weak.
 
-> Faintest galaxies have slightly higher outer dark fractions, but the effect is weak.
-
----
-
-## Extreme Cases
-
-Top 10 highest `fdm_outer`:
+## Extreme cases
 
 ```text
-Mean fdm:      0.904
-Mean SB0_disk: 354.7 Lsun/pc^2
-Mean Vmax:     86.5 km/s
+Top 10 fdm_outer galaxies:
+  Mean fdm_outer:      0.904
+  Mean SB0_disk:       354.7 L_sun/pc^2
+  Mean Vmax:            86.5 km/s
+
+Bottom 10 fdm_outer galaxies:
+  Mean fdm_outer:      0.145
+  Mean SB0_disk:       214.7 L_sun/pc^2
+  Mean Vmax:            63.7 km/s
 ```
 
-Bottom 10 lowest `fdm_outer`:
+The low-residual population is rare. It may reflect systems where central baryonic content, feedback history, or local formation conditions strongly suppress the outer residual.
 
-```text
-Mean fdm:      0.145
-Mean SB0_disk: 214.7 Lsun/pc^2
-Mean Vmax:     63.7 km/s
-```
+## SoCT interpretation
 
-Source interpretation:
+This result is consistent with, but does not prove, the SoCT expectation that outer regions are less dominated by central baryonic modeling and may better preserve environment/history-dependent structure.
 
-- Low-DM galaxies are brighter centrally and have somewhat lower Vmax.
-- Central baryonic content can suppress apparent outer dark fraction in extreme cases.
-- This is a minority population, roughly 5.7% of the sample.
+Conservative interpretation:
 
----
+> The weak relationship between central surface brightness and outer apparent dark fraction suggests that central baryonic brightness alone is insufficient to explain the outer mass discrepancy. The next test is whether outer residuals correlate with formation-history proxies, local density, or cosmic-web environment more strongly than inner residuals.
 
-## SoCT Interpretation
+## Next validation steps
 
-### Prediction 1 — Outer regions are less sensitive to central baryonic physics
+1. Compute inner and outer apparent dark fractions using half-radius and effective-radius splits.
+2. Compare formation-history proxy correlations in inner vs outer regions.
+3. Cross-match with cosmic-web classifications such as void, sheet, filament, and cluster.
+4. Test local density within 1–5 Mpc.
+5. Cross-match with HI deficiency and group environment proxies.
+6. Preserve null or confounded results explicitly.
 
-Status: supported as a candidate pattern.
+## Status boundary
 
-Evidence:
-
-```text
-fdm_outer vs SB0_disk: r ≈ -0.09, not significant
-```
-
-### Prediction 2 — Environment-dependent memory accumulation matters
-
-Status: not yet tested.
-
-Required:
-
-- cosmic web classification;
-- large-scale density field;
-- filament/void labels;
-- local galaxy density within 1-5 Mpc.
-
-### Prediction 3 — Two-channel behavior may create bimodal outcomes
-
-Status: suggestive only.
-
-Evidence:
-
-```text
-63.4% DM-dominated outer regions
-5.7% baryon-dominated outer regions
-```
-
-### Prediction 4 — Central feedback can suppress apparent DM in rare cases
-
-Status: supported in extreme subset, but not dominant.
-
-### Prediction 5 — Outer/inner ratio should correlate with memory or formation proxy
-
-Status: now partially tested in the radial-decomposition follow-up.
-
-Related file:
-
-```text
-observations/sparc/results/inner_outer_radial_decomposition_summary.md
-```
-
----
-
-## Critical Next Tests
-
-1. Cross-match with cosmic web catalogs such as NEXUS+ or V-Web.
-2. Correlate `fdm_outer` with filament/void classification.
-3. Measure local galaxy density within 1-5 Mpc.
-4. Cross-match with HI deficiency / group-environment proxies.
-5. Run a toy model comparing bound fraction vs regional memory proxy.
-6. Reproduce all results from committed derived CSV and notebook.
-
----
-
-## Research Boundary
-
-Use:
-
-> The outer SPARC mass-discrepancy distribution shows weak dependence on central disk surface brightness and strong skew toward high outer inferred dark fraction, motivating environmental and radial-decomposition tests.
-
-Avoid:
-
-> This proves SoCT or rules out dark matter.
+This artifact is not proof of SoCT. It is a preliminary empirical support note showing that the outer mass discrepancy is not strongly explained by central disk surface brightness alone.

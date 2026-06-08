@@ -1,8 +1,8 @@
 # SPARC Data Notes
 
-**Status:** Scaffold / pending data import
+**Status:** PRELIMINARY derived-data import present
 
-This folder is reserved for SPARC-related source notes, schemas, derived tables, and small result summaries used in the SoCT collapse-memory empirical program.
+This folder holds SPARC-related source notes, schemas, derived tables, and small result summaries used in the SoCT collapse-memory empirical program.
 
 ## Current Role
 
@@ -26,9 +26,9 @@ older stellar populations should show higher outer f_DM, especially in low-baryo
 data/sparc/
 ├─ README.md
 ├─ source-notes.md                  # source URLs, citation requirements, version notes
-├─ derived-table-schema.md          # expected columns for derived analysis table
-├─ age_fdm_summary.csv              # small derived table, if licensing/provenance allows
-├─ radial_decomposition_summary.csv # inner/outer decomposition outputs
+├─ derived-data-schema.md           # expected columns for derived analysis table
+├─ sparc_age_fdm_data.csv           # PRELIMINARY derived age/fDM table
+├─ sparc_wise_inner_outer_fdm_split.csv # PRELIMINARY inner/outer decomposition table
 └─ results/
    ├─ correlation-summary.md
    └─ nonlinear-memory-fit-summary.md
@@ -68,4 +68,4 @@ Before adding derived CSVs, include:
 
 ## Current Claim Boundary
 
-Thread-level summaries indicate a modest positive age-f_DM trend, but the repo should not treat this as publication-grade until a reproducible notebook and derived table are committed.
+Derived SPARC tables and a runnable analysis script are now present, but the repo should not treat the result as publication-grade until provenance, regeneration instructions, controls, and figure reproducibility are fully audited.

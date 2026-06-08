@@ -1,148 +1,127 @@
 # SPARC Inner/Outer Radial Decomposition Summary
 
-**Status:** Candidate empirical result / radial-discriminator analysis  
-**Source artifacts:** `sparc_wise_inner_outer_fdm_split.csv`, `sparc_inner_outer_correlation_summary.csv`  
-**Claim level:** Candidate signal with radial-discriminator support, pending notebook reproduction.
+**Status:** candidate empirical result / radial-discriminator support  
+**Dataset:** derived SPARC + WISE inner/outer apparent dark-fraction split  
+**Primary derived dataset:** `observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv`  
+**Correlation table:** `observations/sparc/results/inner_outer_correlation_summary.csv`  
+**Claim level:** preliminary; requires notebook reproduction and independent review
 
----
+## Research question
 
-## Purpose
+Does the formation-history / stellar-population proxy correlate more strongly with the apparent dark residual in the outer rotation curve than in the inner, baryon-dominated region?
 
-This analysis tests whether a formation-history / stellar-population proxy correlates more strongly with apparent dark residuals in the outer rotation curve than in the inner disk.
+This is a key discriminator for the SoCT gravitational-memory track. If the signal is stronger in the outer region than the inner disk, it is less likely to be only an inner baryonic modeling artifact.
 
-This matters because SoCT predicts that memory-field or accumulated-history effects should be cleaner in outer, lower-baryon-dominance regions. If the signal were only an inner baryonic modeling artifact, it should not preferentially strengthen in the outer halo.
-
----
-
-## Derived Quantity
+## Definition of apparent dark fraction
 
 For each radius:
 
 ```text
-f_DM(r) = 1 - [V_gas^2 + V_disk^2 + V_bulge^2] / V_obs^2
+f_DM(r) = 1 - (V_gas^2 + V_disk^2 + V_bulge^2) / V_obs^2
 ```
 
-Two radial splits were tested:
+Derived metrics were computed by splitting each curve into inner and outer radial zones.
 
-1. **Half-radius split:** inner vs outer using half of the measured rotation-curve extent.
-2. **Effective-radius split:** inner vs outer relative to effective radius, more physically meaningful for disk structure.
+Two split definitions were used:
 
-Formation proxy:
+1. **Half-radius split:** inner and outer regions separated by half of the measured rotation-curve extent.
+2. **Effective-radius split:** inner and outer regions separated using the effective-radius scale, which is often more physically meaningful for baryon-dominated disks.
+
+## Formation-history proxy
+
+The current proxy is:
 
 ```text
 g - W1
 ```
 
-Caution:
+This should be described carefully as a WISE/color stellar-population or formation-history proxy, not a direct cosmic age measurement.
 
-> `g-W1` is a formation-history / stellar-population proxy, not a direct cosmic age measurement.
+## Key result: clean Disk + Q=1 subset
 
----
-
-## Main Result
-
-The cleanest subset is:
+The cleanest subset removes low-quality curves and bulge contamination.
 
 ```text
-Disk-dominated + Q=1 high-quality curves
+Subset: Disk + Q=1
 N = 56
 ```
 
-This subset removes lower-quality curves and bulge-contaminated systems.
-
-### Half-Radius Split
+### Half-radius split
 
 | Metric | N | Spearman rho vs g-W1 | p-value |
 |---|---:|---:|---:|
-| Inner fDM | 56 | -0.553 | 9.79e-6 |
-| Outer fDM | 56 | -0.657 | 3.71e-8 |
+| Inner fDM | 56 | -0.553 | 9.79e-06 |
+| Outer fDM | 56 | -0.657 | 3.71e-08 |
 
 Result:
 
-> The outer correlation is stronger than the inner correlation.
+```text
+|rho_outer| > |rho_inner|
+```
 
-### Effective-Radius Split
+The outer apparent dark residual has the stronger association with the formation-history proxy.
+
+### Effective-radius split
 
 | Metric | N | Spearman rho vs g-W1 | p-value |
 |---|---:|---:|---:|
-| Inner fDM | 56 | -0.409 | 0.00177 |
-| Outer fDM | 56 | -0.637 | 1.31e-7 |
+| Inner fDM | 56 | -0.409 | 1.77e-03 |
+| Outer fDM | 56 | -0.637 | 1.31e-07 |
 
 Result:
 
-> The outer correlation is again stronger, and this split is likely more physically meaningful.
-
----
-
-## Full Correlation Summary
-
-The full summary CSV is stored at:
-
 ```text
-observations/sparc/results/inner_outer_correlation_summary.csv
+|rho_outer| >> |rho_inner|
 ```
 
-The derived split dataset should be stored at:
+The effective-radius split gives the cleaner radial discriminator: the outer correlation is substantially stronger than the inner correlation.
+
+## Headline interpretation
+
+> In the clean disk-dominated, high-quality SPARC subset, the WISE color / formation-history proxy correlates more strongly with outer apparent dark residuals than inner residuals.
+
+Conservative version:
+
+> This strengthens the SPARC/P1 track from an age-DM candidate signal to a candidate signal with radial-discriminator support, pending committed notebook reproduction and external review.
+
+## Why this matters for SoCT
+
+The SoCT memory-field interpretation expects accumulated history/environment effects to become cleaner in the outer rotation curve, where central baryonic feedback and inner disk modeling are less dominant.
+
+The result is therefore directionally consistent with the SoCT expectation:
 
 ```text
-observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv
+formation-history proxy association: outer > inner
 ```
 
----
+This does not prove a memory field. It does show that the candidate signal is not confined to the inner baryonic disk.
 
-## Interpretation
+## Conventional alternatives
 
-Conservative headline:
+The main standard explanations remain viable and must be tested:
 
-> In the clean disk-dominated, high-quality SPARC subset, the correlation between WISE color and apparent dark residual is stronger in the outer rotation curve than in the inner region, especially when using an effective-radius split.
+- assembly bias,
+- halo concentration,
+- stellar-mass coupling,
+- feedback history,
+- gas fraction,
+- morphology,
+- local density / satellite environment,
+- selection effects in the clean subset.
 
-SoCT-facing implication:
+A publication-ready version must compare the SoCT interpretation against these conventional alternatives.
 
-> This suggests the residual is not merely an inner baryonic modeling artifact and may encode formation-history-dependent structure.
+## Required next steps
 
-Conventional alternatives remain viable:
+1. Add a runnable notebook that regenerates the derived dataset and correlation table from documented inputs.
+2. Add source links and citations for SPARC and WISE/color inputs.
+3. Run controlled regressions with stellar mass, gas fraction, morphology, surface brightness, curve quality, and environment.
+4. Cross-match with cosmic-web / local-density catalogs.
+5. Test whether the outer association survives bootstrap, jackknife, and outlier removal.
+6. Keep this result labeled as candidate empirical support until reproduced.
 
-- Lambda-CDM assembly bias;
-- halo concentration;
-- feedback history;
-- stellar mass coupling;
-- color/age proxy bias;
-- environment and gas fraction.
+## Current bottom line
 
----
+The inner/outer radial decomposition gives the SPARC track its strongest current discriminator:
 
-## Why This Strengthens Paper 1
-
-The earlier SPARC age-DM result reported a full-sample age/outer-DM candidate correlation.
-
-This radial decomposition adds a more specific discriminator:
-
-```text
-formation-history proxy association is stronger in outer residuals than inner residuals
-```
-
-That is a stronger pattern than a single global correlation and should be highlighted in the Paper 1 manuscript as a candidate radial-discriminator result.
-
----
-
-## Required Before Public Claim Escalation
-
-- Commit the full derived split CSV.
-- Commit the notebook or script that regenerates the split.
-- Verify sample filters: all, Q=1, disk, disk+Q=1.
-- Verify bulge-fraction threshold for disk classification.
-- Test robustness to alternate split definitions.
-- Compare against mass, surface brightness, gas fraction, and environment.
-- Add outlier and leverage diagnostics.
-
----
-
-## Paper-Safe Language
-
-Use:
-
-> The radial decomposition provides candidate evidence that the formation-history proxy is more strongly associated with outer apparent dark residuals than inner residuals in the clean disk + Q=1 subset.
-
-Avoid:
-
-> The radial decomposition proves SoCT or falsifies Lambda-CDM.
+> For the clean Disk + Q=1 subset, the formation-history proxy is more strongly associated with the outer apparent dark residual than with the inner residual, especially under the effective-radius split.

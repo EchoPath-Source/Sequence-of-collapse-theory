@@ -1,5 +1,13 @@
 # Sequence of Collapse Theory
 
+## Current repository audit
+
+A current empirical/theory repository audit is available at:
+
+```text
+docs/repo-audit-current-state.md
+```
+
 A structured research repository for the **Sequence of Collapse (SoC / SoCT)** framework by Antoine L. Shephard.
 
 This repo is intended to become the central home for:

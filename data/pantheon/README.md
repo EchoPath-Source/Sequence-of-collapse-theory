@@ -1,60 +1,42 @@
 # Pantheon+ Data Notes
 
-**Status:** Scaffold / pending data import
+**Status:** PRELIMINARY scaffold / missing required source tables
 
-This folder is reserved for Pantheon+ supernova data notes, covariance documentation, environment-label schemas, and small derived result summaries for the SoCT environment-dependent H0 test.
+This directory documents the Pantheon+ environment-dependent H0 test inputs. It does **not** contain a completed Pantheon H0 result.
 
-## Current Role
+## Required files for the notebook
 
-The Pantheon+ track tests the expansion-side prediction of the collapse-memory model:
+The notebook `notebooks/pantheon/pantheon_environment_h0_test.ipynb` refuses to run the primary fit unless all of the following are available:
 
-```text
-H0_void > H0_filament
-```
+| Required artifact | Expected path | Status | Label | Notes |
+|---|---|---|---|---|
+| Pantheon+ supernova table | `data/pantheon/pantheon_plus.csv` | MISSING | MISSING | Needed for redshifts, distance moduli, and covariance row alignment. |
+| Environment labels | `data/pantheon/environment_labels.csv` | MISSING | MISSING | Must be a documented derived cross-match; schema is in `environment-labels-schema.md`. |
+| Usable covariance file | see candidates below | PARTIAL | PRELIMINARY / EXTERNAL/DOCUMENTED | A covariance subset was requested but is not currently present; full covariance is documented as external pending redistribution clearance. |
 
-Primary statistic:
-
-```math
-Delta H0 = H0_void - H0_filament
-```
-
-## Expected Files
+Supported covariance candidate paths:
 
 ```text
-data/pantheon/
-├─ README.md
-├─ covariance-notes.md
-├─ environment-labels-schema.md
-├─ source-notes.md
-├─ environment_labels.csv              # derived cross-match table, if appropriate
-└─ results/
-   ├─ h0-environment-fit-summary.md
-   ├─ permutation-test-summary.md
-   └─ jackknife-summary.md
+data/pantheon/pantheon_covariance.txt
+data/pantheon/Pantheon_cov_subset.txt
+data/pantheon/Pantheon_SH0ES_cov.txt.gz
 ```
 
-## Required Provenance Before Data Import
+## Covariance subset
 
-Before committing any Pantheon+ table or covariance artifact, document:
+`data/pantheon/Pantheon_cov_subset.txt` is the preferred small in-repo covariance artifact if a verified subset is available. It is currently **MISSING** in this cleanup pass because no root-level `Pantheon_cov_subset.txt` file was present.
 
-- exact Pantheon+ release/version;
-- source URL or DOI;
-- citation requirement;
-- whether redistribution is allowed;
-- any columns removed or renamed;
-- redshift cut used;
-- matching between covariance row order and SN table row order.
+## Full Pantheon+/SH0ES covariance
 
-## Environment Cross-Match Requirement
+A root upload named `Pantheon_SH0ES_cov.txt.gz` was inspected on 2026-06-08:
 
-Environment labels should be created outside the raw Pantheon table and stored as a separate derived table with a documented method.
+- compressed size: `10,334,474` bytes;
+- readable as gzip text;
+- first value: `1701`;
+- remaining numeric value count: `2,893,401`, equal to `1701 * 1701` covariance entries.
 
-Required columns are described in:
+Because this appears to be a full public-data covariance artifact and redistribution terms were not verified during cleanup, it is classified as **EXTERNAL/DOCUMENTED** rather than committed as canonical data. If redistribution is cleared and the project wants it in-repo, use Git LFS or a documented data-release workflow before adding `data/pantheon/Pantheon_SH0ES_cov.txt.gz`.
 
-```text
-data/pantheon/environment-labels-schema.md
-```
+## Claim boundary
 
-## Claim Boundary
-
-This folder currently contains schema and provenance scaffolding only. No real-data Pantheon+ environment-H0 result should be claimed until the covariance-aware fitting notebook and cross-match output are committed.
+No Pantheon environment-H0 result is **ESTABLISHED** until the Pantheon+ SN table, environment-label table, and a usable covariance file are all present and the notebook is run without changing the locked interpretation rules. Do not claim a Pantheon H0 detection from the current repository state.

@@ -1,6 +1,6 @@
 # SPARC Figure Provenance Notes
 
-**Status:** Figure documentation / image artifacts not yet committed  
+**Status:** PRELIMINARY imported figure artifacts present  
 **Related result summary:** `papers/cosmology/sparc/sparc-age-dm-publication-summary-v1.md`  
 **Related notebook plan:** `notebooks/sparc_age_dm_analysis_plan.md`
 
@@ -10,9 +10,18 @@
 
 This file tracks the SPARC plots shared during the analysis thread so they can later be regenerated from committed code and data.
 
-The images should be treated as provisional visual outputs until the derived CSV and notebook are committed.
+The imported images should be treated as provisional visual outputs until they are regenerated from committed code and data.
 
 ---
+
+## Imported root-upload figures
+
+| Figure file | Status | Notes |
+|---|---|---|
+| `figures/sparc/sparc_age_fdm_main_result.png` | PRESENT / PRELIMINARY | Root upload moved into canonical SPARC figure folder. |
+| `figures/sparc/sparc_age_fdm_mass_bins.png` | PRESENT / PRELIMINARY | Root upload moved into canonical SPARC figure folder. |
+| `figures/sparc/sparc_fdm_vs_age_full_analysis.png` | PRESENT / PRELIMINARY | Root duplicate pair collapsed to one canonical copy. |
+| `figures/sparc/sparc_mass_controlled_analysis.png` | PRESENT / PRELIMINARY | Root triplicate collapsed to one canonical copy. |
 
 ## Figure 1 — Full Sample Age-DM Correlation
 
@@ -39,7 +48,7 @@ sigma = 2.67
 Intended future path:
 
 ```text
-figures/sparc/age_dm_full_sample.png
+figures/sparc/sparc_age_fdm_main_result.png
 ```
 
 Required regeneration source:
@@ -76,7 +85,7 @@ High Mass: r = +0.277, p = 0.036
 Intended future path:
 
 ```text
-figures/sparc/age_dm_mass_bins.png
+figures/sparc/sparc_age_fdm_mass_bins.png
 ```
 
 ---

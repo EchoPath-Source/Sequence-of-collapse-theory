@@ -1,16 +1,17 @@
-# Papers Hub / Inventory
+# Papers Index — Sequence of Collapse Theory
 
-This folder is the publication-facing layer of the Sequence of Collapse Theory repository.
+This folder follows the canonical seven-paper publication sequence from the March 2026 SOC Publication Roadmap.
 
 ## Purpose
 
 Use this area for manuscripts that are moving beyond exploratory notes into:
 
-- structured paper drafts,
-- submission-ready outlines,
-- journal-targeted versions,
-- appendices and supplementary methods,
-- calculation notes tied to specific manuscripts.
+- structured paper drafts;
+- submission-ready outlines;
+- journal-targeted versions;
+- appendices and supplementary methods;
+- calculation notes tied to specific manuscripts;
+- OSF-ready preregistration and supporting files.
 
 Each paper folder should eventually include:
 
@@ -23,62 +24,130 @@ references.md
 status.md
 ```
 
-## Currently hosted in repo
+## Canonical paper sequence
 
-| Paper / package | Path | Status | Notes |
-|---|---|---|---|
-| P2 — PNT dark energy / Hubble-window package | `papers/pnt-dark-energy-hubble-window/` | active working draft | Contains two-timescale dark-energy draft, toy-model results, and void–filament Hubble subsection. |
+### P1 — Age-Dependent Galactic Rotation Curves as Evidence for a Spacetime Memory Field
 
-## Still needs importing / centralizing
-
-| Paper | Target path | Priority | Notes |
-|---|---|---:|---|
-| P1 — SPARC / gravitational memory empirical paper | `papers/sparc-gravitational-memory/` | highest | Should link to runnable `observations/sparc/` notebook. Needs radial decomposition. |
-| P2 — PNT full working paper | `papers/pnt-dark-energy-hubble-window/` | high | Existing package should be expanded with current DOCX/PDF content and calculation appendices. |
-| P3 — CIH / parent-universe / CMB directional memory | `papers/cih-parent-universe-directional-memory/` | medium | Requires Kerr/axis derivation before publication draft. |
-| SoCT comprehensive report | `papers/soct-comprehensive-report/` | medium | Should be imported as Markdown or PDF for central reference. |
-| SOC-MZI observer-decoherence paper | `papers/soc-mzi-observer-decoherence/` | medium | Should remain separate from cosmology papers. |
-| Gravity as accumulated collapse history | `papers/gravity-as-accumulated-collapse-history/` | high | Likely overlaps with P1; needs integration strategy. |
-
-## Paper numbering recommendation
+Folder:
 
 ```text
-P1 — SPARC / Gravity as Accumulated Collapse History
-P2 — Planck Nucleation Exhaust and Dark Energy / Hubble Tension
-P3 — Causal Inversion / Parent-Universe Directional Memory
-P4 — Observer-Dependent Decoherence / SOC-MZI
-P5 — Full SoCT Comprehensive Synthesis
+papers/p1-age-dependent-rotation-curves-sparc/
 ```
 
-## Recommended folder structure
+Status: data in hand / write now.
+
+Target: MNRAS or PRL.
+
+### P2 — High-Redshift Disk Galaxies Do Not Require Dark Matter
+
+Folder:
 
 ```text
-papers/
-├─ README.md
-├─ pnt-dark-energy-hubble-window/
-├─ sparc-gravitational-memory/
-├─ cih-parent-universe-directional-memory/
-├─ soc-mzi-observer-decoherence/
-├─ gravity-as-accumulated-collapse-history/
-└─ soct-comprehensive-report/
+papers/p2-high-redshift-time-dependent-gravity/
 ```
+
+Status: published on Medium / import full text or PDF.
+
+Target: astro-ph.GA -> MNRAS.
+
+### P3 — Sequence of Collapse: From Concept to Equation
+
+Folder:
+
+```text
+papers/p3-soc-concept-to-equation/
+```
+
+Status: published on Medium / import full text or PDF.
+
+Target: quant-ph / Foundations of Physics.
+
+### P4 — SOC-MZI-01: Awareness-Modulated Decoherence in Mach-Zehnder Interferometry
+
+Folder:
+
+```text
+papers/p4-soc-mzi-awareness-modulated-decoherence/
+```
+
+Status: preregistered on OSF / needs full protocol import and lab collaboration.
+
+Target: Nature Physics / PRL Registered Report path.
+
+### P5 — Memory Field Density Variation and the Hubble Tension
+
+Folder:
+
+```text
+papers/p5-hubble-tension-memory-gradient/
+```
+
+Status: outlined / write after P1.
+
+Target: Astrophysical Journal Letters.
+
+### P6 — Black Holes as Memory Compression Nodes
+
+Folder:
+
+```text
+papers/p6-black-holes-memory-compression-nodes/
+```
+
+Status: outlined / write after P1 + P2 land.
+
+Target: PRL / General Relativity and Gravitation.
+
+### P7 — Sequence of Collapse: A Unified Framework for Quantum Mechanics, General Relativity, and Consciousness
+
+Folder:
+
+```text
+papers/p7-unified-framework/
+```
+
+Status: foundation built / write last.
+
+Target: Physical Review D / Reviews of Modern Physics.
+
+## Support packages created before roadmap realignment
+
+The following folders are preserved as supporting material rather than deleted:
+
+```text
+papers/p1-memory-field-gravity-sparc/
+papers/pnt-dark-energy-hubble-window/
+papers/p3-causal-inversion-directional-memory/
+papers/p4-observer-dependent-decoherence-cgds/
+papers/p5-soct-synthesis/
+papers/math/
+```
+
+Mapping:
+
+- `p1-memory-field-gravity-sparc/` supports canonical P1.
+- `pnt-dark-energy-hubble-window/` supports canonical P5.
+- `p3-causal-inversion-directional-memory/` supports canonical P6.
+- `p4-observer-dependent-decoherence-cgds/` supports canonical P4.
+- `p5-soct-synthesis/` is superseded by canonical P7 but preserved as earlier synthesis scaffold.
+- `math/` supports canonical P3 and P7.
+
+## Immediate import needs
+
+1. P2 Medium article export / full text.
+2. P3 Medium article export / full text.
+3. P4 full SOC-MZI-01 preregistration protocol and appendices.
+4. P1 SPARC analysis outputs, tables, plots, code, and confidence intervals.
+5. SOC Research Agenda export if OSF agenda project is preserved.
 
 ## Current import principle
 
-Only move material here when it is:
+Only move material into canonical paper folders when it is:
 
-- clearly sourced,
-- separated from product/vision language,
-- labeled as exploratory, draft, or submission-facing,
+- clearly sourced;
+- separated from product/vision language;
+- labeled as exploratory, draft, preregistered, or submission-facing;
 - paired with methods/results where empirical claims are made.
-
-## Immediate next paper tasks
-
-1. Import or convert the PNT working paper into the P2 folder.
-2. Import or convert the SoCT comprehensive report into its own folder.
-3. Create P1 folder and connect it to `observations/sparc/`.
-4. Add SPARC radial-decomposition plan and eventual notebook.
-5. Keep metaphysical writings separate from physics-first publication drafts unless clearly marked as interpretation.
 
 ## Grounding rule
 

@@ -12,35 +12,29 @@ This repo is intended to become the central home for:
 - OSF-linked preregistrations and study drafts
 - future datasets, notebooks, figures, and publication-ready papers
 
-## Current scope
+## Canonical publication roadmap
 
-This setup organizes the theory into a clean research structure using existing project materials already available across the working corpus.
+The repository is now aligned to the March 2026 **SOC Publication Roadmap**, which defines a seven-paper publication sequence:
 
-At this stage, the repo includes:
+1. **P1 — Age-Dependent Galactic Rotation Curves as Evidence for a Spacetime Memory Field**
+2. **P2 — High-Redshift Disk Galaxies Do Not Require Dark Matter**
+3. **P3 — Sequence of Collapse: From Concept to Equation**
+4. **P4 — SOC-MZI-01: Awareness-Modulated Decoherence in Mach-Zehnder Interferometry**
+5. **P5 — Memory Field Density Variation and the Hubble Tension**
+6. **P6 — Black Holes as Memory Compression Nodes**
+7. **P7 — Sequence of Collapse: A Unified Framework for Quantum Mechanics, General Relativity, and Consciousness**
 
-- a repo map
-- a source corpus index
-- a theory overview
-- an article/book map
-- an experiments hub
-- a simulations hub
-- validation and bibliography notes
-- a canonical parameter ledger
-- a dark-sector taxonomy
-- an empirical exploration summary for the SPARC / effective-G / Pantheon+ phase
-- a formal SOC localization-memory Hamiltonian scaffold
-- parent-child directional-transfer simulation summaries
-- data and notebook scaffolds for reproducible cosmology tests
-- OSF companion text files
-- paper/protocol hubs for P1, P2, P3, and P4
+Canonical roadmap summary:
 
-## Working core claims
+```text
+docs/publication-roadmap-march-2026.md
+```
 
-1. **First Collapse**: light / photon-mediated decoherence begins the narrowing of possibility into structure.
-2. **Second Collapse**: conscious observation finalizes experienced reality.
-3. **Memory Field**: collapse events leave accumulated spacetime imprint, modeled as a memory field.
-4. **SOC Localization-Memory Hamiltonian**: extension of standard Hamiltonian formalism with localization, memory coupling, and observer-state coupling.
-5. **Cross-domain implication**: the theory propagates into cosmology, gravity, measurement theory, cognition, spatial computation, and experimental design.
+Papers index:
+
+```text
+papers/README.md
+```
 
 ## Current canonical equation scaffold
 
@@ -72,116 +66,109 @@ Claim boundary:
 
 > This Hamiltonian is a formal scaffold for separating memory-field and observer-state hypotheses into testable channels. It does not prove the theory.
 
-## Active research packages
+## Canonical paper folders
 
-### P1 — Memory-Field Gravity / SPARC / SoCT-PM
+### P1 — Age-Dependent Galactic Rotation Curves / SPARC
 
-P1 is the empirical-gravity track. It explores whether gravity can be modeled as an accumulated collapse-memory effect and uses SPARC rotation curves as an initial validation anchor.
+```text
+papers/p1-age-dependent-rotation-curves-sparc/
+```
 
-Repo hub:
+Roadmap status: data in hand / write now.
+
+Support folder:
 
 ```text
 papers/p1-memory-field-gravity-sparc/
 ```
 
-OSF companion text:
+### P2 — High-Redshift Disk Galaxies & Time-Dependent Gravity
 
 ```text
-osf/p1-memory-field-gravity-sparc.md
+papers/p2-high-redshift-time-dependent-gravity/
 ```
 
-Primary focus:
+Roadmap status: published on Medium / import full text or PDF.
 
-- gravity as accumulated collapse history;
-- memory-field residuals and effective gravitational behavior;
-- SPARC rotation-curve analysis;
-- SoCT-PM simulation planning;
-- comparison against baryons-only, dark-matter-halo, and MOND-like baselines.
-
-### P2 — PNT Dark Energy / Hubble Window
-
-P2 is the Planck Nucleation Theory dark-energy and Hubble-window track.
-
-Repo hub:
+### P3 — SOC: From Concept to Equation
 
 ```text
-papers/pnt-dark-energy-hubble-window/
+papers/p3-soc-concept-to-equation/
 ```
 
-It currently includes:
+Roadmap status: published on Medium / import full text or PDF.
 
-- `working-draft-v0-1.md` — physics-first P2 paper skeleton for Planck Nucleation Theory as a two-timescale dark-energy model.
-- `toy-model-results-v0-1.md` — summary of the prompt-exhaust / Early-Dark-Energy feasibility toy calculations.
-
-Core conclusion of this package:
-
-> PNT naturally separates into a short-lived prompt exhaust channel and a long-lived memory-residue channel. The prompt channel can produce an EDE-like transient but does not yet demonstrate full Hubble-tension resolution in minimal toy models. The late memory component is the stronger near-term publishable track, with predicted w(z) evolution and void-versus-filament differentials.
-
-### P3 — Causal Inversion / Directional Memory Cosmology
-
-P3 is the parent-universe, bounce, and directional-memory cosmology track.
-
-Repo hub:
+Related math scaffold:
 
 ```text
-papers/p3-causal-inversion-directional-memory/
+papers/math/
 ```
 
-OSF companion text:
+### P4 — SOC-MZI-01 Pre-Registration Protocol
 
 ```text
-osf/p3-causal-inversion-directional-memory.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/
 ```
 
-Simulation hub:
+Roadmap status: pre-registered on OSF / full protocol import needed.
 
-```text
-simulations/parent-child-transfer/
-```
-
-Current simulation artifacts:
-
-```text
-simulations/parent-child-transfer/README.md
-simulations/parent-child-transfer/real-space-bounce-transfer-v4-1.md
-simulations/parent-child-transfer/kernel-robustness-summary.md
-```
-
-Current v4.1 simulation claim boundary:
-
-> Real-space bounce-transfer toy models show robust directional inheritance across the tested kernel configurations, motivating multi-seed and null-model follow-up. This does not confirm physical parent-child universe transfer.
-
-### P4 — Observer-Dependent Decoherence / CGDS / SOC-MZI
-
-P4 is the quantum-observer and consciousness-gated measurement track.
-
-Repo hub:
+Support folder:
 
 ```text
 papers/p4-observer-dependent-decoherence-cgds/
 ```
 
-OSF companion text:
+### P5 — Hubble Tension as Memory Field Gradient
 
 ```text
-osf/p4-cgds-observer-decoherence.md
+papers/p5-hubble-tension-memory-gradient/
 ```
 
-Primary focus:
+Roadmap status: outlined / write after P1.
 
-- Consciousness-Gated Double-Slit (CGDS);
-- machine-only versus conscious-access measurement conditions;
-- SOC-MZI / Mach-Zehnder extensions;
-- delayed-choice and quantum-eraser reinterpretations;
-- awareness-conditioned quantum computing;
-- quantum memory hysteresis;
-- post-observation aftereffect tests;
-- attention-state gradient tests;
-- quantum brain-field coupling proposals.
+Support package:
+
+```text
+papers/pnt-dark-energy-hubble-window/
+```
+
+### P6 — Black Holes as Memory Compression Nodes
+
+```text
+papers/p6-black-holes-memory-compression-nodes/
+```
+
+Roadmap status: outlined / write after P1 + P2 land.
+
+Support folder:
+
+```text
+papers/p3-causal-inversion-directional-memory/
+```
+
+Simulation support:
+
+```text
+simulations/parent-child-transfer/
+```
+
+### P7 — Sequence of Collapse Unified Framework
+
+```text
+papers/p7-unified-framework/
+```
+
+Roadmap status: foundation built / write last.
+
+Superseded synthesis scaffold preserved for reference:
+
+```text
+papers/p5-soct-synthesis/
+```
+
+## Active support packages
 
 ### Dark-sector taxonomy
-
-The current dark-sector taxonomy is preserved under:
 
 ```text
 docs/dark-sector-taxonomy.md
@@ -192,8 +179,6 @@ Purpose:
 > Keep ordinary matter, dark matter, dark energy, PNT prompt exhaust, memory residue, and parent-child inheritance distinct so the framework does not conflate separate mechanisms.
 
 ### Empirical exploration package
-
-The current empirical synthesis is preserved under:
 
 ```text
 docs/empirical-exploration-thread-summary-v0-1.md
@@ -221,13 +206,11 @@ Pantheon+: H0_void > H0_filament
 
 ### Literature-positioning note
 
-The repo includes a literature-positioning note:
-
 ```text
 references/consensus-pnt-soct-literature-positioning.md
 ```
 
-This file preserves the current Consensus-based claim calibration for SoCT, SOC-MZI, PNT, and the PNT dark-energy track.
+This file preserves the current claim calibration for SoCT, SOC-MZI, PNT, and the PNT dark-energy track.
 
 ## OSF alignment
 
@@ -237,13 +220,15 @@ The OSF mapping file is preserved under:
 osf/OSF_PROJECT_MAP.md
 ```
 
-Current OSF/repo alignment:
+Roadmap-canonical OSF projects:
 
-- **P1** — Memory-Field Gravity / SPARC / SoCT-PM
-- **P2** — PNT Dark Energy / Hubble Window
-- **P3** — Causal Inversion / Directional Memory Cosmology
-- **P4** — CGDS / Observer-Dependent Decoherence / SOC-MZI
-- **P5** — future SoCT comprehensive synthesis
+- `SOC-P1: Age-Dependent Rotation Curves`
+- `SOC-P2: High-Redshift Time-Dependent Gravity`
+- `SOC-P3: SOC Concept to Equation`
+- `SOC-MZI-01: Pre-Registration Protocol`
+- `SOC-AGENDA: Research Agenda`
+- `SOC-P5: Hubble Tension Memory Gradient`
+- `SOC-P7: Unified Framework Working Paper`
 
 ## Proposed long-term repo structure
 
@@ -252,6 +237,7 @@ Sequence-of-collapse-theory/
 ├─ README.md
 ├─ PREDICTIONS.md
 ├─ docs/
+│  ├─ publication-roadmap-march-2026.md
 │  ├─ repo-map.md
 │  ├─ source-corpus.md
 │  ├─ theory-overview.md
@@ -268,31 +254,41 @@ Sequence-of-collapse-theory/
 ├─ notebooks/
 ├─ figures/
 └─ papers/
+   ├─ README.md
    ├─ math/
-   ├─ p1-memory-field-gravity-sparc/
-   ├─ pnt-dark-energy-hubble-window/
-   ├─ p3-causal-inversion-directional-memory/
-   ├─ p4-observer-dependent-decoherence-cgds/
-   └─ p5-soct-synthesis/
+   ├─ p1-age-dependent-rotation-curves-sparc/
+   ├─ p2-high-redshift-time-dependent-gravity/
+   ├─ p3-soc-concept-to-equation/
+   ├─ p4-soc-mzi-awareness-modulated-decoherence/
+   ├─ p5-hubble-tension-memory-gradient/
+   ├─ p6-black-holes-memory-compression-nodes/
+   └─ p7-unified-framework/
 ```
 
-## Next recommended additions
+## Support folders retained from earlier scaffold
 
-1. Add repo-backed OSF links after the OSF pages are updated.
-2. Add reproducible SPARC derived tables and nonlinear memory-fit notebook.
-3. Add Pantheon+ source notes, environment cross-match output, and covariance-aware H0 fitting notebook.
-4. Add PM simulation parameter logs and H-split result summaries.
-5. Add parent-child transfer parameter logs, null-model definitions, and multi-seed outputs.
-6. Add any existing simulation charts, CSVs, notebooks, or screenshots.
-7. Add a reproducible PNT-EDE toy-model notebook corresponding to `toy-model-results-v0-1.md`.
-8. Add SPARC radial-decomposition plan and results folder for the P1 empirical anchor paper.
-9. Add physics-facing outlines for P1, P3, and P4.
-10. Create the future P5 comprehensive synthesis folder.
+The following folders are intentionally preserved rather than deleted:
+
+```text
+papers/p1-memory-field-gravity-sparc/
+papers/pnt-dark-energy-hubble-window/
+papers/p3-causal-inversion-directional-memory/
+papers/p4-observer-dependent-decoherence-cgds/
+papers/p5-soct-synthesis/
+```
+
+These now function as support packages for the canonical P1, P5, P6, P4, and P7 tracks respectively.
+
+## Immediate import needs
+
+1. P2 Medium article export / full text.
+2. P3 Medium article export / full text.
+3. P4 full SOC-MZI-01 preregistration protocol and appendices.
+4. P1 SPARC analysis outputs, tables, plots, code, and confidence intervals.
+5. SOC Research Agenda export if the OSF agenda project is preserved.
 
 ## Status
 
 Initial theory repo scaffold created and expanded.
 
-This is a **documentation-first baseline** ready for further imports from project threads, local files, Google Drive, OSF, and future simulation outputs.
-
-The P1, P2, P3, and P4 tracks now have a clearer repo/OSF alignment. P2 currently holds the most developed working-paper package, while P1/P3/P4 are structured hubs ready for draft imports, reproducible notebooks, and stronger validation artifacts.
+The repository is now realigned to the March 2026 seven-paper publication roadmap while preserving earlier PNT, causal-inversion, CGDS, and synthesis scaffold work as supporting material.

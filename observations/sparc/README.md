@@ -1,7 +1,7 @@
 # SPARC Age / Missing-Mass Reproducibility Package
 
 **Evidence label:** `real-data-analysis` for controlled files, with clear separation from exploratory or synthetic material.  
-**Status:** Reproducibility scaffold pending derived CSV and runnable notebook.  
+**Status:** Preliminary reproducibility package. Derived CSVs, result tables, figures, and a runnable Python script are present; a full notebook and final provenance review are still pending.  
 **Purpose:** Provide a reproducible empirical test of the SoCT gravitational memory-field hypothesis using galaxy rotation-curve and stellar-population data.
 
 This folder is the executable home for SPARC-related observational work tied to the Sequence of Collapse research program.
@@ -10,7 +10,7 @@ This folder is the executable home for SPARC-related observational work tied to 
 
 ## Research Question
 
-Does galaxy age correlate with inferred dark-matter / missing-mass fraction after controlling for standard confounds?
+Does galaxy age or formation-history proxy correlate with inferred dark-matter / missing-mass fraction after controlling for standard confounds?
 
 ---
 
@@ -22,7 +22,7 @@ This does not by itself prove the SoCT memory field. A positive signal must surv
 
 ---
 
-## Target Claim to Reproduce
+## Current Target Claim to Reproduce
 
 Current internally reported candidate signal:
 
@@ -53,88 +53,100 @@ Do not claim yet:
 
 ---
 
-## Folder Structure
+## Current Artifact Status
 
 ```text
 observations/sparc/
 ├─ README.md
-├─ requirements.txt
-├─ preregistration.md
-├─ analysis-plan.md
-├─ sparc_age_dark_matter_analysis.ipynb        # to be added
+├─ analyses/
+│  └─ current-status-note.md
 ├─ data/
-│  ├─ README.md
-│  ├─ source-links.md
-│  └─ sparc_age_fdm_data.csv                  # to be added or source-linked
+│  ├─ sparc_age_fdm_data.csv
+│  └─ sparc_wise_inner_outer_fdm_split.csv
 ├─ results/
-│  ├─ README.md
-│  ├─ summary.json                            # to be generated
-│  ├─ correlation_table.csv                   # to be generated
-│  ├─ partial_correlations.csv                # to be generated
-│  ├─ mass_bin_results.csv                    # to be generated
-│  ├─ regression_models.csv                   # to be generated
-│  └─ bootstrap_results.csv                   # to be generated
-└─ figures/
-   ├─ README.md
-   ├─ age_dm_full_sample.png                  # to be regenerated
-   └─ age_dm_mass_bins.png                    # to be regenerated
+│  ├─ outer_mass_discrepancy_analysis.md
+│  ├─ inner_outer_radial_decomposition_summary.md
+│  └─ inner_outer_correlation_summary.csv
+├─ scripts/
+│  └─ README.md
+└─ tables/
+   └─ README.md
+```
+
+Repo-level mirrors and supporting artifacts also exist at:
+
+```text
+data/sparc/
+notebooks/sparc/sparc_age_dm_analysis.py
+notebooks/sparc/sparc_age_fdm_analysis.py
+figures/sparc/
+papers/p1-age-dependent-rotation-curves-sparc/results/
+```
+
+Notes:
+
+- `notebooks/sparc/sparc_age_dm_analysis.py` is the canonical runnable Python script.
+- `notebooks/sparc/sparc_age_fdm_analysis.py` is a compatibility wrapper for older manifests that expected the exact `age_fdm` filename.
+- `observations/sparc/data/` is the canonical runnable data location for this observations package.
+- `data/sparc/` remains a repo-level mirror until data provenance is fully settled.
+
+---
+
+## Current Reproduction Command
+
+From repository root:
+
+```bash
+python notebooks/sparc/sparc_age_dm_analysis.py
+```
+
+or, using the compatibility filename:
+
+```bash
+python notebooks/sparc/sparc_age_fdm_analysis.py
+```
+
+The script writes summary tables to:
+
+```text
+observations/sparc/results/
+```
+
+and figures to:
+
+```text
+figures/sparc/
 ```
 
 ---
 
-## Existing Repo Artifacts Feeding This Package
+## Current Analysis Flow
 
-Primary preregistration:
-
-```text
-experiments/cosmology/sparc-memory-field-preregistration-v0-1.md
-```
-
-Initial analysis plan:
-
-```text
-experiments/cosmology/sparc-analysis-plan.md
-```
-
-Derived data schema:
-
-```text
-data/sparc/derived-data-schema.md
-```
-
-Notebook plan:
-
-```text
-notebooks/sparc_age_dm_analysis_plan.md
-```
-
-Paper draft and result summary:
-
-```text
-papers/cosmology/sparc/sparc-age-dm-publication-summary-v1.md
-papers/cosmology/sparc/sparc-age-dm-paper-draft.md
-```
-
-Figure provenance:
-
-```text
-figures/sparc/figure-provenance.md
-```
+1. Load committed SPARC derived age/fDM data.
+2. Compute the mass proxy used in the preliminary controls.
+3. Run baseline Pearson and Spearman correlation tests.
+4. Run mass-bin summaries.
+5. Run partial Spearman control against mass proxy.
+6. Bootstrap uncertainty and sign stability.
+7. Fit the exploratory memory-saturation curve.
+8. Produce reproducible tables and figures.
+9. State limitations and conventional interpretations.
 
 ---
 
-## Planned Analysis Flow
+## Inner / Outer Radial Decomposition
 
-1. Load SPARC rotation-curve data and derived galaxy properties.
-2. Add or merge stellar-population age estimates from documented sources.
-3. Compute missing-mass / inferred dark-matter fraction metrics.
-4. Run baseline Pearson and Spearman correlation tests.
-5. Run controlled regressions with mass, morphology, gas fraction, surface brightness, and environment where available.
-6. Run partial correlations and residualized tests.
-7. Bootstrap uncertainty and robustness.
-8. Run out-of-sample validation.
-9. Produce reproducible tables and figures.
-10. State limitations and conventional interpretations.
+The radial-decomposition subtrack is now represented by:
+
+```text
+observations/sparc/results/inner_outer_radial_decomposition_summary.md
+observations/sparc/results/inner_outer_correlation_summary.csv
+observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv
+```
+
+Claim-safe summary:
+
+> In the clean disk-dominated, high-quality SPARC subset, the formation-history proxy association appears stronger in outer apparent dark residuals than inner residuals, especially under the effective-radius split. This is candidate evidence only and requires full reproduction and conventional controls.
 
 ---
 
@@ -145,11 +157,12 @@ A reviewer should be able to:
 ```text
 clone repo
 install requirements
-open notebook
-run all cells
-reproduce reported table and plots
+run the script or notebook
+reproduce reported tables and plots
 inspect source data and controls
 ```
+
+The current Python script is a reproducibility-support artifact. A publication-ready notebook is still recommended.
 
 ---
 
@@ -158,71 +171,39 @@ inspect source data and controls
 - Stellar mass / baryonic mass.
 - Total luminosity.
 - Vmax and Rmax.
+- Disk surface brightness.
 - Gas fraction.
-- Morphology.
-- Surface brightness.
-- Rotation-curve quality flags.
-- Inclination cuts.
-- Environment / satellite status if available.
-- Stellar-population age source quality.
+- Morphology / bulge fraction.
+- Environment / cosmic-web classification.
+- Age-proxy source and measurement uncertainty.
 
 ---
 
-## What Belongs Here
-
-- controlled analysis summaries;
-- reproducible scripts and notebooks;
-- cleaned tables with named galaxies and defined variables;
-- figure exports with provenance notes;
-- null or inconclusive findings preserved honestly;
-- preregistration text or links.
-
----
-
-## What Does Not Belong Here
-
-- synthetic demonstrations presented as observational evidence;
-- unsourced AI-only summary claims without scripts or underlying tables;
-- public-facing theory essays without dataset linkage;
-- unlabelled exploratory results presented as final evidence.
-
----
-
-## Working Rule
-
-Every file added to this folder should state:
-
-1. whether it uses real SPARC data;
-2. the age proxy or mass-discrepancy definition used;
-3. where the variables came from;
-4. whether the result is exploratory, controlled, or publication-ready.
-
----
-
-## Falsification Condition
-
-The memory-field interpretation is weakened if:
-
-- the age/missing-mass trend disappears in a larger controlled sample;
-- the trend is fully explained by standard environmental or assembly variables;
-- the radial structure does not match memory-field expectations;
-- bootstrap or cross-validation shows the signal is unstable;
-- an independent age proxy fails to reproduce the direction.
-
----
-
-## Immediate Next Step
-
-Add either:
+## Remaining Missing / Needed Items
 
 ```text
-observations/sparc/data/sparc_age_fdm_data.csv
+observations/sparc/sparc_age_dark_matter_analysis.ipynb
+observations/sparc/scripts/reproduce_inner_outer_radial_decomposition.py
+observations/sparc/scripts/reproduce_outer_mass_discrepancy.py
+figures/sparc/figure-provenance.md updates for all current SPARC figures
 ```
 
-or, if the data is not ready to commit:
+Also needed for stronger P1 paper support:
 
 ```text
-observations/sparc/data/source-links.md
+SPARC_age_fdm_regression_models.csv review / regeneration path
+mass_proxy_comparison.csv review / regeneration path
+SPARC_age_vs_fdm_scatter.png or canonical equivalent
 ```
 
-with a complete recipe for regenerating the derived table.
+---
+
+## Claim Boundary
+
+Use:
+
+> The SPARC package contains preliminary reproducibility artifacts and candidate empirical signals that motivate further controlled testing of a memory-field gravity hypothesis.
+
+Avoid:
+
+> The SPARC package proves SoCT, disproves dark matter, or confirms memory-based gravity.

@@ -15,6 +15,18 @@
 | `OSF_Home_Page_Book_of_Sacred_Science.md` | `osf/book-of-sacred-science-home-page.md` | OSF / Context | OSF source-context page imported; marked philosophical/theological context. |
 | `OSF_Prereg_SoCT_PM_v061_and_SPARC_Plan.pdf` and `OSF_Prereg_Combined_v061.pdf` | `osf/prereg/soct-pm-v061-sparc-plan.md` | P1 / OSF / SoCT-PM | Markdown extraction/summary imported; full binary import not performed. |
 
+
+## Latest P1 CSV/result imports reconciled on 2026-06-10
+
+The following P1 result artifacts are now present in the repository and should no longer be treated as pending by exact path:
+
+| Imported repo path | Track | Status |
+|---|---|---|
+| `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_correlations.csv` | P1 / SPARC | Candidate result CSV; requires reproducible regeneration before stronger claims. |
+| `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_partial_correlations.csv` | P1 / SPARC | Candidate result CSV; requires reproducible regeneration before stronger claims. |
+| `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_binned_bootstrap.csv` | P1 / SPARC | Candidate result CSV; requires reproducible regeneration before stronger claims. |
+| `papers/p1-age-dependent-rotation-curves-sparc/results/README.md` | P1 / SPARC | Results manifest/readme present. |
+
 ## Duplicate handling
 
 The two uploaded preregistration excerpt DOCX files were byte-identical:
@@ -30,22 +42,24 @@ Only one Markdown import was created.
 
 This pass intentionally avoids claiming empirical validation. These imports move received source material into repo-tracked Markdown form. They do not replace reproducible notebooks, scripts, tables, figures, or peer review.
 
-## Still pending from audit
+## Remaining pending or path-reconciled items from audit
 
-Highest-priority missing or not-yet-imported items remain:
+Highest-priority items still missing by exact filename/path after the 2026-06-10 P1 CSV reconciliation:
 
-- `sparc_age_fdm_analysis.py`
-- `SPARC_age_fdm_correlations.csv`
-- `SPARC_age_fdm_partial_correlations.csv`
-- `SPARC_age_fdm_binned_bootstrap.csv`
+- `sparc_age_fdm_analysis.py` (present related script: `notebooks/sparc/sparc_age_dm_analysis.py`; equivalence needs review)
 - `mass_proxy_comparison.csv`
-- `paper_grade_analysis.png`
-- `sparc_fdm_vs_age_full_analysis.png`
-- `sparc_mass_controlled_analysis.png`
-- `repo_bundle_sparc_pnt_void.zip`
+- `SPARC_age_fdm_regression_models.csv`
+- `SPARC_age_vs_fdm_scatter.png`
+- `repo_bundle_sparc_pnt_void.zip` (README/source note present at `docs/imported-thread-artifacts/repo_bundle_sparc_pnt_void_README.md`)
 - `SOC MZI Visibility Decay Simulation.py`
-- `environment_H0_analysis.png`
-- Pantheon+ covariance matrix / SN table / environment labels
+- Pantheon+ full covariance matrix / SN table / environment-label table
+
+Items from the earlier missing list that are now present in the repo under specific paths:
+
+- `paper_grade_analysis.png` at `papers/sparc-age-dm/paper_grade_analysis.png`
+- `sparc_fdm_vs_age_full_analysis.png` at `figures/sparc/sparc_fdm_vs_age_full_analysis.png`
+- `sparc_mass_controlled_analysis.png` at `figures/sparc/sparc_mass_controlled_analysis.png`
+- `environment_H0_analysis.png` at `figures/pantheon/environment_H0_analysis.png`
 
 ## Recommended next pass
 

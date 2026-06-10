@@ -19,15 +19,15 @@ This pass compared the actual file tree against these status and audit files:
 
 ## Recursive inventory summary
 
-The repo is no longer an empty scaffold. It contains roadmap documents, theory notes, paper hubs, SPARC candidate data/results, Pantheon+ scaffolding, PNT/P5 toy-model notes, quantum preregistration excerpts, simulations, references, and OSF mapping files.
+The repo is no longer an empty scaffold. It contains roadmap documents, theory notes, paper hubs, SPARC candidate data/results, Pantheon+ source-input documentation/scaffolding, PNT/P5 toy-model notes, quantum preregistration excerpts, simulations, references, and OSF mapping files.
 
 Requested directory file-count summary from this pass:
 
 | Directory | File count | Current role |
 |---|---:|---|
-| `docs` | 51 | Audits, maps, imported source notes, theory/context notes, intake records, and this reconciliation document. |
+| `docs` | 52 | Audits, maps, imported source notes, theory/context notes, intake records, and this reconciliation document. |
 | `observations/sparc` | 16 | Canonical SPARC reproducibility workspace; contains source notes, duplicated derived data, candidate result notes, and run sheets. |
-| `data` | 8 | Canonical repo-level data staging; SPARC derived CSVs and Pantheon+ provenance/schema notes. |
+| `data` | 8 | Canonical repo-level data staging; SPARC derived CSVs and Pantheon+ source/provenance/schema notes. |
 | `notebooks` | 6 | Notebook plans plus current SPARC script and Pantheon notebook scaffold. |
 | `figures` | 7 | Figure outputs/provenance for SPARC and Pantheon candidate artifacts. |
 | `papers` | 45 | Canonical P1-P7 hubs plus support/source folders and imported paper drafts. |
@@ -59,13 +59,13 @@ Requested directory file-count summary from this pass:
 | SPARC derived data | `data/sparc/sparc_age_fdm_data.csv` and `observations/sparc/data/sparc_age_fdm_data.csv` | Byte-identical duplicate. | **Keep** for now; canonical runnable copy should be `observations/sparc/data/`; `data/sparc/` can remain a repo-level mirror until data provenance is finalized. |
 | SPARC inner/outer split data | `data/sparc/sparc_wise_inner_outer_fdm_split.csv` and `observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv` | Byte-identical duplicate. | **Keep** for now; same mirror rule as above. |
 | Imported SPARC source data | `docs/observations/data/sparc_wise_fdm_with_Q_and_radii.csv` | Related but not byte-identical to the derived SPARC copies. | **Needs review**; treat as imported source/candidate data until columns/provenance are mapped into the canonical SPARC package. |
-| SPARC P1 result CSVs | `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_correlations.csv`, `SPARC_age_fdm_partial_correlations.csv`, `SPARC_age_fdm_binned_bootstrap.csv`, plus `bootstrap_results.csv` and duplicate `bootstrap_results_import_test.csv` | Current paper-local candidate result artifacts; two bootstrap CSVs are byte-identical. | **Keep** paper-local result CSVs; **deprecate** `bootstrap_results_import_test.csv` after confirming no external reference depends on that filename. |
+| SPARC P1 result CSVs | `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_correlations.csv`, `SPARC_age_fdm_partial_correlations.csv`, `SPARC_age_fdm_regression_models.csv`, `mass_proxy_comparison.csv`, `SPARC_age_fdm_binned_bootstrap.csv`, plus `bootstrap_results.csv` and duplicate `bootstrap_results_import_test.csv` | Current paper-local candidate result artifacts; two bootstrap CSVs are byte-identical. | **Keep** paper-local result CSVs; **deprecate** `bootstrap_results_import_test.csv` after confirming no external reference depends on that filename. |
 | SPARC figures | `figures/sparc/sparc_fdm_vs_age_full_analysis.png`, `figures/sparc/sparc_mass_controlled_analysis.png`, `figures/sparc/sparc_age_fdm_main_result.png`, `figures/sparc/sparc_age_fdm_mass_bins.png`, `papers/sparc-age-dm/paper_grade_analysis.png` | Figure outputs split between canonical figure folder and older paper folder. | **Migrate/index** future figure references through `figures/sparc/figure-provenance.md`; preserve `papers/sparc-age-dm/` as an older publication-summary package until references are updated. |
-| SPARC code name mismatch | Present: `notebooks/sparc/sparc_age_dm_analysis.py`; missing expected name: `sparc_age_fdm_analysis.py` | Analysis script exists under a different name than the earlier missing list. | **Needs review**; either add a wrapper/alias or update manifests to use the actual path after confirming equivalence. |
+| SPARC code name mismatch | Present: `papers/p1-age-dependent-rotation-curves-sparc/analysis/sparc_age_fdm_analysis.py`, `notebooks/sparc/sparc_age_fdm_analysis.py`, and `notebooks/sparc/sparc_age_dm_analysis.py` | Expected `age_fdm` script is now present both in the P1 analysis folder and as a notebook-path compatibility wrapper. | **Reconciled**; keep the paper-local script as the imported reproducibility artifact and the notebook wrapper for legacy references. |
 | PNT/P5 working material | `papers/pnt-dark-energy-hubble-window/`, `papers/p5-hubble-tension-memory-gradient/`, `papers/cosmology/pnt/`, `simulations/pnt_hubble_void/`, `visualizations/pnt_hubble_void.jsx` | Paper hub, source/support package, master note, simulation folder, and duplicate visualization copy. | **Keep** all; canonical paper hub is P5, source/support is `papers/pnt-dark-energy-hubble-window/`, executable visualization belongs in `simulations/pnt_hubble_void/`; `visualizations/` should be treated as a deploy/copy location. |
 | P3/P6 CIH/Kerr/Engramon | `docs/theory/causal-inversion-hypothesis.md`, `docs/theory/from-kerr-to-cosmos-axis-of-evil-prediction.md`, `docs/theory/engramon-scale-notes.md`, `papers/p6-black-holes-memory-compression-nodes/source/`, `papers/p3-causal-inversion-directional-memory/`, `papers/cosmology/cih/` | Theory source duplicated between docs and P6 source imports; older P3 label overlaps P6. | **Keep** P6 source imports as paper-local source; preserve `docs/theory/` as concept library; mark older P3 CIH folder as support/legacy until migrated. |
 | P4/CGDS/SOC-MZI | `experiments/quantum/`, `papers/p4-observer-dependent-decoherence-cgds/`, `papers/p4-soc-mzi-awareness-modulated-decoherence/`, `docs/experiments/`, `experiments/osf/` | Protocol/preregistration material split by experiment type, paper hub, and OSF import location. | **Keep** canonical P4 paper folder; add a future protocol index linking CGDS, MZI, OSF, and docs excerpts; no deletion recommended. |
-| Pantheon+ scaffolding | Root `Pantheon_cov_subset-6.txt`, `data/pantheon/`, `experiments/pantheon-h0-environment/`, `experiments/cosmology/pantheon-environment-h0-test.md`, `notebooks/pantheon/`, `figures/pantheon/environment_H0_analysis.png` | A root covariance subset-like file exists, but full covariance, SN table, and environment-label table are still absent. | **Migrate/review** root `Pantheon_cov_subset-6.txt` into `data/pantheon/` only after provenance and naming are confirmed; keep full Pantheon+ inputs external/documented until redistribution rights and source URLs are recorded. |
+| Pantheon+ scaffolding | Root `Pantheon_cov_subset-6.txt`, `data/pantheon/`, `experiments/pantheon-h0-environment/`, `experiments/cosmology/pantheon-environment-h0-test.md`, `notebooks/pantheon/`, `figures/pantheon/environment_H0_analysis.png` | Public Pantheon+SH0ES SN-table and STAT+SYS covariance sources are documented; a root covariance subset-like file exists; the environment-label table remains the only real missing Pantheon+ derived artifact. | **Keep/document** source files through `data/pantheon/README.md`; commit raw public files only after redistribution/storage policy is settled; create/import `data/pantheon/environment_labels.csv` before any primary environment-H0 fit. |
 | Broad framework imports | `docs/frameworks/sequence-of-collapse-unified-physics-framework.md`, `papers/soct-comprehensive-report/SOC_Unified_Physics_Framework_2.docx`, `papers/p7-unified-framework/` | Source framework material overlaps P7. | **Keep** as source/speculative material; avoid asserting empirical confirmation from these files. |
 
 ## Current artifact status table
@@ -76,16 +76,16 @@ Requested directory file-count summary from this pass:
 | Repo audit | `docs/repo-audit-current-state.md` | Source / governance | Present, but predates latest P1 CSV and figure imports. |
 | Import pass log | `docs/import-pass-2026-06-08-markdown.md` | Source / governance | Updated to include latest P1 CSV/README imports. |
 | P1 SPARC data | `observations/sparc/data/`, `data/sparc/` | Reproducibility artifact / candidate result | Present in duplicate canonical/mirror locations; provenance still needs a complete run notebook. |
-| P1 SPARC imported result CSVs | `papers/p1-age-dependent-rotation-curves-sparc/results/` | Candidate result | Present: correlations, partial correlations, binned bootstrap, bootstrap copies, and results README. |
-| P1 SPARC script | `notebooks/sparc/sparc_age_dm_analysis.py` | Reproducibility artifact | Present under `age_dm` name; expected `age_fdm` filename remains absent. |
+| P1 SPARC imported result CSVs | `papers/p1-age-dependent-rotation-curves-sparc/results/` | Candidate result | Present: correlations, partial correlations, regression models, mass-proxy comparison, binned bootstrap, bootstrap copies, and results README. |
+| P1 SPARC script | `papers/p1-age-dependent-rotation-curves-sparc/analysis/sparc_age_fdm_analysis.py`; `notebooks/sparc/sparc_age_fdm_analysis.py`; `notebooks/sparc/sparc_age_dm_analysis.py` | Reproducibility artifact | Expected `age_fdm` filename is present; notebook-path wrapper and older `age_dm` script remain for compatibility. |
 | P1 SPARC notebook | `observations/sparc/sparc_age_dark_matter_analysis.ipynb` | Reproducibility artifact | Missing. |
 | P1 SPARC figures | `figures/sparc/`, `papers/sparc-age-dm/` | Candidate result | Several figures present; requested `SPARC_age_vs_fdm_scatter.png` remains missing. |
 | PNT/P5 toy model notes | `papers/pnt-dark-energy-hubble-window/`, `papers/cosmology/pnt/` | Simulation / theory | Present as source notes and toy-model results; executable calculation scripts still incomplete. |
 | PNT visualization | `simulations/pnt_hubble_void/pnt_hubble_void.jsx`, `visualizations/pnt_hubble_void.jsx` | Simulation / visualization | Present in duplicate/copy locations. |
-| Pantheon+ environment-H0 scaffold | `data/pantheon/`, `experiments/cosmology/`, `experiments/pantheon-h0-environment/`, `notebooks/pantheon/`, `figures/pantheon/` | Candidate result scaffold | Scaffold and one figure present; full covariance, SN table, and labels absent/external. |
+| Pantheon+ environment-H0 scaffold | `data/pantheon/`, `experiments/cosmology/`, `experiments/pantheon-h0-environment/`, `notebooks/pantheon/`, `figures/pantheon/` | Candidate result scaffold | Scaffold and one figure present; public SN table and STAT+SYS covariance are documented source inputs; environment labels remain the only real missing derived artifact. |
 | P3/P6 CIH/Kerr/Engramon | `papers/p6-black-holes-memory-compression-nodes/source/`, `docs/theory/`, `papers/p3-causal-inversion-directional-memory/` | Speculative/theory | Present as source notes; needs paper-facing derivation/claim-boundary synthesis. |
 | P4 SOC-MZI / CGDS | `papers/p4-soc-mzi-awareness-modulated-decoherence/`, `papers/p4-observer-dependent-decoherence-cgds/`, `experiments/quantum/` | Preregistration / speculative experiment | Preregistration excerpt and protocol notes present; full preregistration-grade package still incomplete. |
-| SOC-MZI visibility decay simulation script | Expected `SOC MZI Visibility Decay Simulation.py` | Simulation | Missing by exact filename; `simulations/mzi-visibility-decay/model-summary.md` exists as a summary only. |
+| SOC-MZI visibility decay simulation script | `simulations/mzi-visibility-decay/SOC MZI Visibility Decay Simulation.py`; `papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py` | Simulation | Present at the exact uploaded filename; canonical paper copy replaced with the complete runnable script. |
 | OSF mapping | `osf/OSF_PROJECT_MAP.md`, `experiments/osf/` | Source / preregistration | Present. |
 | Broad theory reports | `docs/frameworks/`, `papers/soct-comprehensive-report/`, `papers/p7-unified-framework/` | Speculative/theory source | Present; must remain separated from empirical claims. |
 
@@ -95,19 +95,19 @@ From the earlier missing list and this reconciliation pass:
 
 | Requested / expected item | Current status | Recommendation |
 |---|---|---|
-| `sparc_age_fdm_analysis.py` | **Missing by exact filename**; `notebooks/sparc/sparc_age_dm_analysis.py` exists. | Review equivalence; if equivalent, add an alias/wrapper or update manifests to canonical actual path. |
-| `mass_proxy_comparison.csv` | **Missing**. | Import only with provenance and column documentation. |
+| `sparc_age_fdm_analysis.py` | **Present** at `papers/p1-age-dependent-rotation-curves-sparc/analysis/sparc_age_fdm_analysis.py` and `notebooks/sparc/sparc_age_fdm_analysis.py`. | Keep paper-local script canonical; keep notebook-path wrapper for legacy references. |
+| `mass_proxy_comparison.csv` | **Present** at `papers/p1-age-dependent-rotation-curves-sparc/results/mass_proxy_comparison.csv`. | Keep as imported candidate result CSV with exact committed table values. |
 | `paper_grade_analysis.png` | **Present** at `papers/sparc-age-dm/paper_grade_analysis.png`. | Link from `figures/sparc/figure-provenance.md` or migrate a canonical copy later. |
 | `sparc_fdm_vs_age_full_analysis.png` | **Present** at `figures/sparc/sparc_fdm_vs_age_full_analysis.png`. | Keep under `figures/sparc/`. |
 | `sparc_mass_controlled_analysis.png` | **Present** at `figures/sparc/sparc_mass_controlled_analysis.png`. | Keep under `figures/sparc/`. |
-| `SPARC_age_fdm_regression_models.csv` | **Missing**. | Import with provenance or regenerate from a reproducible script. |
+| `SPARC_age_fdm_regression_models.csv` | **Present** at `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_regression_models.csv`. | Keep as imported candidate regression-result CSV pending reproducible regeneration. |
 | `SPARC_age_vs_fdm_scatter.png` | **Missing**. | Regenerate from the final P1 notebook/script if needed. |
 | `repo_bundle_sparc_pnt_void.zip` | **Missing as ZIP**; README imported at `docs/imported-thread-artifacts/repo_bundle_sparc_pnt_void_README.md`. | Do not commit ZIP unless needed; prefer extracted, documented contents. |
-| `SOC MZI Visibility Decay Simulation.py` | **Missing by exact filename**. | Import or regenerate under `simulations/mzi-visibility-decay/` with README and assumptions. |
+| `SOC MZI Visibility Decay Simulation.py` | **Present** at `simulations/mzi-visibility-decay/SOC MZI Visibility Decay Simulation.py`; complete paper copy at `papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py`. | Keep exact-filename script as source and paper copy as canonical P4 support. |
 | `environment_H0_analysis.png` | **Present** at `figures/pantheon/environment_H0_analysis.png`. | Keep as candidate figure; document data/provenance before using in claims. |
-| Pantheon+ covariance matrix | **Absent/external**; root `Pantheon_cov_subset-6.txt` exists but is not the full covariance. | Add source notes and checksum/provenance; avoid redistributing restricted full data unless permitted. |
-| Pantheon+ SN table | **Missing**. | Add external source instructions or permitted local copy. |
-| Pantheon+ environment-label table | **Missing**; schema exists at `data/pantheon/environment-labels-schema.md`. | Create or import labels with methodology and provenance. |
+| Pantheon+ covariance matrix | **Documented source input**: `Pantheon+SH0ES_STAT+SYS.cov` is documented in `data/pantheon/README.md`; root `Pantheon_cov_subset-6.txt` exists but is not the full covariance. | Commit raw covariance only if redistribution/storage policy is cleared; otherwise keep documented external source and checksum instructions. |
+| Pantheon+ SN table | **Documented source input**: `Pantheon+SH0ES.dat` is documented in `data/pantheon/README.md`. | Commit raw table only if redistribution/storage policy is cleared; otherwise keep documented external source and checksum instructions. |
+| Pantheon+ environment-label table | **Missing derived artifact**; schema exists at `data/pantheon/environment-labels-schema.md`. | Create or import labels with methodology and provenance; this is the only real missing Pantheon+ derived artifact after source-input documentation. |
 
 ## Keep / migrate / deprecate / needs-review recommendations
 
@@ -137,11 +137,11 @@ From the earlier missing list and this reconciliation pass:
 
 ### Needs review
 
-- Whether `notebooks/sparc/sparc_age_dm_analysis.py` is equivalent to the missing `sparc_age_fdm_analysis.py`.
+- Whether the older `notebooks/sparc/sparc_age_dm_analysis.py` should be deprecated now that `sparc_age_fdm_analysis.py` exists in the P1 analysis folder and notebook wrapper path.
 - Provenance and intended destination of root `Pantheon_cov_subset-6.txt`.
 - Column-level relationship between `docs/observations/data/sparc_wise_fdm_with_Q_and_radii.csv` and the canonical SPARC data files.
-- Whether full Pantheon+ data can be redistributed or must remain external with instructions.
-- Whether P4 simulation source exists under a different name or still needs import/regeneration.
+- Whether the documented public Pantheon+SH0ES source files should be committed locally or remain external with checksum/source instructions.
+- Whether additional P4 simulation outputs/figures should be generated from the complete SOC-MZI script.
 
 ## Next PR plan
 
@@ -149,8 +149,8 @@ From the earlier missing list and this reconciliation pass:
    - `observations/sparc/README.md` or a SPARC manifest that distinguishes canonical runnable files from mirrors.
    - `papers/p1-age-dependent-rotation-curves-sparc/results/README.md` to identify candidate result status and duplicated bootstrap file.
    - `simulations/pnt_hubble_void/README.md` to identify the canonical JSX source versus `visualizations/` copy.
-2. Resolve exact-name SPARC script mismatch by either adding `sparc_age_fdm_analysis.py` as a wrapper or formally renaming references to `notebooks/sparc/sparc_age_dm_analysis.py`.
-3. Move validated root Pantheon subset data to `data/pantheon/` with provenance, or document why it remains uncommitted/unmoved.
+2. Decide whether to deprecate older `notebooks/sparc/sparc_age_dm_analysis.py` references now that the exact `sparc_age_fdm_analysis.py` script and wrapper are present.
+3. Create or import `data/pantheon/environment_labels.csv` with locked provenance and validation rules; keep Pantheon+SH0ES source inputs documented or commit them only after storage/redistribution policy is settled.
 4. Add a SPARC notebook or script that regenerates current candidate tables and figures from committed inputs.
 5. Add missing P1 controls/regression outputs only through a reproducible generation path.
 6. Keep all output labels conservative: source, candidate result, reproducibility artifact, preregistration, simulation, or speculative/theory.

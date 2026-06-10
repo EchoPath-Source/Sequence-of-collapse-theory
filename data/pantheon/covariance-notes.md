@@ -1,7 +1,7 @@
 # Pantheon+ Covariance Data Notes
 
 **Status:** Data-ingestion note / not yet parsed into analysis code  
-**Uploaded sources:** `Pantheon_cov_subset-5.txt`, `Pantheon_SH0ES_cov.txt.gz`  
+**Uploaded/source references:** `Pantheon_cov_subset-5.txt`, `Pantheon_SH0ES_cov.txt.gz`; public Pantheon+SH0ES files `Pantheon+SH0ES.dat` and `Pantheon+SH0ES_STAT+SYS.cov` are documented in `data/pantheon/README.md`
 **Related test:** `experiments/cosmology/pantheon-environment-h0-test.md`
 
 ---
@@ -59,7 +59,7 @@ This must be verified before use.
 
 ## Required Data Pairings
 
-The covariance matrix alone is insufficient.
+The covariance matrix alone is insufficient. The public `Pantheon+SH0ES.dat` source table is the required row-order companion for `Pantheon+SH0ES_STAT+SYS.cov`; both are documented source inputs, while `data/pantheon/environment_labels.csv` remains the missing derived cross-match artifact.
 
 The Pantheon+ environment-H0 test also requires:
 

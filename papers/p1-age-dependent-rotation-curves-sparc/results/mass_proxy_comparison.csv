@@ -1,0 +1,4 @@
+proxy,partial_r,ci_low,ci_high,p_value
+Kinematic (Vmax²·R),0.294,0.079,0.398,0.0003
+Photometric (SB0·R²),0.278,0.057,0.383,0.0008
+Combined √(A·B),0.286,0.066,0.389,0.0005

@@ -2,10 +2,11 @@
 
 ## Current repository audit
 
-A current empirical/theory repository audit is available at:
+Current empirical/theory repository audit and reconciliation documents are available at:
 
 ```text
 docs/repo-audit-current-state.md
+docs/repo-reconciliation-current-state.md
 ```
 
 A structured research repository for the **Sequence of Collapse (SoC / SoCT)** framework by Antoine L. Shephard.

@@ -21,10 +21,11 @@ The next credibility threshold remains reproducible empirical work, especially t
 | Origin / Echo recursion note | `docs/origin-echo-recursion.md` | Present |
 | Predictions tracker | `PREDICTIONS.md` | Present |
 | Status tracker | `STATUS.md` | Present |
-| SPARC reproducibility package scaffold | `observations/sparc/` | Present, needs runnable notebook and derived data |
+| SPARC reproducibility package scaffold | `observations/sparc/` | Present; derived data present; still needs runnable notebook/regeneration path |
 | SPARC outer mass discrepancy analysis | `observations/sparc/results/outer_mass_discrepancy_analysis.md` | Candidate result note |
 | SPARC inner/outer radial decomposition | `observations/sparc/results/inner_outer_radial_decomposition_summary.md` | Candidate radial-discriminator result |
 | SPARC inner/outer correlation summary | `observations/sparc/results/inner_outer_correlation_summary.csv` | Machine-readable summary committed |
+| P1 SPARC imported result CSVs | `papers/p1-age-dependent-rotation-curves-sparc/results/` | Candidate correlation/partial/bootstrap CSVs committed; reproducible regeneration still needed |
 | PNT void-filament H0 mechanism | `papers/pnt-dark-energy-hubble-window/void-filament-h0-mechanism.md` | Calculated toy-model note |
 
 ## Highest-priority missing artifact
@@ -41,19 +42,19 @@ Required files:
 
 ```text
 observations/sparc/
-├─ sparc_age_dark_matter_analysis.ipynb
+├─ sparc_age_dark_matter_analysis.ipynb  [missing]
 ├─ data/
-│  ├─ sparc_age_fdm_data.csv
-│  └─ sparc_wise_inner_outer_fdm_split.csv
+│  ├─ sparc_age_fdm_data.csv  [present]
+│  └─ sparc_wise_inner_outer_fdm_split.csv  [present]
 ├─ results/
-│  ├─ summary.json
-│  ├─ correlation_table.csv
-│  ├─ inner_outer_correlation_summary.csv
-│  └─ bootstrap_results.csv
+│  ├─ summary.json  [missing]
+│  ├─ correlation_table.csv  [missing under this exact name; paper-local P1 CSVs present]
+│  ├─ inner_outer_correlation_summary.csv  [present]
+│  └─ bootstrap_results.csv  [present in canonical P1 paper results, not in observations/sparc/results]
 └─ figures/
-   ├─ age_dm_full_sample.png
-   ├─ age_dm_mass_bins.png
-   └─ inner_outer_radial_decomposition.png
+   ├─ age_dm_full_sample.png  [missing under this exact name; related SPARC figures present under figures/sparc]
+   ├─ age_dm_mass_bins.png  [missing under this exact name; related SPARC figures present under figures/sparc]
+   └─ inner_outer_radial_decomposition.png  [missing under this exact name]
 ```
 
 Goal:
@@ -64,8 +65,8 @@ Goal:
 
 | Workstream | Current state | Next step |
 |---|---|---|
-| SPARC age / missing-mass analysis | Candidate empirical signal documented; reproducibility package scaffolded | Add derived CSV, notebook, results tables, controls, preregistration link |
-| SPARC radial decomposition | Candidate radial-discriminator summary committed | Add full split dataset and notebook reproduction |
+| SPARC age / missing-mass analysis | Candidate empirical signal documented; reproducibility package scaffolded; derived CSVs and paper-local P1 result CSVs present | Add runnable notebook/regeneration script, controls, provenance, and preregistration link |
+| SPARC radial decomposition | Candidate radial-discriminator summary and full split dataset committed | Add notebook/script reproduction and provenance notes |
 | SPARC environment/cosmic-web test | Motivated by weak central-brightness dependence | Cross-match with cosmic web / local density catalogs |
 | Planck Memory Substrate | Formal doc added | Derive continuity equation or conservation-like relation for Engramon density |
 | PNT dark-energy / Hubble tension | P2 package and void-filament toy model added | Add calculation scripts, Pantheon test, and working-paper integration |
@@ -114,9 +115,9 @@ These are interpretive, not empirical proof:
 
 ## Immediate next actions
 
-1. Add the full derived SPARC inner/outer split CSV under `observations/sparc/data/`.
-2. Add runnable `sparc_age_dark_matter_analysis.ipynb` when data and code are ready.
-3. Add a notebook or script that regenerates `inner_outer_correlation_summary.csv`.
+1. Add runnable `sparc_age_dark_matter_analysis.ipynb` or an equivalent script-driven workflow when data and code are ready.
+2. Add a notebook or script that regenerates `inner_outer_correlation_summary.csv` and the paper-local P1 result CSVs.
+3. Resolve the exact-name mismatch between expected `sparc_age_fdm_analysis.py` and present `notebooks/sparc/sparc_age_dm_analysis.py`.
 4. Add PNT void-filament H0 calculation script or notebook.
 5. Add Pantheon+ environment-H0 implementation using full covariance.
 6. Add PNT working paper draft under `papers/pnt-working-paper/` or continue integrating into `papers/pnt-dark-energy-hubble-window/`.

@@ -20,6 +20,26 @@ P4 is the direct experimental test of consciousness-coupled decoherence. The roa
 
 P4 tests whether awareness-modulated or conscious-access conditions produce measurable differences in decoherence or interference outcomes beyond standard detector and environment effects.
 
+## Canonical files in this folder
+
+Primary repo-facing protocol file:
+
+```text
+papers/p4-soc-mzi-awareness-modulated-decoherence/SOC-MZI-01-preregistration.md
+```
+
+This file is the current repository-publication version of the preregistration draft. It is written for scientist-facing review and keeps claim boundaries explicit.
+
+Related simulation and experiment-support files:
+
+```text
+simulations/mzi-visibility-decay/model-summary.md
+simulations/mzi-visibility-decay/SOC MZI Visibility Decay Simulation.py
+simulations/mzi-visibility-decay/source-code-notes.md
+experiments/quantum/mach-zehnder-consciousness-test.md
+papers/math/soc-localization-memory-hamiltonian.md
+```
+
 ## Roadmap strengths
 
 The roadmap records that the protocol includes:
@@ -37,15 +57,32 @@ Roadmap interpretation:
 - If AI is null while human observers show the effect, this supports a consciousness-specific interpretation.
 - Either result is publishable if the protocol is run cleanly.
 
+## Imported and pending source status
+
+Now present in repo form:
+
+- repo-ready preregistration draft;
+- MZI model summary;
+- imported simulation script path;
+- source-code notes documenting that the current script still needs cleanup;
+- experiment scaffold in `experiments/quantum/`.
+
+Still pending or needing refinement:
+
+- complete OSF export if available;
+- appendices split into dedicated materials / measures / statistics files;
+- AI observer control-arm implementation package;
+- cleaned runnable simulation script and notebook-grade reproducibility layer.
+
 ## Required source import
 
-Needed from user:
+Still useful from user/source archive if available:
 
-- complete SOC-MZI-01 preregistration protocol;
+- full OSF pre-registration export;
 - appendices;
 - AI observer control arm description;
-- OSF pre-registration export if available;
-- Medium protocol article PDF export from October 27, 2025 if available.
+- Medium protocol article export;
+- lab collaboration package.
 
 ## Relationship to earlier scaffold
 
@@ -76,3 +113,11 @@ Upload:
 - AI observer control arm;
 - pre-registration form export;
 - lab collaboration package.
+
+## Next recommended cleanup
+
+1. Add a dedicated `materials-and-measures` appendix.
+2. Add a dedicated `statistical-analysis-plan` appendix.
+3. Repair or replace the imported simulation script if the current import is incomplete.
+4. Cross-link P4 more explicitly to the canonical equation layer in `papers/math/`.
+5. Keep all P4 wording constrained to equation testing and falsification, not theory confirmation.

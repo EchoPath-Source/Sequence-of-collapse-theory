@@ -1,6 +1,6 @@
 # Pantheon+ Data Notes
 
-**Status:** PRELIMINARY scaffold / missing required source tables
+**Status:** PRELIMINARY scaffold / public source inputs documented; environment labels missing
 
 This directory documents the Pantheon+ environment-dependent H0 test inputs. It does **not** contain a completed Pantheon H0 result.
 
@@ -10,9 +10,9 @@ The notebook `notebooks/pantheon/pantheon_environment_h0_test.ipynb` refuses to 
 
 | Required artifact | Expected path | Status | Label | Notes |
 |---|---|---|---|---|
-| Pantheon+ supernova table | `data/pantheon/pantheon_plus.csv` | MISSING | MISSING | Needed for redshifts, distance moduli, and covariance row alignment. |
-| Environment labels | `data/pantheon/environment_labels.csv` | MISSING | MISSING | Must be a documented derived cross-match; schema is in `environment-labels-schema.md`. |
-| Usable covariance file | see candidates below | PARTIAL | PRELIMINARY / EXTERNAL/DOCUMENTED | A covariance subset was requested but is not currently present; full covariance is documented as external pending redistribution clearance. |
+| Pantheon+SH0ES supernova table | `data/pantheon/raw/Pantheon+SH0ES.dat` if committed locally | DOCUMENTED / EXTERNAL | PUBLIC SOURCE INPUT | Source file is `Pantheon+SH0ES.dat` from the PantheonPlusSH0ES/DataRelease `Pantheon+_Data/4_DISTANCES_AND_COVAR/` release; no local uploaded copy was present in this workspace during the 2026-06-10 reconciliation. |
+| Environment labels | `data/pantheon/environment_labels.csv` | MISSING | MISSING DERIVED ARTIFACT | Must be a documented derived cross-match; schema is in `environment-labels-schema.md`. This is the only real Pantheon+ missing derived artifact after source-input documentation. |
+| Pantheon+SH0ES STAT+SYS covariance | `data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov` if committed locally | DOCUMENTED / EXTERNAL | PUBLIC SOURCE INPUT | Source file is `Pantheon+SH0ES_STAT+SYS.cov` from the same public release; commit raw covariance only after storage/redistribution policy is settled. |
 
 Supported covariance candidate paths:
 
@@ -20,11 +20,29 @@ Supported covariance candidate paths:
 data/pantheon/pantheon_covariance.txt
 data/pantheon/Pantheon_cov_subset.txt
 data/pantheon/Pantheon_SH0ES_cov.txt.gz
+data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov
 ```
 
 ## Covariance subset
 
 `data/pantheon/Pantheon_cov_subset.txt` is the preferred small in-repo covariance artifact if a verified subset is available. It is currently **MISSING** in this cleanup pass because no root-level `Pantheon_cov_subset.txt` file was present.
+
+## Public Pantheon+SH0ES source inputs
+
+The public PantheonPlusSH0ES/DataRelease directory `Pantheon+_Data/4_DISTANCES_AND_COVAR/` documents:
+
+- `Pantheon+SH0ES.dat` as the nominal SN and Cepheid-host distance data vector;
+- `Pantheon+SH0ES_STAT+SYS.cov` as the all-systematics covariance matrix;
+- covariance format as a leading matrix size (`N=1701`) followed by `N x N` flattened covariance entries.
+
+If raw source inputs are committed later, use:
+
+```text
+data/pantheon/raw/Pantheon+SH0ES.dat
+data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov
+```
+
+and record byte sizes plus SHA-256 checksums in this README. At the 2026-06-10 reconciliation, the named uploaded files were not present on disk in this workspace, so this pass documents them instead of importing raw copies.
 
 ## Full Pantheon+/SH0ES covariance
 
@@ -35,8 +53,8 @@ A root upload named `Pantheon_SH0ES_cov.txt.gz` was inspected on 2026-06-08:
 - first value: `1701`;
 - remaining numeric value count: `2,893,401`, equal to `1701 * 1701` covariance entries.
 
-Because this appears to be a full public-data covariance artifact and redistribution terms were not verified during cleanup, it is classified as **EXTERNAL/DOCUMENTED** rather than committed as canonical data. If redistribution is cleared and the project wants it in-repo, use Git LFS or a documented data-release workflow before adding `data/pantheon/Pantheon_SH0ES_cov.txt.gz`.
+Because this appears to be a full public-data covariance artifact and redistribution terms were not verified during cleanup, it is classified as **EXTERNAL/DOCUMENTED** rather than committed as canonical data. If redistribution is cleared and the project wants it in-repo, use Git LFS or a documented data-release workflow before adding `data/pantheon/Pantheon_SH0ES_cov.txt.gz` or `data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov`.
 
 ## Claim boundary
 
-No Pantheon environment-H0 result is **ESTABLISHED** until the Pantheon+ SN table, environment-label table, and a usable covariance file are all present and the notebook is run without changing the locked interpretation rules. Do not claim a Pantheon H0 detection from the current repository state.
+No Pantheon environment-H0 result is **ESTABLISHED** until the documented Pantheon+SH0ES source inputs are available to the runtime environment, the environment-label table is created/imported, and the notebook is run without changing the locked interpretation rules. Do not claim a Pantheon H0 detection from the current repository state.

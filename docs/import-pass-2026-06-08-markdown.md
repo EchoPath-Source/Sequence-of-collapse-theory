@@ -25,6 +25,8 @@ The following P1 result artifacts are now present in the repository and should n
 | `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_correlations.csv` | P1 / SPARC | Candidate result CSV; requires reproducible regeneration before stronger claims. |
 | `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_partial_correlations.csv` | P1 / SPARC | Candidate result CSV; requires reproducible regeneration before stronger claims. |
 | `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_binned_bootstrap.csv` | P1 / SPARC | Candidate result CSV; requires reproducible regeneration before stronger claims. |
+| `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_regression_models.csv` | P1 / SPARC | Candidate regression-result CSV; requires reproducible regeneration before stronger claims. |
+| `papers/p1-age-dependent-rotation-curves-sparc/results/mass_proxy_comparison.csv` | P1 / SPARC | Candidate mass-proxy robustness CSV; exact committed table values retained. |
 | `papers/p1-age-dependent-rotation-curves-sparc/results/README.md` | P1 / SPARC | Results manifest/readme present. |
 
 ## Duplicate handling
@@ -44,15 +46,11 @@ This pass intentionally avoids claiming empirical validation. These imports move
 
 ## Remaining pending or path-reconciled items from audit
 
-Highest-priority items still missing by exact filename/path after the 2026-06-10 P1 CSV reconciliation:
+Highest-priority items still pending by exact filename/path after the 2026-06-10 SPARC/MZI/Pantheon reconciliation:
 
-- `sparc_age_fdm_analysis.py` (present related script: `notebooks/sparc/sparc_age_dm_analysis.py`; equivalence needs review)
-- `mass_proxy_comparison.csv`
-- `SPARC_age_fdm_regression_models.csv`
 - `SPARC_age_vs_fdm_scatter.png`
 - `repo_bundle_sparc_pnt_void.zip` (README/source note present at `docs/imported-thread-artifacts/repo_bundle_sparc_pnt_void_README.md`)
-- `SOC MZI Visibility Decay Simulation.py`
-- Pantheon+ full covariance matrix / SN table / environment-label table
+- Pantheon+ environment-label table (`data/pantheon/environment_labels.csv`)
 
 Items from the earlier missing list that are now present in the repo under specific paths:
 
@@ -60,11 +58,16 @@ Items from the earlier missing list that are now present in the repo under speci
 - `sparc_fdm_vs_age_full_analysis.png` at `figures/sparc/sparc_fdm_vs_age_full_analysis.png`
 - `sparc_mass_controlled_analysis.png` at `figures/sparc/sparc_mass_controlled_analysis.png`
 - `environment_H0_analysis.png` at `figures/pantheon/environment_H0_analysis.png`
+- `sparc_age_fdm_analysis.py` at `papers/p1-age-dependent-rotation-curves-sparc/analysis/sparc_age_fdm_analysis.py` and `notebooks/sparc/sparc_age_fdm_analysis.py`
+- `SPARC_age_fdm_regression_models.csv` at `papers/p1-age-dependent-rotation-curves-sparc/results/SPARC_age_fdm_regression_models.csv`
+- `mass_proxy_comparison.csv` at `papers/p1-age-dependent-rotation-curves-sparc/results/mass_proxy_comparison.csv`
+- `SOC MZI Visibility Decay Simulation.py` at `simulations/mzi-visibility-decay/SOC MZI Visibility Decay Simulation.py`; complete P4 copy at `papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py`
+- `Pantheon+SH0ES.dat` and `Pantheon+SH0ES_STAT+SYS.cov` documented as public Pantheon+SH0ES source inputs in `data/pantheon/README.md`
 
 ## Recommended next pass
 
-1. Import any available SPARC analysis scripts and CSV outputs.
-2. Import figure PNGs if available and internally generated.
+1. Regenerate or import `SPARC_age_vs_fdm_scatter.png` if it remains needed.
+2. Create/import Pantheon+ environment labels with locked methodology and provenance.
 3. Add P6 `open-issues.md` to track known tensions.
 4. Reconcile imported source files with canonical P1-P7 manuscript folders.
 5. Update `docs/repo-audit-current-state.md` after all received artifacts are imported.

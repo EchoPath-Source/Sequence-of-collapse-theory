@@ -20,7 +20,7 @@ The following user-provided result CSVs were imported:
 |---|---|---|
 | `SPARC_age_fdm_regression_models.csv` | imported | OLS age-coefficient table across control models. |
 | `mass_proxy_comparison.csv` | imported | Mass-proxy robustness comparison table. |
-| `paper_grade_analysis.png` | received / pending binary import | Uploaded as generated figure; binary GitHub import still pending. |
+| `paper_grade_analysis.png` | present | Uploaded/generated figure is present at `papers/sparc-age-dm/paper_grade_analysis.png`; index/migrate later if a canonical P1 figure copy is needed. |
 
 ## Claim boundary
 

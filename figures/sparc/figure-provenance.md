@@ -1,43 +1,107 @@
 # SPARC Figure Provenance Notes
 
-**Status:** PRELIMINARY imported figure artifacts present  
-**Related result summary:** `papers/cosmology/sparc/sparc-age-dm-publication-summary-v1.md`  
-**Related notebook plan:** `notebooks/sparc_age_dm_analysis_plan.md`
+**Status:** PRELIMINARY imported and generated figure artifacts present  
+**Track:** P1 — Age-Dependent Galactic Rotation Curves / SPARC  
+**Related reproducibility manifest:** `observations/sparc/results/reproducibility-manifest.md`
 
 ---
 
 ## Purpose
 
-This file tracks the SPARC plots shared during the analysis thread so they can later be regenerated from committed code and data.
+This file tracks SPARC figures used or proposed for the age/fDM and radial-decomposition analysis tracks.
 
-The imported images should be treated as provisional visual outputs until they are regenerated from committed code and data.
+The goal is to make every figure traceable to:
+
+1. input data,
+2. generating script or notebook,
+3. output path,
+4. claim-safe caption,
+5. current evidence status.
+
+Static image files should be treated as visual summaries only. The evidentiary artifact is the data + code that regenerates them.
 
 ---
 
-## Imported root-upload figures
+## Current canonical runnable script
 
-| Figure file | Status | Notes |
-|---|---|---|
-| `figures/sparc/sparc_age_fdm_main_result.png` | PRESENT / PRELIMINARY | Root upload moved into canonical SPARC figure folder. |
-| `figures/sparc/sparc_age_fdm_mass_bins.png` | PRESENT / PRELIMINARY | Root upload moved into canonical SPARC figure folder. |
-| `figures/sparc/sparc_fdm_vs_age_full_analysis.png` | PRESENT / PRELIMINARY | Root duplicate pair collapsed to one canonical copy. |
-| `figures/sparc/sparc_mass_controlled_analysis.png` | PRESENT / PRELIMINARY | Root triplicate collapsed to one canonical copy. |
-
-## Figure 1 — Full Sample Age-DM Correlation
-
-Description:
+The current runnable implementation is:
 
 ```text
-SPARC Age-DM Correlation (n=175)
+notebooks/sparc/sparc_age_dm_analysis.py
 ```
 
-Visual contents:
+Compatibility wrapper for older expected filename:
 
-- x-axis: Mean Stellar Age (Gyr);
-- y-axis: Outer Dark Matter Fraction;
-- colorbar: log10(Vmax) [km/s];
-- red best-fit line;
-- annotation box:
+```text
+notebooks/sparc/sparc_age_fdm_analysis.py
+```
+
+Run from repo root:
+
+```bash
+python notebooks/sparc/sparc_age_fdm_analysis.py
+```
+
+or:
+
+```bash
+python notebooks/sparc/sparc_age_dm_analysis.py
+```
+
+---
+
+## Canonical input data
+
+Primary age/fDM input:
+
+```text
+data/sparc/sparc_age_fdm_data.csv
+```
+
+Inner/outer radial-decomposition input:
+
+```text
+observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv
+```
+
+Repo-level mirror:
+
+```text
+data/sparc/sparc_wise_inner_outer_fdm_split.csv
+```
+
+---
+
+## Figure inventory
+
+| Figure file | Status | Generating source | Primary input | Notes |
+|---|---|---|---|---|
+| `figures/sparc/sparc_age_fdm_main_result.png` | PRESENT / PRELIMINARY | imported root-upload figure; should be regenerated or mapped to script output | `data/sparc/sparc_age_fdm_data.csv` | Original full-sample public-facing figure. |
+| `figures/sparc/sparc_age_fdm_mass_bins.png` | PRESENT / PRELIMINARY | imported root-upload figure; should be regenerated or mapped to script output | `data/sparc/sparc_age_fdm_data.csv` | Original Vmax/mass-bin figure. |
+| `figures/sparc/sparc_fdm_vs_age_full_analysis.png` | PRESENT / PRELIMINARY | imported root-upload figure | `data/sparc/sparc_age_fdm_data.csv` | Root duplicate pair collapsed to one canonical copy. |
+| `figures/sparc/sparc_mass_controlled_analysis.png` | PRESENT / PRELIMINARY | imported root-upload figure | `data/sparc/sparc_age_fdm_data.csv` | Root triplicate collapsed to one canonical copy. |
+| `figures/sparc/sparc_age_fdm_scatter.png` | EXPECTED / REGENERATE | `notebooks/sparc/sparc_age_dm_analysis.py` or wrapper | `data/sparc/sparc_age_fdm_data.csv` | Current script output for full-sample scatter. |
+| `figures/sparc/sparc_memory_fit.png` | EXPECTED / REGENERATE | `notebooks/sparc/sparc_age_dm_analysis.py` or wrapper | `data/sparc/sparc_age_fdm_data.csv` | Current script output for nonlinear memory-fit visualization. |
+| `figures/sparc/sparc_mass_bins.png` | EXPECTED / REGENERATE | `notebooks/sparc/sparc_age_dm_analysis.py` or wrapper | `data/sparc/sparc_age_fdm_data.csv` | Current script output for mass-proxy tertile figure. |
+| `papers/sparc-age-dm/paper_grade_analysis.png` | PRESENT / PRELIMINARY | imported paper/report figure | SPARC derived data; exact script pending | Older paper-grade figure kept in paper-support folder. |
+
+---
+
+## Figure 1 — Full Sample Age/fDM Correlation
+
+### Original imported figure
+
+```text
+figures/sparc/sparc_age_fdm_main_result.png
+```
+
+Visual contents from thread notes:
+
+- x-axis: Mean Stellar Age (Gyr)
+- y-axis: Outer Dark Matter Fraction
+- colorbar: log10(Vmax) [km/s]
+- red best-fit line
+- reported annotation:
 
 ```text
 r = +0.201
@@ -45,36 +109,33 @@ p = 7.67e-03
 sigma = 2.67
 ```
 
-Intended future path:
+### Current script-generated replacement path
 
 ```text
-figures/sparc/sparc_age_fdm_main_result.png
+figures/sparc/sparc_age_fdm_scatter.png
 ```
 
-Required regeneration source:
+### Caption draft
 
-```text
-notebooks/sparc_age_dm_analysis.ipynb
-```
+> Outer inferred dark-matter fraction versus best available stellar-age estimate for the SPARC-derived sample. The trend is in the direction predicted by the SoCT memory-field hypothesis, but remains a candidate empirical signal pending full provenance review, outlier diagnostics, and independent reproduction.
 
 ---
 
-## Figure 2 — Mass-Binned Age-DM Correlations
+## Figure 2 — Mass-Binned Age/fDM Correlations
 
-Description:
+### Original imported figure
+
+```text
+figures/sparc/sparc_age_fdm_mass_bins.png
+```
+
+Thread-noted panel structure:
 
 ```text
 Low Mass (n=59), Mid Mass (n=58), High Mass (n=58)
 ```
 
-Visual contents:
-
-- three panels by mass tercile;
-- x-axis: Age (Gyr);
-- y-axis: f_DM;
-- red best-fit lines;
-- pink scatter points;
-- annotation boxes:
+Reported annotations:
 
 ```text
 Low Mass:  r = +0.115, p = 0.384
@@ -82,45 +143,114 @@ Mid Mass:  r = +0.456, p = 0.000
 High Mass: r = +0.277, p = 0.036
 ```
 
-Intended future path:
+### Current script-generated replacement path
 
 ```text
-figures/sparc/sparc_age_fdm_mass_bins.png
+figures/sparc/sparc_mass_bins.png
+```
+
+### Caption draft
+
+> Age/fDM trend split by mass-proxy tertile. The strongest candidate signal appears in the middle bin, while the low-mass bin is non-significant and the high-mass bin is weaker. This structure should be tested for sensitivity to bin definitions, leverage points, surface brightness, and environment.
+
+---
+
+## Figure 3 — Nonlinear Memory-Fit Visualization
+
+### Current script-generated path
+
+```text
+figures/sparc/sparc_memory_fit.png
+```
+
+### Description
+
+This figure is generated by the current SPARC script and overlays the first-pass nonlinear memory model:
+
+```text
+f_DM(age) = f0 + A(1 - exp(-age / tau))
+```
+
+### Caption draft
+
+> First-pass nonlinear memory-accumulation fit to outer fDM versus stellar-age estimate. The fitted timescale should be treated as exploratory until the model is preregistered, tested under controls, and compared against conventional assembly-bias and halo-concentration explanations.
+
+---
+
+## Figure 4 — Mass-Controlled / Full Analysis Figures
+
+### Imported paths
+
+```text
+figures/sparc/sparc_fdm_vs_age_full_analysis.png
+figures/sparc/sparc_mass_controlled_analysis.png
+```
+
+### Status
+
+These are imported/generated visual artifacts from prior analysis threads. They are useful as reference visuals, but should not be treated as independent evidence unless regenerated from committed code and matched to machine-readable results.
+
+### Required next step
+
+Map each panel to one or more result tables under:
+
+```text
+papers/p1-age-dependent-rotation-curves-sparc/results/
+observations/sparc/results/
 ```
 
 ---
 
-## Reproducibility Requirements
+## Figure 5 — Paper-Grade Analysis Figure
 
-Before these figures are used in a manuscript:
+### Imported path
 
-1. commit `data/sparc/sparc_age_fdm_data.csv` or equivalent;
-2. commit `notebooks/sparc_age_dm_analysis.ipynb`;
-3. regenerate both figures from the committed notebook;
-4. record the exact random seed;
-5. record any filtering applied;
-6. record mass-bin thresholds;
-7. verify that annotations match computed values;
-8. include figure-generation date and data checksum.
+```text
+papers/sparc-age-dm/paper_grade_analysis.png
+```
 
----
+### Status
 
-## Manuscript Use
-
-Recommended captions:
-
-### Figure 1 Caption Draft
-
-> Outer inferred dark matter fraction versus mean stellar age for the SPARC sample. Points are colored by log10(Vmax). The red line shows the linear best fit. The reported positive correlation is in the direction predicted by the SoCT memory-field model, but remains provisional pending release of derived data and analysis code.
-
-### Figure 2 Caption Draft
-
-> Age-DM correlation split by Vmax terciles. The strongest reported signal appears in the mid-mass bin, while the low-mass bin is non-significant and the high-mass bin is weakly significant. This bin structure should be tested for sensitivity to bin thresholds and outliers.
+Present in older paper-support folder. It should either remain there as a paper-support artifact or be copied/mirrored into `figures/sparc/` only after the source script and exact caption are known.
 
 ---
 
-## Research Boundary
+## Reproducibility requirements before manuscript use
 
-Do not treat static image files as reproducible evidence. They are visual summaries only.
+Before any SPARC figure is used as manuscript evidence:
 
-The evidentiary artifact is the data + code that regenerates them.
+1. Confirm the source data path and checksum.
+2. Confirm whether the figure was imported or regenerated.
+3. Record generating script/notebook.
+4. Record random seed where relevant.
+5. Record all filtering rules.
+6. Record bin definitions and thresholds.
+7. Verify annotations match machine-readable result tables.
+8. Confirm figure-generation date.
+9. Add outlier/leverage diagnostics.
+10. Add conventional-alternative caveats.
+
+---
+
+## Current missing / incomplete figure items
+
+Still needed:
+
+```text
+SPARC_age_vs_fdm_scatter.png or formal mapping to figures/sparc/sparc_age_fdm_scatter.png
+exact source/caption for papers/sparc-age-dm/paper_grade_analysis.png
+panel-to-table mapping for figures/sparc/sparc_mass_controlled_analysis.png
+regenerated current-script outputs committed after running notebooks/sparc/sparc_age_fdm_analysis.py
+```
+
+---
+
+## Claim boundary
+
+Use:
+
+> SPARC figures are candidate visual summaries of derived age/fDM and radial-decomposition analyses. They support interpretation only when paired with committed data, code, and machine-readable result tables.
+
+Avoid:
+
+> Static SPARC figures prove SoCT, prove gravity is memory, or rule out dark matter.

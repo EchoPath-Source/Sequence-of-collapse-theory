@@ -171,7 +171,27 @@ That is the correct scientific standard.
 
 ---
 
-## 8. Why this file exists
+## 8. Canonical cross-links
+
+This note is best read together with:
+
+```text
+papers/p3-soc-concept-to-equation/P3-sequence-of-collapse-from-concept-to-equation.md
+papers/math/soc-localization-memory-hamiltonian.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/SOC-MZI-01-preregistration.md
+simulations/mzi-visibility-decay/model-summary.md
+```
+
+Suggested reading order:
+
+1. this equation note for the narrow public-facing math layer,
+2. the cleaned P3 draft for the concept-to-equation paper framing,
+3. the math scaffold for broader Hamiltonian and memory-field context,
+4. the P4 preregistration and MZI simulation files for direct falsification paths.
+
+---
+
+## 9. Why this file exists
 
 This repository contains broader conceptual and metaphysical materials. Those can remain useful as intellectual context.
 

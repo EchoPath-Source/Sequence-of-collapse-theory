@@ -1,3 +1,3 @@
 test,n,r,p_value
-"pearson(age_best, fdm_outer_mean)",175,0.20094326715308153,0.007666087023335571
-"spearman(age_best, fdm_outer_mean)",175,0.21144136014688059,0.004971258154501866
+"pearson(age_best, fdm_outer_mean)",175,0.2009432671530815,0.007666087023335571
+"spearman(age_best, fdm_outer_mean)",175,0.21144136014688059,0.0049712581545018645

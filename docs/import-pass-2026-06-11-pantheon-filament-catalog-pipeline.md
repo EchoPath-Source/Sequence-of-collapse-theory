@@ -57,6 +57,13 @@ sdss_nonvoid
 outside_catalog_coverage
 ```
 
+
+## 2026-06-14 operational validation update
+
+The combined void+filament generator remains present at `notebooks/pantheon/generate_environment_labels_from_void_filament_catalogs.py`, and syntax/help smoke checks passed. The full generation command was not run to completion because the required local Pantheon+ table and external catalog archives/extractions were not available in the container. Consequently, `data/pantheon/environment_labels.csv` was **not generated and not committed** in this pass.
+
+Before generating labels, stage the raw public inputs only in ignored local paths and keep raw Pantheon+/catalog archives out of git unless redistribution policy is explicitly cleared.
+
 ## Claim boundary
 
 These labels are derived cross-match labels, not official Pantheon+ metadata. They should be used to unlock preliminary Pantheon+ environment-H0 pipeline testing only after row-order preservation and catalog coverage are verified.

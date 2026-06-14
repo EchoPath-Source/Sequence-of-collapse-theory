@@ -1,7 +1,7 @@
 # Pantheon+ Environment Labels README
 
 **Artifact:** `data/pantheon/environment_labels.csv`  
-**Status:** missing until generated / derived cross-match artifact
+**Status:** not generated in the 2026-06-14 validation pass because required local raw/staged inputs were absent / derived cross-match artifact
 
 ## Purpose
 
@@ -26,6 +26,20 @@ The older void-only fallback remains available:
 ```text
 notebooks/pantheon/generate_environment_labels_from_void_catalog.py
 ```
+
+
+## 2026-06-14 validation status
+
+The combined generator script was present and passed syntax and `--help` smoke checks. The environment label CSV was not generated because the expected local source files/archives were absent from the container:
+
+```text
+Pantheon+SH0ES.dat.txt
+Pantheon+SH0ES_STAT+SYS.cov(1).txt
+void_catalog_2014.06.18_just_sdss.tar.gz
+J_MNRAS_438_3465.tar.gz.tar
+```
+
+After staging those files in ignored paths, rerun the command below and then validate row count, sequential `row_index`, required columns, nonempty `environment_label`, label/coverage counts, and row-order safety against Pantheon+ `CID`, `RA`, `DEC`, `zHD`, and `zCMB`.
 
 ## Run command
 

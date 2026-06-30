@@ -64,6 +64,12 @@ The combined void+filament generator remains present at `notebooks/pantheon/gene
 
 Before generating labels, stage the raw public inputs only in ignored local paths and keep raw Pantheon+/catalog archives out of git unless redistribution policy is explicitly cleared.
 
+## 2026-06-19 operational validation update
+
+A follow-up generation pass was attempted. The required ignored raw/staged inputs were still absent, and the expected uploaded/source filenames were not discoverable in the workspace, so the pass remains blocked by missing local inputs. The combined script passed syntax validation and failed safely at runtime with an explicit missing Pantheon+ table input error. No derived `environment_labels.csv`, preview CSV, or checksum was generated or committed.
+
+Future completion requires staging the Pantheon+SH0ES table/covariance plus extracted SDSS void and Tempel/Bisous filament catalogs in the documented ignored paths, confirming the filament archive contains `ReadMe`, `table1.dat.gz`, `table2.dat.gz`, and `table3.dat.gz`, and then rerunning the generator plus row-order validation.
+
 ## Claim boundary
 
 These labels are derived cross-match labels, not official Pantheon+ metadata. They should be used to unlock preliminary Pantheon+ environment-H0 pipeline testing only after row-order preservation and catalog coverage are verified.

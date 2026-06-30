@@ -1,7 +1,7 @@
 # Pantheon+ Environment Labels README
 
 **Artifact:** `data/pantheon/environment_labels.csv`  
-**Status:** not generated in the 2026-06-14 validation pass because required local raw/staged inputs were absent / derived cross-match artifact
+**Status:** not generated in the 2026-06-19 validation pass because required local raw/staged inputs and expected uploaded/source files were absent / derived cross-match artifact
 
 ## Purpose
 
@@ -40,6 +40,10 @@ J_MNRAS_438_3465.tar.gz.tar
 ```
 
 After staging those files in ignored paths, rerun the command below and then validate row count, sequential `row_index`, required columns, nonempty `environment_label`, label/coverage counts, and row-order safety against Pantheon+ `CID`, `RA`, `DEC`, `zHD`, and `zCMB`.
+
+## 2026-06-19 validation status
+
+The combined generator still passes syntax validation, but generation remains blocked in this workspace. The required ignored local staged inputs were absent, and the expected uploaded/source files could not be found, so no full CSV, preview CSV, or checksum was produced. The documented generator command was run and failed safely with an input error for the missing Pantheon+ table.
 
 ## Run command
 

@@ -1,16 +1,32 @@
 # Pantheon+ Environment Labels README
 
-**Artifact:** `data/pantheon/environment_labels.csv`  
-**Status:** not generated in the 2026-06-19 validation pass because required local raw/staged inputs and expected uploaded/source files were absent / derived cross-match artifact
+**Artifact:** `data/pantheon/environment_labels.csv`
+**Status:** present / derived cross-match artifact imported on 2026-06-30
+**Rows:** 1701
+**SHA-256:** `ff3006e8cbf7316db29b3760f39d02e911b99a86e814e1a698014a8242695a9d`
 
 ## Purpose
 
-`environment_labels.csv` is the row-aligned environment-label companion table for the Pantheon+ environment-dependent H0 pipeline.
+`environment_labels.csv` is the row-aligned environment-label companion table for preliminary Pantheon+ environment-dependent H0 pipeline testing. The labels are derived SDSS void + Tempel/Bisous filament cross-match labels, not official Pantheon+ metadata.
 
-## Required staged inputs
+## Imported artifacts
+
+```text
+data/pantheon/environment_labels.csv
+data/pantheon/environment_labels_preview.csv
+data/pantheon/environment_labels_summary.md
+data/pantheon/environment_labels.sha256.json
+```
+
+`environment_labels_preview.csv` is a small preview of the derived table. `environment_labels_summary.md` documents the local generation and validation pass. `environment_labels.sha256.json` records the canonical checksum metadata for `data/pantheon/environment_labels.csv`.
+
+## Required staged inputs for regeneration
+
+Raw inputs remain external/ignored and are not committed:
 
 ```text
 data/pantheon/raw/Pantheon+SH0ES.dat
+data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov
 data/pantheon/external/void_catalog_2014.06.18_just_sdss/
 data/pantheon/external/J_MNRAS_438_3465/
 ```
@@ -27,49 +43,35 @@ The older void-only fallback remains available:
 notebooks/pantheon/generate_environment_labels_from_void_catalog.py
 ```
 
-
-## 2026-06-14 validation status
-
-The combined generator script was present and passed syntax and `--help` smoke checks. The environment label CSV was not generated because the expected local source files/archives were absent from the container:
-
-```text
-Pantheon+SH0ES.dat.txt
-Pantheon+SH0ES_STAT+SYS.cov(1).txt
-void_catalog_2014.06.18_just_sdss.tar.gz
-J_MNRAS_438_3465.tar.gz.tar
-```
-
-After staging those files in ignored paths, rerun the command below and then validate row count, sequential `row_index`, required columns, nonempty `environment_label`, label/coverage counts, and row-order safety against Pantheon+ `CID`, `RA`, `DEC`, `zHD`, and `zCMB`.
-
-## 2026-06-19 validation status
-
-The combined generator still passes syntax validation, but generation remains blocked in this workspace. The required ignored local staged inputs were absent, and the expected uploaded/source files could not be found, so no full CSV, preview CSV, or checksum was produced. The documented generator command was run and failed safely with an input error for the missing Pantheon+ table.
-
 ## Run command
 
 ```text
 python notebooks/pantheon/generate_environment_labels_from_void_filament_catalogs.py --pantheon data/pantheon/raw/Pantheon+SH0ES.dat --void-catalog-dir data/pantheon/external/void_catalog_2014.06.18_just_sdss --filament-catalog-dir data/pantheon/external/J_MNRAS_438_3465 --output data/pantheon/environment_labels.csv
 ```
 
-## Expected labels
+## Imported label counts
 
-```text
-void
-near_void_edge
-filament
-near_filament
-field_or_wall
-sdss_nonvoid
-outside_catalog_coverage
-```
+| Label | Count |
+|---|---:|
+| `field_or_wall` | 827 |
+| `sdss_nonvoid` | 741 |
+| `outside_catalog_coverage` | 75 |
+| `void` | 34 |
+| `near_void_edge` | 21 |
+| `filament` | 2 |
+| `near_filament` | 1 |
 
-These labels are derived from public SDSS void and Tempel/Bisous filament catalogs. They should not be presented as official Pantheon+ classifications.
+## Imported coverage counts
 
-## Source catalogs
-
-- Void catalog: public SDSS void catalog staged at `data/pantheon/external/void_catalog_2014.06.18_just_sdss/`.
-- Filament catalog: Tempel et al. SDSS/Bisous catalog `J/MNRAS/438/3465`, staged at `data/pantheon/external/J_MNRAS_438_3465/` with `table2.dat(.gz)` available.
+| Coverage flag | Count |
+|---|---:|
+| `derived_crossmatch` | 1626 |
+| `outside_catalog_coverage` | 75 |
 
 ## Row-order rule
 
-The output must preserve Pantheon+ row order through `row_index`, so labels can be joined to the covariance-aligned SN table without reordering.
+The output preserves Pantheon+ row order through sequential `row_index` values 0 through 1700, so labels can be joined to the covariance-aligned SN table without reordering.
+
+## Claim boundary
+
+These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.

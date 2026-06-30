@@ -70,6 +70,24 @@ A follow-up generation pass was attempted. The required ignored raw/staged input
 
 Future completion requires staging the Pantheon+SH0ES table/covariance plus extracted SDSS void and Tempel/Bisous filament catalogs in the documented ignored paths, confirming the filament archive contains `ReadMe`, `table1.dat.gz`, `table2.dat.gz`, and `table3.dat.gz`, and then rerunning the generator plus row-order validation.
 
+
+## 2026-06-30 generated artifact import update
+
+The generated derived artifacts manually uploaded to the repository root were moved into canonical `data/pantheon/` paths:
+
+```text
+data/pantheon/environment_labels.csv
+data/pantheon/environment_labels_preview.csv
+data/pantheon/environment_labels_summary.md
+data/pantheon/environment_labels.sha256.json
+```
+
+The canonical CSV has 1701 rows with sequential `row_index` values 0 through 1700, preserving Pantheon+ row order for covariance-safe joining. Label counts are `field_or_wall` 827, `sdss_nonvoid` 741, `outside_catalog_coverage` 75, `void` 34, `near_void_edge` 21, `filament` 2, and `near_filament` 1. Coverage counts are `derived_crossmatch` 1626 and `outside_catalog_coverage` 75. The canonical CSV SHA-256 is `ff3006e8cbf7316db29b3760f39d02e911b99a86e814e1a698014a8242695a9d`.
+
+The raw Pantheon+ source files, raw covariance files, void catalog archives, and extracted external catalogs remain external/ignored and were not committed. The root-only local generator was removed rather than retained as a parallel script; the canonical generator remains `notebooks/pantheon/generate_environment_labels_from_void_filament_catalogs.py`.
+
+No Pantheon H0/environment result is claimed from this import.
+
 ## Claim boundary
 
-These labels are derived cross-match labels, not official Pantheon+ metadata. They should be used to unlock preliminary Pantheon+ environment-H0 pipeline testing only after row-order preservation and catalog coverage are verified.
+These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.

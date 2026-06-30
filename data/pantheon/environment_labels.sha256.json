@@ -1,0 +1,7 @@
+{
+  "file": "data/pantheon/environment_labels.csv",
+  "sha256": "ff3006e8cbf7316db29b3760f39d02e911b99a86e814e1a698014a8242695a9d",
+  "rows": 1701,
+  "generated_date": "2026-06-30",
+  "method": "sdss_void_filament_crossmatch_v0.1"
+}

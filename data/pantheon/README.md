@@ -1,6 +1,6 @@
 # Pantheon+ Data Notes
 
-**Status:** PRELIMINARY scaffold / public source inputs documented; 2026-06-19 generation pass still blocked by missing local raw inputs
+**Status:** PRELIMINARY scaffold / public source inputs documented; generated derived environment-label artifacts imported on 2026-06-30
 
 This directory documents the Pantheon+ environment-dependent H0 test inputs. It does **not** contain a completed Pantheon H0 result.
 
@@ -11,7 +11,7 @@ The notebook `notebooks/pantheon/pantheon_environment_h0_test.ipynb` refuses to 
 | Required artifact | Expected path | Status | Label | Notes |
 |---|---|---|---|---|
 | Pantheon+SH0ES supernova table | `data/pantheon/raw/Pantheon+SH0ES.dat` if committed locally | DOCUMENTED / EXTERNAL | PUBLIC SOURCE INPUT | Source file is `Pantheon+SH0ES.dat` from the PantheonPlusSH0ES/DataRelease `Pantheon+_Data/4_DISTANCES_AND_COVAR/` release. |
-| Environment labels | `data/pantheon/environment_labels.csv` | NOT GENERATED IN 2026-06-19 VALIDATION PASS | DERIVED CROSS-MATCH ARTIFACT | Required local raw/staged inputs and expected uploaded/source archives were absent; generate from Pantheon+ RA/DEC/z plus external SDSS void and Tempel/Bisous filament catalogs after staging them. |
+| Environment labels | `data/pantheon/environment_labels.csv` | PRESENT | DERIVED CROSS-MATCH ARTIFACT | Imported generated SDSS void + Tempel/Bisous filament cross-match labels for 1701 Pantheon+ rows. |
 | Pantheon+SH0ES STAT+SYS covariance | `data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov` if committed locally | DOCUMENTED / EXTERNAL | PUBLIC SOURCE INPUT | Source file is `Pantheon+SH0ES_STAT+SYS.cov` from the same public release; commit raw covariance only after storage/redistribution policy is settled. |
 
 Supported covariance candidate paths:
@@ -106,6 +106,22 @@ data/pantheon/external/J_MNRAS_438_3465/table2.dat.gz
 
 A follow-up local pass again found that the required raw Pantheon+ table/covariance and extracted external SDSS void + Tempel/Bisous filament catalogs were absent. The expected uploaded/source filenames were also not discoverable under `/workspace`, so the raw inputs could not be staged automatically. Syntax validation passed, and the documented generator exited with an input error before creating any partial output. Consequently, `data/pantheon/environment_labels.csv` remains **not generated and not committed** in this pass. See `data/pantheon/environment_labels_summary.md` for the command record and claim boundary.
 
+
+## 2026-06-30 generated derived-artifact import
+
+The generated derived environment-label artifacts are now present under `data/pantheon/`:
+
+```text
+data/pantheon/environment_labels.csv
+data/pantheon/environment_labels_preview.csv
+data/pantheon/environment_labels_summary.md
+data/pantheon/environment_labels.sha256.json
+```
+
+`data/pantheon/environment_labels.csv` is a derived SDSS void + Tempel/Bisous filament cross-match artifact with 1701 row-aligned Pantheon+ entries. `data/pantheon/environment_labels_preview.csv` is a small preview, `data/pantheon/environment_labels_summary.md` records generation and validation, and `data/pantheon/environment_labels.sha256.json` records the canonical CSV checksum. Raw Pantheon+ tables, raw covariance files, void catalog archives, and extracted external catalog tables remain external/ignored and were not committed.
+
+The imported label counts are: `field_or_wall` 827, `sdss_nonvoid` 741, `outside_catalog_coverage` 75, `void` 34, `near_void_edge` 21, `filament` 2, and `near_filament` 1. Coverage counts are `derived_crossmatch` 1626 and `outside_catalog_coverage` 75. Row order is preserved through sequential `row_index` values 0 through 1700 for covariance-safe joining.
+
 ## Claim boundary
 
-No Pantheon environment-H0 result is **ESTABLISHED** until the documented Pantheon+SH0ES source inputs are available to the runtime environment, the derived environment-label table is generated/imported, and the notebook is run without changing the locked interpretation rules. Do not claim a Pantheon H0 detection from the current repository state.
+These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.

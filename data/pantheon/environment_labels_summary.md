@@ -1,72 +1,57 @@
-# Pantheon+ Environment Labels Generation Summary
+# Pantheon+ Environment Labels — Local Generation Summary
 
-**Generation date:** 2026-06-19
+**Generation date:** 2026-06-30
+**Output:** `data/pantheon/environment_labels.csv`
+**Rows:** 1701
+**Method version:** `sdss_void_filament_crossmatch_v0.1`
 
-**Method version:** `generate_environment_labels_from_void_filament_catalogs.py` combined SDSS void + Tempel/Bisous filament cross-match.
+## Source inputs used
 
-## Outcome
+| Input | Bytes | SHA-256 |
+|---|---:|---|
+| `Pantheon+SH0ES.dat` | 579283 | `1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8` |
+| `Pantheon+SH0ES_STAT+SYS.cov` | 33284960 | `abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc` |
+| `void_catalog_2014.06.18_just_sdss.tar.gz` | 327352211 | `104a892379b1ff36848d2fd15e27784835d68f80418af6f997fd5af117e1bc02` |
+| `J_MNRAS_438_3465.tar.gz.tar` | 44933120 | `e4e548dd8580386824d9b9e59825f2684f9bcff568b59073ea1485615ff81a07` |
 
-Generation is still blocked in this workspace because the required local raw/staged inputs were not present and the expected uploaded/source files could not be found under `/workspace` or the repository tree. No full `data/pantheon/environment_labels.csv`, preview CSV, or checksum was generated.
+## Output checksum
 
-## Source files expected
+| Output | Bytes | SHA-256 |
+|---|---:|---|
+| `environment_labels.csv` | 705628 | `ff3006e8cbf7316db29b3760f39d02e911b99a86e814e1a698014a8242695a9d` |
 
-Required local staged paths:
+## Environment label counts
 
-```text
-data/pantheon/raw/Pantheon+SH0ES.dat
-data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov
-data/pantheon/external/void_catalog_2014.06.18_just_sdss/
-data/pantheon/external/J_MNRAS_438_3465/
-```
-
-Expected uploaded/source filenames, if supplied to a future workspace:
-
-```text
-Pantheon+SH0ES.dat.txt
-Pantheon+SH0ES_STAT+SYS.cov(1).txt
-void_catalog_2014.06.18_just_sdss.tar.gz
-J_MNRAS_438_3465.tar.gz.tar
-```
-
-## Row count
-
-Not available; generation did not run because `data/pantheon/raw/Pantheon+SH0ES.dat` was missing.
-
-## Label counts
-
-Not available; no generated label table exists in this workspace.
+| Label | Count |
+|---|---:|
+| `field_or_wall` | 827 |
+| `sdss_nonvoid` | 741 |
+| `outside_catalog_coverage` | 75 |
+| `void` | 34 |
+| `near_void_edge` | 21 |
+| `filament` | 2 |
+| `near_filament` | 1 |
 
 ## Coverage counts
 
-Not available; no generated label table exists in this workspace.
+| Coverage flag | Count |
+|---|---:|
+| `derived_crossmatch` | 1626 |
+| `outside_catalog_coverage` | 75 |
 
-## Checks performed
+## Validation checks
 
-- Confirmed the required local staged inputs were absent.
-- Searched for the expected uploaded/source filenames under `/workspace`; none were found.
-- Created ignored staging directories `data/pantheon/raw/` and `data/pantheon/external/` for future local input staging.
-- Ran syntax check for the combined generator.
-- Ran the documented generation command and confirmed it exits with an input error rather than producing a partial CSV when required inputs are missing.
-- Did not perform CSV row-count, required-column, nonempty-label, label-count, coverage-count, or row-order validation because no CSV was generated.
-
-## Commit contents
-
-Only documentation of the blocked 2026-06-19 pass is committed. The full CSV was not committed, and no preview/checksum was committed, because generation could not proceed without local raw inputs.
-
-## Regeneration command
-
-After staging the raw public inputs in ignored local paths, rerun:
-
-```bash
-python notebooks/pantheon/generate_environment_labels_from_void_filament_catalogs.py \
-  --pantheon data/pantheon/raw/Pantheon+SH0ES.dat \
-  --void-catalog-dir data/pantheon/external/void_catalog_2014.06.18_just_sdss \
-  --filament-catalog-dir data/pantheon/external/J_MNRAS_438_3465 \
-  --output data/pantheon/environment_labels.csv
-```
-
-Then validate row count, sequential `row_index`, required columns, nonempty `environment_label`, label counts, coverage counts, and row-order safety against Pantheon+ `CID`, `RA`, `DEC`, `zHD`, and `zCMB`.
+- Confirmed `environment_labels.csv` exists.
+- Confirmed row count matches the Pantheon+ table: 1701 rows.
+- Confirmed `row_index` is sequential from 0 to 1700.
+- Confirmed required output columns are present.
+- Confirmed `environment_label` is nonempty for every row.
+- Confirmed row-order safety by matching `CID`, `RA`, `DEC`, `zHD`, and `zCMB` row-by-row against the Pantheon+ source table.
 
 ## Claim boundary
 
 These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.
+
+## Notes
+
+This file was generated locally from the uploaded source inputs because Codex did not have the raw/staged files in its workspace. The raw Pantheon+ and catalog archives should remain untracked unless redistribution/storage policy is explicitly settled.

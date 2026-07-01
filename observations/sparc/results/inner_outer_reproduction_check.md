@@ -1,6 +1,6 @@
 # SPARC Inner/Outer Radial-Decomposition Reproduction Check
 
-**Status:** REVIEW_REQUIRED  
+**Status:** PASS  
 **Claim level:** candidate empirical result / reproducibility support  
 **Input dataset:** `observations/sparc/data/sparc_wise_inner_outer_fdm_split.csv`  
 **Expected table:** `observations/sparc/results/inner_outer_correlation_summary.csv`  
@@ -23,9 +23,9 @@ It then compares the regenerated table against the committed reference table.
 
 | Field | Value |
 |---|---:|
-| matched | `False` |
+| matched | `True` |
 | tolerance | `1e-12` |
-| max_abs_diff | `14` |
+| max_abs_diff | `9.4368957093138306e-16` |
 | compared_numeric_cells | `120` |
 | missing_rows | `0` |
 | extra_rows | `0` |

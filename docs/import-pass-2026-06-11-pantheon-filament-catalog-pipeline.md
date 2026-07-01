@@ -91,3 +91,11 @@ No Pantheon H0/environment result is claimed from this import.
 ## Claim boundary
 
 These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.
+
+## Follow-up covariance-aware H0 runner — 2026-06-30
+
+A downstream runner was added at `notebooks/pantheon/run_pantheon_environment_h0_analysis.py` to consume the imported SDSS void + Tempel/Bisous filament labels in a covariance-aware Pantheon+ environment-H0 diagnostic. The runner expects the canonical ignored raw table `data/pantheon/raw/Pantheon+SH0ES.dat`, accepts the canonical ignored covariance `data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov` plus documented fallback covariance candidates, and validates row-order safety through `row_index` plus `CID`, `RA`, `DEC`, `zHD`, and `zCMB` checks.
+
+The local execution in this pass was blocked by missing raw Pantheon+ table and covariance inputs. It exited cleanly and wrote `observations/pantheon-environment-h0/results/pantheon_environment_h0_run_summary.md`. No Pantheon H0/environment result is claimed from this run.
+
+The runner includes conservative predeclared grouping modes and skips any contrast with fewer than 5 rows on either side after the locked `0.01 <= zHD <= 0.15` redshift cut. Given the imported label counts of 2 exact `filament` rows and 1 `near_filament` row, strict and edge-inclusive void-vs-filament contrasts are expected to be marked underpowered when raw inputs are staged.

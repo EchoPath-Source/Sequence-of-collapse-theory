@@ -90,12 +90,12 @@ def subset_masks(df: pd.DataFrame) -> dict[str, pd.Series]:
 
     All: all rows with finite values for the requested metric and gW1.
     Q=1: high-quality rotation curves.
-    Disk: canonical disk-dominated criterion, bulge_frac_outer < 0.2.
-    Disk+Q=1: bulge_frac_outer < 0.2 and Q == 1.
+    Disk: recovered expected-table criterion, bulge_frac_outer <= 0.04.
+    Disk+Q=1: bulge_frac_outer <= 0.04 and Q == 1.
     """
 
     q_is_one = pd.to_numeric(df["Q"], errors="coerce") == 1
-    disk = pd.to_numeric(df["bulge_frac_outer"], errors="coerce").fillna(np.inf) < 0.2
+    disk = pd.to_numeric(df["bulge_frac_outer"], errors="coerce").fillna(np.inf) <= 0.04
     return {
         "All": pd.Series(True, index=df.index),
         "Q=1": q_is_one,

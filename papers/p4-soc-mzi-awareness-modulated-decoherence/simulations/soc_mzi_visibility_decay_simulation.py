@@ -62,7 +62,7 @@ class SimConfig:
     a_high: float = 0.80
     delays_us: Tuple[float, ...] = (10.0, 20.0, 40.0, 80.0)
     a_grid_points: int = 11
-    output_dir: str = "results"
+    output_dir: str = str(Path(__file__).resolve().parent / "results")
 
 
 CONFIG = SimConfig()

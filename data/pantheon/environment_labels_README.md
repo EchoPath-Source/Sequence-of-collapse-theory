@@ -75,3 +75,9 @@ The output preserves Pantheon+ row order through sequential `row_index` values 0
 ## Claim boundary
 
 These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.
+
+## Downstream covariance-aware H0 diagnostic
+
+The imported `environment_labels.csv` table is consumed by `notebooks/pantheon/run_pantheon_environment_h0_analysis.py`. The runner treats `environment_label` as the canonical label column and normalizes it to an analysis column named `environment` after loading. It joins by row order using `row_index`, then verifies `CID`, `RA`, `DEC`, `zHD`, and `zCMB` against `data/pantheon/raw/Pantheon+SH0ES.dat` before any fit.
+
+The diagnostic predeclares strict, edge-inclusive, structure-contrast, and catalog-covered grouping modes. Because the imported labels contain only 2 exact `filament` rows and 1 `near_filament` row, the strict and edge-inclusive void-vs-filament modes are expected to be underpowered unless a future label-generation policy changes. The runner marks any grouping with fewer than 5 rows on either side after the locked redshift cut as `SKIPPED_UNDERPOWERED`.

@@ -125,3 +125,24 @@ The imported label counts are: `field_or_wall` 827, `sdss_nonvoid` 741, `outside
 ## Claim boundary
 
 These are derived SDSS void + Tempel/Bisous filament cross-match labels for preliminary Pantheon+ environment-H0 pipeline testing. They are not official Pantheon+ metadata and do not establish an H0/environment detection without the full covariance-aware fit and independent reproducibility audit.
+
+## 2026-06-30 covariance-aware environment-H0 runner
+
+A paired runnable script now advances the imported label artifact toward the covariance-aware Pantheon+ environment-H0 diagnostic:
+
+```bash
+python notebooks/pantheon/run_pantheon_environment_h0_analysis.py
+```
+
+The runner uses `data/pantheon/raw/Pantheon+SH0ES.dat` as the canonical whitespace-delimited Pantheon+ table, `data/pantheon/environment_labels.csv` as the row-aligned derived label table, and the first available covariance candidate from:
+
+```text
+data/pantheon/Pantheon_SH0ES_cov.txt.gz
+data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov
+data/pantheon/pantheon_covariance.txt
+data/pantheon/Pantheon_cov_subset.txt
+```
+
+It supports Pantheon-style covariance files with a leading matrix size followed by `N*N` flattened entries, validates a `(1701, 1701)` covariance against the Pantheon row count, preserves covariance row order through `row_index`, and verifies `CID`, `RA`, `DEC`, `zHD`, and `zCMB` row-by-row before fitting.
+
+In this container pass, the raw Pantheon+ table and covariance were missing, so the runner wrote a blocked summary at `observations/pantheon-environment-h0/results/pantheon_environment_h0_run_summary.md` and did not emit fit CSV outputs. Raw Pantheon+ tables and covariance files remain external/ignored and should not be committed unless project policy changes.

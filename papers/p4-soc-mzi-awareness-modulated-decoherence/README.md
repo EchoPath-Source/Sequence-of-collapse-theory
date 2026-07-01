@@ -30,7 +30,18 @@ papers/p4-soc-mzi-awareness-modulated-decoherence/SOC-MZI-01-preregistration.md
 
 This file is the current repository-publication version of the preregistration draft. It is written for scientist-facing review and keeps claim boundaries explicit.
 
-Related simulation and experiment-support files:
+Canonical P4 simulation package:
+
+```text
+papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/README.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py
+papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/README.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/main_effect.csv
+papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/timing_asymmetry.csv
+papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/dose_response.csv
+```
+
+Legacy/imported simulation-support files:
 
 ```text
 simulations/mzi-visibility-decay/model-summary.md
@@ -39,6 +50,18 @@ simulations/mzi-visibility-decay/source-code-notes.md
 experiments/quantum/mach-zehnder-consciousness-test.md
 papers/math/soc-localization-memory-hamiltonian.md
 ```
+
+## Current simulation status
+
+The canonical paper-local simulation script is now runnable from the repo root:
+
+```bash
+python papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py
+```
+
+The committed simulation outputs are CSV tables only. Generated PNGs are intentionally not committed; they can be regenerated locally from the script when needed for figures or review packets.
+
+This simulation layer is useful for expected-signature planning, falsification scaffolding, and Registered Report preparation. It is not empirical evidence and does not establish an awareness-modulated decoherence effect.
 
 ## Roadmap strengths
 
@@ -63,8 +86,10 @@ Now present in repo form:
 
 - repo-ready preregistration draft;
 - MZI model summary;
-- imported simulation script path;
-- source-code notes documenting that the current script still needs cleanup;
+- canonical runnable simulation script in the P4 paper folder;
+- committed simulation CSV outputs for main effect, timing asymmetry, and dose response;
+- result README documenting seed, output files, generated-but-uncommitted PNGs, and claim boundary;
+- legacy/imported simulation-support path;
 - experiment scaffold in `experiments/quantum/`.
 
 Still pending or needing refinement:
@@ -72,7 +97,8 @@ Still pending or needing refinement:
 - complete OSF export if available;
 - appendices split into dedicated materials / measures / statistics files;
 - AI observer control-arm implementation package;
-- cleaned runnable simulation script and notebook-grade reproducibility layer.
+- notebook-grade reproducibility layer around the runnable simulation script;
+- lab collaboration packet.
 
 ## Required source import
 
@@ -112,12 +138,13 @@ Upload:
 - all appendices;
 - AI observer control arm;
 - pre-registration form export;
-- lab collaboration package.
+- lab collaboration package;
+- simulation CSV outputs and source script as planning/falsification support.
 
 ## Next recommended cleanup
 
 1. Add a dedicated `materials-and-measures` appendix.
 2. Add a dedicated `statistical-analysis-plan` appendix.
-3. Repair or replace the imported simulation script if the current import is incomplete.
+3. Add a notebook-grade reproducibility layer for the current runnable simulation script.
 4. Cross-link P4 more explicitly to the canonical equation layer in `papers/math/`.
 5. Keep all P4 wording constrained to equation testing and falsification, not theory confirmation.

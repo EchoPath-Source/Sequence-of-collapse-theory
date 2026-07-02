@@ -4,6 +4,22 @@
 
 This directory documents the Pantheon+ environment-dependent H0 test inputs. It does **not** contain a completed Pantheon H0 result.
 
+## Raw input staging guide
+
+Before running the covariance-aware environment-H0 diagnostic, stage ignored raw inputs according to:
+
+```text
+data/pantheon/raw-input-staging-guide.md
+```
+
+The main currently blocking raw input is:
+
+```text
+data/pantheon/raw/Pantheon+SH0ES.dat
+```
+
+Do not commit raw Pantheon+ tables or full covariance files unless redistribution/storage policy is explicitly settled. Commit derived labels, provenance notes, checksums, run summaries, and fit CSV outputs only after the diagnostic completes.
+
 ## Required files for the notebook
 
 The notebook `notebooks/pantheon/pantheon_environment_h0_test.ipynb` refuses to run the primary fit unless all of the following are available:
@@ -38,7 +54,7 @@ data/pantheon/raw/Pantheon+SH0ES.dat
 data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov
 ```
 
-and record byte sizes plus SHA-256 checksums in this README.
+and record byte sizes plus SHA-256 checksums in this README or in a separate provenance note.
 
 ## Environment labels from SDSS void + filament catalogs
 
@@ -83,7 +99,6 @@ A root upload named `Pantheon_SH0ES_cov.txt.gz` was inspected on 2026-06-08:
 
 Because this appears to be a full public-data covariance artifact and redistribution terms were not verified during cleanup, it is classified as **EXTERNAL/DOCUMENTED** rather than committed as canonical data. If redistribution is cleared and the project wants it in-repo, use Git LFS or a documented data-release workflow before adding `data/pantheon/Pantheon_SH0ES_cov.txt.gz` or `data/pantheon/raw/Pantheon+SH0ES_STAT+SYS.cov`.
 
-
 ## 2026-06-14 generation attempt
 
 A local validation pass confirmed that the combined generator script is present on the current branch and that syntax/help smoke checks pass. The required user-provided raw/staged files were not present anywhere discoverable in the container, so `data/pantheon/environment_labels.csv` was **not generated or committed** in this pass. The raw input directories were created locally as ignored staging locations only:
@@ -105,7 +120,6 @@ data/pantheon/external/J_MNRAS_438_3465/table2.dat.gz
 ## 2026-06-19 generation attempt
 
 A follow-up local pass again found that the required raw Pantheon+ table/covariance and extracted external SDSS void + Tempel/Bisous filament catalogs were absent. The expected uploaded/source filenames were also not discoverable under `/workspace`, so the raw inputs could not be staged automatically. Syntax validation passed, and the documented generator exited with an input error before creating any partial output. Consequently, `data/pantheon/environment_labels.csv` remains **not generated and not committed** in this pass. See `data/pantheon/environment_labels_summary.md` for the command record and claim boundary.
-
 
 ## 2026-06-30 generated derived-artifact import
 

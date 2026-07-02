@@ -17,6 +17,13 @@ python papers/p1-age-dependent-rotation-curves-sparc/analysis/sparc_age_fdm_anal
 | `SPARC_age_fdm_regression_models.csv` | regenerated | OLS age-coefficient table across control models. Full structural-control model `fdm ~ age_best + logVmax + logRmax + logSB0` attenuates the age coefficient to `p_age ≈ 0.162`. |
 | `SPARC_age_fdm_binned_bootstrap.csv` | regenerated | Mass-bin bootstrap results for lowV, midV, and highV bins. |
 
+## Imported bootstrap files
+
+| File | Status | Notes |
+|---|---|---|
+| `bootstrap_results.csv` | canonical imported bootstrap table | Keep this as the canonical file for the uploaded four-bin bootstrap table. |
+| `bootstrap_results_import_test.csv` | deprecated duplicate | Temporary import-test copy. Do not cite or use for manuscripts. Remove later if deletion permissions/tooling allow. |
+
 ## Binary-artifact boundary
 
 The analysis script also generates:

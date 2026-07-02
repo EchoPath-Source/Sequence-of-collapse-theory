@@ -3,6 +3,11 @@
 
 This is a pipeline/reproducibility run, not a final cosmology analysis. Raw
 Pantheon+ source inputs remain external/ignored by repository policy.
+
+The preferred raw-input locations are under data/pantheon/raw/. For compatibility
+with manual GitHub uploads and root-level staging, this runner also accepts the
+root-level Pantheon+SH0ES.dat.txt file and the root-level covariance ZIP when the
+canonical raw paths are absent.
 """
 from __future__ import annotations
 
@@ -10,6 +15,7 @@ from pathlib import Path
 import gzip
 import math
 import sys
+import zipfile
 import numpy as np
 import pandas as pd
 
@@ -26,12 +32,18 @@ CLAIM_BOUNDARY = (
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data" / "pantheon"
 RAW_SN_TABLE = DATA_DIR / "raw" / "Pantheon+SH0ES.dat"
+SN_TABLE_CANDIDATES = [
+    RAW_SN_TABLE,
+    REPO_ROOT / "Pantheon+SH0ES.dat",
+    REPO_ROOT / "Pantheon+SH0ES.dat.txt",
+]
 ENV_TABLE = DATA_DIR / "environment_labels.csv"
 COVARIANCE_CANDIDATES = [
     DATA_DIR / "Pantheon_SH0ES_cov.txt.gz",
     DATA_DIR / "raw" / "Pantheon+SH0ES_STAT+SYS.cov",
     DATA_DIR / "pantheon_covariance.txt",
     DATA_DIR / "Pantheon_cov_subset.txt",
+    REPO_ROOT / "Pantheon_SH0ES_STAT_SYS_cov.zip",
 ]
 RESULT_DIR = REPO_ROOT / "observations" / "pantheon-environment-h0" / "results"
 
@@ -55,6 +67,13 @@ GROUPINGS = [
 ]
 
 
+def rel(path: Path) -> str:
+    try:
+        return str(path.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
+
+
 def write_summary(status: str, lines: list[str]) -> None:
     RESULT_DIR.mkdir(parents=True, exist_ok=True)
     text = ["# Pantheon+ environment-H0 covariance-aware run summary", "", f"**Status:** {status}", ""]
@@ -63,14 +82,33 @@ def write_summary(status: str, lines: list[str]) -> None:
     (RESULT_DIR / "pantheon_environment_h0_run_summary.md").write_text("\n".join(text), encoding="utf-8")
 
 
+def find_sn_table() -> Path | None:
+    return next((p for p in SN_TABLE_CANDIDATES if p.exists()), None)
+
+
 def find_covariance() -> Path | None:
     return next((p for p in COVARIANCE_CANDIDATES if p.exists()), None)
 
 
+def _load_numeric_values_from_zip(path: Path) -> np.ndarray:
+    with zipfile.ZipFile(path) as zf:
+        members = [name for name in zf.namelist() if not name.endswith("/")]
+        if not members:
+            raise ValueError(f"Covariance zip {path} has no file members")
+        preferred = [name for name in members if name.endswith(".cov") or name.endswith(".txt")]
+        member = preferred[0] if preferred else members[0]
+        with zf.open(member) as fh:
+            text = fh.read().decode("utf-8")
+    return np.fromiter((float(tok) for tok in text.split()), dtype=float)
+
+
 def load_covariance(path: Path) -> np.ndarray:
-    opener = gzip.open if path.suffix == ".gz" else open
-    with opener(path, "rt", encoding="utf-8") as fh:
-        values = np.fromiter((float(tok) for line in fh for tok in line.split()), dtype=float)
+    if path.suffix == ".zip":
+        values = _load_numeric_values_from_zip(path)
+    else:
+        opener = gzip.open if path.suffix == ".gz" else open
+        with opener(path, "rt", encoding="utf-8") as fh:
+            values = np.fromiter((float(tok) for line in fh for tok in line.split()), dtype=float)
     if values.size < 2:
         raise ValueError(f"Covariance file {path} is empty or malformed")
     n = int(values[0])
@@ -80,25 +118,26 @@ def load_covariance(path: Path) -> np.ndarray:
     return entries.reshape((n, n))
 
 
-def load_inputs() -> tuple[pd.DataFrame, pd.DataFrame, np.ndarray, Path] | None:
+def load_inputs() -> tuple[pd.DataFrame, pd.DataFrame, np.ndarray, Path, Path] | None:
     missing = []
-    if not RAW_SN_TABLE.exists():
-        missing.append(str(RAW_SN_TABLE.relative_to(REPO_ROOT)))
+    sn_path = find_sn_table()
+    if sn_path is None:
+        missing.append("one Pantheon+ SN table candidate: " + ", ".join(rel(p) for p in SN_TABLE_CANDIDATES))
     if not ENV_TABLE.exists():
-        missing.append(str(ENV_TABLE.relative_to(REPO_ROOT)))
+        missing.append(rel(ENV_TABLE))
     cov_path = find_covariance()
     if cov_path is None:
-        missing.append("one covariance candidate: " + ", ".join(str(p.relative_to(REPO_ROOT)) for p in COVARIANCE_CANDIDATES))
+        missing.append("one covariance candidate: " + ", ".join(rel(p) for p in COVARIANCE_CANDIDATES))
     if missing:
         write_summary("BLOCKED_MISSING_INPUTS", ["## Missing inputs", "", *[f"- `{m}`" for m in missing]])
         print("BLOCKED_MISSING_INPUTS")
         for m in missing:
             print(f"missing: {m}")
         return None
-    sn = pd.read_csv(RAW_SN_TABLE, delim_whitespace=True, comment="#")
+    sn = pd.read_csv(sn_path, delim_whitespace=True, comment="#")
     env = pd.read_csv(ENV_TABLE)
     cov = load_covariance(cov_path)
-    return sn, env, cov, cov_path
+    return sn, env, cov, cov_path, sn_path
 
 
 def normalize_and_join(sn: pd.DataFrame, env: pd.DataFrame, cov: np.ndarray) -> pd.DataFrame:
@@ -165,12 +204,14 @@ def main() -> int:
     loaded = load_inputs()
     if loaded is None:
         return 0
-    sn, env, cov, cov_path = loaded
+    sn, env, cov, cov_path, sn_path = loaded
     joined = normalize_and_join(sn, env, cov)
     cut = joined[(joined["z"] >= PRIMARY_Z_MIN) & (joined["z"] <= PRIMARY_Z_MAX)].copy()
     print(f"Pantheon row count = {len(sn)}")
     print(f"Environment label row count = {len(env)}")
     print(f"Covariance shape = {cov.shape}")
+    print(f"SN table path = {rel(sn_path)}")
+    print(f"Covariance path = {rel(cov_path)}")
     print("Row-order safety passes")
     print("Group counts after redshift cut:")
     print(cut["environment"].value_counts(dropna=False).to_string())
@@ -197,8 +238,8 @@ def main() -> int:
     pd.DataFrame(fit_rows).to_csv(RESULT_DIR / "pantheon_environment_h0_fit_by_group.csv", index=False)
     pd.DataFrame(contrast_rows).to_csv(RESULT_DIR / "pantheon_environment_h0_contrast_results.csv", index=False)
     write_summary("COMPLETED_DIAGNOSTIC_RUN", [
-        f"- Raw Pantheon+ table: `{RAW_SN_TABLE.relative_to(REPO_ROOT)}`",
-        f"- Covariance path: `{cov_path.relative_to(REPO_ROOT)}`",
+        f"- Raw Pantheon+ table: `{rel(sn_path)}`",
+        f"- Covariance path: `{rel(cov_path)}`",
         f"- Pantheon row count: {len(sn)}",
         f"- Environment label row count: {len(env)}",
         f"- Covariance shape: {cov.shape}",

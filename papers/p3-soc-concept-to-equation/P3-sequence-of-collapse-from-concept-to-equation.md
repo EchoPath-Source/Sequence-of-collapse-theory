@@ -10,7 +10,7 @@
 
 ## Abstract
 
-The Sequence of Collapse (SOC) framework proposes that reality unfolds through two nested collapse processes. The first is an environment- and light-linked decoherence process that gives structure to physical systems. The second is a localized observer-linked process that may modulate how decohered possibilities are integrated into stable outcomes or experienced continuity. This paper presents a minimal mathematical formulation for that second contribution using a consciousness- or information-coherence-gated dephasing term added to standard open-system evolution. The purpose of this formulation is not to claim that SOC has already been empirically verified, but to define a narrow, testable extension that can be constrained or falsified in laboratory settings. A Mach–Zehnder interferometer is proposed as the clearest table-top probe, and a longer-term cosmological memory interpretation is presented explicitly as a speculative extension rather than a load-bearing empirical claim.
+The Sequence of Collapse (SOC) framework proposes a two-stage interpretation of physical and observer-linked collapse processes. In this framing, ordinary environment- and light-linked decoherence gives structure to physical systems, while a second observer-linked contribution may modulate how rapidly decohered possibilities are driven toward stable outcomes or experienced continuity. This paper presents a minimal mathematical formulation for that second contribution using a bounded dephasing term added to standard open-system evolution. The aim is not to claim that SOC has already been empirically established, but to define a narrow phenomenological extension that can be tested, constrained, or falsified in laboratory settings. A Mach–Zehnder interferometer is identified as the clearest table-top probe. A broader cosmological-memory interpretation is retained only as a speculative extension and not as a load-bearing empirical claim.
 
 ---
 
@@ -170,9 +170,23 @@ Only after obtaining laboratory bounds, ask whether any collapse-memory correcti
 
 ---
 
-## 8. Scientific implications
+## 8. Limitations and scope
 
-If the model fails experimentally, then the consciousness-linked rate term should be reduced, reformulated, or abandoned. That would still be a meaningful result.
+Several limitations should be stated explicitly.
+
+1. The present formulation is **phenomenological**, not a first-principles derivation.
+2. The operational variable `A(x,t)` remains theory-sensitive and must be defined in preregistered, measurable terms before confirmatory testing.
+3. The present paper does not establish that consciousness is uniquely required; synthetic or information-theoretic alternatives remain live possibilities.
+4. The cosmological-memory discussion is heuristic and should not be interpreted as an established result.
+5. Positive simulation behavior is useful for design and falsification planning, but it is not empirical evidence.
+
+These limitations are not weaknesses to hide; they define the correct boundary of the claim.
+
+---
+
+## 9. Scientific implications
+
+If the model fails experimentally, then the observer-linked rate term should be reduced, reformulated, or abandoned. That would still be a meaningful result.
 
 If the model survives initial testing, then it would suggest that observer-linked or information-coherence structure can enter effective open-system dynamics without violating standard ensemble predictions.
 
@@ -180,7 +194,7 @@ Either way, the scientific value lies in turning a qualitative intuition into a 
 
 ---
 
-## 9. Claim boundary
+## 10. Claim boundary
 
 Use:
 
@@ -194,11 +208,11 @@ That stronger statement is not warranted by the present formulation.
 
 ---
 
-## 10. Conclusion
+## 11. Conclusion
 
 The Sequence of Collapse began as a conceptual attempt to connect light, consciousness, and structure. Its scientific future depends on whether that intuition can be written as a narrow, measurable, rejectable model.
 
-The consciousness-coupled dephasing form proposed here is one such model. It is valuable not because it confirms SOC in advance, but because it creates a clear path for measurement, constraint, and possible falsification.
+The observer-linked dephasing form proposed here is one such model. Its value lies in making the program testable: the coupling can be constrained, the signatures can be searched for, and the framework can be revised or rejected if the predicted effects do not appear.
 
 That is the standard by which it should be judged.
 
@@ -209,6 +223,7 @@ That is the standard by which it should be judged.
 This cleaned draft is intended to function as the canonical repo-safe paper import for P3. It should be read alongside:
 
 - `papers/math/soc-localization-memory-hamiltonian.md`
+- `papers/math/cce-master-equation-note.md`
 - `docs/equations-and-testable-hypotheses.md`
 - `papers/p4-soc-mzi-awareness-modulated-decoherence/SOC-MZI-01-preregistration.md`
 

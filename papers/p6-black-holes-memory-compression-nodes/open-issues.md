@@ -9,16 +9,36 @@ This file does not weaken or strengthen the P6 hypothesis. It records the curren
 
 Use:
 
-> The P6 material is a speculative theory-development package connecting causal inversion, parent-child cosmology, Kerr-axis inheritance, and black-hole information transfer. It defines possible mechanisms and falsifiable follow-up tests, but it is not an established physical result.
+> The P6 material is a speculative theory-development package connecting causal inversion, parent-child cosmology, Kerr-axis inheritance, compression-as-hidden-degree framing, and black-hole information transfer. It defines possible mechanisms and falsifiable follow-up tests, but it is not an established physical result.
 
 Avoid:
 
-> P6 proves that black holes create universes, proves parent-universe memory transfer, or explains the CMB Axis of Evil.
+> P6 proves that black holes create universes, proves parent-universe memory transfer, proves hidden dimensions, or explains the CMB Axis of Evil.
+
+## Compression framing added in this pass
+
+The current working insight is:
+
+```text
+From below, higher-dimensional transition appears as compression.
+From above, the same process appears as unification.
+```
+
+This belongs in P6 only as a bounded conceptual bridge unless it is later formalized. The paper must distinguish ordinary 3D contraction from frame compression, information compression, memory-density accumulation, and boundary encoding.
+
+Cross-link:
+
+```text
+docs/concepts/compression-as-hidden-degree-of-freedom.md
+```
 
 ## Priority open issues
 
 | Issue | Status | Why it matters | Needed resolution |
 |---|---|---|---|
+| Compression: mechanism, analogy, or ontology? | OPEN | The new compression insight is powerful but can be overread. | Decide whether compression is public metaphor, mathematical analogy, hidden variable, or candidate physical mechanism. |
+| Compression versus ordinary contraction | OPEN | P6 must avoid equating frame compression with simple spatial squeezing. | Define compression as information density, collapse-history accumulation, memory-field density, boundary encoding, or dimensional projection. |
+| Throughness / hidden degree of freedom | OPEN | The 3D-to-higher-frame analogy suggests an unseen direction that may feel like throughness or compression-through-frame. | Decide whether this belongs in P6 main text, P7, or an appendix. |
 | Parent-mass discrepancy | OPEN | Source documents appear to use inconsistent parent-mass estimates across Kerr/CMB and Engramon-scale arguments. | Create a single parameter ledger showing each estimate, assumptions, units, and whether it is illustrative, fitted, or derived. |
 | Preferred-axis derivation gap | OPEN | The Kerr-to-Cosmos track needs more than post-hoc alignment language; it needs a clear mathematical map from parent orientation to child CMB/statistical anisotropy. | Derive or explicitly bracket the axis-transfer mechanism; define what would falsify it. |
 | `A = f_Omega` / `A = a/(2 r_plus)` mapping | OPEN | The linear mapping from parent spin to hemispherical asymmetry is central but currently should be treated as an ansatz unless fully derived. | Add a derivation note or relabel as a phenomenological parameterization. |
@@ -36,7 +56,8 @@ Avoid:
 2. Claim-boundary section separating analogy, ansatz, toy calculation, and formal derivation.
 3. Open issue resolutions or explicit manuscript caveats for every item above.
 4. A proposed falsification table for CMB-axis, parity, low-quadrupole, or parent-spin predictions.
-5. Cross-links to source documents in `papers/p6-black-holes-memory-compression-nodes/source/` and any older CIH support folders.
+5. Cross-links to source documents in `papers/p6-black-holes-memory-compression-nodes/source/`, the compression degree concept note, and any older CIH support folders.
+6. A standard-physics / SoCT-interpretation / speculative-extension table.
 
 ## Suggested file outputs
 
@@ -49,4 +70,4 @@ papers/p6-black-holes-memory-compression-nodes/working-draft-v0-1.md
 
 ## Current recommendation
 
-Keep P6 as a theory-development package until the parent-mass discrepancy, axis-transfer mechanism, and spin-asymmetry mapping are resolved or explicitly scoped as phenomenological assumptions.
+Keep P6 as a theory-development package until the parent-mass discrepancy, axis-transfer mechanism, spin-asymmetry mapping, and compression-degree framing are resolved or explicitly scoped as phenomenological assumptions.

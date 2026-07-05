@@ -14,7 +14,7 @@ Roadmap target: **Nature Physics / PRL Registered Report path**.
 
 This is the canonical P4 folder from the March 2026 SOC Publication Roadmap.
 
-P4 is the direct experimental test of consciousness-coupled decoherence. The roadmap states that the pre-registration is complete, rigorous, and adversarially designed, and that the next step is lab collaboration with a single-photon Mach-Zehnder interferometer setup.
+P4 is the direct experimental test of an observer-linked decoherence-rate extension. The current repository version is written so that the equation layer, protocol logic, falsifiers, and collaboration ask can be reviewed without overstating what has been established.
 
 ## Core experimental claim
 
@@ -28,17 +28,13 @@ Primary repo-facing protocol file:
 papers/p4-soc-mzi-awareness-modulated-decoherence/SOC-MZI-01-preregistration.md
 ```
 
-This file is the current repository-publication version of the preregistration draft. It is written for scientist-facing review and keeps claim boundaries explicit.
-
-Canonical P4 simulation package:
+Protocol appendices and collaboration materials:
 
 ```text
-papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/README.md
-papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py
-papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/README.md
-papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/main_effect.csv
-papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/timing_asymmetry.csv
-papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/results/dose_response.csv
+papers/p4-soc-mzi-awareness-modulated-decoherence/materials-and-measures.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/statistical-analysis-plan.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/lab-collaboration-brief.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/osf-export-checklist.md
 ```
 
 Legacy/imported simulation-support files:
@@ -49,19 +45,14 @@ simulations/mzi-visibility-decay/SOC MZI Visibility Decay Simulation.py
 simulations/mzi-visibility-decay/source-code-notes.md
 experiments/quantum/mach-zehnder-consciousness-test.md
 papers/math/soc-localization-memory-hamiltonian.md
+papers/math/cce-master-equation-note.md
 ```
 
 ## Current simulation status
 
-The canonical paper-local simulation script is now runnable from the repo root:
+The repo now contains a runnable visibility-decay simulation scaffold and related planning artifacts.
 
-```bash
-python papers/p4-soc-mzi-awareness-modulated-decoherence/simulations/soc_mzi_visibility_decay_simulation.py
-```
-
-The committed simulation outputs are CSV tables only. Generated PNGs are intentionally not committed; they can be regenerated locally from the script when needed for figures or review packets.
-
-This simulation layer is useful for expected-signature planning, falsification scaffolding, and Registered Report preparation. It is not empirical evidence and does not establish an awareness-modulated decoherence effect.
+This simulation layer is useful for expected-signature planning, falsification scaffolding, and Registered Report preparation. It is **not** empirical evidence and does not establish an awareness-modulated decoherence effect.
 
 ## Roadmap strengths
 
@@ -85,30 +76,21 @@ Roadmap interpretation:
 Now present in repo form:
 
 - repo-ready preregistration draft;
+- materials and measures appendix;
+- statistical analysis appendix;
+- lab collaboration brief;
+- OSF export checklist;
 - MZI model summary;
-- canonical runnable simulation script in the P4 paper folder;
-- committed simulation CSV outputs for main effect, timing asymmetry, and dose response;
-- result README documenting seed, output files, generated-but-uncommitted PNGs, and claim boundary;
-- legacy/imported simulation-support path;
+- runnable simulation support script in the public repo;
+- source-code note documenting claim boundaries and code status;
 - experiment scaffold in `experiments/quantum/`.
 
 Still pending or needing refinement:
 
 - complete OSF export if available;
-- appendices split into dedicated materials / measures / statistics files;
 - AI observer control-arm implementation package;
-- notebook-grade reproducibility layer around the runnable simulation script;
-- lab collaboration packet.
-
-## Required source import
-
-Still useful from user/source archive if available:
-
-- full OSF pre-registration export;
-- appendices;
-- AI observer control arm description;
-- Medium protocol article export;
-- lab collaboration package.
+- notebook-grade reproducibility layer around the simulation script;
+- final apparatus-specific procurement or build sheet if a lab partnership is formed.
 
 ## Relationship to earlier scaffold
 
@@ -132,19 +114,18 @@ Verify or update OSF project:
 SOC-MZI-01: Pre-Registration Protocol
 ```
 
-Upload:
+Export or upload:
 
 - full protocol document;
 - all appendices;
-- AI observer control arm;
+- AI observer control arm if ready;
 - pre-registration form export;
-- lab collaboration package;
-- simulation CSV outputs and source script as planning/falsification support.
+- lab collaboration packet;
+- simulation support materials labeled as planning / falsification support only.
 
 ## Next recommended cleanup
 
-1. Add a dedicated `materials-and-measures` appendix.
-2. Add a dedicated `statistical-analysis-plan` appendix.
-3. Add a notebook-grade reproducibility layer for the current runnable simulation script.
-4. Cross-link P4 more explicitly to the canonical equation layer in `papers/math/`.
-5. Keep all P4 wording constrained to equation testing and falsification, not theory confirmation.
+1. Add a notebook-grade reproducibility layer for the current runnable simulation script.
+2. Add a dedicated AI observer control-arm note if that branch becomes public-ready.
+3. Cross-link any future lab procurement packet once a real experimental partner is secured.
+4. Keep all P4 wording constrained to equation testing and falsification, not theory confirmation.

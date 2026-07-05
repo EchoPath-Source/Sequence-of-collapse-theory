@@ -8,7 +8,7 @@
 
 ## 1. Role of this appendix
 
-This appendix is not yet a final journal-style bibliography. Its role is to identify the source families that informed the present P3 framing and to mark which references should be formalized in a later submission package.
+This appendix is not yet a final journal-style bibliography, but it now records concrete reference candidates that can anchor the cleaned P3 paper and the related P4 experiment track.
 
 It should be read alongside:
 
@@ -30,53 +30,79 @@ The present P3 draft is primarily derived from:
 
 ---
 
-## 3. External reference categories to formalize
+## 3. External reference candidates
 
-A future journal-ready bibliography should likely include four categories.
+The following references are good candidates for the first formal bibliography pass.
 
 ### A. Open quantum systems and Lindblad dynamics
 
-Needed because the P3 paper uses a phenomenological dephasing extension built on density-matrix evolution.
+1. **G. Lindblad (1976)**  
+   *On the generators of quantum dynamical semigroups.*  
+   Communications in Mathematical Physics, 48, 119–130.
 
-Examples to formalize later:
+2. **H.-P. Breuer and F. Petruccione (2002)**  
+   *The Theory of Open Quantum Systems.*  
+   Oxford University Press.
 
-- standard open quantum systems texts,
-- Lindblad master-equation references,
-- decoherence and pointer-basis references.
+3. **W. H. Zurek (1981, 1982, 2003)**  
+   Foundational decoherence / pointer-basis papers and reviews.  
+   Useful for anchoring the environment-driven part of the SOC framing.
+
+4. **M. Schlosshauer (2007)**  
+   *Decoherence and the Quantum-To-Classical Transition.*  
+   Springer.
 
 ### B. Quantum measurement and interpretation background
 
-Needed because P3 positions itself relative to long-standing measurement-problem debates.
+5. **J. von Neumann (1932)**  
+   *Mathematische Grundlagen der Quantenmechanik.*  
+   Classical reference for the quantum measurement framework.
 
-Examples to formalize later:
+6. **E. P. Wigner (1961)**  
+   *Remarks on the Mind-Body Question.*  
+   In *The Scientist Speculates*.
 
-- von Neumann / Wigner-style consciousness-linked measurement discussions,
-- modern measurement-problem reviews,
-- no-signaling and ensemble-consistency references.
+7. **J. A. Wheeler and W. H. Zurek, eds. (1983)**  
+   *Quantum Theory and Measurement.*  
+   Princeton University Press.
 
-### C. Quantum optics / interferometry
+These references should be used as background and comparison literature, not as if they already validate the SOC hypothesis.
 
-Needed because P4 and the MZI path are the direct table-top test route.
+### C. Quantum optics / interferometry / which-path context
 
-Examples to formalize later:
+8. **B.-G. Englert (1996)**  
+   *Fringe Visibility and Which-Way Information: An Inequality.*  
+   Physical Review Letters, 77, 2154–2157.
 
-- Mach-Zehnder interferometer foundations,
-- single-photon visibility and decoherence studies,
-- delayed-choice and which-path experimental reviews.
+9. **M. O. Scully and K. Drühl (1982)**  
+   *Quantum eraser: A proposed photon correlation experiment concerning observation and “delayed choice” in quantum mechanics.*  
+   Physical Review A, 25, 2208–2213.
+
+10. **V. Jacques et al. (2007)**  
+   *Experimental realization of Wheeler’s delayed-choice GedankenExperiment.*  
+   Science, 315, 966–968.
+
+11. **R. Ionicioiu and D. R. Terno (2011)**  
+   *Proposal for a quantum delayed-choice experiment.*  
+   Physical Review Letters, 107, 230406.
+
+These references help situate P4 relative to standard interferometric and which-path logic.
 
 ### D. Cosmological constraint context
 
-Needed only for disciplined framing of the speculative macro-scale extension.
+12. **F. Lelli, S. S. McGaugh, and J. M. Schombert (2016)**  
+   *SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves.*  
+   Astronomical Journal, 152, 157.
 
-Examples to formalize later:
+13. **D. Brout et al. (2022)**  
+   *The Pantheon+ Analysis: Cosmological Constraints.*  
+   Astrophysical Journal, 938, 110.
 
-- galaxy rotation / SPARC context,
-- lensing and dark-sector phenomenology references,
-- Pantheon+ or related expansion-dataset references.
+14. Additional lensing / large-scale-structure references should be added later if the cosmological-memory discussion remains in the manuscript.
 
 Important boundary:
 
-These references should constrain the cosmology discussion, not be used to imply that P3 has already established a cosmological result.
+These cosmology references should constrain the speculative macro-scale language, not be used to imply that P3 has already established a cosmological result.
 
 ---
 
@@ -96,9 +122,8 @@ Before an arXiv or journal submission, the following should be completed:
 
 1. convert this note into a true references section,
 2. add citation anchors inside the cleaned P3 paper,
-3. attach at least a minimal derivation note for the Lindblad-style extension,
-4. ensure P3 and P4 cite each other consistently,
-5. keep all reference use aligned with the repo’s claim-boundary discipline.
+3. ensure P3 and P4 cite each other consistently,
+4. keep all reference use aligned with the repo’s claim-boundary discipline.
 
 ---
 

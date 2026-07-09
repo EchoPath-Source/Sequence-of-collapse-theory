@@ -200,6 +200,22 @@ Use instead:
 
 ---
 
+## Product Translation Boundary
+
+This literature note can support architecture inspiration and claim calibration, but it does not certify product claims.
+
+Before any SoCT/PNT concept appears in EchoGenesis, EchoPath, Vision Codex, or public product language, route it through:
+
+```text
+docs/research_to_product_handoff.md
+docs/claim_boundaries_for_products.md
+docs/reproducibility_checklist.md
+```
+
+Product-safe terms may include adaptive memory, spatial memory, field-inspired routing, topology-aware diagnostics, or persistence when the product implements those features. Do not use literature adjacency to claim proven new physics, consciousness-driven collapse, dark-sector replacement, or experimentally confirmed memory fields.
+
+---
+
 ## Repo Use
 
 This note should support:
@@ -208,4 +224,5 @@ This note should support:
 - literature positioning sections,
 - collaborator onboarding,
 - referee-safe claim calibration,
-- future bibliography expansion with DOI/arXiv metadata.
+- future bibliography expansion with DOI/arXiv metadata,
+- research-to-product boundary review before public translation.

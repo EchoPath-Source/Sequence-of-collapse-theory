@@ -129,6 +129,12 @@ Related file:
 papers/pnt-dark-energy-hubble-window/void-filament-h0-mechanism.md
 ```
 
+Pantheon import status:
+
+```text
+data/PANTHEON_IMPORT_STATUS.md
+```
+
 ---
 
 ## What Must Not Be Conflated
@@ -141,6 +147,7 @@ collapse memory ≠ prompt exhaust
 late memory residue ≠ EDE transient
 parent-child inheritance ≠ local SPARC signal
 metaphysical Source/Echo/Origin ≠ empirical cosmology
+research taxonomy ≠ product claim
 ```
 
 Each branch requires its own equations, datasets, and falsification conditions.
@@ -171,6 +178,19 @@ Each branch requires its own equations, datasets, and falsification conditions.
 
 ---
 
+## Product Boundary
+
+Product repositories may use engineering language such as adaptive memory, field-inspired routing, topology-aware diagnostics, or persistence only after the relevant concept is translated through:
+
+```text
+docs/research_to_product_handoff.md
+docs/claim_boundaries_for_products.md
+```
+
+Do not translate this taxonomy into product claims that say dark matter is replaced, dark energy is solved, physical memory fields are verified, or SoCT has been experimentally confirmed.
+
+---
+
 ## Repo-Safe Summary
 
 Use:
@@ -190,3 +210,4 @@ Avoid:
 3. Define a parameter ledger for shared quantities.
 4. Add a falsifiability table to `PREDICTIONS.md`.
 5. Keep metaphysical claims out of empirical taxonomy unless clearly labeled.
+6. Keep product translations routed through the claim-boundary docs.

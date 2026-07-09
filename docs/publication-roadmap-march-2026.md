@@ -40,12 +40,35 @@ papers/p6-black-holes-memory-compression-nodes/
 papers/p7-unified-framework/
 ```
 
+## Reproducibility and claim-boundary layer
+
+The roadmap now uses the repository-wide reproducibility and claim-boundary docs:
+
+```text
+docs/reproducibility_checklist.md
+docs/research_to_product_handoff.md
+docs/claim_boundaries_for_products.md
+```
+
+Track-specific status docs:
+
+```text
+data/SPARC_IMPORT_STATUS.md
+data/PANTHEON_IMPORT_STATUS.md
+papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
+```
+
 ## Content needed for actual publication drafts
 
-- P1: SPARC analysis outputs, statistical tables, plots, confidence intervals, notebooks, or screenshots.
+- P1: SPARC analysis outputs, statistical tables, plots, confidence intervals, notebooks, or screenshots. Status tracked in `data/SPARC_IMPORT_STATUS.md` and `papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md`.
 - P2: Medium article export or full text from Feb 9 2026.
 - P3: Medium article export or full text from Oct 23 2025.
-- P4: complete SOC-MZI-01 preregistration protocol with appendices and AI observer control arm.
-- P5: preregistered void-vs-filament / H0 environment analysis plan and any preliminary notes.
+- P4: complete SOC-MZI-01 preregistration protocol with appendices and AI observer control arm. Status tracked in `papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md`.
+- P5: preregistered void-vs-filament / H0 environment analysis plan and any preliminary notes. Pantheon import status tracked in `data/PANTHEON_IMPORT_STATUS.md`.
 - P6: black-hole memory compression notes, Kerr-to-Cosmos materials, causal inversion support, CMB-correlation plan.
 - P7: unified framework document and final synthesis after P1-P6 mature.
+
+## Product boundary
+
+This roadmap is a research and publication roadmap. It does not define EchoPath Memory Layer product claims, EchoGenesis architecture contracts, or private kernel internals. Product-facing translations must go through the research-to-product handoff and claim-boundary docs before use.

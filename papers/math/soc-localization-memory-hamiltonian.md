@@ -145,6 +145,36 @@ papers/pnt-dark-energy-hubble-window/
 simulations/parent-child-transfer/
 ```
 
+Related reproducibility and claim-boundary docs:
+
+```text
+docs/reproducibility_checklist.md
+docs/research_to_product_handoff.md
+docs/claim_boundaries_for_products.md
+data/SPARC_IMPORT_STATUS.md
+data/PANTHEON_IMPORT_STATUS.md
+papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
+papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
+```
+
+---
+
+## Product Translation Boundary
+
+This Hamiltonian may inspire product-safe engineering primitives only after translation through the claim-boundary filter.
+
+Allowed product-safe translations include:
+
+- adaptive memory,
+- spatial memory,
+- event persistence,
+- field-inspired routing,
+- threshold-driven response,
+- topology-aware diagnostics,
+- replay-derived tuning.
+
+Do not use this Hamiltonian to claim that a product proves new physics, detects physical memory fields, validates consciousness-driven collapse, replaces dark matter, or certifies quantum/neuromorphic hardware.
+
 ---
 
 ## Claim Boundary
@@ -166,3 +196,4 @@ Avoid:
 3. Map `lambda_c` to MZI visibility/decoherence experiments.
 4. Derive conservation or continuity conditions for `M`.
 5. Connect memory-kernel form to the Engramon scale and PNT substrate.
+6. Keep any product translation routed through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md`.

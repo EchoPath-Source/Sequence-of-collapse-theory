@@ -21,6 +21,33 @@ This repo is intended to become the central home for:
 - OSF-linked preregistrations and study drafts
 - future datasets, notebooks, figures, and publication-ready papers
 
+## Research-to-product boundary
+
+SoCT provides theoretical primitives, empirical hypotheses, experimental proposals, mathematical scaffolds, and publication tracks that may inspire EchoGenesis architecture and EchoPath research directions. SoCT does not directly certify product claims.
+
+Any product-facing use of SoCT concepts must pass through a claim-boundary filter, reproducibility review, and architecture handoff before appearing in public marketing or product documentation.
+
+Canonical boundary docs:
+
+```text
+docs/research_to_product_handoff.md
+docs/claim_boundaries_for_products.md
+docs/reproducibility_checklist.md
+```
+
+Product-safe translation principle:
+
+```text
+SoCT research source
+  -> reproducibility status
+  -> claim boundary
+  -> EchoGenesis architecture handoff
+  -> product-safe translation
+  -> Vision Codex positioning
+```
+
+Product repos may use engineering terms like adaptive memory, spatial memory, field-inspired routing, persistence, replay-derived tuning, and topology-aware diagnostics when those features are actually implemented. They should not claim proven new physics, consciousness-driven collapse, dark matter replacement, or experimentally confirmed memory fields unless the corresponding empirical track has been reproduced and documented.
+
 ## Canonical publication roadmap
 
 The repository is now aligned to the March 2026 **SOC Publication Roadmap**, which defines a seven-paper publication sequence:
@@ -85,6 +112,13 @@ papers/p1-age-dependent-rotation-curves-sparc/
 
 Roadmap status: data in hand / write now.
 
+Reproducibility/status docs:
+
+```text
+data/SPARC_IMPORT_STATUS.md
+papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
+```
+
 Support folder:
 
 ```text
@@ -121,6 +155,12 @@ papers/p4-soc-mzi-awareness-modulated-decoherence/
 
 Roadmap status: pre-registered on OSF / full protocol import needed.
 
+Experiment status:
+
+```text
+papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
+```
+
 Support folder:
 
 ```text
@@ -134,6 +174,12 @@ papers/p5-hubble-tension-memory-gradient/
 ```
 
 Roadmap status: outlined / write after P1.
+
+Pantheon import/status doc:
+
+```text
+data/PANTHEON_IMPORT_STATUS.md
+```
 
 Support package:
 
@@ -253,13 +299,18 @@ Sequence-of-collapse-theory/
 │  ├─ book-of-collapse-article-map.md
 │  ├─ dark-sector-taxonomy.md
 │  ├─ canonical-parameter-ledger.md
-│  └─ empirical-exploration-thread-summary-v0-1.md
+│  ├─ empirical-exploration-thread-summary-v0-1.md
+│  ├─ research_to_product_handoff.md
+│  ├─ claim_boundaries_for_products.md
+│  └─ reproducibility_checklist.md
 ├─ experiments/
 ├─ simulations/
 │  └─ parent-child-transfer/
 ├─ references/
 ├─ osf/
 ├─ data/
+│  ├─ SPARC_IMPORT_STATUS.md
+│  └─ PANTHEON_IMPORT_STATUS.md
 ├─ notebooks/
 ├─ figures/
 └─ papers/
@@ -290,11 +341,14 @@ These now function as support packages for the canonical P1, P5, P6, P4, and P7 
 
 ## Immediate import needs
 
+Tracked import/status docs now preserve the immediate needs:
+
 1. P2 Medium article export / full text.
 2. P3 Medium article export / full text.
-3. P4 full SOC-MZI-01 preregistration protocol and appendices.
-4. P1 SPARC analysis outputs, tables, plots, code, and confidence intervals.
+3. P4 full SOC-MZI-01 preregistration protocol and appendices — see `papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md`.
+4. P1 SPARC analysis outputs, tables, plots, code, and confidence intervals — see `data/SPARC_IMPORT_STATUS.md` and `papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md`.
 5. SOC Research Agenda export if the OSF agenda project is preserved.
+6. Pantheon+ SN table, covariance, and environment-label imports for P5 — see `data/PANTHEON_IMPORT_STATUS.md`.
 
 ## Status
 

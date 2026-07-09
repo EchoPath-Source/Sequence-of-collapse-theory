@@ -22,7 +22,18 @@ figures/ or figure-notes.md
 results/ or calculation-notes.md
 references.md
 status.md
+REPRODUCIBILITY.md or EXPERIMENT_STATUS.md where applicable
 ```
+
+## Repository-wide reproducibility and claim-boundary docs
+
+```text
+docs/reproducibility_checklist.md
+docs/research_to_product_handoff.md
+docs/claim_boundaries_for_products.md
+```
+
+Use these before translating any paper output into EchoGenesis, EchoPath, Vision Codex, or product-facing language.
 
 ## Canonical paper sequence
 
@@ -35,6 +46,13 @@ papers/p1-age-dependent-rotation-curves-sparc/
 ```
 
 Status: data in hand / write now.
+
+Reproducibility/status:
+
+```text
+papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
+data/SPARC_IMPORT_STATUS.md
+```
 
 Target: MNRAS or PRL.
 
@@ -72,6 +90,12 @@ papers/p4-soc-mzi-awareness-modulated-decoherence/
 
 Status: preregistered on OSF / needs full protocol import and lab collaboration.
 
+Experiment status:
+
+```text
+papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
+```
+
 Target: Nature Physics / PRL Registered Report path.
 
 ### P5 — Memory Field Density Variation and the Hubble Tension
@@ -83,6 +107,12 @@ papers/p5-hubble-tension-memory-gradient/
 ```
 
 Status: outlined / write after P1.
+
+Pantheon import status:
+
+```text
+data/PANTHEON_IMPORT_STATUS.md
+```
 
 Target: Astrophysical Journal Letters.
 
@@ -139,6 +169,7 @@ Mapping:
 3. P4 full SOC-MZI-01 preregistration protocol and appendices.
 4. P1 SPARC analysis outputs, tables, plots, code, and confidence intervals.
 5. SOC Research Agenda export if OSF agenda project is preserved.
+6. P5 Pantheon+ SN table, covariance, environment labels, row-order validation, and derived diagnostic outputs.
 
 ## Current import principle
 
@@ -162,3 +193,7 @@ Metaphysical interpretation
 ```
 
 This separation is essential for external scientific credibility.
+
+## Product boundary
+
+Do not place EchoPath Memory Layer product claims, private kernel internals, or product roadmaps in the paper folders. Product impact can be mentioned only as bounded research impact notes and should pass through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md` first.

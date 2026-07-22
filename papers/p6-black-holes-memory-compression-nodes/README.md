@@ -66,6 +66,23 @@ S_SOC_uv = -(1 / 8 pi G) ( [K_uv] - h_uv [K] ) + lambda_Sigma M_uv
 
 Claim boundary: this scaffold does not prove black holes create child universes, does not resolve singularities, does not prove Causal Inversion, and does not replace the singularity theorems. If the transition surface is treated as null or horizon-like, a dedicated null-shell formalism is required.
 
+## Peer-review math audit dependency
+
+P6 also depends on the repository-wide PNT/SoCT covariance, conservation, and timescale audit:
+
+```text
+papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md
+```
+
+For P6, the most relevant gates are:
+
+1. explicit surface tensor definitions for the relevant surface class;
+2. a null-shell extension if the transition boundary is horizon-like;
+3. stress-energy conservation for any memory-corrected surface term;
+4. a long-timescale memory-survival mechanism if parent-child inheritance is claimed.
+
+Status: the non-null junction scaffold is PARTIALLY ADDRESSED. The null/horizon-like case and conservation derivation remain OPEN.
+
 ## Calculation support
 
 The following script is a **CANDIDATE / dimensional-audit support tool**, not a physical proof:
@@ -117,6 +134,7 @@ The roadmap recommends waiting until P1 and P2 establish the memory-field and ti
 6. Convert causal inversion and Kerr-to-Cosmos materials into formal appendices.
 7. Audit the Engramon / neutrino carrier equations line by line before changing the status from CANDIDATE to RESOLVED.
 8. Choose explicit parent/descendant metrics and compute the Israel surface quantities before treating the junction scaffold as more than formal language.
+9. Resolve or explicitly bracket the peer-review math audit gates before making physical claims beyond a formal scaffold.
 
 ## OSF action
 

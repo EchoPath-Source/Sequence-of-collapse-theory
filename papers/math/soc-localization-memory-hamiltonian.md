@@ -2,7 +2,7 @@
 
 **Status:** Canonical equation block / theoretical scaffold  
 **Claim level:** Proposed mathematical framework, not established physics  
-**Related files:** `docs/theory-overview.md`, `docs/source-corpus.md`, `PREDICTIONS.md`
+**Related files:** `docs/theory-overview.md`, `docs/source-corpus.md`, `PREDICTIONS.md`, `papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md`
 
 ---
 
@@ -120,6 +120,36 @@ That separation is necessary for falsifiability.
 
 ---
 
+## Dimensional Consistency Appendix
+
+The related dimensional-analysis appendix is:
+
+```text
+papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
+```
+
+It records the minimum unit constraint that any nonlocal memory-coupling version of the Hamiltonian must satisfy:
+
+```text
+[lambda * integral_t integral_s w_i K dt ds] = Energy
+```
+
+For the normalized-kernel case where `w_i` and `ds` are dimensionless and `K` has units `T^-1`, the integral is dimensionless and the coupling must carry units of energy:
+
+```text
+[lambda] = Energy
+```
+
+The appendix also separates the required dimensional statement from the stronger, still-speculative Engramon normalization:
+
+```text
+lambda = lambda_E * E_E
+```
+
+with `lambda_E = 1` treated only as a candidate parameter-fixed proposal, not as a proof of the Engramon-neutrino carrier hypothesis.
+
+---
+
 ## Prediction Matrix
 
 | Prediction | Equation source | Expected signature | Falsification condition |
@@ -155,6 +185,7 @@ data/SPARC_IMPORT_STATUS.md
 data/PANTHEON_IMPORT_STATUS.md
 papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
 papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
+papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
 ```
 
 ---
@@ -191,9 +222,9 @@ Avoid:
 
 ## Next Work
 
-1. Define units for `M(x,t)` and `Phi_c(x,t)`.
+1. Define units for `M(x,t)` and `Phi_c(x,t)` in the canonical field/operator form.
 2. Map `lambda_M` to SPARC/Pantheon/PNT constraints.
 3. Map `lambda_c` to MZI visibility/decoherence experiments.
 4. Derive conservation or continuity conditions for `M`.
-5. Connect memory-kernel form to the Engramon scale and PNT substrate.
+5. Connect memory-kernel form to the Engramon scale and PNT substrate without treating dimensional consistency as proof of the carrier hypothesis.
 6. Keep any product translation routed through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md`.

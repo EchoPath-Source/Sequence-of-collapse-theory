@@ -49,6 +49,35 @@ Related source materials:
 - Engramon scale notes.
 - Parent-child directional-transfer simulation summaries.
 
+## Calculation support
+
+The following script is a **CANDIDATE / dimensional-audit support tool**, not a physical proof:
+
+```text
+papers/p6-black-holes-memory-compression-nodes/analysis/validate_engramon_holographic_scaling.py
+```
+
+It checks whether a target carrier energy near the neutrino scale can map to the same effective reduced Compton wavelength from two candidate parent-mass regimes using:
+
+```text
+L_E = l_Pl * (M_parent / M_Pl)^alpha
+```
+
+Default run:
+
+```bash
+python papers/p6-black-holes-memory-compression-nodes/analysis/validate_engramon_holographic_scaling.py
+```
+
+Optional CSV output:
+
+```bash
+python papers/p6-black-holes-memory-compression-nodes/analysis/validate_engramon_holographic_scaling.py \
+  --csv-out papers/p6-black-holes-memory-compression-nodes/results/engramon_holographic_scaling_validation.csv
+```
+
+Claim boundary: this script only verifies arithmetic consistency under stated assumptions. It does not prove SoCT, Engramons, memory gravity, neutrino coupling, a GeV/eV unit-error origin, or a parent-universe mechanism.
+
 ## Testable prediction noted in roadmap
 
 SOC-BH-01b:
@@ -69,6 +98,7 @@ The roadmap recommends waiting until P1 and P2 establish the memory-field and ti
 4. Separate metaphor from equation.
 5. Pre-register SOC-BH-01b CMB correlation analysis before running it.
 6. Convert causal inversion and Kerr-to-Cosmos materials into formal appendices.
+7. Audit the Engramon / neutrino carrier equations line by line before changing the status from CANDIDATE to RESOLVED.
 
 ## OSF action
 

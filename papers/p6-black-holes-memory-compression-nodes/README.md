@@ -49,6 +49,23 @@ Related source materials:
 - Engramon scale notes.
 - Parent-child directional-transfer simulation summaries.
 
+## Formal surface scaffolds
+
+The following GR-facing surface formalism is a **FORMAL SCAFFOLD**, not an established physical result:
+
+```text
+papers/math/israel-junction-causal-inversion-surface.md
+```
+
+It defines a conservative Israel-junction-style non-null hypersurface language for expressing a proposed Causal Inversion / parent-child transition boundary:
+
+```text
+[h_uv] = 0
+S_SOC_uv = -(1 / 8 pi G) ( [K_uv] - h_uv [K] ) + lambda_Sigma M_uv
+```
+
+Claim boundary: this scaffold does not prove black holes create child universes, does not resolve singularities, does not prove Causal Inversion, and does not replace the singularity theorems. If the transition surface is treated as null or horizon-like, a dedicated null-shell formalism is required.
+
 ## Calculation support
 
 The following script is a **CANDIDATE / dimensional-audit support tool**, not a physical proof:
@@ -99,6 +116,7 @@ The roadmap recommends waiting until P1 and P2 establish the memory-field and ti
 5. Pre-register SOC-BH-01b CMB correlation analysis before running it.
 6. Convert causal inversion and Kerr-to-Cosmos materials into formal appendices.
 7. Audit the Engramon / neutrino carrier equations line by line before changing the status from CANDIDATE to RESOLVED.
+8. Choose explicit parent/descendant metrics and compute the Israel surface quantities before treating the junction scaffold as more than formal language.
 
 ## OSF action
 

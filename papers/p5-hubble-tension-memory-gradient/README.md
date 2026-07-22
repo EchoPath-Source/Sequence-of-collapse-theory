@@ -52,6 +52,31 @@ notebooks/pantheon_environment_h0_fit_plan.md
 docs/dark-sector-taxonomy.md
 ```
 
+## Peer-review math audit dependency
+
+P5 depends on the repository-wide PNT/SoCT covariance, conservation, and timescale audit:
+
+```text
+papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md
+```
+
+That audit records four gates that must be addressed before peer-review-level claims:
+
+1. memory kernels must be covariant/gauge safe;
+2. memory stress-energy must be conservation-compatible;
+3. junction-surface tensors must be explicitly defined for the relevant surface class;
+4. the dark-energy / Hubble-window model must justify long-timescale memory survival.
+
+For P5 specifically, the two-timescale bridge is the most relevant open item:
+
+```text
+M(x,t) = M_f(x,t) + M_p(x,t)
+beta_p << beta_f
+rho_eff(t) = rho_Lambda + rho_Mp(t)
+```
+
+Claim boundary: this is a candidate phenomenological bridge. It does not prove a dark-energy mechanism until derived from an action or constrained by data.
+
 ## Required work before publication
 
 1. Pre-register the specific correlation analysis before running it.
@@ -60,6 +85,7 @@ docs/dark-sector-taxonomy.md
 4. Use covariance-aware fitting.
 5. Compare against systematics and selection effects.
 6. Report null result criteria.
+7. Resolve or explicitly bracket the peer-review math audit gates before making physical claims beyond a phenomenological scaffold.
 
 ## Dependency
 

@@ -21,6 +21,22 @@ SoCT paper / notebook / dataset
 
 SoCT can inspire architecture. It does not certify product claims.
 
+## Application hypothesis map
+
+The speculative hardware and application map is maintained at:
+
+```text
+docs/technology/pnt-soct-application-hypotheses.md
+```
+
+Its governing rule is:
+
+```text
+Anomaly first. Application second. Product claim last.
+```
+
+That document is an idea reservoir and validation roadmap only. It does not claim that propulsion, gravity control, vacuum energy extraction, anomalous catalysis, quantum-computing stabilization, or observer-state field detection has been demonstrated.
+
 ## What SoCT may provide
 
 SoCT may provide:
@@ -35,7 +51,8 @@ SoCT may provide:
 - literature positioning,
 - publication drafts,
 - dataset requirement lists,
-- reproducibility status summaries.
+- reproducibility status summaries,
+- hardware-null-test ideas and application hypotheses with explicit claim boundaries.
 
 ## What SoCT does not provide by itself
 
@@ -47,6 +64,7 @@ SoCT does not by itself provide:
 - confirmation of new physics,
 - confirmation of consciousness-driven collapse,
 - confirmation that memory fields physically exist,
+- proof of propulsion, gravity control, or vacuum-energy extraction,
 - certification that EchoPath or EchoGenesis products work because SoCT is true.
 
 ## Required handoff filter
@@ -73,7 +91,11 @@ Allowed in product repos when technically implemented:
 - topology-aware diagnostics,
 - coherence-inspired stability score,
 - threshold-based response,
-- memory-biased simulation behavior.
+- memory-biased simulation behavior,
+- boundary-gradient anomaly detection,
+- cavity-assisted reaction-rate testing,
+- quantum-noise residual mapping,
+- controlled null-test instrumentation.
 
 Not allowed as public product claims unless independently reproduced and documented:
 
@@ -84,7 +106,13 @@ Not allowed as public product claims unless independently reproduced and documen
 - quantum hardware validation,
 - biological equivalence,
 - experimentally confirmed Source/Origin dynamics,
-- product performance guaranteed by SoCT.
+- product performance guaranteed by SoCT,
+- propellantless propulsion,
+- gravity shielding,
+- vacuum batteries,
+- free energy,
+- anomalous catalysis as demonstrated fact,
+- observer-state field detection as demonstrated fact.
 
 ## Repository ownership
 

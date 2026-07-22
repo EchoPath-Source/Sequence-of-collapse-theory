@@ -2,7 +2,7 @@
 
 **Status:** Canonical equation block / theoretical scaffold  
 **Claim level:** Proposed mathematical framework, not established physics  
-**Related files:** `docs/theory-overview.md`, `docs/source-corpus.md`, `PREDICTIONS.md`, `papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md`
+**Related files:** `docs/theory-overview.md`, `docs/source-corpus.md`, `PREDICTIONS.md`, `papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md`, `papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md`
 
 ---
 
@@ -150,6 +150,37 @@ with `lambda_E = 1` treated only as a candidate parameter-fixed proposal, not as
 
 ---
 
+## Covariance, Conservation, and Timescale Audit
+
+The related peer-review readiness audit is:
+
+```text
+papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md
+```
+
+It records four open mathematical gates that must be addressed before the Hamiltonian can be treated as more than a formal scaffold:
+
+1. gauge/covariance safety of the nonlocal memory kernel;
+2. stress-energy conservation for memory and interaction sectors;
+3. complete junction-surface tensor definitions for the relevant surface class;
+4. decoherence and long-timescale memory-survival requirements.
+
+The audit recommends replacing coordinate-distance kernels with covariant kernels of the form:
+
+```text
+K(x, x') = K_sigma(sigma(x, x'), tau_M, l_Pl) P(x, x')
+```
+
+and treating any memory stress tensor as action-derived or conservation-constrained:
+
+```text
+nabla_mu (T_matter^{mu nu} + T_M^{mu nu} + T_int^{mu nu}) = 0
+```
+
+Claim boundary: this audit does not resolve the theory. It makes the vulnerabilities explicit and turns them into reviewable mathematical gates.
+
+---
+
 ## Prediction Matrix
 
 | Prediction | Equation source | Expected signature | Falsification condition |
@@ -186,6 +217,7 @@ data/PANTHEON_IMPORT_STATUS.md
 papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
 papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
 papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
+papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md
 ```
 
 ---
@@ -227,4 +259,7 @@ Avoid:
 3. Map `lambda_c` to MZI visibility/decoherence experiments.
 4. Derive conservation or continuity conditions for `M`.
 5. Connect memory-kernel form to the Engramon scale and PNT substrate without treating dimensional consistency as proof of the carrier hypothesis.
-6. Keep any product translation routed through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md`.
+6. Replace coordinate-distance memory kernels with covariant/gauge-safe kernels or explicitly restrict them to an effective background.
+7. Derive or constrain `T_M^{mu nu}` and `T_int^{mu nu}` so the total stress-energy tensor is conservation-compatible.
+8. Define the two-timescale memory model and the protected source term `Q[C]` before making long-timescale memory claims.
+9. Keep any product translation routed through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md`.

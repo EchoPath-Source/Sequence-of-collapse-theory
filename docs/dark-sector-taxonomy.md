@@ -75,6 +75,28 @@ Main conventional alternatives:
 - MOND-like acceleration scaling;
 - selection effects.
 
+### Cosmic-web memory interpretation
+
+Dark matter should not be described as simply absent from voids or as already replaced by SoCT. The safer research framing is:
+
+> Voids are dark-matter underdensities and low-collapse-history regions, while filaments and halos are high-collapse-history regions where the gravitational scaffold has accumulated.
+
+In SoCT/PNT language, the cosmic web may be interpreted as a candidate memory-density map:
+
+```text
+voids      -> low collapse history / low memory density / dark-matter underdensity
+filaments  -> high collapse history / accumulated memory density / strong dark-sector scaffolding
+halos      -> localized collapse-history wells around galaxies and clusters
+```
+
+This is a research interpretation, not proof. It motivates tests of whether history-weighted gravity or memory-density proxies can explain dark-sector observables better than current-matter-only proxies under controlled comparison.
+
+Related P6 motivation note:
+
+```text
+papers/p6-black-holes-memory-compression-nodes/gravitational-memory-motivation.md
+```
+
 ---
 
 ## Dark Energy Branch
@@ -137,6 +159,22 @@ data/PANTHEON_IMPORT_STATUS.md
 
 ---
 
+## Black-Hole Information / Gravity-Memory Motivation
+
+Black-hole information preservation and evaporation questions provide a useful motivation for the gravity-as-memory branch, but not direct evidence for it.
+
+Repo-safe phrasing:
+
+> Black-hole information preservation, dark-matter cosmic-web structure, and void/filament contrast are compatible with a gravity-as-memory interpretation, but they do not prove SoCT/PNT. They motivate formal models and reproducible tests of whether gravitational anomalies can be organized as accumulated collapse history.
+
+This motivation belongs primarily in P6:
+
+```text
+papers/p6-black-holes-memory-compression-nodes/gravitational-memory-motivation.md
+```
+
+---
+
 ## What Must Not Be Conflated
 
 Do not treat these as identical:
@@ -176,6 +214,13 @@ Each branch requires its own equations, datasets, and falsification conditions.
 - predicted CMB signatures violate non-Gaussianity constraints;
 - observed alignments vanish after systematics/look-elsewhere corrections.
 
+### Black-hole / memory-compression branch weakens if:
+
+- no formal memory-compression operator can be defined without violating known constraints;
+- the information-preservation analogy cannot be connected to falsifiable observables;
+- P6 remains metaphorical rather than mathematically bounded;
+- CMB/large-scale directional tests fail after systematics and look-elsewhere corrections.
+
 ---
 
 ## Product Boundary
@@ -211,3 +256,4 @@ Avoid:
 4. Add a falsifiability table to `PREDICTIONS.md`.
 5. Keep metaphysical claims out of empirical taxonomy unless clearly labeled.
 6. Keep product translations routed through the claim-boundary docs.
+7. Add literature references on black-hole information preservation, gravitational memory, cosmic-web dark matter, and void/filament underdensities.

@@ -26,6 +26,22 @@ P6 develops the black-hole and information-paradox extension of the memory-field
 - Bounce = transmission to child universe.
 - Hawking radiation = transmission residue.
 
+## Gravitational-memory motivation
+
+A bounded motivation note has been added at:
+
+```text
+papers/p6-black-holes-memory-compression-nodes/gravitational-memory-motivation.md
+```
+
+This note connects black-hole information preservation, dark-matter cosmic-web structure, and void/filament contrast as soft motivation for the gravity-as-memory branch.
+
+Claim boundary:
+
+> Black-hole information preservation, dark-matter cosmic-web structure, and void/filament contrast are compatible with a gravity-as-memory interpretation, but they do not prove SoCT/PNT. They motivate formal models and reproducible tests of whether gravitational anomalies can be organized as accumulated collapse history.
+
+This motivation note should not be treated as evidence that black-hole evaporation proves SoCT, that dark matter is definitively memory, or that PNT has been confirmed.
+
 ## Relationship to existing repo work
 
 Earlier repo folder:
@@ -48,6 +64,7 @@ Related source materials:
 - Kerr-to-Cosmos notes.
 - Engramon scale notes.
 - Parent-child directional-transfer simulation summaries.
+- Gravitational-memory motivation note.
 
 ## Formal surface scaffolds
 
@@ -135,6 +152,7 @@ The roadmap recommends waiting until P1 and P2 establish the memory-field and ti
 7. Audit the Engramon / neutrino carrier equations line by line before changing the status from CANDIDATE to RESOLVED.
 8. Choose explicit parent/descendant metrics and compute the Israel surface quantities before treating the junction scaffold as more than formal language.
 9. Resolve or explicitly bracket the peer-review math audit gates before making physical claims beyond a formal scaffold.
+10. Convert gravitational-memory motivation into equations, references, and falsifiable observables before using it as more than conceptual support.
 
 ## OSF action
 
@@ -156,4 +174,5 @@ Upload:
 - causal inversion support materials;
 - Kerr-to-Cosmos support materials;
 - CMB correlation preregistration plan;
-- simulation summaries.
+- simulation summaries;
+- gravitational-memory motivation note.

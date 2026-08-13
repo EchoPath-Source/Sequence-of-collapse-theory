@@ -216,6 +216,20 @@ Product-safe terms may include adaptive memory, spatial memory, field-inspired r
 
 ---
 
+## Adjacent Theories Map
+
+A broader theory-by-theory adjacency map is maintained at:
+
+```text
+references/adjacent-theories-map.md
+```
+
+That file separates literature adjacency from validation and compares SoCT/PNT with Diósi-Penrose objective reduction, Orch OR, ER=EPR, GRW/CSL objective collapse, decoherence and quantum Darwinism, black-hole information, holography, gravitational memory/BMS symmetry, emergent spacetime, emergent gravity, dark-sector alternatives, cosmic-web structure, causal sets, loop quantum cosmology, and integrated-information approaches.
+
+Use it for comparison, discoverability, and claim-boundary review only. It must not be cited as evidence that any adjacent theory validates SoCT/PNT.
+
+---
+
 ## Repo Use
 
 This note should support:

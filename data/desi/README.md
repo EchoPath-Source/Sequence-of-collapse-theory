@@ -16,12 +16,13 @@ Notebook implementation plan:
 notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md
 ```
 
-Schema, column-semantics, and staged smoke-query records:
+Schema, semantics, staged smoke query, and execution status:
 
 ```text
 data/desi/DESI_DR1_SCHEMA_VERIFICATION.md
 data/desi/DESI_DR1_COLUMN_SEMANTICS.md
 data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql
+data/desi/DESI_DR1_SMOKE_EXECUTION_STATUS.md
 ```
 
 DESI is used here as an environment and cosmic-web scaffold that may support later Pantheon+ crossmatching. This directory does not contain evidence that SoCT/PNT is correct, and no DESI-derived empirical claim should be made before the documented staging, verification, labeling, and crossmatch steps are completed.
@@ -34,7 +35,6 @@ The intended sequence is:
 
 ```text
 DESI schema verification
-  -> column-semantics lock
   -> small query validation
   -> reproducible sample definition
   -> density estimation
@@ -199,7 +199,7 @@ source_release
 quality_flags
 ```
 
-Field meanings should be documented before the full catalog is generated. Any normalized `target_ra` / `target_dec` fields must retain explicit provenance to their actual DESI coordinate source. The current smoke-query source is `mean_fiber_ra` / `mean_fiber_dec`; see `DESI_DR1_COLUMN_SEMANTICS.md`.
+Field meanings should be documented before the full catalog is generated. Any normalized `target_ra` / `target_dec` fields must retain explicit provenance to their actual DESI coordinate source.
 
 ### Candidate environment bins
 
@@ -247,13 +247,21 @@ It is deliberately limited to 25 rows and is intended only to validate:
 - row retrieval;
 - provenance capture.
 
+The first live execution attempt is recorded in:
+
+```text
+data/desi/DESI_DR1_SMOKE_EXECUTION_STATUS.md
+```
+
 Current execution status:
 
 ```text
-READY / NOT YET RUN
+ATTEMPTED / BLOCKED BEFORE SERVICE CONTACT BY RUNTIME DNS/NETWORK
 ```
 
-It must not be used to estimate the final void/filament H0 differential or as evidence for any SoCT/PNT claim.
+The observed blocker was inability of the current runtime to resolve `datalab.noirlab.edu`. No NOIRLab response was received and no query rows were generated. This must not be interpreted as a schema failure or empty-result condition.
+
+The smoke query must not be used to estimate the final void/filament H0 differential or as evidence for any SoCT/PNT claim.
 
 ## Relationship to Pantheon+
 
@@ -304,11 +312,11 @@ Do not claim from this staging layer that:
 ```text
 DESI data contract: PRESENT
 DESI schema/documentation verification: COMPLETE FOR SMOKE-QUERY FIELD SELECTION
-DESI column-semantics contract: PRESENT / SMOKE-QUERY SEMANTICS LOCKED
-DESI live data-type/null verification: PENDING SMOKE EXECUTION
-DESI optional VAC field semantics/cardinality: PENDING LIVE SCHEMA INSPECTION
+DESI column semantics contract: PRESENT
+DESI live data-type/null verification: PENDING SUCCESSFUL SMOKE EXECUTION
 DESI smoke query SQL: READY
-DESI smoke query execution: NOT YET RUN
+DESI smoke execution attempt: BLOCKED BY RUNTIME DNS/NETWORK
+DESI smoke query result: NOT GENERATED
 DESI environment estimator: NOT YET IMPLEMENTED
 DESI environment-label catalog: NOT YET GENERATED
 Pantheon+ crossmatch: NOT YET RUN

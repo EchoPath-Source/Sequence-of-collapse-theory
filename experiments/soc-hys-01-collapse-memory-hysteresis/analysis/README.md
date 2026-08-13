@@ -13,6 +13,39 @@ Primary rule:
 Do not tune the analysis after seeing whether the effect appears.
 ```
 
+## Current simulation script
+
+The initial simulation scaffold is:
+
+```text
+experiments/soc-hys-01-collapse-memory-hysteresis/analysis/simulate_hysteresis_protocol.py
+```
+
+Default null run:
+
+```bash
+python experiments/soc-hys-01-collapse-memory-hysteresis/analysis/simulate_hysteresis_protocol.py
+```
+
+Injected hysteresis run:
+
+```bash
+python experiments/soc-hys-01-collapse-memory-hysteresis/analysis/simulate_hysteresis_protocol.py \
+  --hysteresis-amplitude 0.15 \
+  --summary-out experiments/soc-hys-01-collapse-memory-hysteresis/results/sim_summary.csv
+```
+
+Confound-only example:
+
+```bash
+python experiments/soc-hys-01-collapse-memory-hysteresis/analysis/simulate_hysteresis_protocol.py \
+  --hysteresis-amplitude 0.0 \
+  --settling-amplitude 0.2 \
+  --drift-per-trial 0.0001
+```
+
+Claim boundary: simulation output is not physical evidence for SoCT. It only checks that the pipeline can distinguish null data, injected hysteresis, and ordinary confounds before physical sensor data are collected.
+
 ## Data model
 
 Recommended per-trial columns:
@@ -35,6 +68,20 @@ environmental_flags
 excluded
 exclusion_reason
 ```
+
+The simulation script currently emits a smaller synthetic-development schema:
+
+```text
+repeat
+trial
+transition
+condition
+is_post_switch
+post_index
+value
+```
+
+Physical-data ingestion should keep the richer schema above.
 
 ## Primary endpoint
 

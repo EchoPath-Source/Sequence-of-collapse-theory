@@ -114,6 +114,12 @@ Pantheon import status:
 data/PANTHEON_IMPORT_STATUS.md
 ```
 
+DESI environment-query plan:
+
+```text
+papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md
+```
+
 Target: Astrophysical Journal Letters.
 
 ### P6 — Black Holes as Memory Compression Nodes

@@ -181,6 +181,12 @@ Pantheon import/status doc:
 data/PANTHEON_IMPORT_STATUS.md
 ```
 
+DESI environment-query support:
+
+```text
+papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md
+```
+
 Support package:
 
 ```text

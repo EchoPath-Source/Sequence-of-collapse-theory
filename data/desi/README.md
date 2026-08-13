@@ -16,6 +16,13 @@ Notebook implementation plan:
 notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md
 ```
 
+Schema verification and staged smoke query:
+
+```text
+data/desi/DESI_DR1_SCHEMA_VERIFICATION.md
+data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql
+```
+
 DESI is used here as an environment and cosmic-web scaffold that may support later Pantheon+ crossmatching. This directory does not contain evidence that SoCT/PNT is correct, and no DESI-derived empirical claim should be made before the documented staging, verification, labeling, and crossmatch steps are completed.
 
 ## DESI role in the repository
@@ -74,9 +81,15 @@ If a table, column, value-added catalog, or selection definition changes across 
 
 ## NOIRLab Data Lab schema verification
 
-Before any production query is treated as valid, verify the expected DESI DR1 tables and columns against the current NOIRLab Data Lab schema.
+Before any production query is treated as valid, verify the expected DESI DR1 tables and columns against current NSF NOIRLab Astro Data Lab documentation and, where possible, live schema/query metadata.
 
-The existing query plan lists expected resources, including:
+Current verification record:
+
+```text
+data/desi/DESI_DR1_SCHEMA_VERIFICATION.md
+```
+
+The verified planning resources include:
 
 ```text
 desi_dr1.zpix
@@ -86,19 +99,9 @@ desi_dr1.emfit
 desi_dr1.agngal
 ```
 
-These names are planning assumptions until verified against the live schema.
+The first staged smoke query uses documented `zpix` fields including `mean_fiber_ra` and `mean_fiber_dec`; it preserves those semantics rather than silently relabeling them as target coordinates.
 
-The first notebook stage must record:
-
-- confirmed table names;
-- confirmed column names;
-- primary/unique identifier behavior;
-- units where relevant;
-- nullability or missing-value behavior where relevant;
-- whether joins on `targetid` behave as assumed;
-- any release-specific warnings or deprecations.
-
-A schema mismatch is a blocking condition, not a reason to silently rewrite the analysis.
+A schema mismatch during execution is a blocking condition, not a reason to silently rewrite the analysis.
 
 ## Raw-versus-derived policy
 
@@ -193,7 +196,7 @@ source_release
 quality_flags
 ```
 
-Field meanings should be documented before the full catalog is generated.
+Field meanings should be documented before the full catalog is generated. Any normalized `target_ra` / `target_dec` fields must retain explicit provenance to their actual DESI coordinate source.
 
 ### Candidate environment bins
 
@@ -225,18 +228,29 @@ No file at these paths should be interpreted as existing until it is actually ge
 
 ## Smoke-test artifacts
 
-The first executable DESI step should produce only a deliberately small smoke-test result after schema verification.
+The first executable DESI step is staged as:
 
-A smoke-test artifact should be small enough to inspect manually and should validate only:
+```text
+data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql
+```
+
+It is deliberately limited to 25 rows and is intended only to validate:
 
 - table/column availability;
-- basic quality cuts;
+- documented quality cuts;
 - coordinate fields;
 - redshift handling;
+- HEALPix field access;
 - row retrieval;
 - provenance capture.
 
-It should not be used to estimate the final void/filament H0 differential or as evidence for any SoCT/PNT claim.
+Current execution status:
+
+```text
+READY / NOT YET RUN
+```
+
+It must not be used to estimate the final void/filament H0 differential or as evidence for any SoCT/PNT claim.
 
 ## Relationship to Pantheon+
 
@@ -286,8 +300,10 @@ Do not claim from this staging layer that:
 
 ```text
 DESI data contract: PRESENT
-DESI schema verification: NOT YET RUN
-DESI smoke query: NOT YET RUN
+DESI schema/documentation verification: COMPLETE FOR SMOKE-QUERY FIELD SELECTION
+DESI live data-type/null verification: PENDING SMOKE EXECUTION
+DESI smoke query SQL: READY
+DESI smoke query execution: NOT YET RUN
 DESI environment estimator: NOT YET IMPLEMENTED
 DESI environment-label catalog: NOT YET GENERATED
 Pantheon+ crossmatch: NOT YET RUN

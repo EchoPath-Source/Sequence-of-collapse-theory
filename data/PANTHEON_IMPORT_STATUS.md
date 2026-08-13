@@ -37,6 +37,7 @@ Publication-grade use requires verified SN-table input, covariance input, enviro
 | Pantheon+ SN table | MISSING / VERIFY | Must contain required columns and canonical row ordering. |
 | Full covariance matrix | PARTIAL / VERIFY | Must match SN-table ordering and expected dimensions. |
 | Environment labels | MISSING / VERIFY | Void/filament/unclassified labels and method required. |
+| DESI environment-label scaffold | PLANNED | See `papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md`. |
 | Row-order validation | MISSING | Required before covariance-aware fit. |
 | Diagnostic script/notebook | PARTIAL | Must document command, inputs, outputs, and blocked states. |
 | Derived result CSVs | MISSING / CONDITIONAL | Commit only if diagnostic run completes cleanly. |
@@ -74,8 +75,9 @@ Avoid until fully reproduced:
 
 1. Stage canonical Pantheon+ SN table.
 2. Stage/verify full covariance matrix.
-3. Stage environment-label table and methodology.
-4. Run row-order validation.
-5. Run covariance-aware diagnostic.
-6. Commit derived outputs only after clean run completion.
-7. Update P5 reproducibility notes when outputs exist.
+3. Build or import DESI-derived environment labels for Pantheon+ crossmatching.
+4. Stage environment-label table and methodology.
+5. Run row-order validation.
+6. Run covariance-aware diagnostic.
+7. Commit derived outputs only after clean run completion.
+8. Update P5 reproducibility notes when outputs exist.

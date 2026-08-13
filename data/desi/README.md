@@ -16,10 +16,11 @@ Notebook implementation plan:
 notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md
 ```
 
-Schema verification and staged smoke query:
+Schema, column-semantics, and staged smoke-query records:
 
 ```text
 data/desi/DESI_DR1_SCHEMA_VERIFICATION.md
+data/desi/DESI_DR1_COLUMN_SEMANTICS.md
 data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql
 ```
 
@@ -33,6 +34,7 @@ The intended sequence is:
 
 ```text
 DESI schema verification
+  -> column-semantics lock
   -> small query validation
   -> reproducible sample definition
   -> density estimation
@@ -83,10 +85,11 @@ If a table, column, value-added catalog, or selection definition changes across 
 
 Before any production query is treated as valid, verify the expected DESI DR1 tables and columns against current NSF NOIRLab Astro Data Lab documentation and, where possible, live schema/query metadata.
 
-Current verification record:
+Current verification records:
 
 ```text
 data/desi/DESI_DR1_SCHEMA_VERIFICATION.md
+data/desi/DESI_DR1_COLUMN_SEMANTICS.md
 ```
 
 The verified planning resources include:
@@ -196,7 +199,7 @@ source_release
 quality_flags
 ```
 
-Field meanings should be documented before the full catalog is generated. Any normalized `target_ra` / `target_dec` fields must retain explicit provenance to their actual DESI coordinate source.
+Field meanings should be documented before the full catalog is generated. Any normalized `target_ra` / `target_dec` fields must retain explicit provenance to their actual DESI coordinate source. The current smoke-query source is `mean_fiber_ra` / `mean_fiber_dec`; see `DESI_DR1_COLUMN_SEMANTICS.md`.
 
 ### Candidate environment bins
 
@@ -301,7 +304,9 @@ Do not claim from this staging layer that:
 ```text
 DESI data contract: PRESENT
 DESI schema/documentation verification: COMPLETE FOR SMOKE-QUERY FIELD SELECTION
+DESI column-semantics contract: PRESENT / SMOKE-QUERY SEMANTICS LOCKED
 DESI live data-type/null verification: PENDING SMOKE EXECUTION
+DESI optional VAC field semantics/cardinality: PENDING LIVE SCHEMA INSPECTION
 DESI smoke query SQL: READY
 DESI smoke query execution: NOT YET RUN
 DESI environment estimator: NOT YET IMPLEMENTED

@@ -227,6 +227,17 @@ This requires the Pantheon+ SN table, covariance matrix, environment-label metho
 data/PANTHEON_IMPORT_STATUS.md
 ```
 
+## Reproducibility/data-staging docs
+
+Before any large query, environment-label generation, or Pantheon+ crossmatch, use:
+
+```text
+data/desi/README.md
+notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md
+```
+
+These documents define the DESI data/provenance contract and lock the intended notebook sequence before implementation.
+
 ## Claim boundary
 
 This is a research-query and environment-label plan. It does not create empirical confirmation. It defines how DESI may help generate testable environment labels for later SoCT/PNT analysis.

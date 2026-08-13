@@ -38,6 +38,7 @@ Publication-grade use requires verified SN-table input, covariance input, enviro
 | Full covariance matrix | PARTIAL / VERIFY | Must match SN-table ordering and expected dimensions. |
 | Environment labels | MISSING / VERIFY | Void/filament/unclassified labels and method required. |
 | DESI environment-label scaffold | PLANNED | See `papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md`. |
+| DESI reproducibility/data contract | PRESENT | See `data/desi/README.md` and `notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md`. No DESI labels generated yet. |
 | Row-order validation | MISSING | Required before covariance-aware fit. |
 | Diagnostic script/notebook | PARTIAL | Must document command, inputs, outputs, and blocked states. |
 | Derived result CSVs | MISSING / CONDITIONAL | Commit only if diagnostic run completes cleanly. |
@@ -58,6 +59,8 @@ P5/Pantheon should eventually include:
 - figure regeneration path,
 - claim boundary.
 
+For the DESI branch specifically, schema verification and reproducible environment-label generation must be completed before Pantheon+ coordinate crossmatching begins.
+
 ## Claim boundary
 
 Current safe language:
@@ -75,9 +78,13 @@ Avoid until fully reproduced:
 
 1. Stage canonical Pantheon+ SN table.
 2. Stage/verify full covariance matrix.
-3. Build or import DESI-derived environment labels for Pantheon+ crossmatching.
-4. Stage environment-label table and methodology.
-5. Run row-order validation.
-6. Run covariance-aware diagnostic.
-7. Commit derived outputs only after clean run completion.
-8. Update P5 reproducibility notes when outputs exist.
+3. Verify DESI DR1 schema against the current NOIRLab Data Lab schema.
+4. Run only a tiny DESI sky-patch smoke query and validate provenance/sample cuts.
+5. Define and validate the DESI density/environment methodology.
+6. Generate DESI-derived environment labels only after schema and quality checks are stable.
+7. Crossmatch Pantheon+ coordinates only after the DESI environment-label catalog exists reproducibly.
+8. Stage environment-label table and methodology.
+9. Run row-order validation.
+10. Run covariance-aware diagnostic.
+11. Commit derived outputs only after clean run completion.
+12. Update P5 reproducibility notes when outputs exist.

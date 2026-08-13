@@ -40,7 +40,7 @@ Publication-grade use requires verified SN-table input, covariance input, enviro
 | DESI environment-label scaffold | PLANNED | See `papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md`. |
 | DESI reproducibility/data contract | PRESENT | See `data/desi/README.md` and `notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md`. No DESI labels generated yet. |
 | DESI column semantics | PRESENT / SMOKE-QUERY SEMANTICS LOCKED | See `data/desi/DESI_DR1_COLUMN_SEMANTICS.md`. Live data-type/null inspection and optional VAC field/cardinality checks remain pending. |
-| DESI tiny smoke query | READY / NOT YET RUN | `data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql`; plumbing validation only. |
+| DESI tiny smoke query | READY / EXECUTION BLOCKED BY RUNTIME NETWORK | `data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql`; first execution attempt is documented in `data/desi/DESI_DR1_SMOKE_EXECUTION_STATUS.md`. No rows generated. |
 | Row-order validation | MISSING | Required before covariance-aware fit. |
 | Diagnostic script/notebook | PARTIAL | Must document command, inputs, outputs, and blocked states. |
 | Derived result CSVs | MISSING / CONDITIONAL | Commit only if diagnostic run completes cleanly. |
@@ -81,7 +81,7 @@ Avoid until fully reproduced:
 1. Stage canonical Pantheon+ SN table.
 2. Stage/verify full covariance matrix.
 3. Preserve the locked DESI smoke-query column semantics in `data/desi/DESI_DR1_COLUMN_SEMANTICS.md`.
-4. Run only the staged 25-row DESI sky-patch smoke query and inspect live data types, null behavior, provenance, and sample cuts.
+4. Re-run the staged 25-row DESI sky-patch smoke query from an environment that can reach NSF NOIRLab Astro Data Lab; inspect live data types, null behavior, provenance, and sample cuts.
 5. Inspect optional VAC schemas/join cardinality before any `stellar_mass_emline` or `emfit` join is used.
 6. Define and validate the DESI density/environment methodology.
 7. Generate DESI-derived environment labels only after schema and quality checks are stable.

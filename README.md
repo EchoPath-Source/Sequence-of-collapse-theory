@@ -273,6 +273,16 @@ references/consensus-pnt-soct-literature-positioning.md
 
 This file preserves the current claim calibration for SoCT, SOC-MZI, PNT, and the PNT dark-energy track.
 
+### Adjacent research threads
+
+SoCT is positioned as a speculative but falsifiable framework adjacent to objective-collapse theories, Penrose/Diósi-Penrose gravitational collapse proposals, Orch OR, ER=EPR, black-hole information preservation, gravitational memory effects, holography, emergent spacetime, and cosmic-web dark-sector phenomenology.
+
+These fields do not validate SoCT, but they define the research neighborhood in which SoCT can be compared, constrained, or falsified.
+
+```text
+references/adjacent-theories-map.md
+```
+
 ## OSF alignment
 
 The OSF mapping file is preserved under:

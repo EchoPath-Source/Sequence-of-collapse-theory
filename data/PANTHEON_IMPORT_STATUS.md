@@ -39,6 +39,8 @@ Publication-grade use requires verified SN-table input, covariance input, enviro
 | Environment labels | MISSING / VERIFY | Void/filament/unclassified labels and method required. |
 | DESI environment-label scaffold | PLANNED | See `papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md`. |
 | DESI reproducibility/data contract | PRESENT | See `data/desi/README.md` and `notebooks/desi/DESI_ENVIRONMENT_NOTEBOOK_PLAN.md`. No DESI labels generated yet. |
+| DESI column semantics | PRESENT / SMOKE-QUERY SEMANTICS LOCKED | See `data/desi/DESI_DR1_COLUMN_SEMANTICS.md`. Live data-type/null inspection and optional VAC field/cardinality checks remain pending. |
+| DESI tiny smoke query | READY / NOT YET RUN | `data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql`; plumbing validation only. |
 | Row-order validation | MISSING | Required before covariance-aware fit. |
 | Diagnostic script/notebook | PARTIAL | Must document command, inputs, outputs, and blocked states. |
 | Derived result CSVs | MISSING / CONDITIONAL | Commit only if diagnostic run completes cleanly. |
@@ -59,7 +61,7 @@ P5/Pantheon should eventually include:
 - figure regeneration path,
 - claim boundary.
 
-For the DESI branch specifically, schema verification and reproducible environment-label generation must be completed before Pantheon+ coordinate crossmatching begins.
+For the DESI branch specifically, schema/column verification and reproducible environment-label generation must be completed before Pantheon+ coordinate crossmatching begins.
 
 ## Claim boundary
 
@@ -78,13 +80,14 @@ Avoid until fully reproduced:
 
 1. Stage canonical Pantheon+ SN table.
 2. Stage/verify full covariance matrix.
-3. Verify DESI DR1 schema against the current NOIRLab Data Lab schema.
-4. Run only a tiny DESI sky-patch smoke query and validate provenance/sample cuts.
-5. Define and validate the DESI density/environment methodology.
-6. Generate DESI-derived environment labels only after schema and quality checks are stable.
-7. Crossmatch Pantheon+ coordinates only after the DESI environment-label catalog exists reproducibly.
-8. Stage environment-label table and methodology.
-9. Run row-order validation.
-10. Run covariance-aware diagnostic.
-11. Commit derived outputs only after clean run completion.
-12. Update P5 reproducibility notes when outputs exist.
+3. Preserve the locked DESI smoke-query column semantics in `data/desi/DESI_DR1_COLUMN_SEMANTICS.md`.
+4. Run only the staged 25-row DESI sky-patch smoke query and inspect live data types, null behavior, provenance, and sample cuts.
+5. Inspect optional VAC schemas/join cardinality before any `stellar_mass_emline` or `emfit` join is used.
+6. Define and validate the DESI density/environment methodology.
+7. Generate DESI-derived environment labels only after schema and quality checks are stable.
+8. Crossmatch Pantheon+ coordinates only after the DESI environment-label catalog exists reproducibly and the coordinate source is explicitly frozen.
+9. Stage environment-label table and methodology.
+10. Run row-order validation.
+11. Run covariance-aware diagnostic.
+12. Commit derived outputs only after clean run completion.
+13. Update P5 reproducibility notes when outputs exist.

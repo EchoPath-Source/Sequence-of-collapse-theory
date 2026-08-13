@@ -283,6 +283,19 @@ These fields do not validate SoCT, but they define the research neighborhood in 
 references/adjacent-theories-map.md
 ```
 
+### Discriminating comparison scaffolds
+
+The adjacency map is paired with two research-facing discriminator matrices:
+
+```text
+references/collapse-decoherence-observer-discriminants.md
+references/gravity-model-discriminants.md
+```
+
+The first separates standard decoherence, GRW/CSL-like objective collapse, gravity-related collapse, and the current SoCT observer-state channel. The second compares Lambda-CDM/halo interpretations, MOND-like phenomenology, emergent-gravity proposals, and the current SoCT history-dependent memory-field hypothesis.
+
+These files are intended to define what would actually distinguish SoCT from neighboring explanations. They are not evidence that SoCT has already passed those tests.
+
 ## OSF alignment
 
 The OSF mapping file is preserved under:

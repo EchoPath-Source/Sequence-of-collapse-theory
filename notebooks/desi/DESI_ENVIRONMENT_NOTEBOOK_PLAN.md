@@ -18,6 +18,12 @@ Data-staging contract:
 data/desi/README.md
 ```
 
+Column-semantics contract:
+
+```text
+data/desi/DESI_DR1_COLUMN_SEMANTICS.md
+```
+
 The notebook should eventually produce a reproducible DESI-derived environment layer that can be used for later Pantheon+ crossmatching. It must not skip directly from exploratory querying to H0 claims.
 
 ## Inputs
@@ -33,7 +39,7 @@ Planned inputs include:
 
 No large raw catalog should be committed to the repository as part of notebook development.
 
-## Stage 1 — Schema verification
+## Stage 1 — Schema and column-semantics verification
 
 Before any production query:
 
@@ -41,14 +47,21 @@ Before any production query:
 2. verify required columns;
 3. verify identifier behavior for `targetid`;
 4. verify `zcat_primary`, `zwarn`, `spectype`, coordinate, redshift, and HEALPix fields where used;
-5. verify any joinable value-added catalogs and their join keys;
-6. record the schema verification date and release.
+5. verify any joinable value-added catalogs and their join keys before those joins are used;
+6. record the schema verification date and release;
+7. freeze the operational meaning and source provenance of every field used by the smoke query in `data/desi/DESI_DR1_COLUMN_SEMANTICS.md`.
 
-Expected resources from the planning document must be treated as assumptions until verified.
+Current smoke-query coordinate semantics are locked to `desi_dr1.zpix.mean_fiber_ra` and `mean_fiber_dec`. These must not be silently relabeled as target coordinates.
 
-If table or column names differ from the plan, stop and update the query plan/data contract before scaling further.
+If table or column names differ from the contract during live execution, stop and update the query plan/data contract explicitly before scaling further.
 
 ## Stage 2 — Tiny sky-patch smoke query
+
+Smoke-query execution is gated by the column-semantics contract above. The staged query is:
+
+```text
+data/desi/DESI_DR1_SMOKE_QUERY_v0_1.sql
+```
 
 Run a deliberately small query against a limited sky region or row count.
 
@@ -69,16 +82,19 @@ No conclusion about voids, filaments, PNT, SoCT, or H0 may be drawn from this st
 
 Define the base selection explicitly before density work begins.
 
-Candidate planning cuts from the DESI query plan include:
+The current smoke-query baseline, aligned to the Data Lab useful-spectrum semantics for the Main Survey, is:
 
 ```text
 zcat_primary = true
+objtype = 'TGT'
 zwarn = 0
 spectype = 'GALAXY'
+survey = 'main'
+program <> 'other'
 0.01 <= z <= 0.5
 ```
 
-These must be confirmed against the current schema and DESI documentation before production use.
+These cuts must survive live smoke-query validation before production use.
 
 Record:
 
@@ -121,6 +137,7 @@ Candidate approaches include:
 
 Whichever method is chosen, document:
 
+- exact source coordinate fields;
 - angular units;
 - redshift-to-distance assumptions;
 - fiducial cosmological parameters if used;
@@ -280,6 +297,8 @@ source_release
 quality_flags
 ```
 
+Normalized coordinate names must retain explicit provenance to the actual DESI source fields used.
+
 Planned full output path:
 
 ```text
@@ -294,7 +313,7 @@ PLANNED / NOT YET GENERATED
 
 ## Stage 12 — Pantheon+ coordinate-crossmatch interface
 
-Pantheon+ crossmatching begins only after a reproducible DESI environment catalog exists.
+Pantheon+ crossmatching begins only after a reproducible DESI environment catalog exists and the coordinate source used for matching has been explicitly frozen.
 
 The intended interface is:
 
@@ -390,8 +409,8 @@ Do not claim from this plan that:
 ## Locked implementation sequence
 
 ```text
-1. Verify DESI DR1 table/column names against current NOIRLab Data Lab schema.
-2. Run a tiny sky-patch query.
+1. Verify DESI DR1 table/column names and freeze smoke-query column semantics.
+2. Run the staged tiny sky-patch query and inspect returned schema/null behavior.
 3. Confirm reliable galaxy cuts.
 4. Define redshift shells.
 5. Define coordinate/neighborhood handling.

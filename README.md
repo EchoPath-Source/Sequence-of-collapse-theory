@@ -11,6 +11,16 @@ docs/repo-reconciliation-current-state.md
 
 A structured research repository for the **Sequence of Collapse (SoC / SoCT)** framework by Antoine L. Shephard.
 
+## Core positioning
+
+> **SoCT asks whether one generative principle — collapse leaves memory — can connect quantum-to-classical transition, gravitational memory, cosmological structure, black-hole information, and conscious observation without sacrificing falsifiability.**
+
+The stronger research formulation is:
+
+> **SoCT is compelling because it offers a single generative pattern — collapse leaves memory — that naturally links quantum-to-classical transition, gravitational memory, cosmological structure, black-hole information, and conscious observation, while producing distinct falsifiable empirical tracks.**
+
+This is a research-program statement, not a claim that every proposed connection has been established. The individual tracks must stand or fail on their own empirical and mathematical tests. In particular, the observer/consciousness channel is separable from the gravitational, cosmological, and black-hole tracks: failure of one extension does not by itself establish or refute every other SoCT hypothesis.
+
 This repo is intended to become the central home for:
 
 - core theory documents

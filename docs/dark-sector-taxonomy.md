@@ -157,6 +157,14 @@ Pantheon import status:
 data/PANTHEON_IMPORT_STATUS.md
 ```
 
+DESI environment-query plan:
+
+```text
+papers/p5-hubble-tension-memory-gradient/DESI_ENVIRONMENT_QUERY_PLAN.md
+```
+
+DESI can help build the galaxy-density and cosmic-web proxy needed to distinguish void-like, filament-like, and cluster-like environments before Pantheon+ crossmatching.
+
 ---
 
 ## Black-Hole Information / Gravity-Memory Motivation

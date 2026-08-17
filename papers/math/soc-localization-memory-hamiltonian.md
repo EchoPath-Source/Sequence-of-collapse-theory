@@ -2,7 +2,7 @@
 
 **Status:** Canonical equation block / theoretical scaffold  
 **Claim level:** Proposed mathematical framework, not established physics  
-**Related files:** `docs/theory-overview.md`, `docs/source-corpus.md`, `PREDICTIONS.md`, `papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md`, `papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md`
+**Related files:** `docs/theory-overview.md`, `docs/source-corpus.md`, `PREDICTIONS.md`, `papers/math/soc-operational-observation-model.md`, `papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md`, `papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md`
 
 ---
 
@@ -92,6 +92,124 @@ For MZI/decoherence tests, the related phenomenological form is:
 lambda_eff = lambda_env + lambda_c A(t)
 V(tau,A) = V0 exp[-lambda_eff tau]
 ```
+
+---
+
+## Operational Observation Derivation Program
+
+The undefined observation-strength/source structure above is now an explicit derivation target rather than a free phenomenological placeholder.
+
+Canonical observation-model note:
+
+```text
+papers/math/soc-operational-observation-model.md
+```
+
+The observation project begins below consciousness. Let `S` be a system and `O` a physical record-bearing subsystem. Ordinary interaction dynamics are represented through the localization/interaction sector:
+
+```math
+H_int subset H_loc.
+```
+
+Those dynamics generate a joint state
+
+```math
+rho_SO(t),
+```
+
+from which the project attempts to derive an operational observation quantity using:
+
+```text
+causal interaction
+state distinguishability
+record persistence
+downstream accessibility
+```
+
+The provisional observation functional is
+
+```math
+Omega_{S->O}(t) = F(I_c, D, R, A_d),
+```
+
+with an exploratory factorized proxy
+
+```math
+Omega_{S->O}(t) = I_c(t) D(t) R(t) A_d(t).
+```
+
+A more information-theoretic route defines a record-production rate
+
+```math
+Gamma_rec(x,t) = G(partial_t I_SO, R, A_d, Xi_irr),
+```
+
+where `I_SO` is system-record mutual information and `Xi_irr` represents robust/irreversible record formation.
+
+The candidate bridge into the existing memory equation is then
+
+```math
+C_obs(x,t) = kappa_rec Gamma_rec(x,t),
+```
+
+or, at a simpler phenomenological level,
+
+```math
+C_obs(x,t) = kappa_Omega Omega(x,t).
+```
+
+This yields
+
+```math
+partial_t M
+    = alpha C_obs
+    - beta M
+    + D_M nabla^2 M
+```
+
+for the observation-sourced branch.
+
+A broader decomposition may become necessary:
+
+```math
+C_total = C_env + C_obs + C_c,
+```
+
+where:
+
+```text
+C_env = ordinary environment/localization contribution
+C_obs = persistent distinguishable record-production contribution
+C_c   = additional conscious-access contribution, if supported
+```
+
+The model must determine whether `C_env` and `C_obs` are genuinely distinct physics or merely two descriptions of standard open-system dynamics before attributing any residual to SoCT.
+
+The preferred causal architecture is therefore:
+
+```text
+H_int
+  -> rho_SO(t)
+  -> distinguishability / information
+  -> record formation
+  -> Omega or Gamma_rec
+  -> candidate C_obs
+  -> M
+  -> lambda_M M O_M
+```
+
+Conscious access remains a separable later branch:
+
+```text
+record
+  -> integrated/global processing
+  -> conscious-access variable A_c
+  -> test whether C_c or H_c adds explanatory power
+```
+
+Claim boundary:
+
+> The operational observation model does not assume that observation equals objective wavefunction collapse, that record production necessarily creates a new physical memory field, or that consciousness is required for physical observation.
 
 ---
 
@@ -216,6 +334,7 @@ data/SPARC_IMPORT_STATUS.md
 data/PANTHEON_IMPORT_STATUS.md
 papers/p1-age-dependent-rotation-curves-sparc/REPRODUCIBILITY.md
 papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
+papers/math/soc-operational-observation-model.md
 papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
 papers/math/pnt-soct-covariance-conservation-and-timescale-audit.md
 ```
@@ -244,7 +363,7 @@ Do not use this Hamiltonian to claim that a product proves new physics, detects 
 
 Use:
 
-> This Hamiltonian provides a formal scaffold for separating memory-field and observer-state hypotheses into testable channels.
+> This Hamiltonian provides a formal scaffold for separating localization, operational observation, memory-field, and conscious-access hypotheses into testable channels.
 
 Avoid:
 
@@ -254,12 +373,14 @@ Avoid:
 
 ## Next Work
 
-1. Define units for `M(x,t)` and `Phi_c(x,t)` in the canonical field/operator form.
-2. Map `lambda_M` to SPARC/Pantheon/PNT constraints.
-3. Map `lambda_c` to MZI visibility/decoherence experiments.
-4. Derive conservation or continuity conditions for `M`.
-5. Connect memory-kernel form to the Engramon scale and PNT substrate without treating dimensional consistency as proof of the carrier hypothesis.
-6. Replace coordinate-distance memory kernels with covariant/gauge-safe kernels or explicitly restrict them to an effective background.
-7. Derive or constrain `T_M^{mu nu}` and `T_int^{mu nu}` so the total stress-energy tensor is conservation-compatible.
-8. Define the two-timescale memory model and the protected source term `Q[C]` before making long-timescale memory claims.
-9. Keep any product translation routed through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md`.
+1. Derive and benchmark the operational observation functional `Omega` and record-production rate `Gamma_rec` in standard qubit/detector/open-system models.
+2. Determine whether `C_env` and `C_obs` are mathematically/physically distinct or only alternative descriptions of ordinary decoherence and record formation.
+3. Define units for `M(x,t)`, `Gamma_rec`, `C_obs`, and `Phi_c(x,t)` in the canonical field/operator form.
+4. Map `lambda_M` to SPARC/Pantheon/PNT constraints.
+5. Map `lambda_c` to MZI visibility/decoherence experiments only after lower-level observation variables are controlled.
+6. Derive conservation or continuity conditions for `M`.
+7. Connect memory-kernel form to the Engramon scale and PNT substrate without treating dimensional consistency as proof of the carrier hypothesis.
+8. Replace coordinate-distance memory kernels with covariant/gauge-safe kernels or explicitly restrict them to an effective background.
+9. Derive or constrain `T_M^{mu nu}` and `T_int^{mu nu}` so the total stress-energy tensor is conservation-compatible.
+10. Define the two-timescale memory model and the protected source term `Q[C]` before making long-timescale memory claims.
+11. Keep any product translation routed through `docs/research_to_product_handoff.md` and `docs/claim_boundaries_for_products.md`.

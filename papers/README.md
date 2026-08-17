@@ -35,6 +35,17 @@ docs/claim_boundaries_for_products.md
 
 Use these before translating any paper output into EchoGenesis, EchoPath, Vision Codex, or product-facing language.
 
+## Foundational math support
+
+The math support package now includes an explicit operational-observation program:
+
+```text
+papers/math/soc-localization-memory-hamiltonian.md
+papers/math/soc-operational-observation-model.md
+```
+
+The observation model is intended to derive observation strength and record-production variables from interaction, distinguishability, persistence, and accessibility before adding any conscious-access hypothesis. It supports canonical P3, P4, and P7 and may also clarify the source term used by memory-field branches.
+
 ## Canonical paper sequence
 
 ### P1 — Age-Dependent Galactic Rotation Curves as Evidence for a Spacetime Memory Field
@@ -80,6 +91,12 @@ Status: published on Medium / import full text or PDF.
 
 Target: quant-ph / Foundations of Physics.
 
+Observation-model support:
+
+```text
+papers/math/soc-operational-observation-model.md
+```
+
 ### P4 — SOC-MZI-01: Awareness-Modulated Decoherence in Mach-Zehnder Interferometry
 
 Folder:
@@ -95,6 +112,10 @@ Experiment status:
 ```text
 papers/p4-soc-mzi-awareness-modulated-decoherence/EXPERIMENT_STATUS.md
 ```
+
+Observation-model dependency:
+
+> P4 should eventually control the lower-level physical observation/record variables before attributing any residual to conscious access.
 
 Target: Nature Physics / PRL Registered Report path.
 
@@ -144,6 +165,12 @@ papers/p7-unified-framework/
 
 Status: foundation built / write last.
 
+Observation-model support:
+
+```text
+papers/math/soc-operational-observation-model.md
+```
+
 Target: Physical Review D / Reviews of Modern Physics.
 
 ## Support packages created before roadmap realignment
@@ -166,7 +193,7 @@ Mapping:
 - `p3-causal-inversion-directional-memory/` supports canonical P6.
 - `p4-observer-dependent-decoherence-cgds/` supports canonical P4.
 - `p5-soct-synthesis/` is superseded by canonical P7 but preserved as earlier synthesis scaffold.
-- `math/` supports canonical P3 and P7.
+- `math/` supports canonical P3 and P7 and now contains the observation-model foundation required to sharpen P4.
 
 ## Immediate import needs
 

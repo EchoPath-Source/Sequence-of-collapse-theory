@@ -17,9 +17,32 @@ This folder is reserved for computational, modeling, and validation materials.
 
 ## Current status
 
-The repo has been initialized with simulation structure and empirical scaffolding.
+The repo now contains runnable simulation material alongside imported and exploratory scaffolds.
 
-No raw simulation datasets or runnable notebooks have been imported yet.
+### Operational observation program
+
+```text
+simulations/observation-qubit-pointer/
+```
+
+Simulation 1 is a standard-quantum qubit + two-state pointer benchmark. It sweeps measurement interaction strength and computes pointer trace distance, quantum mutual information, Holevo record information, persistence, and provisional observation-strength diagnostics.
+
+It intentionally includes:
+
+```text
+no SoCT memory feedback
+no consciousness term
+```
+
+so it functions as the null/baseline layer for the observation project.
+
+Related derivation files:
+
+```text
+papers/math/soc-operational-observation-model.md
+papers/math/soc-observation-to-spacetime-derivation-ladder.md
+papers/math/soc-localization-memory-hamiltonian.md
+```
 
 The current empirical exploration summary is preserved at:
 
@@ -27,7 +50,7 @@ The current empirical exploration summary is preserved at:
 docs/empirical-exploration-thread-summary-v0-1.md
 ```
 
-This summary frames the strongest near-term simulation route as a low-energy effective-G / memory-kernel model rather than a Planck-scale rewrite.
+This summary frames the strongest near-term gravitational simulation route as a low-energy effective-G / memory-kernel model rather than a Planck-scale rewrite.
 
 Working phenomenological form:
 
@@ -41,46 +64,39 @@ Minimal exponential memory form:
 M(t) = 1 - exp(-t/tau)
 ```
 
-## Recommended first imports
+## Active simulation directions
 
-1. SPARC memory-fit output tables and parameter logs.
-2. PM void-filament H-split parameter logs.
-3. Effective-G / memory-kernel toy-model scripts.
-4. Any plots or tables tied to the Unified Physics Framework.
-5. Validation screenshots or summary tables from prior work.
-6. Any code that explores:
-   - memory kernels
-   - age-dependent rotation curves
-   - collapse weighting
-   - void-filament expansion differentials
-   - black-hole compression / bounce intuition
-7. Any exported notebooks or scripts from local or thread work.
+1. Operational observation: qubit -> pointer -> environment -> record erasure -> history-matched memory feedback.
+2. SPARC memory-fit output tables and parameter logs.
+3. PM void-filament H-split parameter logs.
+4. Effective-G / memory-kernel toy-model scripts.
+5. CMB / gravitational-wave / black-hole comparison models.
+6. Parent-child directional-memory toy simulations.
+
+## Observation simulation ladder
+
+```text
+Simulation 1: qubit + pointer                 COMPLETE baseline
+Simulation 2: qubit + pointer + environment   NEXT
+Simulation 3: record erasure                  planned
+Simulation 4: SoCT memory feedback             planned
+Simulation 5: conscious-access layer           planned only after lower layers stabilize
+```
 
 ## Suggested structure
 
 ```text
 simulations/
 ├─ README.md
+├─ observation-qubit-pointer/
+│  ├─ README.md
+│  ├─ simulate_qubit_pointer.py
+│  └─ results.csv
 ├─ sparc/
-│  ├─ notes.md
-│  ├─ parameter-log.md
-│  └─ outputs/
 ├─ memory-kernel/
-│  ├─ effective-g-memory-model.md
-│  ├─ notes.md
-│  └─ outputs/
 ├─ cosmology/
-│  ├─ pm-void-filament-hsplit-notes.md
-│  ├─ cmb-correlation-notes.md
-│  ├─ hubble-memory-drag-notes.md
-│  └─ outputs/
-├─ black-hole/
-│  ├─ soc-bh-01-notes.md
-│  └─ outputs/
+├─ parent-child-transfer/
 └─ imported-assets/
-   ├─ screenshots/
-   ├─ tables/
-   └─ charts/
 ```
 
 ## Import rule

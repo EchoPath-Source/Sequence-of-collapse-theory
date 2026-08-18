@@ -57,15 +57,15 @@ The scientifically useful target became:
 
 The original source is not required by the hypothesis and is not used as evidence.
 
-## RM-01 first simulation
+## RM-01 simulation ladder
 
-The first benchmark is stored at:
+The benchmark series is stored at:
 
 ```text
 experiments/observation-foundations/rm01-record-geometry/
 ```
 
-Its most important first-pass findings are:
+### RM-01 — first metric gate
 
 ```text
 structured local persistent record overlap -> recoverable hidden geometry
@@ -74,15 +74,68 @@ matched homogeneous global records         -> no geometry recovery
 binary variation-of-information candidate  -> fails first metric gate
 ```
 
-Therefore the surviving idea is not `redundancy -> geometry`.
+The first important negative result was that binary variation-of-information did not recover the hidden geometry. Jaccard support distance did.
 
-It is more narrowly:
+### RM-01B — held-out geometry families
+
+A fixed Jaccard reconstruction generalized across cycle, torus, irregular, bottleneck, shortcut, and variable-speed families.
+
+The shortcut benchmark showed that record relations follow **effective propagation geometry** more strongly than a supplied background embedding when genuine low-cost nonlocal routes are introduced.
+
+### RM-01C — remove global distance from record generation
+
+RM-01C removed the explicit distance-decay generator.
+
+Records instead arise from repeated local transition dynamics:
 
 ```text
-persistent records
-+ constrained propagation/locality
--> structured overlap
--> recoverable relational geometry
+local edge rules
+-> propagated influence
+-> persistent records
+-> relational support geometry
+```
+
+No all-pairs distance or coordinate is used to generate record probability.
+
+Across six families, local record geometry remained strongly correlated with effective propagation geometry while scrambled/global controls collapsed toward zero.
+
+### RM-01D — higher-structure reconstruction
+
+RM-01D asks whether the record representation contains more than pairwise distance.
+
+Using a family-agnostic reconstruction supplied only with persistent record supports, the first 30-seed benchmark finds:
+
+```text
+mean local direct-edge ROC AUC  = 0.978
+scrambled/global edge ROC AUC   = ~0.505
+
+bottleneck partition ARI        = 1.000
+shortcut closeness percentile   = 0.996
+```
+
+An equal-size, fixed-record-density dimension suite separately compares a 64-node cycle, 64-node 2-D torus, and 64-node 3-D torus.
+
+The record-only local growth estimator preserves
+
+```text
+cycle < 2-D < 3-D
+```
+
+in all `30 / 30` local seeds, versus `6 / 30` scrambled and `0 / 30` global controls.
+
+The numerical growth exponents are not treated as unbiased continuum dimensions; finite-size and fixed-k reconstruction effects remain explicit limitations.
+
+The current surviving toy chain is:
+
+```text
+local relational interaction
+-> propagation
+-> persistent record supports
+-> overlap relations
+-> effective distance
+-> local adjacency
+-> bottleneck / shortcut structure
+-> relative growth-dimensional organization
 ```
 
 This remains a toy-model methodology result only.
@@ -105,8 +158,38 @@ quantum interaction
 -> open spacetime bridge
 ```
 
-RM-01 currently probes only whether the relational structure of persistent records can carry recoverable geometry. It does not establish the SoCT-specific memory or gravity steps.
+RM-01 currently probes only whether the relational structure of persistent records can carry recoverable effective geometry. It does not establish the SoCT-specific memory or gravity steps.
 
-## Next gate
+## Next gate — RM-01E
 
-RM-01B should test held-out geometry families and ask whether record-support geometry generalizes, or merely rediscovers the local kernel used to generate records.
+The strongest remaining assumption is that RM-01A-D begin from a substrate graph whose relational structure already exists.
+
+RM-01E should instead generate an evolving **pre-geometric relational network** from local update rules and then ask which compressed description best explains the resulting persistent record relations:
+
+```text
+relation-update rules
+-> evolving interaction network
+-> propagation
+-> persistent records
+-> record-only reconstruction
+-> competing model classes
+```
+
+Candidate explanatory classes should include:
+
+```text
+1-D / 2-D / 3-D geometric embedding
+hyperbolic geometry
+tree / ultrametric
+community/block model
+small-world network
+generic higher-dimensional latent model
+```
+
+The key question is no longer whether a known geometry can be reconstructed.
+
+It is:
+
+> Does a low-dimensional geometric description become the best compressed explanation of persistent record relations in any nontrivial regime without hard-coding that geometry into the generator?
+
+A negative result is an acceptable and informative outcome.

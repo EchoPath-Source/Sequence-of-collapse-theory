@@ -10,6 +10,7 @@
 - `papers/math/soc-recursive-observation-memory-causality-geometry.md`
 - `papers/math/soc-localization-memory-hamiltonian.md`
 - `papers/math/soct-memory-origin-constraints-and-causal-completion.md`
+- `papers/math/soct-memory-action-energy-exchange.md`
 - `docs/operational-observation-current-formulation.md`
 - `docs/soct-memory-necessity-status.md`
 - `docs/observation-foundations-literature-crosswalk-2026-08-17.md`
@@ -43,7 +44,7 @@ the SoCT M equation is a viable and falsifiable extra-state model;
 but M is not yet empirically required or uniquely identifiable.
 ```
 
-SIM-04J adds an important refinement: the current first-order memory equation should be treated as an effective low-frequency law unless a causal completion is derived. A candidate damped hyperbolic completion creates new cross-regime consistency tests rather than new arbitrary fit freedom.
+SIM-04J and SIM-04K strengthen the field hypothesis by adding constraints rather than flexibility. SIM-04J treats the first-order reaction-diffusion law as an effective low-frequency limit of a candidate causal field. SIM-04K then requires the same field parameters to satisfy a no-retuning energy/backreaction ledger.
 
 ## Simulation status
 
@@ -100,8 +101,19 @@ SIM-04J adds an important refinement: the current first-order memory equation sh
   Files: `sim04i_incomplete_reset_hidden_reservoir.py`, `SIM04I_RESULTS.md`
 
 - **SIM-04J complete — Memory-Origin Constraint / Causal Completion**  
-  The current reaction-diffusion memory equation is tested as the overdamped limit of a causal damped field. Late/low-k parameters plus an independently calibrated `gamma` predict finite propagation speed, a mode-crossover scale, and high-k response without new high-k fit parameters. In the causal generator, the constrained model reaches the noise floor on held-out high-k data while pure diffusion fails; in a pure-diffusion generator, the simpler diffusion null wins.  
+  The reaction-diffusion memory equation is tested as the overdamped limit of a damped causal field. Late/low-k parameters plus an independently calibrated `gamma` predict finite propagation speed, a mode-crossover scale, and high-k response without new high-k fit parameters. The causal generator passes its held-out high-k test; a pure-diffusion generator instead selects the diffusion null.  
   Files: `sim04j_memory_origin_constraints.py`, `SIM04J_RESULTS.md`
+
+- **SIM-04K complete — Action / Conservation / Backreaction Gate**  
+  The candidate causal field implies the flat-background energy ledger
+
+  ```math
+  partial_t rho_M + div S_M
+  = g C_obs partial_t M - gamma (partial_t M)^2.
+  ```
+
+  Parameters are fitted only from training probe trajectories and frozen before an independent damping-heat channel is predicted. For action-consistent synthetic data, held-out heat prediction reaches the heat-noise floor (`RMSE ~ 0.00194` for `sigma_heat = 0.002`). For an otherwise identical field-like probe generator with no heat signal, the action model fails strongly (`RMSE ~ 0.08643`) while the zero-heat null wins. A source-power heat generator is likewise best explained by its own simpler heat law.  
+  Files: `sim04k_action_conservation_backreaction.py`, `SIM04K_RESULTS.md`
 
 ## Observation program
 
@@ -157,7 +169,7 @@ partial_t^2 M
 = g C_obs,
 ```
 
-with the overdamped mapping
+with
 
 ```math
 alpha=g/gamma,
@@ -167,7 +179,7 @@ qquad
 D_M=c_M^2/gamma.
 ```
 
-This implies the cross-regime constraints
+Cross-regime constraints include
 
 ```math
 c_M=sqrt(gamma D_M)
@@ -185,7 +197,22 @@ For overdamped Fourier modes,
 r_-(k)[gamma-r_-(k)]/gamma = beta + D_M k^2.
 ```
 
-The present simulations show mathematical viability and falsifiability, not necessity.
+The candidate flat-background energy density is
+
+```math
+rho_M
+= 1/2 (partial_t M)^2
++ 1/2 c_M^2 |grad M|^2
++ 1/2 omega_M^2 M^2,
+```
+
+with periodic/no-flux integrated exchange law
+
+```math
+dE_M/dt = P_source - P_damp.
+```
+
+The present simulations show mathematical viability and increasing falsifiability, not necessity.
 
 ## Current nested hypotheses
 
@@ -199,7 +226,7 @@ In a true post-reset experiment, H0 and H1 are physically identical. The contest
 
 ## Current identifiability boundary
 
-A persuasive new-physics signature would require, at minimum:
+A persuasive new-physics signature would now require, at minimum:
 
 ```text
 verified matched ordinary state
@@ -210,16 +237,25 @@ verified matched ordinary state
 + predicted causal front / mode crossover
 + fixed probe/feedback coupling
 + held-out protocol and wavelength prediction
++ no-retuning energy/backreaction prediction
 + failure of independently constrained conventional reservoirs.
 ```
 
-A conventional degree of freedom with exactly the same complete source, damping, propagation, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
+A conventional physical degree of freedom with exactly the same complete source, causal dynamics, energy exchange, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
 
 ## Next research gates
 
-### Track A — action / conservation discriminator
+### Track A — explicit exchange / covariant conservation completion
 
-Use the candidate action-first memory sector already identified in the covariance/conservation audit to derive the field stress-energy, source exchange, and any cross-observable backreaction relation. The goal is one parameter set that must satisfy both memory propagation and an independent conservation/backreaction observable.
+SIM-04K still treats `gamma partial_t M` as effective damping. Introduce an explicit recipient/bath sector so the damping loss appears as energy gained elsewhere rather than disappearing phenomenologically. Derive a coupled total-energy ledger and then a covariant stress-energy scaffold.
+
+The full target is eventually
+
+```math
+nabla_mu T_total^{mu nu}=0,
+```
+
+not merely a flat-space scalar energy balance.
 
 ### Track B — causal-completion audit
 
@@ -244,4 +280,5 @@ Continue the observation/record-formation model independently of H2. Its value s
 7. preserve the distinction between ordinary record memory `R` and proposed state `M`;
 8. never treat a hidden-state naming difference as physical evidence;
 9. treat reset/environmental closure as an empirical measurement problem;
-10. treat the first-order memory PDE as an effective law until causal/covariant completion is established.
+10. treat the first-order memory PDE as an effective law until causal/covariant completion is established;
+11. do not interpret a field-like probe residual physically unless the same fixed parameters satisfy the independently measured exchange/backreaction ledger.

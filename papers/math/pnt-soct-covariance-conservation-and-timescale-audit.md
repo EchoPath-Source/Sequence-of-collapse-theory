@@ -10,6 +10,7 @@ papers/math/soc-localization-memory-hamiltonian.md
 papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
 papers/math/soct-memory-origin-constraints-and-causal-completion.md
 papers/math/soct-memory-action-energy-exchange.md
+papers/math/soct-memory-local-exchange-continuity.md
 papers/math/israel-junction-causal-inversion-surface.md
 papers/p5-hubble-tension-memory-gradient/README.md
 papers/p6-black-holes-memory-compression-nodes/README.md
@@ -37,7 +38,7 @@ This file is not a claim of resolution. It is a formal audit and resolution plan
 | Gate | Risk before peer review | Candidate resolution path | Current status |
 |---|---|---|---|
 | Gauge / covariance safety | Coordinate-distance kernels can violate diffeomorphism covariance or gauge invariance. | Replace raw coordinate kernels with covariant kernels based on invariant intervals, bitensors, parallel transport, or gauge dressing. | OPEN |
-| Stress-energy conservation | A phenomenological memory stress tensor can violate the Bianchi identity unless the full stress tensor is conserved. | Derive memory and interaction tensors from an action or impose coupled field equations that enforce total conservation. | **OPEN — flat-background energy ledger derived/tested in SIM-04K; explicit bath + covariant total tensor still missing** |
+| Stress-energy conservation | A phenomenological memory stress tensor can violate the Bianchi identity unless the full stress tensor is conserved. | Derive memory and interaction tensors from an action or impose coupled field equations that enforce total conservation. | **OPEN — global and local flat-background exchange ledgers derived/tested through SIM-04L; microscopic bath + covariant total tensor still missing** |
 | Junction-surface tensors | Parent-child / causal-inversion surfaces require explicit intrinsic metric, extrinsic curvature, jump tensor, and surface stress-energy definitions. | Use non-null Lanczos-Israel junction equations as the first scaffold; add a null-shell extension if the boundary is horizon-like. | PARTIALLY ADDRESSED |
 | Decoherence / long-timescale memory | Ordinary quantum coherence decays too quickly to support cosmological inheritance unless a protected slow channel exists. | Split memory into fast local memory and slow/protected memory with explicit timescale hierarchy. | OPEN |
 
@@ -158,7 +159,7 @@ where `C(x)` is the collapse-intensity source and `g_M` is a coupling constant w
 
 This is only a candidate support model. It does not prove that `phi_M` exists, and it does not prove that PNT/SoCT modifies gravity.
 
-### Progress after SIM-04J / SIM-04K
+### Progress after SIM-04J / SIM-04K / SIM-04L
 
 The memory-origin program now uses the candidate flat-background causal completion
 
@@ -191,7 +192,7 @@ rho_M
 + 1/2 omega_M^2 M^2
 ```
 
-and exchange law
+and local exchange law
 
 ```math
 partial_t rho_M + div S_M
@@ -199,26 +200,53 @@ partial_t rho_M + div S_M
 - gamma (partial_t M)^2.
 ```
 
-For periodic/no-flux boundaries,
+For periodic/no-flux boundaries this reduces to
 
 ```math
 dE_M/dt = P_source - P_damp.
 ```
 
-The discrete SIM-04K implementation satisfies this instantaneous algebraic identity to floating-point roundoff and uses it to predict an independent damping-heat channel from parameters fitted only to probe trajectories.
+The discrete SIM-04K implementation satisfies the global instantaneous algebraic identity to floating-point roundoff and predicts an independent damping-heat channel from parameters fitted only to probe trajectories.
 
-This is meaningful progress because energetic/backreaction behavior is no longer allowed to float independently of the field trajectory.
+SIM-04L strengthens the same constraint spatially. It defines local source and bath exchange channels
+
+```math
+P_src(x,t)=g C_obs(x,t) partial_t M(x,t),
+```
+
+```math
+P_bath(x,t)=gamma [partial_t M(x,t)]^2,
+```
+
+and verifies the semi-discrete local continuity identity to approximately
+
+```text
+3.82e-17
+```
+
+maximum absolute residual in the benchmark.
+
+The action-consistent synthetic generator predicts held-out site-resolved source and bath exchange at the local sensor-noise floor. A deliberately spatially scrambled adversary preserves every global exchange total but fails the local field prediction by more than an order of magnitude above local sensor noise.
+
+This establishes an important methodological point:
+
+```text
+global conservation is necessary but not sufficient;
+local continuity / flux structure supplies an additional falsification gate.
+```
+
+This is meaningful progress because energetic/backreaction behavior is no longer allowed to float independently in either total magnitude or spatial deposition.
 
 It is **not** a resolution of the full stress-energy gate.
 
 ### Remaining required step
 
-The next conservation task is to model the recipient sector explicitly:
+The next conservation task is to replace the bookkeeping recipient by an explicit dynamical sector:
 
 ```text
 source / matter sector
 <-> memory field M
-<-> bath / damping sector.
+<-> bath / environment sector.
 ```
 
 The damping loss
@@ -227,22 +255,23 @@ The damping loss
 gamma (partial_t M)^2
 ```
 
-must appear as energy gained by a modeled recipient sector rather than disappearing phenomenologically.
+must emerge from explicit bath/environment dynamics or a controlled open-system derivation rather than simply being assigned to a recipient ledger.
 
 After that, a covariant formulation must:
 
 1. define the full action or effective action;
-2. derive `T_M^{mu nu}`, `T_int^{mu nu}`, and any bath stress tensor;
-3. derive explicit exchange currents among sectors;
+2. derive `T_M^{mu nu}`, `T_int^{mu nu}`, and the bath/environment stress tensor;
+3. derive explicit exchange four-currents among sectors;
 4. verify
 
    ```math
    nabla_mu T_total^{mu nu}=0;
    ```
 
-5. state whether `c_M` is compatible with the spacetime metric, an effective metric, or a physical medium/preferred frame.
+5. state whether `c_M` is compatible with the spacetime metric, an effective metric, or a physical medium/preferred frame;
+6. show how the low-frequency damping coefficient `gamma` follows from the explicit environment rather than being inserted independently.
 
-Until those steps are complete, stress-energy conservation remains **OPEN**, with a flat-background energetic scaffold **PARTIALLY ADDRESSED**.
+Until those steps are complete, stress-energy conservation remains **OPEN**, with flat-background global and local energetic scaffolds **PARTIALLY ADDRESSED**.
 
 ---
 

@@ -35,7 +35,8 @@ Every simulation must include a null model and a failure criterion. The goal is 
 - **SIM-03B complete:** raw response amplitude fails as a transmission/distance proxy under susceptibility and near-critical recurrent amplification.
 - **SIM-04A complete:** causal reachability and earliest response are recoverable at high precision from finite noisy interventions in the initial DAG benchmark; heterogeneous susceptibility mainly reduces recall for weak paths.
 - **SIM-04B complete:** in flat-spacetime toy models, causal order + calibrated interval count recovers useful timelike scale; adding calibrated delay recovers useful spatial-separation information. Density gradients, nonlocal shortcuts, and uncalibrated delay expose explicit failure boundaries.
-- **Next:** SIM-04C comparison of candidate causal-distance constructions across withheld geometry families.
+- **SIM-04C complete:** candidate distance rules were compared across regular and withheld geometry families. Calibrated propagation delay was the strongest simple generalizer for effective path geometry; a learned combination did not universally outperform physics-informed estimators. Shortcut and variable-speed cases confirmed that background embedding distance and effective causal distance can legitimately diverge.
+- **Next gate:** SIM-04D identifiability — determine whether an apparent geometry change can be distinguished from ordinary changes in speed/medium, susceptibility, hidden nodes, or dynamical memory before injecting an SoCT-specific memory field.
 
 The literature-informed detailed SIM-03/04 plan is in `SIM03_04_REVISED_PLAN.md`.
 
@@ -142,19 +143,13 @@ Files:
 - `sim04b_order_count_delay_geometry.py`
 - `SIM04B_RESULTS.md`
 
-### SIM-04C — Compare Candidate Distance Constructions
+### SIM-04C — Candidate Distance Constructions
 
-Do not privilege one distance rule. Compare at least:
+**Result:** no universal scalar distance rule emerged. Calibrated propagation delay was the strongest simple estimator for effective path geometry on irregular, bottleneck, and variable-speed networks. `-log(transmission)` behaved well under its expected exponential-channel assumption but was not uniquely privileged. Hop count remained an excellent topology baseline on regular networks and degraded as edge costs varied.
 
-```text
-D1 = shortest path on inverse calibrated causal capacity
-D2 = shortest path on negative-log calibrated transmission
-D3 = calibrated propagation-delay metric
-D4 = order / hop / interval-count proxy appropriate to the test bed
-D5 = learned combination trained on selected geometry families and tested on withheld families
-```
+A learned combination trained only on chain + grid data did **not** universally beat simple physics-informed estimators on withheld geometry families, providing an explicit anti-overfitting result.
 
-The benchmark must separately report agreement with:
+The shortcut and variable-speed families require separate reporting against:
 
 ```text
 background embedding geometry
@@ -162,7 +157,26 @@ versus
 effective causal/path geometry
 ```
 
-because genuine shortcut relations can make those targets diverge.
+because real low-cost causal routes can make the two disagree.
+
+Files:
+
+- `sim04c_candidate_distance_comparison.py`
+- `SIM04C_RESULTS.md`
+
+### SIM-04D — Identifiability Gate
+
+Before injecting an SoCT-specific memory field, test whether apparent changes in effective causal geometry can be distinguished from simpler alternatives:
+
+```text
+local propagation-speed changes
+receiver susceptibility changes
+hidden or missing nodes
+ordinary environmental / dynamical memory
+true topology changes
+```
+
+An `M`-driven geometry signature is not scientifically useful if those alternatives can reproduce it with equal or lower complexity.
 
 ## SIM-05 — Redundant Record / Broadcastability
 

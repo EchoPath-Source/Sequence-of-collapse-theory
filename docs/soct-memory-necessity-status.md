@@ -1,6 +1,6 @@
 # SoCT Memory Field — Current Necessity / Novelty Status
 
-**Status:** research assessment after SIM-02 through SIM-04J  
+**Status:** research assessment after SIM-02 through SIM-04K  
 **Claim level:** internal scientific positioning; not empirical confirmation or refutation  
 **Purpose:** prevent synthetic viability results from being misread as evidence that a physical memory field is already required.
 
@@ -12,7 +12,7 @@ The conservative conclusion is:
 
 > **Standard quantum/open-system dynamics already explain interaction, entanglement, decoherence, record persistence, record erasure, redundancy, and ordinary environmental memory. The proposed `M` field remains a mathematically viable additional-state hypothesis, but it has not yet been shown to be empirically required or uniquely identifiable.**
 
-SIM-04J sharpens the field hypothesis by treating the first-order reaction-diffusion equation as an effective low-frequency law and deriving a candidate causal completion. This adds cross-regime predictions, not evidence that the field exists.
+SIM-04J and SIM-04K make the field hypothesis substantially more constrained. SIM-04J treats the first-order reaction-diffusion equation as an effective low-frequency law with a candidate causal completion. SIM-04K then derives a linked energy/exchange ledger so a field trajectory cannot be fitted independently of its energetic consequences. These are stronger falsification conditions, not evidence that the field exists.
 
 ---
 
@@ -56,9 +56,9 @@ Thus the standalone operational observation model may be useful without implying
 
 If an additional state survives after all explicitly modeled ordinary degrees of freedom are reset, a fresh probe can retain history dependence. This is a valid H2 signature in simulation, but only becomes evidence for new physics if conventional state completions are independently excluded.
 
-### 5. A causal completion can turn late-time parameters into short-time predictions
+### 5. A causal completion turns late-time parameters into short-time predictions
 
-SIM-04J studies the candidate completion
+SIM-04J studies
 
 ```math
 partial_t^2 M
@@ -68,7 +68,7 @@ partial_t^2 M
 = g C_obs.
 ```
 
-In the overdamped regime it reduces to the current law with
+with the overdamped mapping
 
 ```math
 alpha=g/gamma,
@@ -78,27 +78,70 @@ qquad
 D_M=c_M^2/gamma.
 ```
 
-Hence
+This implies
 
 ```math
-c_M=sqrt(gamma D_M)
+c_M=sqrt(gamma D_M),
 ```
-
-and
 
 ```math
-k_c^2=(gamma/4-beta)/D_M.
+k_c^2=(gamma/4-beta)/D_M,
 ```
 
-For an overdamped Fourier mode,
+and for overdamped Fourier modes
 
 ```math
 r_-(k)[gamma-r_-(k)]/gamma = beta + D_M k^2.
 ```
 
-These are cross-regime constraints. In the synthetic causal generator, late/low-k fitting predicts held-out early/high-k behavior at the noise floor; in a pure-diffusion generator, pure diffusion wins instead.
+In the synthetic causal generator, late/low-k fitting predicts held-out early/high-k behavior at the noise floor; in a pure-diffusion generator, pure diffusion wins instead.
 
-This makes the hypothesis more constrained and falsifiable. It does not make `M` necessary.
+### 6. A physical-field interpretation implies an energy/backreaction ledger
+
+SIM-04K derives the flat-background effective energy density
+
+```math
+rho_M
+= 1/2 (partial_t M)^2
++ 1/2 c_M^2 |grad M|^2
++ 1/2 omega_M^2 M^2
+```
+
+and the exchange law
+
+```math
+partial_t rho_M + div S_M
+= g C_obs partial_t M
+- gamma (partial_t M)^2.
+```
+
+For periodic/no-flux boundaries,
+
+```math
+dE_M/dt = P_source - P_damp.
+```
+
+The SIM-04K fit is deliberately performed **only on probe trajectories**. The fitted field parameters are then frozen before predicting an independent damping-heat channel with no extra heat amplitude.
+
+For action-consistent synthetic data:
+
+```text
+held-out probe RMSE  ~ 0.00149
+predicted heat RMSE  ~ 0.00194
+heat noise sigma     = 0.00200.
+```
+
+For an otherwise identical field-like probe generator with no heat channel:
+
+```text
+held-out probe RMSE  ~ 0.00149
+field-predicted heat RMSE ~ 0.08643
+zero-heat null RMSE       ~ 0.00193.
+```
+
+Thus the conservation/backreaction requirement can **falsify** the physical-field completion even when the probe trajectory alone still fits extremely well.
+
+This is an important strengthening of the hypothesis.
 
 ---
 
@@ -113,7 +156,8 @@ M produces any already-observed anomaly;
 M is the unique explanation of a post-reset residual;
 M modifies fundamental spacetime geometry;
 Gamma_rec is the unique observation-source functional;
-the causal completion above is the unique or correct completion;
+the causal completion is the unique or correct completion;
+the flat-background action/exchange scaffold is a complete covariant theory;
 consciousness is required for lower-level observation.
 ```
 
@@ -125,7 +169,7 @@ History dependence implies that the chosen present-state description may be inco
 
 A conventional residual reservoir given the same source, decay, diffusion, and probe coupling as `M` is indistinguishable from `M` using probe-only data. Independent reset diagnostics break that degeneracy only if they actually couple to the conventional hidden mode with sufficient sensitivity.
 
-A conventional reservoir engineered to obey the same complete causal source/damping/propagation law remains observationally degenerate as well. The new causal constraints raise the amount of structure the competitor must reproduce but do not solve a pure naming/ontology ambiguity.
+A conventional field engineered to obey the same **complete** causal and energy-exchange structure remains observationally degenerate as well. SIM-04K raises the amount of physical structure the competitor must reproduce, but it does not solve a pure naming/ontology ambiguity.
 
 ---
 
@@ -149,11 +193,11 @@ A conventional reservoir engineered to obey the same complete causal source/damp
 
 ### Supported
 
-> If the first-order memory law is the overdamped limit of a causal field, late-time parameters imply additional short-time/wavelength predictions that can falsify that completion.
+> If the first-order memory law is the overdamped limit of a causal physical field, late-time parameters imply short-time/wavelength predictions and an independently testable energy/backreaction ledger.
 
 ### Research hypothesis
 
-> If a residual follows a fixed record-derived source, relaxation, spatial propagation, causal-front/dispersion law, and feedback law while independently constrained conventional reservoirs fail, an additional persistent degree of freedom would become scientifically motivated.
+> If a residual follows a fixed record-derived source, relaxation, spatial propagation, causal-front/dispersion law, feedback law, and conservation-compatible exchange signature while independently constrained conventional reservoirs fail, an additional persistent degree of freedom would become scientifically motivated.
 
 ---
 
@@ -170,37 +214,47 @@ matched-present / different-history residual
 wait-time dependence
 cross-protocol parameter transfer
 fresh-probe residual after ordinary reset
-and, under the causal completion, high-k/short-time crossover behavior.
+high-k / short-time crossover behavior
+and action-linked source-work / stored-energy / damping-loss behavior.
 ```
 
 ### Relative to complete conventional physics: not yet uniquely
 
-An arbitrary conventional hidden reservoir can be assigned the same phenomenological dynamics. A stronger conventional mimic can also be assigned the same causal completion.
+An arbitrary conventional hidden reservoir can be assigned the same phenomenological dynamics. A stronger conventional mimic can also be assigned the same causal completion and the same energy ledger.
 
-Therefore the next novelty target is not another fit of the same field trajectory. It is a second physical consequence forced by the field's proposed origin.
+So the program has not yet derived an ontologically unique signature.
+
+What it has done is progressively replace a generic hidden-state hypothesis with a much more constrained candidate physical sector.
 
 ---
 
-## Strongest next discriminator: action / conservation
+## Strongest next discriminator: explicit exchange / covariant completion
 
-The repository's covariance/conservation audit already requires a physical memory sector to participate in a conservation-compatible action or exchange law.
-
-For a causal damped field, the field trajectory should imply an energy balance schematically of the form
+SIM-04K still treats
 
 ```math
-dE_M/dt
-= source work
-- damping loss
-- boundary flux.
+gamma partial_t M
 ```
 
-Thus an `M` interpretation should not be allowed to fit a probe residual while leaving energetic/backreaction consequences arbitrary.
+as effective damping. The lost field energy is assigned to a bath conceptually, but that bath is not yet modeled as an explicit dynamical sector.
 
 The next theoretical goal is therefore:
 
-> derive the memory stress-energy / exchange equation and identify an independent observable that the same `(source, gamma, beta, D_M, coupling)` parameters must predict.
+> **construct an explicit recipient/bath sector so that source/matter energy, memory-field energy, and bath energy are dynamically exchanged while total energy is conserved.**
 
-A conventional competitor may still reproduce this if it has the same full physical structure, but then the alternative is no longer a generic hidden scalar fit; it must reproduce the same linked dynamics and conservation behavior.
+The corresponding covariant program must eventually derive a complete
+
+```math
+T_total^{mu nu}
+```
+
+with
+
+```math
+nabla_mu T_total^{mu nu}=0.
+```
+
+A flat-background energy ledger is an important prerequisite but is not enough to close the repository's stress-energy/Bianchi gate.
 
 ---
 
@@ -230,5 +284,6 @@ should be judged against established quantum measurement/open-system formalisms 
 5. prefer simpler nested nulls when D_M -> 0 or lambda_M -> 0;
 6. never treat a hidden-state naming difference as physical evidence;
 7. require cross-regime causal consistency if the causal completion is invoked;
-8. require conservation/backreaction consistency before interpreting M as a physical field.
+8. require no-retuning energy/backreaction consistency before interpreting M as a physical field;
+9. keep the full covariant stress-energy/conservation gate OPEN until an explicit exchange sector is derived.
 ```

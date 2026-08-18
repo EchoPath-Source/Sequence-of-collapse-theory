@@ -9,6 +9,7 @@ Related theory documents:
 - `papers/math/soc-operational-observation-model.md`
 - `papers/math/soc-recursive-observation-memory-causality-geometry.md`
 - `papers/math/soc-localization-memory-hamiltonian.md`
+- `docs/observation-foundations-literature-crosswalk-2026-08-17.md`
 
 ## Purpose
 
@@ -26,18 +27,19 @@ observation -> memory -> causality -> geometry -> observation.
 
 Every simulation must include a null model and a failure criterion. The goal is to discover which parts are mathematically viable before attaching SoCT-specific physical interpretation.
 
+## Current status
+
+- **SIM-01 complete:** recursive Born-refinement consistency benchmark.
+- **SIM-02 complete:** history dependence alone cannot distinguish omitted hidden state from a special memory ontology.
+- **SIM-03A complete:** intervention-defined object recovery survives a latent common-cause confound that degrades correlation clustering.
+- **SIM-03B complete:** raw response amplitude fails as a transmission/distance proxy under susceptibility and near-critical recurrent amplification.
+- **Next:** SIM-04A causal-order / earliest-response reconstruction.
+
+The literature-informed detailed SIM-03/04 plan is in `SIM03_04_REVISED_PLAN.md`.
+
 ## SIM-01 — Recursive Born Refinement
 
 **Question:** Within Hilbert-space quantum mechanics, does square-norm weighting emerge as the unique member of the family `P proportional |alpha|^p` that is invariant under arbitrary equal orthogonal refinement and subsequent coarse-graining of record branches?
-
-**Method:**
-
-1. Generate normalized random complex amplitude vectors.
-2. Compute branch probabilities using `|alpha|^p` for a sweep of exponents `p`.
-3. Select a branch and refine it into `m` equal orthogonal subbranches with amplitude `alpha/sqrt(m)`.
-4. Sum the probabilities of the refined subbranches back to the original coarse branch.
-5. Measure the change in coarse probability.
-6. Repeat recursively with nested refinements.
 
 **Prediction under the stated assumptions:** `p = 2` has zero refinement error up to floating-point precision.
 
@@ -52,13 +54,6 @@ Files:
 
 **Question:** What evidence distinguishes history dependence caused by omitted conventional variables from a genuinely required additional memory state?
 
-**Models:**
-
-1. fully observed Markov process;
-2. Markov process with one hidden state variable;
-3. explicit finite-memory kernel;
-4. dynamical memory variable `M_t` with its own update law.
-
 **Primary statistic:**
 
 ```math
@@ -67,61 +62,73 @@ I(H;F|X)
 
 followed by progressive state augmentation.
 
-**Success criterion:** A memory candidate is justified only if residual predictive information from history persists after known hidden variables are controlled and is removed or compressed by a low-dimensional `M_t` with held-out predictive value.
+**Result:** the statistic detects incomplete state descriptions but does not by itself identify the missing predictive state as an SoCT-specific memory field.
 
-**Failure criterion:** If ordinary latent-state completion removes the effect, no extra memory degree of freedom is needed.
+Files:
 
-## SIM-03 — Emergent Objects and Locality
+- `sim02_hidden_state_vs_memory.py`
+- `SIM02_RESULTS.md`
 
-**Question:** Can stable subsystem boundaries and locality be recovered jointly from causal interactions without pre-labeling objects?
+## SIM-03 — Emergent Objects, Susceptibility, and Locality
 
-**Method:**
+### SIM-03A — Emergent Object Benchmark
 
-- generate interacting nodes with hidden ground-truth structure;
-- infer intervention-based causal influence;
-- partition nodes by internal causal closure;
-- derive candidate distances from normalized transmission/delay;
-- iterate partition and geometry estimates to a fixed point.
+**Question:** Can hidden dynamical modules be recovered without coordinates or supplied labels, and does intervention structure remain informative when observational correlation is confounded?
 
-**Success criterion:** Recovered partitions and geometry converge and match withheld ground truth across perturbations.
+**Result:** in the toy benchmark, intervention-based methods recover the hidden modules under a latent common-cause confound while ordinary correlation clustering degrades.
 
-**Failure criterion:** Multiple incompatible fixed points, extreme parameter sensitivity, or dependence on hidden labels.
+Files:
+
+- `sim03a_emergent_object_benchmark.py`
+- `SIM03A_RESULTS.md`
+
+### SIM-03B — Susceptibility and Criticality Adversary
+
+**Question:** Does large intervention response reliably identify strong transmission, same-object membership, or short effective distance when receiver gain and recurrent amplification vary?
+
+**Result:** no. Local susceptibility normalization substantially improves direct/small-lag transmission recovery, but near criticality long-time integrated response becomes dominated by indirect recurrent paths and ceases to recover the underlying direct transmission graph.
+
+The surviving methodological rule is:
+
+```text
+large response != strong direct transmission != short effective distance.
+```
+
+Files:
+
+- `sim03b_susceptibility_criticality_adversary.py`
+- `SIM03B_RESULTS.md`
 
 ## SIM-04 — Causal Geometry Reconstruction
 
-**Question:** Can hidden geometry be reconstructed from causal order, propagation delay, and normalized transmission cost?
+The original raw-response path metric is no longer accepted as the primary reconstruction method.
 
-Candidate path metric:
+**Revised question:** Can hidden causal/geometric structure be reconstructed from finite noisy interventions using information that is less vulnerable to susceptibility and recurrence confounds?
 
-```math
-L(\gamma)=-\sum_{e\in\gamma}\log \tilde\kappa_e,
-```
+The input hierarchy is now:
 
-with
+1. causal order / reachability;
+2. earliest detectable response;
+3. first-response delay;
+4. small-lag/direct response with local susceptibility calibrated separately;
+5. event/count or effective-volume information;
+6. integrated response only as an auxiliary dynamical observable.
 
-```math
-d(A,B)=\min_{\gamma:A\to B}L(\gamma).
-```
+### SIM-04A — Causal Order / Earliest Response
 
-Raw influence `kappa` must not be used without testing local susceptibility confounds.
+Recover directed reachability and nearest causal relations from interventions while hiding coordinates and the edge list.
 
-**Ground-truth test beds:**
+### SIM-04B — Geometry From Order + Scale + Delay
 
-- 1D chain;
-- 2D lattice;
-- irregular graph;
-- curved / position-dependent coupling analogue;
-- critical or resonant adversarial network.
+Test 1D, 2D, irregular, shortcut, variable-speed, hidden-node, and near-critical networks. Compare reconstructed distances/topology against withheld ground truth.
 
-**Failure criterion:** Reconstruction mistakes high susceptibility for short distance or fails when coupling strength varies independently of topology.
+**Failure criterion:** reconstruction mistakes susceptibility, resonance, common cause, or shortcut strength for geometric proximity.
 
 ## SIM-05 — Redundant Record / Broadcastability
 
-**Question:** Which coarse-grained observables can be copied into many downstream fragments while preserving consistent recoverability?
+This simulation is now explicitly benchmarked against Quantum Darwinism / Spectrum Broadcast Structure ideas identified in the literature confrontation.
 
-**Purpose:** Test whether robust classical records correspond to selected information that becomes redundantly accessible, rather than faithful copies of complete microscopic states.
-
-**Metrics:** redundancy, recoverability, disturbance, mutual information per fragment, and stability under fragment loss.
+**Question:** Which coarse-grained observables can be redundantly recovered from many downstream fragments while preserving consistent readout?
 
 ## SIM-06 — Observation Idempotence and Coarse-Graining
 
@@ -132,10 +139,6 @@ Candidate property:
 ```math
 \mathcal O(\mathcal O(x))\approx \mathcal O(x).
 ```
-
-Compare strong/stable records against weak, invasive, noisy, and dynamically changing observations.
-
-**Failure criterion:** Idempotence does not discriminate stable records from generic transformations.
 
 ## SIM-07 — Recursive Closure Fixed-Point Toy Model
 
@@ -153,7 +156,7 @@ Z_{t+1}=\mathcal F_\theta(Z_t)
 
 produce stable self-consistent observation-memory-causality-geometry fixed points without separately hard-coding each target structure?
 
-This simulation should be attempted only after SIM-01 through SIM-04 establish sensible component operators.
+This simulation should be attempted only after SIM-04 establishes sensible causal/geometry operators.
 
 ## Research discipline
 

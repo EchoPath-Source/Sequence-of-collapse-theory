@@ -11,6 +11,7 @@
 - `papers/math/soc-localization-memory-hamiltonian.md`
 - `papers/math/soct-memory-origin-constraints-and-causal-completion.md`
 - `papers/math/soct-memory-action-energy-exchange.md`
+- `papers/math/soct-memory-local-exchange-continuity.md`
 - `docs/operational-observation-current-formulation.md`
 - `docs/soct-memory-necessity-status.md`
 - `docs/observation-foundations-literature-crosswalk-2026-08-17.md`
@@ -44,7 +45,7 @@ the SoCT M equation is a viable and falsifiable extra-state model;
 but M is not yet empirically required or uniquely identifiable.
 ```
 
-SIM-04J and SIM-04K strengthen the field hypothesis by adding constraints rather than flexibility. SIM-04J treats the first-order reaction-diffusion law as an effective low-frequency limit of a candidate causal field. SIM-04K then requires the same field parameters to satisfy a no-retuning energy/backreaction ledger.
+SIM-04J through SIM-04L strengthen the field hypothesis by adding constraints rather than flexibility. SIM-04J imposes cross-regime causal behavior, SIM-04K requires no-retuning energetic/backreaction consistency, and SIM-04L strengthens that to a spatially resolved local exchange law.
 
 ## Simulation status
 
@@ -112,8 +113,19 @@ SIM-04J and SIM-04K strengthen the field hypothesis by adding constraints rather
   = g C_obs partial_t M - gamma (partial_t M)^2.
   ```
 
-  Parameters are fitted only from training probe trajectories and frozen before an independent damping-heat channel is predicted. For action-consistent synthetic data, held-out heat prediction reaches the heat-noise floor (`RMSE ~ 0.00194` for `sigma_heat = 0.002`). For an otherwise identical field-like probe generator with no heat signal, the action model fails strongly (`RMSE ~ 0.08643`) while the zero-heat null wins. A source-power heat generator is likewise best explained by its own simpler heat law.  
+  Parameters are fitted only from training probe trajectories and frozen before an independent damping-heat channel is predicted. For action-consistent synthetic data, held-out heat prediction reaches the heat-noise floor (`RMSE ~ 0.00194` for `sigma_heat = 0.002`). For an otherwise identical field-like probe generator with no heat signal, the action model fails strongly (`RMSE ~ 0.08643`) while the zero-heat null wins.  
   Files: `sim04k_action_conservation_backreaction.py`, `SIM04K_RESULTS.md`
+
+- **SIM-04L complete — Local Source / Field / Bath Exchange Continuity**  
+  The K-level global energy requirement is strengthened to the local continuity law
+
+  ```math
+  partial_t rho_M + div S_M
+  = g C_obs partial_t M - gamma (partial_t M)^2.
+  ```
+
+  Probe-only fitting on `A/B` predicts held-out site-resolved source exchange and bath gain on `C/D` with no exchange-amplitude retuning. For the action-consistent generator, local source/bath RMSE is at the `0.0015` sensor-noise floor. A deliberately spatially scrambled generator preserves every global time-window exchange total but produces local RMSE around `0.02`, demonstrating that global conservation can pass while local continuity fails. A no-exchange generator is correctly favored by the zero-exchange null.  
+  Files: `sim04l_local_exchange_continuity.py`, `SIM04L_RESULTS.md`
 
 ## Observation program
 
@@ -197,7 +209,7 @@ For overdamped Fourier modes,
 r_-(k)[gamma-r_-(k)]/gamma = beta + D_M k^2.
 ```
 
-The candidate flat-background energy density is
+The candidate flat-background energy density and flux are
 
 ```math
 rho_M
@@ -206,10 +218,15 @@ rho_M
 + 1/2 omega_M^2 M^2,
 ```
 
-with periodic/no-flux integrated exchange law
+```math
+S_M=-c_M^2(partial_t M) grad M,
+```
+
+with local exchange law
 
 ```math
-dE_M/dt = P_source - P_damp.
+partial_t rho_M + div S_M
+= g C_obs partial_t M - gamma (partial_t M)^2.
 ```
 
 The present simulations show mathematical viability and increasing falsifiability, not necessity.
@@ -237,35 +254,38 @@ verified matched ordinary state
 + predicted causal front / mode crossover
 + fixed probe/feedback coupling
 + held-out protocol and wavelength prediction
-+ no-retuning energy/backreaction prediction
++ no-retuning global energy/backreaction prediction
++ spatially resolved local source/bath exchange consistency
 + failure of independently constrained conventional reservoirs.
 ```
 
-A conventional physical degree of freedom with exactly the same complete source, causal dynamics, energy exchange, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
+A conventional physical degree of freedom with exactly the same complete source, causal dynamics, local stress/energy exchange, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
 
 ## Next research gates
 
-### Track A — explicit exchange / covariant conservation completion
+### Track A — microscopic exchange-sector completion
 
-SIM-04K still treats `gamma partial_t M` as effective damping. Introduce an explicit recipient/bath sector so the damping loss appears as energy gained elsewhere rather than disappearing phenomenologically. Derive a coupled total-energy ledger and then a covariant stress-energy scaffold.
+SIM-04L makes source and bath exchange explicit as local energy bookkeeping, but the bath is still not a microscopic dynamical sector. Replace the phenomenological damping sink with explicit bath/environment degrees of freedom or a controlled open-system derivation, and test whether the same low-frequency `gamma` emerges rather than being inserted by hand.
 
-The full target is eventually
+### Track B — covariant conservation completion
+
+Construct a covariant stress-energy scaffold for source/matter + memory + bath/interaction and require
 
 ```math
-nabla_mu T_total^{mu nu}=0,
+nabla_mu T_total^{mu nu}=0.
 ```
 
-not merely a flat-space scalar energy balance.
+The current flat-background continuity identity is a partial constraint, not closure of the GR/Bianchi gate.
 
-### Track B — causal-completion audit
+### Track C — causal-completion audit
 
-Determine whether the damped hyperbolic completion can be made covariant without inserting an unjustified preferred frame, and whether its low-frequency limit consistently reproduces the current phenomenological equation.
+Determine whether damping can be expressed covariantly without an unjustified preferred frame and whether the low-frequency limit consistently reproduces the current phenomenological equation.
 
-### Track C — reset / environmental-closure budget
+### Track D — reset / environmental-closure budget
 
 Continue quantifying conventional modes that can survive reset and the diagnostic sensitivity required to exclude them.
 
-### Track D — standalone operational-observation manuscript
+### Track E — standalone operational-observation manuscript
 
 Continue the observation/record-formation model independently of H2. Its value should not depend on whether the memory-field extension survives.
 
@@ -281,4 +301,5 @@ Continue the observation/record-formation model independently of H2. Its value s
 8. never treat a hidden-state naming difference as physical evidence;
 9. treat reset/environmental closure as an empirical measurement problem;
 10. treat the first-order memory PDE as an effective law until causal/covariant completion is established;
-11. do not interpret a field-like probe residual physically unless the same fixed parameters satisfy the independently measured exchange/backreaction ledger.
+11. do not interpret a field-like probe residual physically unless the same fixed parameters satisfy independently measured exchange/backreaction observables;
+12. require local exchange consistency, not only integrated energy balance, when the field interpretation predicts spatial transport.

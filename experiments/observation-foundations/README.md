@@ -33,7 +33,8 @@ Every simulation must include a null model and a failure criterion. The goal is 
 - **SIM-02 complete:** history dependence alone cannot distinguish omitted hidden state from a special memory ontology.
 - **SIM-03A complete:** intervention-defined object recovery survives a latent common-cause confound that degrades correlation clustering.
 - **SIM-03B complete:** raw response amplitude fails as a transmission/distance proxy under susceptibility and near-critical recurrent amplification.
-- **Next:** SIM-04A causal-order / earliest-response reconstruction.
+- **SIM-04A complete:** causal reachability and earliest response are recoverable at high precision from finite noisy interventions in the initial DAG benchmark; heterogeneous susceptibility mainly reduces recall for weak paths.
+- **Next:** SIM-04B geometry from causal order + timing/scale information.
 
 The literature-informed detailed SIM-03/04 plan is in `SIM03_04_REVISED_PLAN.md`.
 
@@ -116,13 +117,27 @@ The input hierarchy is now:
 
 ### SIM-04A — Causal Order / Earliest Response
 
-Recover directed reachability and nearest causal relations from interventions while hiding coordinates and the edge list.
+**Result:** the initial hidden-DAG benchmark passes. Reachability precision remains above `0.9995` across the tested finite-trial regimes. Heterogeneous susceptibility primarily creates false negatives on weak paths; increasing intervention count restores recall monotonically. Earliest-lag error falls toward zero with additional trials.
+
+Files:
+
+- `sim04a_causal_order_earliest_response.py`
+- `SIM04A_RESULTS.md`
 
 ### SIM-04B — Geometry From Order + Scale + Delay
 
 Test 1D, 2D, irregular, shortcut, variable-speed, hidden-node, and near-critical networks. Compare reconstructed distances/topology against withheld ground truth.
 
-**Failure criterion:** reconstruction mistakes susceptibility, resonance, common cause, or shortcut strength for geometric proximity.
+The main comparison should be among:
+
+```text
+order only
+order + delay
+order + count/density
+order + delay + calibrated direct transmission
+```
+
+**Failure criterion:** reconstruction mistakes susceptibility, resonance, common cause, shortcut strength, or missed weak causal paths for geometric proximity/separation.
 
 ## SIM-05 — Redundant Record / Broadcastability
 

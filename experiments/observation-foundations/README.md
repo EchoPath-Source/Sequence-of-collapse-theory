@@ -34,7 +34,8 @@ Every simulation must include a null model and a failure criterion. The goal is 
 - **SIM-03A complete:** intervention-defined object recovery survives a latent common-cause confound that degrades correlation clustering.
 - **SIM-03B complete:** raw response amplitude fails as a transmission/distance proxy under susceptibility and near-critical recurrent amplification.
 - **SIM-04A complete:** causal reachability and earliest response are recoverable at high precision from finite noisy interventions in the initial DAG benchmark; heterogeneous susceptibility mainly reduces recall for weak paths.
-- **Next:** SIM-04B geometry from causal order + timing/scale information.
+- **SIM-04B complete:** in flat-spacetime toy models, causal order + calibrated interval count recovers useful timelike scale; adding calibrated delay recovers useful spatial-separation information. Density gradients, nonlocal shortcuts, and uncalibrated delay expose explicit failure boundaries.
+- **Next:** SIM-04C comparison of candidate causal-distance constructions across withheld geometry families.
 
 The literature-informed detailed SIM-03/04 plan is in `SIM03_04_REVISED_PLAN.md`.
 
@@ -124,20 +125,44 @@ Files:
 - `sim04a_causal_order_earliest_response.py`
 - `SIM04A_RESULTS.md`
 
-### SIM-04B — Geometry From Order + Scale + Delay
+### SIM-04B — Geometry From Order + Count + Delay
 
-Test 1D, 2D, irregular, shortcut, variable-speed, hidden-node, and near-critical networks. Compare reconstructed distances/topology against withheld ground truth.
+**Result:** homogeneous flat-spacetime sprinklings provide a clean toy demonstration that causal interval count plus calibrated event density carries metric information beyond causal comparability alone. Adding calibrated delay allows a useful reconstruction of spatial separation for causally related pairs.
 
-The main comparison should be among:
+The adversarial results establish three important boundaries:
 
 ```text
-order only
-order + delay
-order + count/density
-order + delay + calibrated direct transmission
+interval count requires density calibration
+raw delay requires clock / medium calibration
+real shortcut relations define a different effective causal geometry
 ```
 
-**Failure criterion:** reconstruction mistakes susceptibility, resonance, common cause, shortcut strength, or missed weak causal paths for geometric proximity/separation.
+Files:
+
+- `sim04b_order_count_delay_geometry.py`
+- `SIM04B_RESULTS.md`
+
+### SIM-04C — Compare Candidate Distance Constructions
+
+Do not privilege one distance rule. Compare at least:
+
+```text
+D1 = shortest path on inverse calibrated causal capacity
+D2 = shortest path on negative-log calibrated transmission
+D3 = calibrated propagation-delay metric
+D4 = order / hop / interval-count proxy appropriate to the test bed
+D5 = learned combination trained on selected geometry families and tested on withheld families
+```
+
+The benchmark must separately report agreement with:
+
+```text
+background embedding geometry
+versus
+effective causal/path geometry
+```
+
+because genuine shortcut relations can make those targets diverge.
 
 ## SIM-05 — Redundant Record / Broadcastability
 

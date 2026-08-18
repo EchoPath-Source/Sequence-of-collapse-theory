@@ -36,7 +36,8 @@ Every simulation must include a null model and a failure criterion. The goal is 
 - **SIM-04A complete:** causal reachability and earliest response are recoverable at high precision from finite noisy interventions in the initial DAG benchmark; heterogeneous susceptibility mainly reduces recall for weak paths.
 - **SIM-04B complete:** in flat-spacetime toy models, causal order + calibrated interval count recovers useful timelike scale; adding calibrated delay recovers useful spatial-separation information. Density gradients, nonlocal shortcuts, and uncalibrated delay expose explicit failure boundaries.
 - **SIM-04C complete:** candidate distance rules were compared across regular and withheld geometry families. Calibrated propagation delay was the strongest simple generalizer for effective path geometry; a learned combination did not universally outperform physics-informed estimators. Shortcut and variable-speed cases confirmed that background embedding distance and effective causal distance can legitimately diverge.
-- **Next gate:** SIM-04D identifiability — determine whether an apparent geometry change can be distinguished from ordinary changes in speed/medium, susceptibility, hidden nodes, or dynamical memory before injecting an SoCT-specific memory field.
+- **SIM-04D complete:** a multi-protocol fingerprint separates several ordinary mechanism families in a controlled held-out benchmark, but exact non-identifiability classes remain: geometry vs propagation speed, hidden mediator vs delayed direct edge, and named memory state vs latent-state realization.
+- **Next:** SIM-04E — first SoCT-specific memory injection using the canonical source-decay-diffusion equation, with cross-protocol parameter transfer and explicit ordinary-memory / medium-change nulls.
 
 The literature-informed detailed SIM-03/04 plan is in `SIM03_04_REVISED_PLAN.md`.
 
@@ -166,17 +167,45 @@ Files:
 
 ### SIM-04D — Identifiability Gate
 
-Before injecting an SoCT-specific memory field, test whether apparent changes in effective causal geometry can be distinguished from simpler alternatives:
+**Result:** practical mechanism identification improves dramatically when geometry residuals are supplemented with response timing, support changes, amplitude, local gain calibration, tail structure, and post-reset persistence. Across held-out weak/strong parameter ranges, the full diagnostic panel reaches about `0.993 +/- 0.005` classification accuracy in the controlled synthetic benchmark.
+
+But three exact equivalence classes impose hard boundaries:
 
 ```text
-local propagation-speed changes
-receiver susceptibility changes
-hidden or missing nodes
-ordinary environmental / dynamical memory
-true topology changes
+metric length change <-> propagation-speed change
+hidden mediator <-> delayed direct edge
+named memory state <-> equivalent hidden latent state
 ```
 
-An `M`-driven geometry signature is not scientifically useful if those alternatives can reproduce it with equal or lower complexity.
+Therefore an apparent `G_eff` change is not sufficient evidence for a distinct memory field or spacetime modification.
+
+Files:
+
+- `sim04d_identifiability_gate.py`
+- `SIM04D_RESULTS.md`
+
+### SIM-04E — SoCT Memory Injection / Cross-Protocol Gate
+
+The first SoCT-specific simulation will use the canonical phenomenological field equation
+
+```math
+partial_t M = alpha C - beta M + D_M nabla^2 M
+```
+
+and a predeclared feedback map into one causal observable.
+
+Required tests:
+
+```text
+source-history dependence
+post-source relaxation
+spatial propagation/diffusion
+matched-present / different-history residual
+held-out protocol prediction with fixed parameters
+competition against instantaneous medium change and ordinary local memory
+```
+
+The purpose is not to claim evidence for `M`. It is to determine whether the SoCT equation defines a distinguishable, transferable signature in a controlled environment before any empirical interpretation.
 
 ## SIM-05 — Redundant Record / Broadcastability
 

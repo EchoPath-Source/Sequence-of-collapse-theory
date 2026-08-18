@@ -1,425 +1,253 @@
 # PNT / SoCT Covariance, Conservation, and Timescale Audit
 
 **Status:** FORMAL AUDIT / PEER-REVIEW READINESS PLAN  
-**Claim level:** OPEN ISSUES + CANDIDATE RESOLUTION PATHS  
-**Related OSF node:** `https://osf.io/tb9nq/overview`  
-**Related repo files:**
-
-```text
-papers/math/soc-localization-memory-hamiltonian.md
-papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
-papers/math/soct-memory-origin-constraints-and-causal-completion.md
-papers/math/soct-memory-action-energy-exchange.md
-papers/math/soct-memory-local-exchange-continuity.md
-papers/math/israel-junction-causal-inversion-surface.md
-papers/p5-hubble-tension-memory-gradient/README.md
-papers/p6-black-holes-memory-compression-nodes/README.md
-```
-
----
+**Claim level:** OPEN ISSUES + CANDIDATE RESOLUTION PATHS
 
 ## Purpose
 
-This document converts four peer-review vulnerabilities in the Planck Nucleation Theory / Sequence of Collapse Theory math track into explicit mathematical gates.
-
-The vulnerabilities are:
+This document tracks four mathematical vulnerabilities that must be resolved before the PNT / SoCT field sector is peer-review ready:
 
 1. gauge/covariance safety of the memory kernel;
 2. stress-energy conservation;
 3. complete junction-surface tensor definitions;
 4. decoherence and long-timescale memory survival.
 
-This file is not a claim of resolution. It is a formal audit and resolution plan. Each item remains an open or partially addressed requirement until the corresponding derivation, simulation, or preregistered test is complete.
-
----
+Passing toy simulations does not close these gates.
 
 ## Readiness table
 
-| Gate | Risk before peer review | Candidate resolution path | Current status |
-|---|---|---|---|
-| Gauge / covariance safety | Coordinate-distance kernels can violate diffeomorphism covariance or gauge invariance. | Replace raw coordinate kernels with covariant kernels based on invariant intervals, bitensors, parallel transport, or gauge dressing. | OPEN |
-| Stress-energy conservation | A phenomenological memory stress tensor can violate the Bianchi identity unless the full stress tensor is conserved. | Derive memory and interaction tensors from an action or impose coupled field equations that enforce total conservation. | **OPEN — global and local flat-background exchange ledgers derived/tested through SIM-04L; microscopic bath + covariant total tensor still missing** |
-| Junction-surface tensors | Parent-child / causal-inversion surfaces require explicit intrinsic metric, extrinsic curvature, jump tensor, and surface stress-energy definitions. | Use non-null Lanczos-Israel junction equations as the first scaffold; add a null-shell extension if the boundary is horizon-like. | PARTIALLY ADDRESSED |
-| Decoherence / long-timescale memory | Ordinary quantum coherence decays too quickly to support cosmological inheritance unless a protected slow channel exists. | Split memory into fast local memory and slow/protected memory with explicit timescale hierarchy. | OPEN |
-
----
-
-## Gate 1: Gauge / covariance safety of the memory kernel
-
-### Vulnerability
-
-Earlier heuristic language may write the memory kernel schematically as:
-
-```text
-K(|x - x_i|, t - t_i, s_i)
-```
-
-This is not safe as a fundamental covariant object because coordinate separations are chart-dependent. In curved spacetime or gauge-coupled settings, a nonlocal kernel must specify how fields at separated points are compared.
-
-### Candidate covariant replacement
-
-Replace the coordinate-distance kernel with a covariant bitensor or dressed nonlocal kernel:
-
-```text
-K(|x - x_i|, t - t_i, s_i)  ->  K(x, x')
-```
-
-with a minimal form:
-
-```text
-K(x, x') = K_sigma(sigma(x, x'), tau_M, l_Pl) P(x, x')
-```
-
-where:
-
-| Symbol | Meaning | Status |
+| Gate | Main risk | Current status |
 |---|---|---|
-| `sigma(x, x')` | invariant interval / Synge-type world-function between points | Candidate formalization |
-| `tau_M` | memory-kernel decay or relaxation scale | To be constrained |
-| `l_Pl` | Planck length cutoff / nucleation scale | PNT scaffold |
-| `P(x, x')` | parallel-transport, bitensor, or gauge-dressing factor | Required for nonlocal comparison |
-
-A corresponding nonlocal memory contribution may be written schematically as:
-
-```text
-M(x) = integral dV_x' K(x, x') C(x')
-```
-
-where `dV_x' = sqrt(-g(x')) d^4x'` is the covariant spacetime volume element and `C(x')` is the local collapse-intensity source.
-
-### Required next step
-
-Define whether `P(x, x')` is:
-
-1. a gravitational parallel propagator only;
-2. a gauge Wilson-line-like dressing for internal gauge fields;
-3. a phenomenological transport operator for the memory field;
-4. a deliberately restricted object used only in an effective cosmological background.
-
-Until this is defined, the memory kernel remains an OPEN mathematical vulnerability.
+| Gauge / covariance safety | coordinate kernels / preferred structures may violate covariance | **OPEN** |
+| Stress-energy conservation | phenomenological memory/exchange terms may violate total conservation | **OPEN — flat global/local ledgers and a microscopic oscillator-bath toy are now derived/tested through SIM-04M; covariant total tensor still missing** |
+| Junction-surface tensors | parent-child / inversion surfaces need explicit null/non-null tensor treatment | **PARTIALLY ADDRESSED** |
+| Long-timescale survival | ordinary decoherence may erase the proposed memory channel | **OPEN** |
 
 ---
 
-## Gate 2: Stress-energy conservation
+## Gate 1 — Gauge / covariance safety
 
-### Vulnerability
-
-Einstein-type field equations require compatibility with the contracted Bianchi identity. If a memory stress tensor is inserted by hand, the total stress-energy tensor may fail to satisfy:
-
-```text
-nabla_mu T_total^{mu nu} = 0
-```
-
-This would make the gravitational sector inconsistent unless the violation is explicitly treated as an effective open-system exchange with another sector.
-
-### Candidate action-first structure
-
-Use an action-level formulation:
-
-```text
-S_total = S_EH + S_matter + S_M + S_int
-```
-
-where:
-
-| Term | Meaning |
-|---|---|
-| `S_EH` | Einstein-Hilbert gravitational action or modified-gravity base action |
-| `S_matter` | ordinary matter/radiation sector |
-| `S_M` | memory-field sector |
-| `S_int` | interaction between memory, collapse source, and matter/geometry |
-
-Then define the memory stress tensor by variation with respect to the metric:
-
-```text
-T_M_{mu nu} = -(2 / sqrt(-g)) delta S_M / delta g^{mu nu}
-```
-
-and require the coupled system to obey:
-
-```text
-nabla_mu (T_matter^{mu nu} + T_M^{mu nu} + T_int^{mu nu}) = 0
-```
-
-### Minimal scalar-field support model
-
-A conservative support model can represent the memory substrate as a scalar field `phi_M`:
-
-```text
-S_M = integral d^4x sqrt(-g) [ -1/2 g^{mu nu} (nabla_mu phi_M)(nabla_nu phi_M) - V_M(phi_M) ]
-```
-
-with an interaction term:
-
-```text
-S_int = integral d^4x sqrt(-g) g_M phi_M C(x)
-```
-
-where `C(x)` is the collapse-intensity source and `g_M` is a coupling constant whose units must be audited separately.
-
-This is only a candidate support model. It does not prove that `phi_M` exists, and it does not prove that PNT/SoCT modifies gravity.
-
-### Progress after SIM-04J / SIM-04K / SIM-04L
-
-The memory-origin program now uses the candidate flat-background causal completion
+Earlier heuristic kernels may be written schematically as
 
 ```math
-partial_t^2 M
-+ gamma partial_t M
-- c_M^2 nabla^2 M
-+ omega_M^2 M
-= g C_obs.
+K(|x-x'|,t-t').
 ```
 
-The conservative kinetic/spatial/restoring terms admit the effective Lagrangian density
+A fundamental relativistic formulation cannot rely on coordinate separation alone.
+
+A candidate covariant form is
 
 ```math
-L_M
-= 1/2 (partial_t M)^2
-- 1/2 c_M^2 |grad M|^2
-- 1/2 omega_M^2 M^2
-+ g M C_obs.
+K(x,x')=K_\sigma(\sigma(x,x'),\tau_M,\ell_{Pl})P(x,x'),
 ```
 
-The damping term is **not** derived from this conservative one-field action. It is explicitly treated as effective exchange with unresolved bath/environment degrees of freedom.
+with invariant separation `sigma`, an appropriate spacetime measure, and a parallel-transport / dressing object `P(x,x')` when fields at separated points must be compared.
 
-SIM-04K derives the corresponding flat-background energy density
+This remains OPEN until the exact tensor/gauge content of `P` and the domain of the kernel are defined.
+
+---
+
+## Gate 2 — Stress-energy conservation
+
+### Requirement
+
+Any gravitationally coupled memory sector must participate in a total conservation law compatible with the Bianchi identity:
 
 ```math
-rho_M
-= 1/2 (partial_t M)^2
-+ 1/2 c_M^2 |grad M|^2
-+ 1/2 omega_M^2 M^2
+\nabla_\mu T_{total}^{\mu\nu}=0.
 ```
 
-and local exchange law
+A candidate action-first organization is
 
 ```math
-partial_t rho_M + div S_M
-= g C_obs partial_t M
-- gamma (partial_t M)^2.
+S_{total}=S_{EH}+S_{matter}+S_M+S_{int}+S_{env}.
 ```
 
-For periodic/no-flux boundaries this reduces to
+The memory stress tensor should ultimately be obtained by metric variation rather than inserted phenomenologically.
+
+### Progress through SIM-04J
+
+The first-order reaction-diffusion law is treated as an effective low-frequency equation. A candidate causal completion is
 
 ```math
-dE_M/dt = P_source - P_damp.
+\partial_t^2M
++\gamma\partial_tM
+-c_M^2\nabla^2M
++\omega_M^2M
+=gC_{obs}.
 ```
 
-The discrete SIM-04K implementation satisfies the global instantaneous algebraic identity to floating-point roundoff and predicts an independent damping-heat channel from parameters fitted only to probe trajectories.
-
-SIM-04L strengthens the same constraint spatially. It defines local source and bath exchange channels
+In the overdamped regime,
 
 ```math
-P_src(x,t)=g C_obs(x,t) partial_t M(x,t),
+\alpha=g/\gamma,
+\qquad
+\beta=\omega_M^2/\gamma,
+\qquad
+D_M=c_M^2/\gamma.
+```
+
+This imposes cross-regime constraints rather than adding independent parameters.
+
+### Progress through SIM-04K
+
+The conservative field terms give the flat-background energy density
+
+```math
+\rho_M
+=\frac12\dot M^2
++\frac12c_M^2|\nabla M|^2
++\frac12\omega_M^2M^2.
+```
+
+The effective exchange identity is
+
+```math
+\partial_t\rho_M+\nabla\cdot\mathbf S_M
+=gC_{obs}\dot M-\gamma\dot M^2.
+```
+
+For periodic/no-flux boundaries,
+
+```math
+\frac{dE_M}{dt}=P_{source}-P_{damp}.
+```
+
+SIM-04K verifies the discrete global identity and shows that the same field parameters fitted from probes must predict an independent heat/backreaction channel.
+
+### Progress through SIM-04L
+
+SIM-04L strengthens the global ledger to the spatially resolved local exchange law
+
+```math
+P_{src}(x,t)=gC_{obs}(x,t)\dot M(x,t),
 ```
 
 ```math
-P_bath(x,t)=gamma [partial_t M(x,t)]^2,
+P_{bath}(x,t)=\gamma\dot M(x,t)^2.
 ```
 
-and verifies the semi-discrete local continuity identity to approximately
+A globally balanced but spatially scrambled adversary passes integrated calorimetry while failing the local continuity pattern. Therefore global conservation is necessary but not sufficient.
 
-```text
-3.82e-17
-```
+### Progress through SIM-04M — explicit microscopic bath
 
-maximum absolute residual in the benchmark.
-
-The action-consistent synthetic generator predicts held-out site-resolved source and bath exchange at the local sensor-noise floor. A deliberately spatially scrambled adversary preserves every global exchange total but fails the local field prediction by more than an order of magnitude above local sensor noise.
-
-This establishes an important methodological point:
-
-```text
-global conservation is necessary but not sufficient;
-local continuity / flux structure supplies an additional falsification gate.
-```
-
-This is meaningful progress because energetic/backreaction behavior is no longer allowed to float independently in either total magnitude or spatial deposition.
-
-It is **not** a resolution of the full stress-energy gate.
-
-### Remaining required step
-
-The next conservation task is to replace the bookkeeping recipient by an explicit dynamical sector:
-
-```text
-source / matter sector
-<-> memory field M
-<-> bath / environment sector.
-```
-
-The damping loss
+SIM-04M replaces phenomenological damping for one field-mode surrogate with explicit harmonic environment modes using
 
 ```math
-gamma (partial_t M)^2
+H
+=\frac{P_M^2}{2}
++\frac{\Omega_M^2M^2}{2}
++\sum_j\left[
+\frac{p_j^2}{2}
++\frac{\omega_j^2}{2}
+\left(q_j-\frac{c_j}{\omega_j^2}M\right)^2
+\right]
+-gC_{obs}(t)M.
 ```
 
-must emerge from explicit bath/environment dynamics or a controlled open-system derivation rather than simply being assigned to a recipient ledger.
+The full microscopic source+system+bath model is Hamiltonian. After the source ends, total energy is conserved.
 
-After that, a covariant formulation must:
+Eliminating the bath gives a generalized memory-kernel equation with
 
-1. define the full action or effective action;
-2. derive `T_M^{mu nu}`, `T_int^{mu nu}`, and the bath/environment stress tensor;
-3. derive explicit exchange four-currents among sectors;
-4. verify
+```math
+K(t)=\sum_j\frac{c_j^2}{\omega_j^2}\cos(\omega_jt).
+```
+
+Thus local damping is not fundamental in this completion. It is a short-memory approximation to explicit environment dynamics.
+
+SIM-04M finds:
+
+```text
+sparse bath -> strong recurrence -> local gamma fails;
+dense broad bath -> stable gamma_eff ~ 0.46-0.47 over the tested window
+                  -> held-out local damping improves strongly.
+```
+
+Microscopic energy closure remains at approximately `1e-7` or better across the tested bath resolutions.
+
+This is meaningful progress because the damping sink is no longer merely named; one explicit conventional mechanism can generate it while preserving exact microscopic energy.
+
+It also raises the burden on SoCT:
+
+> a measured `gamma` cannot itself be treated as evidence for a new memory sector, because ordinary unresolved bath modes can generate the same reduced damping.
+
+### Why Gate 2 remains OPEN
+
+SIM-04M is a nonrelativistic flat-background oscillator-bath toy. It does not yet provide
+
+```text
+a covariant environment action,
+a bath stress-energy tensor,
+exchange four-currents,
+a proof of Lorentz/diffeomorphism consistency,
+or a demonstration that the effective damping introduces no unjustified preferred frame.
+```
+
+Required next steps:
+
+1. extend the bath construction to multiple spatial/momentum modes;
+2. derive the corresponding nonlocal effective kernel in spacetime;
+3. identify whether the environment defines a physical four-velocity / medium;
+4. construct `T_M^{mu nu}`, `T_env^{mu nu}`, and `T_int^{mu nu}`;
+5. derive explicit exchange currents;
+6. verify
 
    ```math
-   nabla_mu T_total^{mu nu}=0;
+   \nabla_\mu(T_{matter}^{\mu\nu}+T_M^{\mu\nu}+T_{env}^{\mu\nu}+T_{int}^{\mu\nu})=0.
    ```
 
-5. state whether `c_M` is compatible with the spacetime metric, an effective metric, or a physical medium/preferred frame;
-6. show how the low-frequency damping coefficient `gamma` follows from the explicit environment rather than being inserted independently.
-
-Until those steps are complete, stress-energy conservation remains **OPEN**, with flat-background global and local energetic scaffolds **PARTIALLY ADDRESSED**.
+Until then, the stress-energy/Bianchi gate remains OPEN.
 
 ---
 
-## Gate 3: Junction-surface tensor definitions
+## Gate 3 — Junction-surface tensors
 
-### Current scaffold
+The repository contains a non-null Israel-junction-style scaffold with
 
-The repo now has a non-null Israel-junction-style scaffold:
-
-```text
-papers/math/israel-junction-causal-inversion-surface.md
+```math
+S_{GR,uv}
+=-\frac{1}{8\pi G}([K_{uv}]-h_{uv}[K])
 ```
 
-The core standard junction expression is:
+and candidate memory corrections.
 
-```text
-S_GR_uv = -(1 / 8 pi G) ( [K_uv] - h_uv [K] )
-```
+This remains only a scaffold. If the relevant boundary is horizon-like or null, a dedicated null-shell formalism is required with explicit null normal/tangent conventions, transverse curvature, and surface stress-energy definitions.
 
-and the conservative SoCT/PNT ansatz is:
-
-```text
-S_SOC_uv = S_GR_uv + S_M_uv
-S_M_uv = lambda_Sigma M_uv
-```
-
-or:
-
-```text
-S_SOC_uv = -(1 / 8 pi G) ( [K_uv] - h_uv [K] ) + lambda_Sigma M_uv
-```
-
-### Remaining vulnerability
-
-This is only a non-null hypersurface scaffold. It is appropriate for timelike or spacelike matching surfaces under standard assumptions. If the causal-inversion boundary is horizon-like or null, this scaffold is not sufficient.
-
-### Required next step
-
-Add a dedicated null-surface extension with:
-
-1. null normal/tangent conventions;
-2. transverse curvature or null extrinsic-curvature analogues;
-3. surface stress tensor for lightlike shells;
-4. explicit relationship between null-shell variables and `M_uv` or its null-surface analogue.
-
-Until then, the junction-surface gate is PARTIALLY ADDRESSED, not resolved.
+Status: **PARTIALLY ADDRESSED**.
 
 ---
 
-## Gate 4: Decoherence and long-timescale memory survival
+## Gate 4 — Decoherence / long-timescale memory survival
 
-### Vulnerability
+If `M` is ordinary local quantum coherence, environmental decoherence is a major survival problem.
 
-If the memory channel is an ordinary local quantum coherence channel, environmental decoherence will generally suppress it rapidly. PNT/SoCT therefore needs a clear distinction between short-lived laboratory-scale coherence and long-lived cosmological memory.
-
-### Two-timescale decomposition
-
-Define:
+The current phenomenological placeholder separates
 
 ```text
-M(x,t) = M_f(x,t) + M_p(x,t)
+M = M_f + M_p
 ```
 
-where:
+with
 
-| Symbol | Meaning |
-|---|---|
-| `M_f` | fast local memory / ordinary decohering response |
-| `M_p` | protected or slow memory channel |
+```math
+\partial_tM_f=\alpha_fC-\beta_fM_f+D_f\nabla^2M_f,
+```
 
-A minimal phenomenological two-timescale system is:
+```math
+\partial_tM_p=\alpha_pQ[C]-\beta_pM_p+D_p\nabla^2M_p,
+```
+
+and
 
 ```text
-partial_t M_f = alpha_f C - beta_f M_f + D_f nabla^2 M_f
+beta_p << beta_f.
 ```
 
-```text
-partial_t M_p = alpha_p Q[C] - beta_p M_p + D_p nabla^2 M_p
-```
+But the protected source `Q[C]` and protection mechanism remain undefined.
 
-with the hierarchy:
+SIM-04M reinforces that an environment can both dissipate and return information/energy depending on spectral structure. Therefore a long-lived channel cannot be justified merely by writing a small `beta_p`; the microscopic protection mechanism must be specified.
 
-```text
-beta_p << beta_f
-```
-
-and, for cosmological relevance:
-
-```text
-tau_p = 1 / beta_p >> tau_f = 1 / beta_f
-```
-
-### Topological-protection placeholder
-
-The protected source term is written as `Q[C]`, not simply `C`, to keep the protection mechanism explicit and unresolved. Candidate interpretations include:
-
-1. boundary winding or index-like collapse history;
-2. horizon/surface encoded memory;
-3. Planck-cell nucleation state class;
-4. large-scale topological defect or domain structure;
-5. effective coarse-grained memory invariant.
-
-No topological protection claim is established until `Q[C]` is defined and shown to be stable under perturbations.
-
-### Required next step
-
-Define `Q[C]`, identify its conserved or approximately conserved quantity, and state the empirical failure condition for the protected channel.
-
-Until then, the decoherence/timescale issue remains OPEN.
-
----
-
-## Integration with P2 / P5 dark-energy framing
-
-The two-timescale model is the most natural bridge into the dark-energy / Hubble-window track. A minimal PNT two-timescale dark-energy interpretation would treat the slow memory channel as contributing an effective background term:
-
-```text
-rho_eff(t) = rho_Lambda + rho_Mp(t)
-```
-
-with:
-
-```text
-rho_Mp(t) proportional_to M_p(t)
-```
-
-and a conservative equation-of-state placeholder:
-
-```text
-w_eff(a) = -1 + delta_w(M_p, dM_p/dt, environment)
-```
-
-This should remain a candidate phenomenological bridge until derived from an action or constrained by data.
-
----
-
-## Peer-review status labels
-
-Use these labels in related files:
-
-| Label | Meaning |
-|---|---|
-| OPEN | known vulnerability; no full resolution yet |
-| PARTIALLY ADDRESSED | scaffold exists but important cases remain |
-| CANDIDATE | plausible resolution path; not yet derived or tested |
-| FORMAL SCAFFOLD | math language exists, but not established physics |
-| READY FOR TEST DESIGN | equations and assumptions are explicit enough to build a falsifiable analysis |
-| RESOLVED | do not use unless the derivation is complete and independently checked |
+Status: **OPEN**.
 
 ---
 
@@ -427,11 +255,8 @@ Use these labels in related files:
 
 This audit does not prove PNT, SoCT, memory gravity, Engramons, parent-child universe transfer, or a dark-energy mechanism.
 
-It records what must be true mathematically for the framework to survive serious peer review:
+The current defensible statement is:
 
-1. nonlocal kernels must be covariant/gauge safe;
-2. memory stress-energy and exchange must be conservation-compatible;
-3. junction tensors must be explicitly defined for the relevant surface class;
-4. long-timescale memory must have a protected or otherwise justified survival mechanism.
+> The memory-sector program now has progressively stronger flat-background causal, energetic, local-continuity, and microscopic-bath consistency gates. These reduce arbitrariness and expose conventional explanations, but they do not yet supply the covariant conserved field theory required for a fundamental gravitational claim.
 
-Until these gates are closed, all related claims should remain PRELIMINARY, FORMAL SCAFFOLD, or CANDIDATE.
+Use `RESOLVED` only when the full derivation is complete and independently checked.

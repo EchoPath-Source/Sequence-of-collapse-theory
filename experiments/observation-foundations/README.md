@@ -9,6 +9,7 @@
 - `papers/math/soc-operational-observation-model.md`
 - `papers/math/soc-recursive-observation-memory-causality-geometry.md`
 - `papers/math/soc-localization-memory-hamiltonian.md`
+- `papers/math/soct-memory-origin-constraints-and-causal-completion.md`
 - `docs/operational-observation-current-formulation.md`
 - `docs/soct-memory-necessity-status.md`
 - `docs/observation-foundations-literature-crosswalk-2026-08-17.md`
@@ -42,16 +43,16 @@ the SoCT M equation is a viable and falsifiable extra-state model;
 but M is not yet empirically required or uniquely identifiable.
 ```
 
-The current burden of proof is documented in `docs/soct-memory-necessity-status.md`.
+SIM-04J adds an important refinement: the current first-order memory equation should be treated as an effective low-frequency law unless a causal completion is derived. A candidate damped hyperbolic completion creates new cross-regime consistency tests rather than new arbitrary fit freedom.
 
 ## Simulation status
 
 - **SIM-01 complete — Recursive Born Refinement**  
-  `p = 2` is the refinement-invariant fixed point within the tested `|alpha|^p` family under supplied Hilbert-space assumptions. This is a structural benchmark, not a new derivation of quantum mechanics.  
+  `p = 2` is the refinement-invariant fixed point within the tested `|alpha|^p` family under supplied Hilbert-space assumptions.  
   Files: `sim01_recursive_born_refinement.py`, `SIM01_RESULTS.md`
 
 - **SIM-02 complete — Hidden State vs Genuine Memory**  
-  History dependence identifies state incompleteness but not the ontology of the missing state. Markov completion can turn both ordinary hidden-state and explicit-memory processes into present-state dynamics.  
+  History dependence identifies state incompleteness but not the ontology of the missing state.  
   Files: `sim02_hidden_state_vs_memory.py`, `SIM02_RESULTS.md`
 
 - **SIM-03A complete — Emergent Object Benchmark**  
@@ -67,11 +68,11 @@ The current burden of proof is documented in `docs/soct-memory-necessity-status.
   Files: `sim04a_causal_order_earliest_response.py`, `SIM04A_RESULTS.md`
 
 - **SIM-04B complete — Geometry From Order + Count + Delay**  
-  In flat-spacetime toy models, causal interval count plus calibrated event density carries timelike metric information; calibrated delay adds spatial-separation information. Density gradients, shortcuts, and clock/medium changes define failure boundaries.  
+  Causal interval count plus calibrated density carries timelike metric information in flat toy models; calibrated delay adds spatial information.  
   Files: `sim04b_order_count_delay_geometry.py`, `SIM04B_RESULTS.md`
 
 - **SIM-04C complete — Candidate Causal-Distance Comparison**  
-  No universal scalar distance rule emerged. Calibrated propagation delay generalized strongly on several withheld network families, while a learned combination did not universally beat simpler physics-informed estimators. Background embedding geometry and effective causal/path geometry must be reported separately.  
+  No universal scalar distance rule emerged. Background embedding geometry and effective causal/path geometry must be reported separately.  
   Files: `sim04c_candidate_distance_comparison.py`, `SIM04C_RESULTS.md`
 
 - **SIM-04D complete — Identifiability Gate**  
@@ -79,34 +80,30 @@ The current burden of proof is documented in `docs/soct-memory-necessity-status.
   Files: `sim04d_identifiability_gate.py`, `SIM04D_RESULTS.md`
 
 - **SIM-04E complete — SoCT Memory Injection / Cross-Protocol Gate**  
-  The source-decay-diffusion equation produces a transferable synthetic signature when diffusion is truly present. On local-memory data it collapses to `D_M = 0`; instantaneous nulls win when memory is absent.  
+  The source-decay-diffusion equation produces a transferable synthetic signature when diffusion is truly present. On local-memory data it collapses to `D_M = 0`.  
   Files: `sim04e_soct_memory_injection.py`, `SIM04E_RESULTS.md`
 
 - **SIM-04F complete — Observation-Derived Memory Source**  
-  The source can be derived from interaction, distinguishability, accessible information, record acquisition, persistence, and downstream accessibility rather than supplied as arbitrary pulses. Persistence-aware sources survive a fragile-record adversary, although `Omega` remains a serious competing functional.  
+  The source can be derived from interaction, distinguishability, accessible information, record acquisition, persistence, and downstream accessibility rather than supplied as arbitrary pulses. `Omega` remains a serious competing functional.  
   Files: `sim04f_observation_derived_memory_source.py`, `SIM04F_RESULTS.md`
 
 - **SIM-04G complete — Explicit Qubit + Detector + Environment**  
-  Standard unitary quantum mechanics already distinguishes transient decoherence, persistent environmental records, record erasure, and redundancy. In particular:
-
-  ```text
-  peak decoherence != persistent record formation
-  record persistence != record redundancy.
-  ```
-
+  Standard unitary quantum mechanics already distinguishes transient decoherence, persistent environmental records, record erasure, and redundancy.  
   Files: `sim04g_qubit_detector_environment_records.py`, `SIM04G_RESULTS.md`
 
 - **SIM-04H complete — H0/H1/H2 Complete Reset-and-Probe**  
-  After an exact reset of all explicitly modeled ordinary degrees of freedom, H0 and H1 make the same physical prediction: no fresh-probe history residual. H2 can generate a transferable post-reset signal when the synthetic generator includes an extra state. Exact-reset H0 data reject the extra model by complexity, while an ordinary local reservoir drives the general H2 fit to `D_M = 0`. A matched conventional hidden diffusive state remains observationally equivalent to `M`.  
+  After an exact reset of all explicitly modeled ordinary degrees of freedom, H0 and H1 make the same physical prediction: no fresh-probe history residual. H2 can generate a transferable post-reset signal when the synthetic generator includes an extra state, but a matched conventional hidden diffusive state remains observationally equivalent.  
   Files: `sim04h_h0_h1_h2_reset_probe.py`, `SIM04H_RESULTS.md`
 
 - **SIM-04I complete — Incomplete Reset / Hidden Reservoir Adversary**  
-  A conventional leftover reservoir is deliberately given the same source/decay/diffusion family as H2. Probe-only data cannot distinguish the two. Independent reset diagnostics can identify the conventional reservoir when they couple strongly enough and have sufficient sensitivity; weakly visible reservoirs can masquerade as H2, and a completely diagnostic-blind matched reservoir is exactly unresolved.  
+  Independent reset diagnostics can expose an ordinary leftover reservoir when they couple strongly enough. Weakly visible reservoirs can masquerade as H2; a completely diagnostic-blind matched reservoir is exactly unresolved.  
   Files: `sim04i_incomplete_reset_hidden_reservoir.py`, `SIM04I_RESULTS.md`
 
-## Central lessons through SIM-04I
+- **SIM-04J complete — Memory-Origin Constraint / Causal Completion**  
+  The current reaction-diffusion memory equation is tested as the overdamped limit of a causal damped field. Late/low-k parameters plus an independently calibrated `gamma` predict finite propagation speed, a mode-crossover scale, and high-k response without new high-k fit parameters. In the causal generator, the constrained model reaches the noise floor on held-out high-k data while pure diffusion fails; in a pure-diffusion generator, the simpler diffusion null wins.  
+  Files: `sim04j_memory_origin_constraints.py`, `SIM04J_RESULTS.md`
 
-### Observation program
+## Observation program
 
 The lower-level operational hierarchy remains viable independently of SoCT:
 
@@ -130,9 +127,9 @@ and persistence-aware record-production forms such as
 Gamma_rec = G(partial_t I,R,A_d,Xi_irr).
 ```
 
-These should be judged against established quantum measurement, instrument, trajectory, Quantum Darwinism, Spectrum Broadcast Structure, and process-tensor formalisms without assuming new physics.
+These should be judged against established measurement, instrument, trajectory, Quantum Darwinism, Spectrum Broadcast Structure, and process-tensor formalisms without assuming new physics.
 
-### SoCT extension
+## SoCT extension
 
 The optional SoCT layer begins only after ordinary record formation:
 
@@ -144,13 +141,51 @@ ordinary retained record R
 -> additional held-out residual.
 ```
 
-The current model is
+Current effective model:
 
 ```math
 partial_t M = alpha C_obs - beta M + D_M nabla^2 M.
 ```
 
-The current simulations show that this equation is **mathematically viable and falsifiable**, not that it is **necessary**.
+Candidate causal completion:
+
+```math
+partial_t^2 M
++ gamma partial_t M
+- c_M^2 nabla^2 M
++ omega_M^2 M
+= g C_obs,
+```
+
+with the overdamped mapping
+
+```math
+alpha=g/gamma,
+qquad
+beta=omega_M^2/gamma,
+qquad
+D_M=c_M^2/gamma.
+```
+
+This implies the cross-regime constraints
+
+```math
+c_M=sqrt(gamma D_M)
+```
+
+and
+
+```math
+k_c^2=(gamma/4-beta)/D_M.
+```
+
+For overdamped Fourier modes,
+
+```math
+r_-(k)[gamma-r_-(k)]/gamma = beta + D_M k^2.
+```
+
+The present simulations show mathematical viability and falsifiability, not necessity.
 
 ## Current nested hypotheses
 
@@ -160,61 +195,53 @@ H1 = H0 plus a useful operational observation summary, no new state
 H2 = H0/H1 plus an additional persistent state M.
 ```
 
-In a true post-reset experiment, H0 and H1 are physically identical. The experimental contest is therefore H2 versus the strongest conventional state completion of H0/H1.
+In a true post-reset experiment, H0 and H1 are physically identical. The contest is H2 versus the strongest conventional state completion of H0/H1.
 
 ## Current identifiability boundary
-
-A probe history residual alone is insufficient.
 
 A persuasive new-physics signature would require, at minimum:
 
 ```text
 verified matched ordinary state
 + different retained-record histories
-+ fixed source law
-+ transferable relaxation beta
-+ transferable spatial term D_M
++ fixed record-derived source law
++ transferable beta and D_M
++ independently calibrated fast scale gamma
++ predicted causal front / mode crossover
 + fixed probe/feedback coupling
-+ held-out protocol prediction
++ held-out protocol and wavelength prediction
 + failure of independently constrained conventional reservoirs.
 ```
 
-Even then, a completely hidden conventional degree of freedom with exactly the same dynamics remains an ontology ambiguity until an additional discriminating prediction is derived.
+A conventional degree of freedom with exactly the same complete source, damping, propagation, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
 
 ## Next research gates
 
-### Track A — SoCT-origin discriminator
+### Track A — action / conservation discriminator
 
-Derive a prediction that follows from the **origin** of `M` in the SoCT Hamiltonian/record-production source rather than merely from assigning an arbitrary hidden field the same diffusion equation.
+Use the candidate action-first memory sector already identified in the covariance/conservation audit to derive the field stress-energy, source exchange, and any cross-observable backreaction relation. The goal is one parameter set that must satisfy both memory propagation and an independent conservation/backreaction observable.
 
-Promising targets:
+### Track B — causal-completion audit
 
-```text
-source-law constraints tied specifically to record production
-parameter relations derived from the Hamiltonian
-conservation / backreaction constraints
-cross-observable coupling relations
-universal scaling relations across different physical implementations.
-```
+Determine whether the damped hyperbolic completion can be made covariant without inserting an unjustified preferred frame, and whether its low-frequency limit consistently reproduces the current phenomenological equation.
 
-### Track B — reset / environmental-closure budget
+### Track C — reset / environmental-closure budget
 
-Before proposing a laboratory reset-and-probe experiment, quantify which conventional environment modes must be bounded, how reset fidelity would be diagnosed, what diagnostic couplings could remain blind, and how large an unobserved reservoir could remain consistent with the closure measurements.
+Continue quantifying conventional modes that can survive reset and the diagnostic sensitivity required to exclude them.
 
-### Track C — standalone operational-observation manuscript
+### Track D — standalone operational-observation manuscript
 
-Continue the observation/record-formation model independently of H2. Its value should not depend on whether the SoCT memory-field extension survives.
+Continue the observation/record-formation model independently of H2. Its value should not depend on whether the memory-field extension survives.
 
 ## Research discipline
-
-For every future simulation:
 
 1. state the strongest conventional/null model first;
 2. separate supplied assumptions from derived results;
 3. separate mathematical viability from physical evidence;
-4. use held-out histories/parameter regimes where possible;
-5. prefer a failed clean prediction over post-hoc retuning;
+4. use held-out histories, wavelengths, and parameter regimes;
+5. prefer failed clean predictions over post-hoc retuning;
 6. prefer simpler nested nulls when `D_M -> 0` or `lambda_M -> 0`;
 7. preserve the distinction between ordinary record memory `R` and proposed state `M`;
 8. never treat a hidden-state naming difference as physical evidence;
-9. treat reset/environmental closure as an empirical measurement problem, not an assumption.
+9. treat reset/environmental closure as an empirical measurement problem;
+10. treat the first-order memory PDE as an effective law until causal/covariant completion is established.

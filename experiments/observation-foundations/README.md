@@ -12,6 +12,7 @@
 - `papers/math/soct-memory-origin-constraints-and-causal-completion.md`
 - `papers/math/soct-memory-action-energy-exchange.md`
 - `papers/math/soct-memory-local-exchange-continuity.md`
+- `papers/math/soct-memory-microscopic-bath-completion.md`
 - `docs/operational-observation-current-formulation.md`
 - `docs/soct-memory-necessity-status.md`
 - `docs/observation-foundations-literature-crosswalk-2026-08-17.md`
@@ -41,91 +42,89 @@ The conservative conclusion is:
 ```text
 standard quantum/open-system physics explains much of observation and record formation;
 ordinary hidden/local reservoirs explain some history-dependent residuals;
-the SoCT M equation is a viable and falsifiable extra-state model;
-but M is not yet empirically required or uniquely identifiable.
+ordinary microscopic baths can also generate reduced damping and recurrence;
+the SoCT M equation is a viable and increasingly constrained extra-state model;
+but M is not empirically required or uniquely identifiable.
 ```
 
-SIM-04J through SIM-04L strengthen the field hypothesis by adding constraints rather than flexibility. SIM-04J imposes cross-regime causal behavior, SIM-04K requires no-retuning energetic/backreaction consistency, and SIM-04L strengthens that to a spatially resolved local exchange law.
+SIM-04J through SIM-04M progressively remove arbitrariness rather than add flexibility:
+
+```text
+J -> causal/high-k completion
+K -> global energy/backreaction ledger
+L -> local exchange/flux continuity
+M -> microscopic bath origin of effective damping.
+```
 
 ## Simulation status
 
-- **SIM-01 complete — Recursive Born Refinement**  
-  `p = 2` is the refinement-invariant fixed point within the tested `|alpha|^p` family under supplied Hilbert-space assumptions.  
+- **SIM-01 — Recursive Born Refinement — complete**  
+  `p = 2` is the refinement-invariant fixed point within the tested `|alpha|^p` family under supplied Hilbert-space assumptions. This is a structural benchmark, not a new Born-rule derivation.  
   Files: `sim01_recursive_born_refinement.py`, `SIM01_RESULTS.md`
 
-- **SIM-02 complete — Hidden State vs Genuine Memory**  
-  History dependence identifies state incompleteness but not the ontology of the missing state.  
+- **SIM-02 — Hidden State vs Genuine Memory — complete**  
+  History dependence detects state incompleteness but does not identify the ontology of the missing state.  
   Files: `sim02_hidden_state_vs_memory.py`, `SIM02_RESULTS.md`
 
-- **SIM-03A complete — Emergent Object Benchmark**  
+- **SIM-03A — Emergent Object Benchmark — complete**  
   Intervention-defined modules survive a latent common-cause confound that degrades ordinary correlation clustering.  
   Files: `sim03a_emergent_object_benchmark.py`, `SIM03A_RESULTS.md`
 
-- **SIM-03B complete — Susceptibility / Criticality Adversary**  
-  Raw response amplitude is unsafe as a transmission or distance proxy. Near criticality, integrated response is dominated by indirect recurrent paths.  
+- **SIM-03B — Susceptibility / Criticality Adversary — complete**  
+  Raw response amplitude is unsafe as a transmission or distance proxy; near criticality integrated response becomes dominated by indirect recurrent paths.  
   Files: `sim03b_susceptibility_criticality_adversary.py`, `SIM03B_RESULTS.md`
 
-- **SIM-04A complete — Causal Order / Earliest Response**  
+- **SIM-04A — Causal Order / Earliest Response — complete**  
   Finite noisy interventions recover reachability and earliest influence at high precision in the initial DAG benchmark.  
   Files: `sim04a_causal_order_earliest_response.py`, `SIM04A_RESULTS.md`
 
-- **SIM-04B complete — Geometry From Order + Count + Delay**  
+- **SIM-04B — Geometry From Order + Count + Delay — complete**  
   Causal interval count plus calibrated density carries timelike metric information in flat toy models; calibrated delay adds spatial information.  
   Files: `sim04b_order_count_delay_geometry.py`, `SIM04B_RESULTS.md`
 
-- **SIM-04C complete — Candidate Causal-Distance Comparison**  
+- **SIM-04C — Candidate Causal-Distance Comparison — complete**  
   No universal scalar distance rule emerged. Background embedding geometry and effective causal/path geometry must be reported separately.  
   Files: `sim04c_candidate_distance_comparison.py`, `SIM04C_RESULTS.md`
 
-- **SIM-04D complete — Identifiability Gate**  
+- **SIM-04D — Identifiability Gate — complete**  
   Multi-protocol diagnostics separate several mechanism families, but exact equivalence classes remain: metric length vs propagation speed, hidden mediator vs delayed direct edge, and named memory state vs equivalent latent state.  
   Files: `sim04d_identifiability_gate.py`, `SIM04D_RESULTS.md`
 
-- **SIM-04E complete — SoCT Memory Injection / Cross-Protocol Gate**  
+- **SIM-04E — SoCT Memory Injection / Cross-Protocol Gate — complete**  
   The source-decay-diffusion equation produces a transferable synthetic signature when diffusion is truly present. On local-memory data it collapses to `D_M = 0`.  
   Files: `sim04e_soct_memory_injection.py`, `SIM04E_RESULTS.md`
 
-- **SIM-04F complete — Observation-Derived Memory Source**  
+- **SIM-04F — Observation-Derived Memory Source — complete**  
   The source can be derived from interaction, distinguishability, accessible information, record acquisition, persistence, and downstream accessibility rather than supplied as arbitrary pulses. `Omega` remains a serious competing functional.  
   Files: `sim04f_observation_derived_memory_source.py`, `SIM04F_RESULTS.md`
 
-- **SIM-04G complete — Explicit Qubit + Detector + Environment**  
+- **SIM-04G — Explicit Qubit + Detector + Environment — complete**  
   Standard unitary quantum mechanics already distinguishes transient decoherence, persistent environmental records, record erasure, and redundancy.  
   Files: `sim04g_qubit_detector_environment_records.py`, `SIM04G_RESULTS.md`
 
-- **SIM-04H complete — H0/H1/H2 Complete Reset-and-Probe**  
-  After an exact reset of all explicitly modeled ordinary degrees of freedom, H0 and H1 make the same physical prediction: no fresh-probe history residual. H2 can generate a transferable post-reset signal when the synthetic generator includes an extra state, but a matched conventional hidden diffusive state remains observationally equivalent.  
+- **SIM-04H — H0/H1/H2 Complete Reset-and-Probe — complete**  
+  After exact reset of all explicitly modeled ordinary degrees of freedom, H0 and H1 make the same physical prediction. H2 can generate a transferable post-reset signal when the synthetic generator includes an extra state, but a matched conventional hidden diffusive state remains observationally equivalent.  
   Files: `sim04h_h0_h1_h2_reset_probe.py`, `SIM04H_RESULTS.md`
 
-- **SIM-04I complete — Incomplete Reset / Hidden Reservoir Adversary**  
-  Independent reset diagnostics can expose an ordinary leftover reservoir when they couple strongly enough. Weakly visible reservoirs can masquerade as H2; a completely diagnostic-blind matched reservoir is exactly unresolved.  
+- **SIM-04I — Incomplete Reset / Hidden Reservoir Adversary — complete**  
+  Independent reset diagnostics can expose an ordinary leftover reservoir when they couple strongly enough. Weakly visible reservoirs can masquerade as H2; a diagnostic-blind matched reservoir is exactly unresolved.  
   Files: `sim04i_incomplete_reset_hidden_reservoir.py`, `SIM04I_RESULTS.md`
 
-- **SIM-04J complete — Memory-Origin Constraint / Causal Completion**  
-  The reaction-diffusion memory equation is tested as the overdamped limit of a damped causal field. Late/low-k parameters plus an independently calibrated `gamma` predict finite propagation speed, a mode-crossover scale, and high-k response without new high-k fit parameters. The causal generator passes its held-out high-k test; a pure-diffusion generator instead selects the diffusion null.  
+- **SIM-04J — Memory-Origin Constraint / Causal Completion — complete**  
+  The reaction-diffusion memory equation is tested as the overdamped limit of a damped causal field. Late/low-k parameters plus independently calibrated `gamma` predict finite propagation speed, mode crossover, and high-k response without new high-k fit parameters.  
   Files: `sim04j_memory_origin_constraints.py`, `SIM04J_RESULTS.md`
 
-- **SIM-04K complete — Action / Conservation / Backreaction Gate**  
-  The candidate causal field implies the flat-background energy ledger
-
-  ```math
-  partial_t rho_M + div S_M
-  = g C_obs partial_t M - gamma (partial_t M)^2.
-  ```
-
-  Parameters are fitted only from training probe trajectories and frozen before an independent damping-heat channel is predicted. For action-consistent synthetic data, held-out heat prediction reaches the heat-noise floor (`RMSE ~ 0.00194` for `sigma_heat = 0.002`). For an otherwise identical field-like probe generator with no heat signal, the action model fails strongly (`RMSE ~ 0.08643`) while the zero-heat null wins.  
+- **SIM-04K — Action / Conservation / Backreaction Gate — complete**  
+  Probe-only fitting is frozen before an independent damping-heat channel is predicted. Action-consistent synthetic data reach the heat-noise floor; otherwise identical probe trajectories with no heat or a different heat mechanism reject the field-energy interpretation.  
   Files: `sim04k_action_conservation_backreaction.py`, `SIM04K_RESULTS.md`
 
-- **SIM-04L complete — Local Source / Field / Bath Exchange Continuity**  
-  The K-level global energy requirement is strengthened to the local continuity law
-
-  ```math
-  partial_t rho_M + div S_M
-  = g C_obs partial_t M - gamma (partial_t M)^2.
-  ```
-
-  Probe-only fitting on `A/B` predicts held-out site-resolved source exchange and bath gain on `C/D` with no exchange-amplitude retuning. For the action-consistent generator, local source/bath RMSE is at the `0.0015` sensor-noise floor. A deliberately spatially scrambled generator preserves every global time-window exchange total but produces local RMSE around `0.02`, demonstrating that global conservation can pass while local continuity fails. A no-exchange generator is correctly favored by the zero-exchange null.  
+- **SIM-04L — Local Source / Field / Bath Exchange Continuity — complete**  
+  The global energy requirement is strengthened to a spatially resolved continuity law. A spatially scrambled adversary preserves every global exchange total but fails the predicted local source/bath pattern by more than an order of magnitude above sensor noise.  
   Files: `sim04l_local_exchange_continuity.py`, `SIM04L_RESULTS.md`
+
+- **SIM-04M — Microscopic Bath / Emergent Damping — complete**  
+  The phenomenological `gamma dot(M)` term is replaced by explicit reversible harmonic bath modes. Sparse baths retain a long memory kernel and show strong energy return/recurrence, causing the local-friction model to fail on held-out late times. Dense broad baths suppress large recurrence over the tested window, produce a stable `gamma_eff ~ 0.46-0.47`, and substantially improve both held-out trajectory and effective heat prediction. Full microscopic energy closes to about `1e-7` across bath resolutions.  
+  Files: `sim04m_microscopic_bath_emergent_damping.py`, `SIM04M_RESULTS.md`
 
 ## Observation program
 
@@ -165,13 +164,13 @@ ordinary retained record R
 -> additional held-out residual.
 ```
 
-Current effective model:
+The current first-order effective model is
 
 ```math
 partial_t M = alpha C_obs - beta M + D_M nabla^2 M.
 ```
 
-Candidate causal completion:
+The candidate causal reduced model is
 
 ```math
 partial_t^2 M
@@ -191,45 +190,16 @@ qquad
 D_M=c_M^2/gamma.
 ```
 
-Cross-regime constraints include
+SIM-04M adds an important hierarchy below this equation:
 
-```math
-c_M=sqrt(gamma D_M)
+```text
+explicit microscopic bath
+-> exact reversible source/system/bath dynamics
+-> generalized non-Markovian memory kernel
+-> local gamma dot(M) only in a short-memory dense-bath limit.
 ```
 
-and
-
-```math
-k_c^2=(gamma/4-beta)/D_M.
-```
-
-For overdamped Fourier modes,
-
-```math
-r_-(k)[gamma-r_-(k)]/gamma = beta + D_M k^2.
-```
-
-The candidate flat-background energy density and flux are
-
-```math
-rho_M
-= 1/2 (partial_t M)^2
-+ 1/2 c_M^2 |grad M|^2
-+ 1/2 omega_M^2 M^2,
-```
-
-```math
-S_M=-c_M^2(partial_t M) grad M,
-```
-
-with local exchange law
-
-```math
-partial_t rho_M + div S_M
-= g C_obs partial_t M - gamma (partial_t M)^2.
-```
-
-The present simulations show mathematical viability and increasing falsifiability, not necessity.
+Therefore `gamma` is not automatically a fundamental parameter or evidence for new physics.
 
 ## Current nested hypotheses
 
@@ -250,7 +220,7 @@ verified matched ordinary state
 + different retained-record histories
 + fixed record-derived source law
 + transferable beta and D_M
-+ independently calibrated fast scale gamma
++ controlled/derived damping or full non-Markovian kernel
 + predicted causal front / mode crossover
 + fixed probe/feedback coupling
 + held-out protocol and wavelength prediction
@@ -259,33 +229,29 @@ verified matched ordinary state
 + failure of independently constrained conventional reservoirs.
 ```
 
-A conventional physical degree of freedom with exactly the same complete source, causal dynamics, local stress/energy exchange, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
+A conventional physical degree of freedom with the same complete source, dynamics, microscopic environment, stress/energy exchange, and coupling law remains an ontology ambiguity. Statistics cannot resolve a pure naming difference.
 
 ## Next research gates
 
-### Track A — microscopic exchange-sector completion
+### Track A — covariant microscopic/open-system completion
 
-SIM-04L makes source and bath exchange explicit as local energy bookkeeping, but the bath is still not a microscopic dynamical sector. Replace the phenomenological damping sink with explicit bath/environment degrees of freedom or a controlled open-system derivation, and test whether the same low-frequency `gamma` emerges rather than being inserted by hand.
+SIM-04M supplies an explicit Hamiltonian bath in a nonrelativistic flat-background toy. Determine whether a corresponding environment/exchange sector can be embedded covariantly without inserting an unjustified preferred frame.
 
-### Track B — covariant conservation completion
-
-Construct a covariant stress-energy scaffold for source/matter + memory + bath/interaction and require
+The eventual target remains
 
 ```math
 nabla_mu T_total^{mu nu}=0.
 ```
 
-The current flat-background continuity identity is a partial constraint, not closure of the GR/Bianchi gate.
+### Track B — multi-mode / spatial microscopic bath
 
-### Track C — causal-completion audit
+Extend the one-mode oscillator-bath gate to several field modes or a spatial lattice and test whether one bath spectral model predicts a common effective damping/kernel structure across wavelength.
 
-Determine whether damping can be expressed covariantly without an unjustified preferred frame and whether the low-frequency limit consistently reproduces the current phenomenological equation.
-
-### Track D — reset / environmental-closure budget
+### Track C — reset / environmental-closure budget
 
 Continue quantifying conventional modes that can survive reset and the diagnostic sensitivity required to exclude them.
 
-### Track E — standalone operational-observation manuscript
+### Track D — standalone operational-observation manuscript
 
 Continue the observation/record-formation model independently of H2. Its value should not depend on whether the memory-field extension survives.
 
@@ -300,6 +266,7 @@ Continue the observation/record-formation model independently of H2. Its value s
 7. preserve the distinction between ordinary record memory `R` and proposed state `M`;
 8. never treat a hidden-state naming difference as physical evidence;
 9. treat reset/environmental closure as an empirical measurement problem;
-10. treat the first-order memory PDE as an effective law until causal/covariant completion is established;
-11. do not interpret a field-like probe residual physically unless the same fixed parameters satisfy independently measured exchange/backreaction observables;
-12. require local exchange consistency, not only integrated energy balance, when the field interpretation predicts spatial transport.
+10. treat the first-order memory PDE and local damping as effective laws until their causal/microscopic/covariant regime is established;
+11. require independently measured exchange/backreaction observables;
+12. require local exchange consistency, not only integrated energy balance;
+13. if bath recurrence or long memory is present, replace local `gamma` with the full non-Markovian kernel rather than retuning `gamma` after the fact.

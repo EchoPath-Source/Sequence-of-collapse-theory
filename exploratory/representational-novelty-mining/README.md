@@ -187,15 +187,11 @@ Held-out history-specific response:
 
 ```text
 H_geo true       = 0.20095 +/- 0.20042 hops
-95% CI           = [0.17817, 0.22372]
-
 H_geo permuted   = 0.00527 +/- 0.12824 hops
-95% CI           = [-0.00930, 0.01984]
-
 paired p         = 4.70e-35
 ```
 
-RM-01G also adds a triangle/Forman-style graph-curvature proxy. The actual history predicts a reproducible localized curvature-like redistribution:
+A triangle/Forman-style graph-curvature proxy also shows a localized history-aligned redistribution:
 
 ```text
 memory/curvature alignment      = -0.11015
@@ -205,7 +201,7 @@ paired p                        = 4.34e-13
 
 The sign is model-specific and is **not** interpreted as physical Ricci curvature.
 
-The surviving toy chain is now:
+The surviving RM-01G chain is:
 
 ```text
 past temporal ordering
@@ -215,6 +211,56 @@ past temporal ordering
 -> history-specific metric deformation
 -> localized curvature-like graph response
 ```
+
+### RM-01H — transferability gate
+
+RM-01H asks whether the RM-01G action defines one transferable coarse-grained response across changing size, degree, memory persistence, and network topology.
+
+The raw coupling `beta` fails immediately as an intensive parameter because the triangle term changes in discrete units whose leverage depends strongly on degree and topology.
+
+A proposal-level dimensionless coupling was therefore defined:
+
+```math
+\lambda_{eff}
+= \beta\,
+\frac{\sigma(\Delta K_M)}
+{\alpha\,\sigma(\Delta N_\triangle)}.
+```
+
+RM-01H also corrected two explicit finite-size artifacts:
+
+```text
+history events scale with source-group size
+accepted-improvement update budget scales with edge count
+```
+
+A two-parameter threshold response fitted only on `n=48/64` regular graphs achieved:
+
+```text
+training R^2 = 0.8024
+training MAE = 0.01594
+```
+
+but failed on fresh `n=80/96` systems with frozen parameters:
+
+```text
+holdout R^2 = -0.8784
+holdout MAE = 0.03876
+```
+
+A focused topology holdout at the frozen baseline coupling also fails:
+
+```text
+random regular: H_geo = 0.1687 +/- 0.1751, p = 0.00224
+small-world:    H_geo = 0.0698 +/- 0.3090, p = 0.396
+ring lattice:   H_geo = 0.0000 in 15/15 seeds
+```
+
+Therefore RM-01H is intentionally recorded as a **failed transfer gate**.
+
+The current action is a genuine finite-network history-dependent geometry mechanism, but it is not yet a transferable constitutive law.
+
+The most likely failure is structural: a raw global triangle-count term and a normalized continuous memory term do not define one common local intensive energy density across graph families/discretizations.
 
 ## Relationship to SoCT
 
@@ -232,9 +278,9 @@ quantum interaction
 -> open spacetime bridge
 ```
 
-RM-01A-G do **not** establish the SoCT-specific gravity step.
+RM-01A-H do **not** establish the SoCT-specific gravity step.
 
-What they increasingly motivate is a relational memory object such as:
+What they motivate is a relational memory object such as:
 
 ```math
 K_M(i,j,t),
@@ -247,7 +293,8 @@ The most defensible current inference is:
 ```text
 structured relational memory
 + local consistency dynamics
-can produce history-specific effective-geometry response in toy networks.
+can produce history-specific effective-geometry response in toy networks,
+but the first finite-network action does not transfer as a continuum law.
 ```
 
 ## Current claim boundary
@@ -263,20 +310,26 @@ Do not claim that RM-01 derives:
 - lensing/geodesic dynamics;
 - or evidence for a real SoCT memory field.
 
-The RM-01G action is phenomenological and its memory coupling is posited rather than derived.
+RM-01H specifically blocks promotion of RM-01G to a weak-field continuum/gravity analogy.
 
-## Next gate — RM-01H
+## Next gate — RM-01I
 
-Test whether RM-01G admits a transferable coarse-grained constitutive response:
+Repair the **action**, not the failed response curve.
 
-```text
-K_M
--> local action density
--> memory density / memory strain
--> metric-response susceptibility
--> held-out size / topology transfer
+The next candidate should use genuinely local/intensive quantities, schematically:
+
+```math
+S = \sum_i s_i,
 ```
 
-The next test should vary graph size, degree, memory lengthscale, and coupling strength; fit only on a training subset; and test whether one weak-coupling response law predicts unseen systems without retuning.
+with a normalized local density such as
 
-Only after such transfer should the program attempt a weak-field continuum/gravity analogy.
+```math
+s_i
+= -\alpha C_i
+- \beta\frac{1}{d_i}\sum_{j\in N(i)}\widehat K_M(i,j),
+```
+
+where `C_i` is a local closure or curvature-like density rather than raw global triangle count.
+
+RM-01I must repeat the matched-present/reversed-history test and require positive held-out transfer across size, degree, memory scale, and topology before any continuum analogy is reconsidered.

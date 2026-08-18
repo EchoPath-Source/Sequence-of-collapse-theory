@@ -8,6 +8,8 @@
 ```text
 papers/math/soc-localization-memory-hamiltonian.md
 papers/math/shephard-mirrowen-hamiltonian-dimensional-analysis.md
+papers/math/soct-memory-origin-constraints-and-causal-completion.md
+papers/math/soct-memory-action-energy-exchange.md
 papers/math/israel-junction-causal-inversion-surface.md
 papers/p5-hubble-tension-memory-gradient/README.md
 papers/p6-black-holes-memory-compression-nodes/README.md
@@ -35,7 +37,7 @@ This file is not a claim of resolution. It is a formal audit and resolution plan
 | Gate | Risk before peer review | Candidate resolution path | Current status |
 |---|---|---|---|
 | Gauge / covariance safety | Coordinate-distance kernels can violate diffeomorphism covariance or gauge invariance. | Replace raw coordinate kernels with covariant kernels based on invariant intervals, bitensors, parallel transport, or gauge dressing. | OPEN |
-| Stress-energy conservation | A phenomenological memory stress tensor can violate the Bianchi identity unless the full stress tensor is conserved. | Derive memory and interaction tensors from an action or impose coupled field equations that enforce total conservation. | OPEN |
+| Stress-energy conservation | A phenomenological memory stress tensor can violate the Bianchi identity unless the full stress tensor is conserved. | Derive memory and interaction tensors from an action or impose coupled field equations that enforce total conservation. | **OPEN — flat-background energy ledger derived/tested in SIM-04K; explicit bath + covariant total tensor still missing** |
 | Junction-surface tensors | Parent-child / causal-inversion surfaces require explicit intrinsic metric, extrinsic curvature, jump tensor, and surface stress-energy definitions. | Use non-null Lanczos-Israel junction equations as the first scaffold; add a null-shell extension if the boundary is horizon-like. | PARTIALLY ADDRESSED |
 | Decoherence / long-timescale memory | Ordinary quantum coherence decays too quickly to support cosmological inheritance unless a protected slow channel exists. | Split memory into fast local memory and slow/protected memory with explicit timescale hierarchy. | OPEN |
 
@@ -156,11 +158,91 @@ where `C(x)` is the collapse-intensity source and `g_M` is a coupling constant w
 
 This is only a candidate support model. It does not prove that `phi_M` exists, and it does not prove that PNT/SoCT modifies gravity.
 
-### Required next step
+### Progress after SIM-04J / SIM-04K
 
-Derive the Euler-Lagrange equation for `phi_M`, compute `T_M_{mu nu}`, and show the explicit exchange equation between matter, interaction, and memory sectors.
+The memory-origin program now uses the candidate flat-background causal completion
 
-Until then, stress-energy conservation remains OPEN.
+```math
+partial_t^2 M
++ gamma partial_t M
+- c_M^2 nabla^2 M
++ omega_M^2 M
+= g C_obs.
+```
+
+The conservative kinetic/spatial/restoring terms admit the effective Lagrangian density
+
+```math
+L_M
+= 1/2 (partial_t M)^2
+- 1/2 c_M^2 |grad M|^2
+- 1/2 omega_M^2 M^2
++ g M C_obs.
+```
+
+The damping term is **not** derived from this conservative one-field action. It is explicitly treated as effective exchange with unresolved bath/environment degrees of freedom.
+
+SIM-04K derives the corresponding flat-background energy density
+
+```math
+rho_M
+= 1/2 (partial_t M)^2
++ 1/2 c_M^2 |grad M|^2
++ 1/2 omega_M^2 M^2
+```
+
+and exchange law
+
+```math
+partial_t rho_M + div S_M
+= g C_obs partial_t M
+- gamma (partial_t M)^2.
+```
+
+For periodic/no-flux boundaries,
+
+```math
+dE_M/dt = P_source - P_damp.
+```
+
+The discrete SIM-04K implementation satisfies this instantaneous algebraic identity to floating-point roundoff and uses it to predict an independent damping-heat channel from parameters fitted only to probe trajectories.
+
+This is meaningful progress because energetic/backreaction behavior is no longer allowed to float independently of the field trajectory.
+
+It is **not** a resolution of the full stress-energy gate.
+
+### Remaining required step
+
+The next conservation task is to model the recipient sector explicitly:
+
+```text
+source / matter sector
+<-> memory field M
+<-> bath / damping sector.
+```
+
+The damping loss
+
+```math
+gamma (partial_t M)^2
+```
+
+must appear as energy gained by a modeled recipient sector rather than disappearing phenomenologically.
+
+After that, a covariant formulation must:
+
+1. define the full action or effective action;
+2. derive `T_M^{mu nu}`, `T_int^{mu nu}`, and any bath stress tensor;
+3. derive explicit exchange currents among sectors;
+4. verify
+
+   ```math
+   nabla_mu T_total^{mu nu}=0;
+   ```
+
+5. state whether `c_M` is compatible with the spacetime metric, an effective metric, or a physical medium/preferred frame.
+
+Until those steps are complete, stress-energy conservation remains **OPEN**, with a flat-background energetic scaffold **PARTIALLY ADDRESSED**.
 
 ---
 
@@ -319,7 +401,7 @@ This audit does not prove PNT, SoCT, memory gravity, Engramons, parent-child uni
 It records what must be true mathematically for the framework to survive serious peer review:
 
 1. nonlocal kernels must be covariant/gauge safe;
-2. memory stress-energy must be conservation-compatible;
+2. memory stress-energy and exchange must be conservation-compatible;
 3. junction tensors must be explicitly defined for the relevant surface class;
 4. long-timescale memory must have a protected or otherwise justified survival mechanism.
 

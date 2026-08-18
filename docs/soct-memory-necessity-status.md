@@ -1,6 +1,6 @@
 # SoCT Memory Field — Current Necessity / Novelty Status
 
-**Status:** research assessment after SIM-02 through SIM-04K  
+**Status:** research assessment after SIM-02 through SIM-04L  
 **Claim level:** internal scientific positioning; not empirical confirmation or refutation  
 **Purpose:** prevent synthetic viability results from being misread as evidence that a physical memory field is already required.
 
@@ -12,7 +12,7 @@ The conservative conclusion is:
 
 > **Standard quantum/open-system dynamics already explain interaction, entanglement, decoherence, record persistence, record erasure, redundancy, and ordinary environmental memory. The proposed `M` field remains a mathematically viable additional-state hypothesis, but it has not yet been shown to be empirically required or uniquely identifiable.**
 
-SIM-04J and SIM-04K make the field hypothesis substantially more constrained. SIM-04J treats the first-order reaction-diffusion equation as an effective low-frequency law with a candidate causal completion. SIM-04K then derives a linked energy/exchange ledger so a field trajectory cannot be fitted independently of its energetic consequences. These are stronger falsification conditions, not evidence that the field exists.
+SIM-04J through SIM-04L make the field hypothesis substantially more constrained. J treats the first-order reaction-diffusion equation as an effective low-frequency law with a candidate causal completion. K derives a linked energy/exchange ledger. L strengthens that ledger to a local spatial continuity law. These are stronger falsification conditions, not evidence that the field exists.
 
 ---
 
@@ -121,7 +121,7 @@ For periodic/no-flux boundaries,
 dE_M/dt = P_source - P_damp.
 ```
 
-The SIM-04K fit is deliberately performed **only on probe trajectories**. The fitted field parameters are then frozen before predicting an independent damping-heat channel with no extra heat amplitude.
+The SIM-04K fit is deliberately performed only on probe trajectories. The fitted field parameters are then frozen before predicting an independent damping-heat channel with no extra heat amplitude.
 
 For action-consistent synthetic data:
 
@@ -134,14 +134,50 @@ heat noise sigma     = 0.00200.
 For an otherwise identical field-like probe generator with no heat channel:
 
 ```text
-held-out probe RMSE  ~ 0.00149
+held-out probe RMSE       ~ 0.00149
 field-predicted heat RMSE ~ 0.08643
 zero-heat null RMSE       ~ 0.00193.
 ```
 
-Thus the conservation/backreaction requirement can **falsify** the physical-field completion even when the probe trajectory alone still fits extremely well.
+Thus the energetic requirement can falsify the physical-field completion even when the probe trajectory alone still fits extremely well.
 
-This is an important strengthening of the hypothesis.
+### 7. Global energy balance is weaker than local continuity
+
+SIM-04L keeps the same causal field but tests the spatially resolved exchange maps
+
+```math
+P_src(x,t)=gC_obs(x,t) partial_t M(x,t),
+```
+
+```math
+P_bath(x,t)=gamma [partial_t M(x,t)]^2.
+```
+
+The same `(beta,D_M,lambda)` fit from probe histories predicts the held-out local exchange channels with no new exchange amplitude.
+
+For an action-consistent synthetic generator:
+
+```text
+probe RMSE        ~ 0.00149
+source local RMSE ~ 0.00152
+bath local RMSE   ~ 0.00151
+local sensor sigma = 0.00150.
+```
+
+A spatially scrambled adversary preserves the same global exchange totals in every time window, yet gives
+
+```text
+source local RMSE ~ 0.02348
+bath local RMSE   ~ 0.02110.
+```
+
+Thus
+
+```text
+global conservation can pass while local field continuity fails.
+```
+
+A no-exchange generator likewise rejects the action-linked local exchange prediction and is best explained by the zero-exchange null.
 
 ---
 
@@ -157,7 +193,8 @@ M is the unique explanation of a post-reset residual;
 M modifies fundamental spacetime geometry;
 Gamma_rec is the unique observation-source functional;
 the causal completion is the unique or correct completion;
-the flat-background action/exchange scaffold is a complete covariant theory;
+the flat-background exchange scaffold is a complete microscopic bath model;
+the current local continuity law is already a full covariant T^{mu nu} theory;
 consciousness is required for lower-level observation.
 ```
 
@@ -169,7 +206,7 @@ History dependence implies that the chosen present-state description may be inco
 
 A conventional residual reservoir given the same source, decay, diffusion, and probe coupling as `M` is indistinguishable from `M` using probe-only data. Independent reset diagnostics break that degeneracy only if they actually couple to the conventional hidden mode with sufficient sensitivity.
 
-A conventional field engineered to obey the same **complete** causal and energy-exchange structure remains observationally degenerate as well. SIM-04K raises the amount of physical structure the competitor must reproduce, but it does not solve a pure naming/ontology ambiguity.
+A conventional field engineered to obey the same complete causal, energetic, and local exchange structure remains observationally degenerate as well. SIM-04J/K/L raise the amount of physical structure the competitor must reproduce, but do not solve a pure naming/ontology ambiguity.
 
 ---
 
@@ -193,11 +230,11 @@ A conventional field engineered to obey the same **complete** causal and energy-
 
 ### Supported
 
-> If the first-order memory law is the overdamped limit of a causal physical field, late-time parameters imply short-time/wavelength predictions and an independently testable energy/backreaction ledger.
+> If the first-order memory law is the overdamped limit of a causal physical field, late-time parameters imply short-time/wavelength predictions and independently testable global and local energy-exchange consequences.
 
 ### Research hypothesis
 
-> If a residual follows a fixed record-derived source, relaxation, spatial propagation, causal-front/dispersion law, feedback law, and conservation-compatible exchange signature while independently constrained conventional reservoirs fail, an additional persistent degree of freedom would become scientifically motivated.
+> If a residual follows a fixed record-derived source, relaxation, spatial propagation, causal-front/dispersion law, feedback law, and conservation-compatible local exchange signature while independently constrained conventional reservoirs fail, an additional persistent physical degree of freedom would become scientifically motivated.
 
 ---
 
@@ -215,12 +252,13 @@ wait-time dependence
 cross-protocol parameter transfer
 fresh-probe residual after ordinary reset
 high-k / short-time crossover behavior
-and action-linked source-work / stored-energy / damping-loss behavior.
+action-linked source-work / stored-energy / damping-loss behavior
+spatially resolved source-depletion and bath-gain patterns.
 ```
 
 ### Relative to complete conventional physics: not yet uniquely
 
-An arbitrary conventional hidden reservoir can be assigned the same phenomenological dynamics. A stronger conventional mimic can also be assigned the same causal completion and the same energy ledger.
+An arbitrary conventional hidden reservoir can be assigned the same phenomenological dynamics. A stronger conventional mimic can also be assigned the same causal completion and the same local exchange law.
 
 So the program has not yet derived an ontologically unique signature.
 
@@ -228,24 +266,27 @@ What it has done is progressively replace a generic hidden-state hypothesis with
 
 ---
 
-## Strongest next discriminator: explicit exchange / covariant completion
+## Strongest next discriminator: microscopic bath + covariant completion
 
-SIM-04K still treats
+SIM-04L makes the recipient bath explicit only as a local energy channel:
 
 ```math
-gamma partial_t M
+partial_t rho_bath = gamma (partial_t M)^2.
 ```
 
-as effective damping. The lost field energy is assigned to a bath conceptually, but that bath is not yet modeled as an explicit dynamical sector.
+That is stronger than an unnamed damping sink, but it is still bookkeeping rather than a microscopic dynamical derivation.
 
 The next theoretical goal is therefore:
 
-> **construct an explicit recipient/bath sector so that source/matter energy, memory-field energy, and bath energy are dynamically exchanged while total energy is conserved.**
+> **replace the phenomenological damping term by explicit bath/environment degrees of freedom or a controlled open-system derivation and determine whether the observed low-frequency `gamma` emerges from that sector rather than being inserted by hand.**
 
-The corresponding covariant program must eventually derive a complete
+The covariant program must then construct
 
 ```math
 T_total^{mu nu}
+= T_source/matter^{mu nu}
++ T_M^{mu nu}
++ T_bath/int^{mu nu}
 ```
 
 with
@@ -254,7 +295,7 @@ with
 nabla_mu T_total^{mu nu}=0.
 ```
 
-A flat-background energy ledger is an important prerequisite but is not enough to close the repository's stress-energy/Bianchi gate.
+The current flat-background local continuity law is an important intermediate constraint but is not enough to close the repository's stress-energy/Bianchi gate.
 
 ---
 
@@ -284,6 +325,6 @@ should be judged against established quantum measurement/open-system formalisms 
 5. prefer simpler nested nulls when D_M -> 0 or lambda_M -> 0;
 6. never treat a hidden-state naming difference as physical evidence;
 7. require cross-regime causal consistency if the causal completion is invoked;
-8. require no-retuning energy/backreaction consistency before interpreting M as a physical field;
-9. keep the full covariant stress-energy/conservation gate OPEN until an explicit exchange sector is derived.
+8. require no-retuning global and local exchange/backreaction consistency before interpreting M as a physical field;
+9. keep the full covariant stress-energy/conservation gate OPEN until an explicit dynamical exchange sector is derived.
 ```

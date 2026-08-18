@@ -40,6 +40,10 @@ degree-only baseline
 
 The model competition is a structural diagnostic, not a formal Bayesian model-evidence calculation. Higher-dimensional models have more flexibility; therefore the strongest geometric result is when low-dimensional Euclidean models are competitive or win without a complexity advantage being granted to them.
 
+## Validation provenance
+
+The reported 30-seed result was completed as three deterministic 10-seed batches (`0-9`, `10-19`, `20-29`) using the same algorithm and `150` latent-optimization steps per fit. The packaged standalone script was separately syntax-checked and smoke-tested. A later single-process 30-seed packaging rerun exceeded the execution window and is **not** the source of the numbers below.
+
 ## 30-seed result
 
 ### Record reconstruction

@@ -125,20 +125,67 @@ in all `30 / 30` local seeds, versus `6 / 30` scrambled and `0 / 30` global cont
 
 The numerical growth exponents are not treated as unbiased continuum dimensions; finite-size and fixed-k reconstruction effects remain explicit limitations.
 
-The current surviving toy chain is:
+### RM-01E — pre-geometric model competition
+
+RM-01E removes the familiar substrate-family assumption. Every run begins from a 64-node degree-4 random regular relation graph with no coordinates.
+
+Three degree-preserving local evolution rules are compared:
+
+```text
+accumulated co-exposure memory
+triadic/common-neighbor closure
+random rewiring control
+```
+
+Persistent local-diffusion records still reconstruct the evolved relation graph strongly:
+
+```text
+memory   record-edge AUC = 0.970 +/- 0.012
+triadic  record-edge AUC = 0.994 +/- 0.004
+random   record-edge AUC = 0.961 +/- 0.012
+```
+
+The important result is structural model competition on held-out links. Naive accumulated-memory reinforcement does **not** spontaneously select a low-dimensional geometry; its strongest mean model is block/community structure.
+
+Triadic closure behaves differently. Without coordinates, low-dimensional Euclidean latent descriptions become strongly predictive:
+
+```text
+Euclidean 1D AUC = 0.885
+Euclidean 2D AUC = 0.905
+Euclidean 3D AUC = 0.925
+Euclidean 8D AUC = 0.930
+```
+
+Low-dimensional Euclidean models (1D/2D/3D) are the best raw-AUC candidate in `18 / 30` seeds; the Euclidean family including 8D wins `21 / 30`.
+
+The evolved triadic networks also show high clustering (`0.610`), long mean path length (`6.967`), diameter about `15.7`, and near-linear graph-ball growth (`~1.04`).
+
+The surviving lesson is therefore not
+
+```text
+memory alone -> geometry
+```
+
+but more narrowly
+
+```text
+persistent memory/records encode relational topology
++
+local relational closure/consistency can organize that topology into a low-dimensional geometric regime.
+```
+
+This remains a toy-model methodology result only.
+
+The current surviving chain is:
 
 ```text
 local relational interaction
 -> propagation
--> persistent record supports
--> overlap relations
--> effective distance
--> local adjacency
--> bottleneck / shortcut structure
--> relative growth-dimensional organization
+-> persistent records
+-> recoverable relational topology
+-> closure / consistency dynamics
+-> candidate low-dimensional effective geometry
 ```
-
-This remains a toy-model methodology result only.
 
 ## Relationship to SoCT
 
@@ -158,38 +205,45 @@ quantum interaction
 -> open spacetime bridge
 ```
 
-RM-01 currently probes only whether the relational structure of persistent records can carry recoverable effective geometry. It does not establish the SoCT-specific memory or gravity steps.
+RM-01 currently probes whether relational memory structure can carry, reconstruct, or help organize effective geometry. It does not establish the SoCT-specific gravity step.
 
-## Next gate — RM-01E
+## Next gate — RM-01F
 
-The strongest remaining assumption is that RM-01A-D begin from a substrate graph whose relational structure already exists.
-
-RM-01E should instead generate an evolving **pre-geometric relational network** from local update rules and then ask which compressed description best explains the resulting persistent record relations:
+RM-01E separated two ingredients that now need to be recombined:
 
 ```text
-relation-update rules
--> evolving interaction network
--> propagation
--> persistent records
--> record-only reconstruction
--> competing model classes
+persistent accumulated memory
++
+local relational closure
 ```
 
-Candidate explanatory classes should include:
+RM-01F should test whether a **memory-weighted closure law** produces a history-dependent change in future relational geometry that cannot be explained by the matched present state alone.
+
+Required comparison:
 
 ```text
-1-D / 2-D / 3-D geometric embedding
-hyperbolic geometry
-tree / ultrametric
-community/block model
-small-world network
-generic higher-dimensional latent model
+ordinary triadic closure
+vs
+memory-weighted closure
+vs
+instantaneous-state closure
+vs
+random rewiring
 ```
 
-The key question is no longer whether a known geometry can be reconstructed.
+The crucial gravity-as-memory-style signature is:
 
-It is:
+```text
+matched present relational state
++
+different past histories
+-> different future geometric evolution
+```
 
-> Does a low-dimensional geometric description become the best compressed explanation of persistent record relations in any nontrivial regime without hard-coding that geometry into the generator?
+If that residual survives ordinary hidden-state and instantaneous-medium controls, the program would have its first toy demonstration of the causal direction actually required by a gravity-as-memory mechanism:
 
-A negative result is an acceptable and informative outcome.
+```text
+past history -> persistent memory -> changed future relational geometry.
+```
+
+A negative result remains an acceptable and informative outcome.

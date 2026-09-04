@@ -31,6 +31,99 @@ This repo is intended to become the central home for:
 - OSF-linked preregistrations and study drafts
 - future datasets, notebooks, figures, and publication-ready papers
 
+## Active Observation and Observer-Emergence Program
+
+A new foundational program now asks two deliberately separate questions.
+
+### O-0 — Operational Observation
+
+> **What is the minimum physical transformation necessary for one system to count as having observed another?**
+
+The working hierarchy is:
+
+```text
+interaction
+  -> state-dependent correlation
+  -> distinguishability
+  -> physical record
+  -> record persistence
+  -> downstream accessibility
+  -> operational observation
+```
+
+The goal is to derive the currently phenomenological observation/collapse source variables from ordinary quantum interaction and information-bearing record formation rather than assuming a conscious observer at the start.
+
+Canonical files:
+
+```text
+papers/math/soc-operational-observation-model.md
+papers/math/soc-localization-memory-hamiltonian.md
+papers/math/soc-observation-to-spacetime-derivation-ladder.md
+```
+
+The intended derivation chain is:
+
+```text
+quantum state
+  -> interaction Hamiltonian H_int
+  -> correlated state rho_SO
+  -> distinguishability / accessible information
+  -> observation functional Omega or record-production rate Gamma_rec
+  -> SoCT source C_obs
+  -> memory field M
+  -> candidate memory feedback
+  -> candidate covariant spacetime response
+```
+
+Only the first portion is standard quantum/information-theoretic machinery. The steps from record production to persistent SoCT memory and from memory to spacetime response remain hypotheses to derive and test.
+
+### O-1 — Observer Emergence / "First Tuning Fork"
+
+> **What measurable conditions convert persistent records into a recursively self-updating, observer-like system?**
+
+This track is intentionally downstream of O-0. It does not equate memory, observerhood, or consciousness.
+
+Working ladder:
+
+```text
+record
+  -> persistence
+  -> feedback
+  -> adaptive feedback
+  -> integrated state/history
+  -> recursive self-modeling
+  -> self-maintaining observer-like organization
+  -> conscious access? (separate empirical question)
+```
+
+Canonical file:
+
+```text
+papers/math/soc-observer-emergence-first-tuning-fork.md
+```
+
+This program is expected to support P3 (concept to equation), P4 (observer/conscious-access tests), and P7 (unified framework) while preserving nested falsifiability.
+
+### Observation simulation ladder
+
+```text
+simulations/observation-qubit-pointer/
+simulations/observation-qubit-pointer-environment/
+simulations/observation-record-erasure/
+```
+
+Current status:
+
+- Simulation 1: qubit + pointer baseline — implemented.
+- Simulation 2: qubit + pointer + environment — implemented; demonstrates that environmental decoherence and a designated pointer record can be varied separately.
+- Simulation 3: record creation / erasure — active next gate.
+- Simulation 4: history-matched memory feedback — planned first explicitly SoCT-specific discriminator.
+- Simulation 5: conscious-access layer — deferred until lower-level physical observation variables are stable.
+
+Claim boundary:
+
+> These simulations validate definitions and mechanism separation inside toy quantum models. They do not establish a new physical memory field, consciousness-driven collapse, or an observation-derived spacetime theory.
+
 ## Research-to-product boundary
 
 SoCT provides theoretical primitives, empirical hypotheses, experimental proposals, mathematical scaffolds, and publication tracks that may inspire EchoGenesis architecture and EchoPath research directions. SoCT does not directly certify product claims.
@@ -108,6 +201,8 @@ Canonical file:
 papers/math/soc-localization-memory-hamiltonian.md
 ```
 
+The observation program treats `A(x,t)` and `C(x,t)` as derivation targets. The current working bridge is to derive an operational observation functional `Omega` and/or record-production rate `Gamma_rec` from the quantum interaction, then test whether either can legitimately source the SoCT memory variable.
+
 Claim boundary:
 
 > This Hamiltonian is a formal scaffold for separating memory-field and observer-state hypotheses into testable channels. It does not prove the theory.
@@ -157,6 +252,8 @@ Related math scaffold:
 papers/math/
 ```
 
+The O-0 operational-observation program and O-1 observer-emergence program are now core mathematical support tracks for P3.
+
 ### P4 — SOC-MZI-01 Pre-Registration Protocol
 
 ```text
@@ -176,6 +273,8 @@ Support folder:
 ```text
 papers/p4-observer-dependent-decoherence-cgds/
 ```
+
+P4 should treat conscious-access effects as downstream of matched physical observation/record variables defined by O-0.
 
 ### P5 — Hubble Tension as Memory Field Gradient
 
@@ -236,6 +335,8 @@ Superseded synthesis scaffold preserved for reference:
 ```text
 papers/p5-soct-synthesis/
 ```
+
+O-0, the observation-to-spacetime derivation ladder, and O-1 are expected to provide part of the quantum-to-observer-to-memory structure needed before P7 can claim a coherent unified mathematical narrative.
 
 ## Active support packages
 
@@ -344,6 +445,9 @@ Sequence-of-collapse-theory/
 │  └─ reproducibility_checklist.md
 ├─ experiments/
 ├─ simulations/
+│  ├─ observation-qubit-pointer/
+│  ├─ observation-qubit-pointer-environment/
+│  ├─ observation-record-erasure/
 │  └─ parent-child-transfer/
 ├─ references/
 ├─ osf/
@@ -355,6 +459,9 @@ Sequence-of-collapse-theory/
 └─ papers/
    ├─ README.md
    ├─ math/
+   │  ├─ soc-operational-observation-model.md
+   │  ├─ soc-observation-to-spacetime-derivation-ladder.md
+   │  └─ soc-observer-emergence-first-tuning-fork.md
    ├─ p1-age-dependent-rotation-curves-sparc/
    ├─ p2-high-redshift-time-dependent-gravity/
    ├─ p3-soc-concept-to-equation/
@@ -393,4 +500,4 @@ Tracked import/status docs now preserve the immediate needs:
 
 Initial theory repo scaffold created and expanded.
 
-The repository is now realigned to the March 2026 seven-paper publication roadmap while preserving earlier PNT, causal-inversion, CGDS, and synthesis scaffold work as supporting material.
+The repository is now realigned to the March 2026 seven-paper publication roadmap while preserving earlier PNT, causal-inversion, CGDS, synthesis scaffold work, and the active Observation / Observer-Emergence mathematical program as supporting research infrastructure.

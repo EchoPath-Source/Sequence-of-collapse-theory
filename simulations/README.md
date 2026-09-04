@@ -21,26 +21,35 @@ The repo now contains runnable simulation material alongside imported and explor
 
 ### Operational observation program
 
+The active observation simulation sequence is:
+
 ```text
 simulations/observation-qubit-pointer/
+simulations/observation-qubit-pointer-environment/
+simulations/observation-record-erasure/
 ```
 
 Simulation 1 is a standard-quantum qubit + two-state pointer benchmark. It sweeps measurement interaction strength and computes pointer trace distance, quantum mutual information, Holevo record information, persistence, and provisional observation-strength diagnostics.
 
-It intentionally includes:
+Simulation 2 adds explicit environment fragments and independently varies pointer-record strength and environmental-record strength. It demonstrates that system decoherence can occur while a designated pointer has zero record, so the operational observation metric is not merely a relabeling of total decoherence.
+
+Simulation 3 creates a pointer record and then applies the exact inverse unitary. The present record metrics return to zero, while an explicitly defined cumulative positive record-production bookkeeping functional remains nonzero. This exposes the central SoCT source-choice problem: whether `M` should track current records, durable/irreversible records, integrated persistence, or historical record production.
+
+All three currently include:
 
 ```text
 no SoCT memory feedback
 no consciousness term
 ```
 
-so it functions as the null/baseline layer for the observation project.
+so they function as null/baseline layers for the observation project.
 
 Related derivation files:
 
 ```text
 papers/math/soc-operational-observation-model.md
 papers/math/soc-observation-to-spacetime-derivation-ladder.md
+papers/math/soc-observer-emergence-first-tuning-fork.md
 papers/math/soc-localization-memory-hamiltonian.md
 ```
 
@@ -66,7 +75,7 @@ M(t) = 1 - exp(-t/tau)
 
 ## Active simulation directions
 
-1. Operational observation: qubit -> pointer -> environment -> record erasure -> history-matched memory feedback.
+1. Operational observation: qubit -> pointer -> environment -> record erasure -> irreversible-record benchmark -> history-matched memory feedback.
 2. SPARC memory-fit output tables and parameter logs.
 3. PM void-filament H-split parameter logs.
 4. Effective-G / memory-kernel toy-model scripts.
@@ -76,9 +85,10 @@ M(t) = 1 - exp(-t/tau)
 ## Observation simulation ladder
 
 ```text
-Simulation 1: qubit + pointer                 COMPLETE baseline
-Simulation 2: qubit + pointer + environment   NEXT
-Simulation 3: record erasure                  planned
+Simulation 1: qubit + pointer                  COMPLETE baseline
+Simulation 2: qubit + pointer + environment    COMPLETE baseline
+Simulation 3: record creation + exact erasure  COMPLETE baseline
+Simulation 3b: irreversible/distributed record NEXT
 Simulation 4: SoCT memory feedback             planned
 Simulation 5: conscious-access layer           planned only after lower layers stabilize
 ```
@@ -91,6 +101,14 @@ simulations/
 ├─ observation-qubit-pointer/
 │  ├─ README.md
 │  ├─ simulate_qubit_pointer.py
+│  └─ results.csv
+├─ observation-qubit-pointer-environment/
+│  ├─ README.md
+│  ├─ simulate_qubit_pointer_environment.py
+│  └─ results.csv
+├─ observation-record-erasure/
+│  ├─ README.md
+│  ├─ simulate_record_erasure.py
 │  └─ results.csv
 ├─ sparc/
 ├─ memory-kernel/

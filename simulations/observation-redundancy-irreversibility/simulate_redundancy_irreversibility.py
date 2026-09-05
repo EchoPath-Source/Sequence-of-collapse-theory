@@ -37,18 +37,18 @@ def main():
             overlap, d_frag, chi_frag = single_fragment_metrics(phi)
             for erased in range(n + 1):
                 remaining = n - erased
-
-                # Conditional environment branches have overlap cos(phi)^remaining.
                 branch_overlap = overlap ** remaining
 
-                # Residual decoherence / record-separation proxy after erasing k fragments.
+                # Record structure outside the sector that has been reversed.
                 xi_irr = 1.0 - branch_overlap
 
-                # Count fragments that individually carry near-classical accessible information.
+                # Threshold redundancy diagnostic only; not the main score.
                 redundancy_09 = remaining if chi_frag >= 0.9 else 0
 
-                # Exploratory durable-record score. This is a model diagnostic, not a law.
-                durable_score = xi_irr * (redundancy_09 / n if n else 0.0)
+                # Continuous exploratory durable-record score. It rewards residual
+                # branch separation, surviving multiplicity, and accessible info.
+                surviving_fraction = remaining / n if n else 0.0
+                durable_score = xi_irr * surviving_fraction * chi_frag
 
                 rows.append({
                     "N_fragments": n,

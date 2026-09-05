@@ -16,13 +16,16 @@ simulations/observation-history-controls/
 simulations/observation-history-randomized-crossover/
 simulations/observation-history-preparation-carryover/
 simulations/observation-history-covariate-error/
+simulations/observation-history-sham-sensitivity/
 ```
 
 Simulation 1 establishes the standard-quantum qubit-pointer baseline. Simulation 2 separates designated pointer record formation from total system decoherence. Simulation 3 shows that an ideal reversible record can be erased even though record creation occurred earlier. Simulation 3b shows that distributed records survive partial reversal and motivates persistence/redundancy/irreversibility weighting in the candidate record-production source.
 
 Simulation 4 introduces the speculative SoCT memory-feedback term and defines a matched-standard-state/different-history discriminator. Simulation 4b shows that its simple smooth phase trajectory is not unique under ordinary nuisance drift. Simulation 4c redesigns the test using randomized history-dose crossover. Simulation 4d shows that preparation-induced ordinary carryover can create a large false history effect even under randomized assignment.
 
-Simulation 4e attacks the next assumption: measured covariates are incomplete and noisy. With true `lambda_M=0`, measurement error and omitted history-correlated ordinary variables can regenerate statistically strong apparent history coefficients. Therefore a residual cannot be interpreted as SoCT memory merely because known carryover covariates were included in a regression.
+Simulation 4e shows that measurement error and omitted history-correlated ordinary variables can regenerate statistically strong apparent history coefficients even when true `lambda_M=0`.
+
+Simulation 4f adds preparation-matched sham histories, unrelated negative controls, Monte Carlo false-positive tracking, and explicit withholding rules. Under progressively stronger hidden ordinary carryover, both target-history and sham-history false-positive rates rise while the unrelated negative control stays near baseline. This supports a protocol rule that an apparent history effect is not eligible for SoCT interpretation when sham behavior or omitted-variable sensitivity remains comparable.
 
 ## Observation simulation ladder
 
@@ -32,12 +35,13 @@ Simulation 2:  qubit + pointer + environment            COMPLETE baseline
 Simulation 3:  record creation + exact erasure          COMPLETE baseline
 Simulation 3b: redundant/distributed record             COMPLETE baseline
 Source v0.1:   durable record-production source         DEFINED candidate
-Simulation 4:  SoCT history-dependent memory feedback  COMPLETE toy discriminator
+Simulation 4:  SoCT history-dependent memory feedback   COMPLETE toy discriminator
 Simulation 4b: nuisance/drift adversarial controls      COMPLETE; simple trajectory NOT UNIQUE
 Simulation 4c: randomized history-dose crossover        COMPLETE identifiability redesign
 Simulation 4d: preparation carryover controls           COMPLETE; naive false positive demonstrated
 Simulation 4e: covariate error + omitted carryover      COMPLETE; residual can reappear under null
-Simulation 4f: sham + negative-control sensitivity      NEXT
+Simulation 4f: sham + negative-control sensitivity      COMPLETE; withholding criteria defined
+Protocol 1:    laboratory history-memory preregistration NEXT
 Simulation 5:  conscious-access layer                   DEFERRED until lower layers stabilize
 ```
 
@@ -58,6 +62,8 @@ randomized history dose
 ```
 
 The central discriminator is no longer simply `different history -> different phase`. It is whether a residual follows randomized record-history dose **after** ordinary present-state differences and plausible hidden carryover have been independently bounded.
+
+A nominal history residual must be withheld from SoCT interpretation when the sham-history channel is significant or comparable, negative controls are unstable, present-state diagnostics differ, or plausible omitted-variable sensitivity can account for the effect.
 
 ## Related derivation files
 

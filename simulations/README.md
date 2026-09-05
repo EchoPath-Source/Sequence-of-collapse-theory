@@ -30,6 +30,7 @@ simulations/observation-record-erasure/
 simulations/observation-redundancy-irreversibility/
 simulations/observation-history-memory-feedback/
 simulations/observation-history-controls/
+simulations/observation-history-randomized-crossover/
 ```
 
 Simulation 1 is a standard-quantum qubit + two-state pointer benchmark. It sweeps measurement interaction strength and computes pointer trace distance, quantum mutual information, Holevo record information, persistence, and provisional observation-strength diagnostics.
@@ -44,6 +45,8 @@ Simulation 4 is the first explicitly SoCT-specific toy discriminator. Two system
 
 Simulation 4b is an adversarial control layer. It shows that, over a finite observation window, the simple exponential-memory phase basis can be absorbed extremely well by ordinary constant, linear-frequency, and quadratic-drift nuisance terms, especially for slow memory decay. Therefore a single smooth phase trajectory is not a robust unique signature of SoCT memory.
 
+Simulation 4c changes the design rather than overfitting the same trajectory. Prior history dose is randomized and crossed between physical arms, while hardware offsets and slow drift remain apparatus-tied. In synthetic injected-signal tests, the randomized history coefficient is recoverable while the null stays consistent with zero. This establishes an identifiability strategy, not evidence for SoCT.
+
 Simulations 1-3b include:
 
 ```text
@@ -51,7 +54,7 @@ no SoCT memory feedback
 no consciousness term
 ```
 
-Simulation 4 introduces only the speculative memory-feedback term. Simulation 4b attacks that discriminator with ordinary nuisance structure. Consciousness remains excluded.
+Simulation 4 introduces only the speculative memory-feedback term. Simulations 4b-4c test whether that discriminator survives increasingly realistic control structure. Consciousness remains excluded.
 
 Related derivation files:
 
@@ -86,7 +89,7 @@ M(t) = 1 - exp(-t/tau)
 ## Active simulation directions
 
 1. Operational observation: qubit -> pointer -> environment -> erasure -> redundancy/irreversibility -> history-matched memory feedback.
-2. Randomized history-dose crossover designs that break the nuisance degeneracy found in Simulation 4b.
+2. Preparation-carryover controls for the randomized history-dose design.
 3. Observer-emergence / first-tuning-fork modeling after the lower observation layer stabilizes.
 4. SPARC memory-fit output tables and parameter logs.
 5. PM void-filament H-split parameter logs.
@@ -104,7 +107,8 @@ Simulation 3b: redundant/distributed record            COMPLETE baseline
 Source v0.1:   durable record-production source        DEFINED candidate
 Simulation 4:  SoCT history-dependent memory feedback COMPLETE toy discriminator
 Simulation 4b: nuisance/drift adversarial controls     COMPLETE; simple trajectory NOT UNIQUE
-Simulation 4c: randomized history-dose crossover       NEXT
+Simulation 4c: randomized history-dose crossover       COMPLETE identifiability redesign
+Simulation 4d: preparation carryover controls          NEXT
 Simulation 5:  conscious-access layer                  deferred until lower layers stabilize
 ```
 

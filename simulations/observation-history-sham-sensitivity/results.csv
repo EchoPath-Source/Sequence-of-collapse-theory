@@ -1,0 +1,5 @@
+hidden_strength,history_false_positive_rate_abs_z_ge_3,sham_flag_rate_abs_z_ge_3,negative_control_flag_rate_abs_z_ge_3,median_history_lambda_fit,replicates
+0.0,0.0,0.0,0.01,0.0000910844,200
+0.003,0.02,0.02,0.01,0.0009102131,200
+0.006,0.09,0.10,0.01,0.0017283147,200
+0.012,0.35,0.40,0.01,0.0032543787,200

@@ -27,22 +27,28 @@ The active observation simulation sequence is:
 simulations/observation-qubit-pointer/
 simulations/observation-qubit-pointer-environment/
 simulations/observation-record-erasure/
+simulations/observation-redundancy-irreversibility/
+simulations/observation-history-memory-feedback/
 ```
 
 Simulation 1 is a standard-quantum qubit + two-state pointer benchmark. It sweeps measurement interaction strength and computes pointer trace distance, quantum mutual information, Holevo record information, persistence, and provisional observation-strength diagnostics.
 
 Simulation 2 adds explicit environment fragments and independently varies pointer-record strength and environmental-record strength. It demonstrates that system decoherence can occur while a designated pointer has zero record, so the operational observation metric is not merely a relabeling of total decoherence.
 
-Simulation 3 creates a pointer record and then applies the exact inverse unitary. The present record metrics return to zero, while an explicitly defined cumulative positive record-production bookkeeping functional remains nonzero. This exposes the central SoCT source-choice problem: whether `M` should track current records, durable/irreversible records, integrated persistence, or historical record production.
+Simulation 3 creates a pointer record and then applies the exact inverse unitary. Present record metrics return to zero while an explicitly defined cumulative positive record-production bookkeeping functional remains nonzero. This exposes the SoCT source-choice problem: should `M` track current records, durable records, integrated persistence, or historical record production?
 
-All three currently include:
+Simulation 3b distributes the record across multiple environment fragments and then erases only a subset. Distributed record structure survives partial reversal and vanishes only after every record-bearing fragment is reversed in the toy model. This motivates weighting a candidate source by accessible information, persistence, redundancy, and resistance to reversal.
+
+Simulation 4 is the first explicitly SoCT-specific toy discriminator. Two systems start with the same ordinary quantum state, Hamiltonian, and environment, but different speculative memory values inherited from different prior record histories. With `lambda_M=0`, their trajectories are identical. With `lambda_M != 0`, the added term `lambda_M M O_M` produces a calculable history-dependent phase residual.
+
+Simulations 1-3b include:
 
 ```text
 no SoCT memory feedback
 no consciousness term
 ```
 
-so they function as null/baseline layers for the observation project.
+Simulation 4 introduces only the speculative memory-feedback term. Consciousness remains excluded.
 
 Related derivation files:
 
@@ -50,6 +56,7 @@ Related derivation files:
 papers/math/soc-operational-observation-model.md
 papers/math/soc-observation-to-spacetime-derivation-ladder.md
 papers/math/soc-observer-emergence-first-tuning-fork.md
+papers/math/soc-record-production-source-v0-1.md
 papers/math/soc-localization-memory-hamiltonian.md
 ```
 
@@ -75,46 +82,26 @@ M(t) = 1 - exp(-t/tau)
 
 ## Active simulation directions
 
-1. Operational observation: qubit -> pointer -> environment -> record erasure -> irreversible-record benchmark -> history-matched memory feedback.
-2. SPARC memory-fit output tables and parameter logs.
-3. PM void-filament H-split parameter logs.
-4. Effective-G / memory-kernel toy-model scripts.
-5. CMB / gravitational-wave / black-hole comparison models.
-6. Parent-child directional-memory toy simulations.
+1. Operational observation: qubit -> pointer -> environment -> erasure -> redundancy/irreversibility -> history-matched memory feedback.
+2. Noise/drift and hidden-environment controls for the Simulation 4 discriminator.
+3. Observer-emergence / first-tuning-fork modeling after the lower observation layer stabilizes.
+4. SPARC memory-fit output tables and parameter logs.
+5. PM void-filament H-split parameter logs.
+6. Effective-G / memory-kernel toy-model scripts.
+7. CMB / gravitational-wave / black-hole comparison models.
+8. Parent-child directional-memory toy simulations.
 
 ## Observation simulation ladder
 
 ```text
-Simulation 1: qubit + pointer                  COMPLETE baseline
-Simulation 2: qubit + pointer + environment    COMPLETE baseline
-Simulation 3: record creation + exact erasure  COMPLETE baseline
-Simulation 3b: irreversible/distributed record NEXT
-Simulation 4: SoCT memory feedback             planned
-Simulation 5: conscious-access layer           planned only after lower layers stabilize
-```
-
-## Suggested structure
-
-```text
-simulations/
-├─ README.md
-├─ observation-qubit-pointer/
-│  ├─ README.md
-│  ├─ simulate_qubit_pointer.py
-│  └─ results.csv
-├─ observation-qubit-pointer-environment/
-│  ├─ README.md
-│  ├─ simulate_qubit_pointer_environment.py
-│  └─ results.csv
-├─ observation-record-erasure/
-│  ├─ README.md
-│  ├─ simulate_record_erasure.py
-│  └─ results.csv
-├─ sparc/
-├─ memory-kernel/
-├─ cosmology/
-├─ parent-child-transfer/
-└─ imported-assets/
+Simulation 1:  qubit + pointer                         COMPLETE baseline
+Simulation 2:  qubit + pointer + environment           COMPLETE baseline
+Simulation 3:  record creation + exact erasure         COMPLETE baseline
+Simulation 3b: redundant/distributed record             COMPLETE baseline
+Source v0.1:   durable record-production source         DEFINED candidate
+Simulation 4:  SoCT history-dependent memory feedback  COMPLETE toy discriminator
+Simulation 4b: noise/drift + hidden-environment controls NEXT
+Simulation 5:  conscious-access layer                   deferred until lower layers stabilize
 ```
 
 ## Import rule

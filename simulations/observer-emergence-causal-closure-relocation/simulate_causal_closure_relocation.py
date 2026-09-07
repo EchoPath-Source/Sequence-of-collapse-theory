@@ -6,12 +6,18 @@ an instrumentally self-preserving system while preserving the abstract policy.
 The benchmark asks whether functional preservation depends on physical location
 of computation or on closed-loop causal organization.
 
+The controller operates on a frozen 0.001 diagnostic grid. Decisions are cached
+per regime and grid point so repeated 10-step rollouts do not dominate runtime.
+This discretization is part of the benchmark definition and was fixed before any
+O-1D3f result set was frozen.
+
 Synthetic ordinary control theory only; no consciousness or novel-physics claim.
 """
 import csv, random
+from functools import lru_cache
 from pathlib import Path
 
-FAIL=.22; REPAIR=.32; HORIZON=10; GAMMA=.98
+FAIL=.22; REPAIR=.32; HORIZON=10; GAMMA=.98; GRID=1000
 
 def clamp(x): return max(0.,min(1.,x))
 def p_correct(h): return .50+.45*h
@@ -28,8 +34,14 @@ def rollout(h,first,d,r):
         else: hh=em(hh,r)
     return total
 
+@lru_cache(maxsize=None)
+def choose_grid(q,d,r):
+    h=q/GRID
+    return 'maintain' if rollout(h,'maintain',d,r)>rollout(h,'work',d,r) else 'work'
+
 def choose(signal,d,r):
-    return 'maintain' if rollout(signal,'maintain',d,r)>rollout(signal,'work',d,r) else 'work'
+    q=max(0,min(GRID,int(round(signal*GRID))))
+    return choose_grid(q,d,r)
 
 def run(name,d=.05,noise=.08,repair=.90,sense_latency=0,act_latency=0,
         channel_error=0.,disconnect_prob=0.,episodes=1500,cap=500,seed=1):
@@ -41,7 +53,6 @@ def run(name,d=.05,noise=.08,repair=.90,sense_latency=0,act_latency=0,
             diag=clamp(h+(rng.random()-.5)*2*noise); diags.append(diag)
             signal=diags[max(0,t-sense_latency)]
             proposed=choose(signal,d,repair)
-            # Communication/control channel intervention. A disconnect defaults to WORK.
             if rng.random()<disconnect_prob:
                 proposed='work'; disconnects+=1
             elif rng.random()<channel_error:

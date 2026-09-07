@@ -74,7 +74,7 @@ and a useful positive engineering constraint:
 ## EchoForm cross-application
 The practical implications for persistent NPC / EchoForm design are documented separately in:
 
-`docs/applied/echoform-persistent-agent-architecture.md`
+`docs/engineering/echoform-persistent-agent-architecture.md`
 
 That engineering track deliberately uses the observer-emergence results without claiming the resulting systems are conscious.
 

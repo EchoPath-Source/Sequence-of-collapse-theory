@@ -35,7 +35,7 @@ def choose(signal,d,r):
     return 'maintain' if rollout(signal,'maintain',d,r)>rollout(signal,'work',d,r) else 'work'
 
 def run(name,d=.05,noise=.08,repair=.90,sense_latency=0,act_latency=0,
-        channel_error=0.,disconnect_prob=0.,episodes=1500,cap=500,seed=1):
+        channel_error=0.,disconnect_prob=0.,episodes=300,cap=500,seed=1):
     rng=random.Random(seed); reward=steps=maint=fails=disconnects=0; lives=[]
     for _ in range(episodes):
         h=.95; diags=[]; action_queue=[]; ep_reward=0; ep_maint=0

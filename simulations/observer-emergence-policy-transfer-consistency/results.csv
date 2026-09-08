@@ -1,0 +1,4 @@
+degradation,best_training_value,best_trigger,best_recovery_target
+0.04,313.543000,0.69,0.70
+0.08,208.696600,0.69,0.76
+0.12,143.904600,0.69,0.76

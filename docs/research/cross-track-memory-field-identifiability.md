@@ -281,6 +281,123 @@ Therefore:
 This structure is intended to prevent a small number of flexible tracks from manufacturing apparent unification.
 
 
+## 5E. SPARC provenance and calibration freeze gate
+
+SPARC is the preferred development/calibration track because it is currently the most mature empirical branch, **not because it is an untouched preregistered dataset**.
+
+Prior SPARC development has already consumed researcher degrees of freedom through choices and checks involving mass/age proxies, binning, resampling, robustness analyses, and related pipeline decisions. Those choices must be disclosed rather than erased by relabeling SPARC as a calibration dataset.
+
+Before CTI extracts the cross-track calibration posterior, create a frozen SPARC calibration manifest containing at minimum:
+
+```text
+dataset/version
+sample inclusion/exclusion rules
+distance/inclination quality rules
+stellar mass-to-light assumptions
+age / formation-history proxy set
+primary proxy designated for calibration
+bin definitions, if used
+regression / likelihood form
+covariates and control variables
+bootstrap/resampling procedure
+robustness variants already explored
+multiple-testing / model-selection history
+nuisance parameters and priors
+canonical output statistic
+code commit / data hashes
+known prior exploratory decisions
+freeze date
+```
+
+The manifest must distinguish historically explored choices, canonical calibration choices, and sensitivity-only analyses that cannot replace the canonical result after freeze.
+
+If the canonical calibration fails, a robustness variant may diagnose why, but it cannot silently become the new calibration analysis. Promoting a different variant starts a new hypothesis/version cycle.
+
+## 5F. Decision-rule freeze gate
+
+A cold prediction must have a numerical decision rule before the target result is inspected.
+
+For each held-out track, freeze the likelihood/error model, target observables, approved nuisance parameters and priors, test/model-comparison statistic, numerical compatibility/rejection criterion, expected power or sensitivity, quality-control rules, systematic treatment, and definition of an inconclusive result.
+
+The protocol does **not** choose arbitrary universal cutoffs before a justified statistical model exists. The numerical rule and its justification must instead be frozen after the track's likelihood/error/power model is established but before the held-out target result is revealed to the cross-track analysis.
+
+Possible frameworks include posterior-predictive criteria, calibrated chi-square or likelihood-ratio tests, Bayes-factor thresholds with justified priors, frequentist confidence criteria with calibrated coverage, or equivalence regions where scientifically appropriate.
+
+The rule should be simulation-calibrated when feasible. Three outcomes must remain available:
+
+```text
+compatible
+incompatible
+inconclusive / underpowered
+```
+
+**Inconclusive does not count as successful prediction.**
+
+A result that misses a frozen criterion cannot be reclassified as success because it is close. It may motivate a revised hypothesis requiring new held-out evidence.
+
+### Nuisance-parameter firewall
+
+Every target track must have a pre-approved nuisance ledger.
+
+A quantity qualifies as nuisance only if it represents a known measurement, calibration, selection, foreground/background, or domain-specific systematic with an independently motivated role in the standard analysis.
+
+A nuisance parameter must not alter the frozen universal/scaling memory law, implement a new cross-scale transformation, absorb arbitrary target residual structure, acquire a flexible functional form only after target inspection, or act as a disguised domain-specific copy of a supposedly universal SoCT parameter.
+
+If acceptable target fit requires a new flexible nuisance term after unblinding, the original frozen prediction has failed or become inconclusive; the modified model is a new hypothesis.
+
+## 5G. Cross-scale bridge gate
+
+A shared symbol `M` does not establish that galactic, cosmological, and microscopic memory variables are quantitatively interchangeable.
+
+Before SPARC-derived parameters can predict another scale, CTI must derive an admissible transformation.
+
+For the laboratory branch:
+
+```math
+\mathcal T_{G\to Q}:
+(\theta_M,L_G,T_G,\mathcal B_G)
+\mapsto
+(\theta_M^Q,L_Q,T_Q,\mathcal B_Q).
+```
+
+For cosmology:
+
+```math
+\mathcal T_{G\to P}:
+(\theta_M,L_G,T_G,\mathcal B_G)
+\mapsto
+(\theta_M^P,L_P,T_P,\mathcal B_P).
+```
+
+Here `\mathcal B` denotes relevant physical background/boundary conditions rather than an extra unconstrained fitting function.
+
+Each transformation is itself a cross-track bridge and must independently satisfy Section 5A.
+
+If no admissible `\mathcal T_{G\to Q}` exists, SPARC is **not entitled to make a quantitative laboratory prediction**. If no admissible `\mathcal T_{G\to P}` exists, SPARC is **not entitled to make a quantitative Pantheon+ prediction**.
+
+That outcome is scientifically informative: the framework has not yet earned quantitative cross-scale unification.
+
+A transformation introduced after examining the target is a new hypothesis and cannot be tested on that same target as if it were held out.
+
+## 5H. Revised pre-unblinding chain
+
+```text
+common theory
+-> admissible bridge derivation
+-> SPARC provenance audit
+-> canonical SPARC pipeline freeze
+-> SPARC calibration posterior
+-> admissible cross-scale transformation
+-> target nuisance ledger
+-> target likelihood / power model
+-> numerical decision-rule freeze
+-> target unblinding / cold prediction score
+-> only afterward: diagnosis or joint refit
+```
+
+Every arrow must be auditable by version/commit.
+
+
 ## 6. Stronger held-out architecture
 
 The preferred test is not initially a three-domain discovery fit.
@@ -517,6 +634,10 @@ RCOF may later consume the operational record framework, but a failure of observ
 
 ## 16. Immediate work packages
 
+### CTI-00 — SPARC provenance audit
+
+Before treating SPARC as calibration data, inventory the analysis choices already explored and produce the canonical calibration manifest required by Section 5E.
+
 ### CTI-01 — canonical parameter inventory
 
 Audit all uses of:
@@ -540,9 +661,13 @@ and classify each as U/S/C/N.
 
 Derive units and candidate dimensionless groups. Determine whether `beta` and `D_M` can meaningfully be universal across laboratory, galactic, and cosmological scales or require a scale law.
 
+### CTI-02B — cross-scale transformation derivation
+
+Derive or reject admissible `T_G->Q` and `T_G->P` mappings before either target is used for cross-track validation. A missing bridge blocks the corresponding quantitative prediction.
+
 ### CTI-03 — track likelihood interfaces
 
-Specify the minimal outputs each track must expose to a joint fitter.
+Specify the minimal outputs each track must expose to prediction and later joint fitting. Include nuisance ledgers, likelihood/error models, and the information needed to calibrate a numerical decision rule.
 
 ### CTI-04 — SPARC calibration + cross-track prediction prototype
 
@@ -551,6 +676,10 @@ Use SPARC to calibrate the admissible shared/scaling block and use the synthetic
 ### CTI-05 — Pantheon readiness audit
 
 Complete the raw-input/covariance pipeline and assess whether the environment-H0 dataset has enough power for a held-out prediction.
+
+### CTI-05B — target decision-rule calibration
+
+Using target-track methodology without revealing the held-out result to the cross-track analysis, establish the likelihood/error model, power/sensitivity, nuisance firewall, and justified numerical compatible/incompatible/inconclusive rule.
 
 ### CTI-06 — freeze document
 
@@ -632,4 +761,4 @@ held-out three-track test: not yet run
 empirical unification: not established
 ```
 
-The immediate next gate is **CTI-01: canonical parameter inventory**, followed by **CTI-02: dimensional bridge**.
+The immediate next gates are **CTI-00: SPARC provenance audit**, **CTI-01: canonical parameter inventory**, and **CTI-02: dimensional bridge**. No cold cross-track prediction is authorized until the relevant cross-scale bridge and decision rule are frozen.

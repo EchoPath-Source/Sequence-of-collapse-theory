@@ -1,0 +1,35 @@
+name: CTI-00B SPARC Specification Curve
+
+on:
+  push:
+    branches:
+      - research/cti-00b-specification-curve
+  workflow_dispatch:
+
+jobs:
+  cti00b:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/cti-00b-specification-curve
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install analysis dependencies
+        run: pip install numpy pandas scipy
+      - name: Run CTI-00B
+        run: python observations/sparc/scripts/cti00b_specification_curve.py
+      - name: Commit generated audit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations/sparc/results/cti00b/specification_curve.csv observations/sparc/results/cti00b/summary.json
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+          else
+            git commit -m "results: record CTI-00B SPARC specification curve"
+            git push
+          fi

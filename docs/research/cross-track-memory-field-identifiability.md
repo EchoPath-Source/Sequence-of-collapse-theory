@@ -634,9 +634,11 @@ RCOF may later consume the operational record framework, but a failure of observ
 
 ## 16. Immediate work packages
 
-### CTI-00 — SPARC provenance audit
+### CTI-00 — SPARC provenance + specification robustness
 
-Before treating SPARC as calibration data, inventory the analysis choices already explored and produce the canonical calibration manifest required by Section 5E.
+Before treating SPARC as calibration data, inventory the analysis choices already explored and produce the canonical calibration manifest required by Section 5E. Then run CTI-00B across defensible specifications to quantify how much the inferred calibration changes under reasonable analysis choices. See `docs/research/cti-00-sparc-provenance-and-specification-robustness.md`.
+
+A significant SPARC association is not sufficient: if the calibration quantity is specification-sensitive or inconclusive, SPARC is not authorized as the sole cross-track anchor.
 
 ### CTI-01 — canonical parameter inventory
 
@@ -663,7 +665,9 @@ Derive units and candidate dimensionless groups. Determine whether `beta` and `D
 
 ### CTI-02B — cross-scale transformation derivation
 
-Derive or reject admissible `T_G->Q` and `T_G->P` mappings before either target is used for cross-track validation. A missing bridge blocks the corresponding quantitative prediction.
+Derive or reject the nearer astrophysical/cosmological bridge `T_G->P` first. A missing admissible `T_G->P` blocks the Pantheon+ quantitative prediction and is a hard exit for that unification claim.
+
+Only after the `G->P` bridge has been derived and its cold-test protocol established should the much harder microscopic bridge `T_G->Q` be attempted. A missing admissible `T_G->Q` independently blocks the laboratory quantitative prediction.
 
 ### CTI-03 — track likelihood interfaces
 
@@ -699,36 +703,47 @@ State the laboratory prediction before real probe data are analyzed. After the c
 SIM-04I local degeneracy
         |
         v
-CTI-01 parameter audit
+CTI-00 SPARC provenance + specification robustness
+        |
+        +-- sensitive/inconclusive --> STOP: SPARC not authorized as sole anchor
+        |
+      stable
         |
         v
-Can a physically justified shared/scaled parameter block be defined?
-   | no ----------------> unification claim reduced/rejected
+CTI-01/02 parameter + dimensional audit
+        |
+        v
+Can a physically justified shared/scaled block be defined?
+   | no ----------------------> STOP quantitative unification claim
    |
   yes
    |
    v
-SPARC calibration + prediction prototype
+derive T_G->P
    |
-   +-- incompatible ----> revise theory before Pantheon
+   +-- no admissible bridge -> STOP G->P quantitative unification claim
    |
- compatible
-   |
-   v
-freeze admissible bridge + cross-track model
+  admissible
    |
    v
-held-out Pantheon+ prediction
+freeze decision rule -> cold Pantheon+ prediction
    |
-   +-- fails -----------> shared unification model falsified/constrained
+   +-- fails -------------> shared G->P model falsified/constrained
    |
  survives
    |
    v
-full joint fit + stronger conventional alternatives
+attempt harder T_G->Q
+   |
+   +-- no admissible bridge -> STOP G->Q quantitative unification claim
+   |
+  admissible
    |
    v
-laboratory design / external validation
+prospective real laboratory prediction
+   |
+   v
+post-test joint diagnostics
 ```
 
 ## 18. Claim language

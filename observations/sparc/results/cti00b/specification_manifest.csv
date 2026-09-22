@@ -1,0 +1,14 @@
+spec_id,status,data_file,outcome_variable,primary_predictor,proxy_definition,controls,model_family,prior_status,selection_rationale
+S01,candidate,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,none,Pearson correlation,exploratory/current-primary,current reproducible primary
+S02,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,logVmax,residual Pearson,existing-committed,existing Vmax control
+S03,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,logRmax,residual Pearson,existing-committed,existing Rmax control
+S04,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,logSB0,residual Pearson,existing-committed,existing surface-brightness control
+S05,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,logVmax+logRmax,residual Pearson,existing-committed,existing two-control model
+S06,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,logVmax+logRmax+logSB0,residual Pearson,existing-committed,existing maximal committed control set
+S07,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,log(Vmax^2 Rmax),residual Pearson,existing-proxy-family,kinematic mass-proxy family
+S08,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,log(SB0 Rmax^2),residual Pearson,existing-proxy-family,photometric mass-proxy family
+S09,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_best,literature age where available else combined proxy,mean(logKinMass logPhotMass),residual Pearson,existing-proxy-family,combined mass-proxy family
+S10,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_combined_proxy,combined proxy for all rows,none,Pearson correlation,existing-data-alternative,age-proxy sensitivity
+S11,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_combined_proxy,combined proxy for all rows,mean(logKinMass logPhotMass),residual Pearson,existing-data-alternative,age-proxy plus mass sensitivity
+S12,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_literature,literature-only subset,none,Pearson correlation,existing-data-alternative,literature-only small-N sensitivity
+S13,sensitivity,data/sparc/sparc_age_fdm_data.csv,fdm_outer_mean,age_literature,literature-only subset,mean(logKinMass logPhotMass),residual Pearson,existing-data-alternative,literature-only plus mass sensitivity

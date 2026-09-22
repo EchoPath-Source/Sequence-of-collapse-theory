@@ -1,128 +1,337 @@
 # Sequence of Collapse Theory
 
-## Current repository audit
+A structured research repository for the **Sequence of Collapse (SoC / SoCT)** framework by Antoine L. Shephard.
 
-Current empirical/theory repository audit and reconciliation documents are available at:
+## What SoCT proposes
+
+The central SoCT hypothesis is:
+
+> **Physical localization / collapse history may leave a persistent state that can influence later dynamics.**
+
+The framework explores whether that generative principle can be made quantitative across several domains without requiring every proposed extension to succeed.
+
+The current canonical scaffold separates ordinary dynamics, localization/environmental dynamics, a candidate persistent memory state, and a separately testable observer-state channel:
+
+```math
+H_SOC = H_0 + H_int + \lambda_M M(x,t) O_M + \lambda_c \Phi_c(x,t) O_c
+```
+
+with candidate memory evolution
+
+```math
+\partial_t M
+= \alpha C_{obs}
+- \beta M
++ D_M \nabla^2 M.
+```
+
+The observation foundations program is attempting to derive rather than assume the source `C_obs`.
+
+A current candidate bridge is
+
+```math
+C_{obs}(x,t)=\kappa_{rec}\Gamma_{rec}(x,t),
+```
+
+so that
+
+```math
+\partial_t M
+= \alpha_{rec}\Gamma_{rec}
+- \beta M
++ D_M\nabla^2M,
+```
+
+where `\Gamma_rec` is a persistence-aware record-production rate and `\alpha_rec=\alpha\kappa_rec`.
+
+This source law is a **versioned research hypothesis**, not established physics.
+
+## What the repository is trying to determine
+
+The repository is organized around three increasingly strong questions:
+
+1. **Operational observation:** Can interaction, distinguishability, persistence, accessibility, and record production be given a substrate-independent quantitative description?
+2. **SoCT memory:** Does record/localization history require an additional persistent physical state after complete ordinary state accounting?
+3. **Cross-domain unification:** If such a state exists, do the quantum, gravitational, cosmological, and black-hole branches share quantitative laws or parameters rather than only a common analogy?
+
+The third question is intentionally stronger than the first two. At present, **"collapse leaves memory" is a unifying research principle, not an empirically established unification law**. A genuine physical unification will require shared quantitative structure, parameter relations, or cross-domain predictions. If each domain ultimately requires unrelated mechanisms and freely independent parameters, the empirical unification claim fails even if individual models remain useful.
+
+## Core claim boundaries
+
+The repository does **not** currently establish that:
+
+- observation causes objective wavefunction collapse;
+- a new physical memory field exists in nature;
+- gravity is produced by observation or consciousness;
+- consciousness is necessary for ordinary physical observation;
+- conscious access modifies quantum dynamics;
+- the same memory variable has already been shown to govern quantum, galactic, cosmological, and black-hole behavior.
+
+The scientific program is structured so these propositions can fail independently.
+
+## Canonical architecture
+
+```text
+ordinary physics / observation foundations
+interaction
+  -> state-dependent correlation
+  -> distinguishability
+  -> accessible information
+  -> retained / distributed record
+  -> record-production functional Gamma_rec
+
+candidate SoCT extension
+Gamma_rec
+  -> C_obs = kappa_rec Gamma_rec
+  -> persistent state M
+  -> decay / diffusion / propagation
+  -> fixed feedback coupling
+  -> history-dependent held-out prediction
+
+separate downstream observer branch
+accessible records
+  -> recurrent / integrated processing
+  -> recursive coupling accessibility
+  -> observer-like organization
+  -> conscious access? (independent empirical question)
+```
+
+This partition is important: the operational-observation program can survive if the additional `M` state is false, and the memory/gravity/cosmology branches do not depend on a positive consciousness result.
+
+## Active empirical and mathematical tracks
+
+### Memory-field gravity / galaxy dynamics
+
+The SPARC track asks whether formation-history or age proxies correlate with inferred missing-mass structure after mass, morphology, surface-brightness, gas, and environmental controls.
+
+A working phenomenological relation is
+
+```math
+G_{eff}(x,t)=G_0[1+\alpha M(x,t)].
+```
+
+This is a candidate effective model, not a demonstrated replacement for dark matter.
+
+Primary locations:
+
+```text
+observations/sparc/
+papers/p1-age-dependent-rotation-curves-sparc/
+papers/p1-memory-field-gravity-sparc/
+```
+
+### Cosmology / environment-dependent expansion
+
+The Pantheon+/PNT branch tests whether void/filament environment is associated with reproducible expansion-rate differences after standard cosmological and environmental controls.
+
+Primary locations:
+
+```text
+papers/p5-hubble-tension-memory-gradient/
+papers/pnt-dark-energy-hubble-window/
+data/PANTHEON_IMPORT_STATUS.md
+```
+
+### Observation foundations
+
+The operational observation program begins below consciousness.
+
+Its current hierarchy is
+
+```text
+Level 0 — interaction
+Level 1 — correlation
+Level 2 — distinguishable information
+Level 3 — retained physical record
+Level 4 — downstream-accessible record
+Level 5 — recurrent / recursively used record
+Level 6 — conscious access, if separately operationalized
+```
+
+A provisional observation family is
+
+```math
+\Omega_{S\to O}=F(I_c,D,R,A_d),
+```
+
+and the current record-production work uses persistence-aware candidates such as
+
+```math
+\Gamma_{rec}=G(\partial_t I_{SO},R,A_d,\Xi_{irr}).
+```
+
+One versioned source model defines
+
+```math
+Q_{rec}=I_{acc}P_RR_d\Xi_{irr},
+```
+
+```math
+\Gamma_{rec}^{(0.1)}=[\partial_tQ_{rec}]_+.
+```
+
+There is **not yet a universal threshold that turns decoherence into a record**. A record is operationally characterized by state-dependent accessible information plus specified persistence/accessibility criteria. Thresholds, when needed for a concrete experiment, must be preregistered relative to noise, timescale, and task rather than declared fundamental.
+
+Canonical files:
+
+```text
+papers/math/soc-operational-observation-model.md
+papers/math/soc-record-production-source-v0-1.md
+docs/operational-observation-current-formulation.md
+experiments/observation-foundations/
+```
+
+### SoCT memory discriminator
+
+The first explicitly SoCT-specific distinction is not ordinary decoherence or record formation. Standard quantum dynamics already produces those.
+
+The clean candidate discriminator is:
+
+```text
+matched explicitly modeled ordinary present state
++ different prior durable-record histories
++ fresh probe
+-> reproducible history-dependent residual
+```
+
+Under H0/H1, a complete reset of all relevant ordinary degrees of freedom predicts no history-dependent fresh-probe residual.
+
+Under the exploratory H2 model,
+
+```math
+\partial_tM=\alpha C_{obs}-\beta M+D_M\nabla^2M
+```
+
+and a predeclared probe coupling can produce a residual phase or other observable proportional to the surviving `M`.
+
+SIM-04H demonstrated that this discriminator is recoverable **when synthetic data are generated from H2**, and that the extra model is not selected for exact-reset H0 synthetic data. This is methodology validation, not evidence that nature contains `M`.
+
+SIM-04I then showed the central identifiability problem: an unobserved conventional reservoir with the same source/decay/diffusion/probe law can exactly mimic the H2 signal. Independent reset/environment diagnostics are therefore essential.
+
+### Record erasure and irreversibility
+
+Exact microscopic record creation followed by exact inverse evolution returns the ordinary record diagnostics to zero in the closed-system benchmark.
+
+The current source hypothesis therefore weights durable/persistent record production rather than assuming every transient correlation creates physical `M`.
+
+This gives a sharp empirical boundary:
+
+> A fully erased ordinary record does not by itself count as evidence for persistent SoCT memory. SoCT-specific evidence would require a later residual after the relevant ordinary record-bearing degrees of freedom have been independently shown to be reset or bounded.
+
+Whether even perfectly reversible transient record production can source `M` remains an open model choice and must not be decided retrospectively from a desired result.
+
+### Observer emergence / Recursive Coupling
+
+Observer emergence is a **partitioned downstream research track**, not a prerequisite for the gravity, cosmology, or lower-level observation work.
+
+The current Recursive Coupling & Observer Formation (RCOF) hypothesis asks whether observer-like organization can be operationally characterized when records of previous internal-external coupling become causal inputs to future coupling.
+
+```text
+interaction
+-> accessible relational record
+-> coupling-history memory
+-> recursive access
+-> modification of future coupling
+-> operational observer formation
+```
+
+This does not imply that recursive systems are conscious.
+
+Canonical files:
+
+```text
+docs/research/recursive-coupling-observer-formation.md
+papers/math/soc-observer-emergence-first-tuning-fork.md
+papers/math/soc-observer-emergence-crossfeed-map.md
+```
+
+## Nested hypotheses
+
+The observation/memory program uses the following separation:
+
+```text
+H0 — complete ordinary quantum/open-system dynamics
+H1 — useful operational observation/record summary, no new physical state
+H2 — additional persistent state M with fixed source/evolution/coupling laws
+H3 — independently operationalized conscious-access contribution
+```
+
+Failure of H3 does not falsify H0-H2. Failure of H2 does not erase any standalone value of H1. The galaxy/cosmology branches must likewise be assessed on their own quantitative predictions.
+
+## Current status of the observation simulation program
+
+The README previously described the simulation ladder as if record erasure and memory feedback were still future work. That is now stale.
+
+Current foundations work includes:
+
+```text
+qubit + pointer baselines
+pointer + environment separation
+record creation / exact erasure
+redundancy / irreversibility tests
+observation-derived source comparisons
+explicit unitary record/decoherence benchmarks
+complete reset-and-probe H0/H1/H2 benchmark (SIM-04H)
+incomplete-reset / hidden-reservoir adversary (SIM-04I)
+recursive-coupling / observer-formation path (new research branch)
+```
+
+The strongest present conclusion is methodological:
+
+> Standard quantum/open-system dynamics explains interaction, decoherence, record formation, erasure, and redundancy. An additional persistent state is mathematically testable, but is neither empirically required nor uniquely identifiable until conventional hidden-state explanations are bounded.
+
+## Falsification structure
+
+SoCT should become more constrained as the program develops.
+
+Examples:
+
+- **Operational observation functional:** revise or abandon a proposed functional if it is coordinate/partition arbitrary, unstable under coarse-graining, or adds no useful compression beyond established measurement/information formalisms.
+- **Persistent memory state:** reject it as necessary when ordinary hidden-state models of equal or lower complexity explain held-out history-dependent data.
+- **Spatial memory propagation:** a fitted `D_M\to0` favors a simpler local reservoir over a propagating field.
+- **Conscious-access channel:** a controlled null result constrains that channel without being treated as a falsification of unrelated gravity/cosmology branches.
+- **Empirical unification:** if no shared quantitative structure, parameter relation, or cross-domain prediction can be derived, "collapse leaves memory" remains an organizing hypothesis rather than a demonstrated physical unification.
+
+## Publication roadmap
+
+The historical seven-paper roadmap remains useful as a project map, but paper claims must follow the evidence actually achieved in each branch:
+
+1. P1 — age-dependent galactic rotation curves / SPARC
+2. P2 — high-redshift disk galaxies / time-dependent gravity
+3. P3 — SoCT concept-to-equation
+4. P4 — controlled observer/conscious-access quantum test
+5. P5 — memory-field variation / Hubble-tension track
+6. P6 — black-hole memory-compression hypothesis
+7. P7 — unified-framework synthesis
+
+P7 is conditional: a strong unified-framework claim requires quantitative bridges rather than thematic similarity alone.
+
+Canonical roadmap:
+
+```text
+docs/publication-roadmap-march-2026.md
+```
+
+## Repository map and audit
+
+Current audit/reconciliation documents:
 
 ```text
 docs/repo-audit-current-state.md
 docs/repo-reconciliation-current-state.md
 ```
 
-A structured research repository for the **Sequence of Collapse (SoC / SoCT)** framework by Antoine L. Shephard.
-
-## Core positioning
-
-> **SoCT asks whether one generative principle — collapse leaves memory — can connect quantum-to-classical transition, gravitational memory, cosmological structure, black-hole information, and conscious observation without sacrificing falsifiability.**
-
-The stronger research formulation is:
-
-> **SoCT is compelling because it offers a single generative pattern — collapse leaves memory — that naturally links quantum-to-classical transition, gravitational memory, cosmological structure, black-hole information, and conscious observation, while producing distinct falsifiable empirical tracks.**
-
-This is a research-program statement, not a claim that every proposed connection has been established. The individual tracks must stand or fail on their own empirical and mathematical tests. In particular, the observer/consciousness channel is separable from the gravitational, cosmological, and black-hole tracks: failure of one extension does not by itself establish or refute every other SoCT hypothesis.
-
-This repo is intended to become the central home for:
-
-- core theory documents
-- mathematical frameworks
-- experimental proposals
-- simulation notes and validation logs
-- literature/references
-- OSF-linked preregistrations and study drafts
-- future datasets, notebooks, figures, and publication-ready papers
-
-## Active Observation and Observer-Emergence Program
-
-A new foundational program now asks two deliberately separate questions.
-
-### O-0 — Operational Observation
-
-> **What is the minimum physical transformation necessary for one system to count as having observed another?**
-
-The working hierarchy is:
+Prediction tracker:
 
 ```text
-interaction
-  -> state-dependent correlation
-  -> distinguishability
-  -> physical record
-  -> record persistence
-  -> downstream accessibility
-  -> operational observation
+PREDICTIONS.md
 ```
 
-The goal is to derive the currently phenomenological observation/collapse source variables from ordinary quantum interaction and information-bearing record formation rather than assuming a conscious observer at the start.
-
-Canonical files:
+Theory overview:
 
 ```text
-papers/math/soc-operational-observation-model.md
-papers/math/soc-localization-memory-hamiltonian.md
-papers/math/soc-observation-to-spacetime-derivation-ladder.md
+docs/theory-overview.md
 ```
-
-The intended derivation chain is:
-
-```text
-quantum state
-  -> interaction Hamiltonian H_int
-  -> correlated state rho_SO
-  -> distinguishability / accessible information
-  -> observation functional Omega or record-production rate Gamma_rec
-  -> SoCT source C_obs
-  -> memory field M
-  -> candidate memory feedback
-  -> candidate covariant spacetime response
-```
-
-Only the first portion is standard quantum/information-theoretic machinery. The steps from record production to persistent SoCT memory and from memory to spacetime response remain hypotheses to derive and test.
-
-### O-1 — Observer Emergence / "First Tuning Fork"
-
-> **What measurable conditions convert persistent records into a recursively self-updating, observer-like system?**
-
-This track is intentionally downstream of O-0. It does not equate memory, observerhood, or consciousness.
-
-Working ladder:
-
-```text
-record
-  -> persistence
-  -> feedback
-  -> adaptive feedback
-  -> integrated state/history
-  -> recursive self-modeling
-  -> self-maintaining observer-like organization
-  -> conscious access? (separate empirical question)
-```
-
-Canonical file:
-
-```text
-papers/math/soc-observer-emergence-first-tuning-fork.md
-```
-
-This program is expected to support P3 (concept to equation), P4 (observer/conscious-access tests), and P7 (unified framework) while preserving nested falsifiability.
-
-### Observation simulation ladder
-
-```text
-simulations/observation-qubit-pointer/
-simulations/observation-qubit-pointer-environment/
-simulations/observation-record-erasure/
-```
-
-Current status:
-
-- Simulation 1: qubit + pointer baseline — implemented.
-- Simulation 2: qubit + pointer + environment — implemented; demonstrates that environmental decoherence and a designated pointer record can be varied separately.
-- Simulation 3: record creation / erasure — active next gate.
-- Simulation 4: history-matched memory feedback — planned first explicitly SoCT-specific discriminator.
-- Simulation 5: conscious-access layer — deferred until lower-level physical observation variables are stable.
-
-Claim boundary:
-
-> These simulations validate definitions and mechanism separation inside toy quantum models. They do not establish a new physical memory field, consciousness-driven collapse, or an observation-derived spacetime theory.
 
 ## Research-to-product boundary
 

@@ -147,6 +147,140 @@ The scientific value comes from **shared constrained structure**, not merely mul
 
 If every domain receives an independent copy of all memory parameters, the exercise does not test unification.
 
+
+
+## 5A. Pre-fit admissibility rule for cross-track bridges
+
+The phrase **physically justified** is not permitted to be assigned retrospectively after inspecting cross-track fits.
+
+Before a target track is examined, every proposed universal parameter, invariant, or scale transformation must be registered with an explicit derivational basis.
+
+An admissible bridge must satisfy at least one predeclared category:
+
+1. **Dimensional necessity** — the combination follows from units and the assumed governing variables, with no data-selected exponents or coefficients.
+2. **Common dynamical derivation** — the relation follows from the same underlying equation, action, Hamiltonian, field equation, or other specified dynamical structure used across the tracks.
+3. **Symmetry / conservation constraint** — the relation follows from a stated symmetry, invariance, conservation law, or covariance requirement.
+4. **Predeclared scale transformation** — the scale dependence is derived or specified before examining the target track and contains a fixed, auditable parameter count.
+5. **Independent prior derivation** — the relation was derived from independent theory or data not subsequently used as the target test.
+
+The following do **not** qualify:
+
+- numerical similarity discovered after fitting;
+- choosing a convenient dimensionless combination after inspecting target results;
+- adding exponents or scale factors because they align the tracks;
+- relabeling unrelated fitted quantities with the same symbol;
+- selecting among many candidate transformations based on which one best matches the held-out track.
+
+Each bridge must therefore carry a provenance record:
+
+```text
+bridge_id
+mathematical_form
+derivation_category
+derivation_source
+free_parameters
+units / dimensionless status
+calibration data allowed
+target data forbidden before freeze
+date frozen
+revision identifier
+```
+
+If a bridge is changed after target-data inspection, the modified bridge is a **new hypothesis** and requires new held-out evidence.
+
+## 5B. Primary unification test: predict, do not jointly fit
+
+The principal empirical unification test is **not** a simultaneous three-track fit.
+
+The primary protocol is:
+
+```text
+derive bridge
+-> fit calibration track
+-> freeze universal/scaling block
+-> predict independent tracks
+-> score predictions without refitting shared parameters
+```
+
+For the current program, SPARC is the preferred calibration track because it is the most mature empirical branch.
+
+Let the admissible shared/scaling parameter block be
+
+```math
+\theta_M=(\theta_U,\theta_S).
+```
+
+Calibration gives
+
+```math
+p(\theta_M|D_S).
+```
+
+The frozen model then generates posterior-predictive distributions
+
+```math
+p(D_P|D_S,H_{SoCT})
+=
+\int
+p(D_P|\theta_M,\eta_P,H_{SoCT})
+p(\theta_M|D_S)
+p(\eta_P)
+\,d\theta_M\,d\eta_P
+```
+
+and, when real laboratory data exist,
+
+```math
+p(D_Q|D_S,H_{SoCT})
+=
+\int
+p(D_Q|\theta_M,\eta_Q,H_{SoCT})
+p(\theta_M|D_S)
+p(\eta_Q)
+\,d\theta_M\,d\eta_Q.
+```
+
+Domain nuisance parameters may be marginalized only when their definitions and priors were specified independently of the target residual.
+
+They may not alter the frozen universal/scaling memory dynamics.
+
+A failed cold prediction cannot be converted into a successful unification result by subsequently allowing `\theta_M` to float.
+
+A post-failure refit may motivate a revised model, but that model begins a new hypothesis cycle.
+
+## 5C. Role of the eventual joint fit
+
+The all-track joint likelihood remains useful, but it is **secondary**.
+
+After the cold tests it may be used for:
+
+- parameter estimation;
+- residual diagnosis;
+- tension localization;
+- sensitivity analysis;
+- comparison with separate-domain models;
+- designing the next experiment.
+
+It must not replace or overwrite the result of the frozen out-of-sample test.
+
+A model that fails the cold prediction but fits after joint retuning has demonstrated flexibility, not the originally claimed cross-track prediction.
+
+## 5D. Small-N protection
+
+With only a small number of substantially independent physical tracks, apparent agreement among best-fit parameters is vulnerable to coincidence and researcher degrees of freedom.
+
+Therefore:
+
+- cross-track success is not defined by overlap of three fitted confidence regions alone;
+- the number of candidate bridges considered must be recorded;
+- target-track results must not be used to select the bridge;
+- at least one empirical track must remain untouched after the final bridge freeze;
+- whenever possible, leave-one-domain-out posterior prediction should be reported;
+- a later independent laboratory experiment is especially valuable because current SIM-04H/I results are synthetic methodology tests.
+
+This structure is intended to prevent a small number of flexible tracks from manufacturing apparent unification.
+
+
 ## 6. Stronger held-out architecture
 
 The preferred test is not initially a three-domain discovery fit.
@@ -157,40 +291,62 @@ Use theory, dimensions, and simulations to specify which parameters/invariants a
 
 No observational track may determine its own post-hoc transformation law.
 
-### Stage B — two-track development
+### Stage B — SPARC calibration and synthetic-methodology validation
 
-Use quantum-methodology constraints plus SPARC to test whether a shared parameterization is mathematically coherent.
+Use SPARC as the initial empirical calibration track for the admissible shared/scaling block.
 
-This stage may refine the model but is not a confirmatory unification test.
+SIM-04H/I remain methodology and identifiability benchmarks. Because they are synthetic, they are not counted as independent empirical evidence for nature's value of the shared parameters.
 
 ### Stage C — freeze
 
-Freeze:
+Before examining the held-out target result, freeze:
 
-- source law,
-- universal/scaling parameter definitions,
-- priors,
-- observable maps,
-- nuisance treatment,
-- success/failure criteria.
+- source law;
+- admissible universal/scaling parameter definitions;
+- the derivation/provenance of every cross-track bridge;
+- priors;
+- observable maps;
+- nuisance treatment;
+- success/failure criteria;
+- the list of bridge variants considered.
 
 ### Stage D — held-out Pantheon+ test
 
-After the Pantheon+ pipeline is complete, use the frozen quantum+SPARC-constrained model to predict an allowed Pantheon+ region.
+After the Pantheon+ pipeline is complete, use the frozen SPARC-calibrated model to predict an allowed Pantheon+ region.
 
 Schematically,
 
 ```math
-D_Q,D_S
+D_S
 \rightarrow
-p(\theta_U,\theta_S|D_Q,D_S)
+p(\theta_U,\theta_S|D_S)
 \rightarrow
-p(D_P|D_Q,D_S,H_{SoCT}).
+p(D_P|D_S,H_{SoCT}).
 ```
 
-Then compare the held-out Pantheon+ result against that posterior predictive distribution.
+Then compare the held-out Pantheon+ result against that posterior predictive distribution without refitting the shared/scaling block.
 
-This is stronger than fitting all three tracks and reporting goodness of fit.
+### Stage E — prospective laboratory prediction
+
+Use the frozen model to state the quantitative laboratory signature and required sensitivity before a real experiment is analyzed.
+
+When independent laboratory data become available,
+
+```math
+D_S
+\rightarrow
+p(\theta_U,\theta_S|D_S)
+\rightarrow
+p(D_Q|D_S,H_{SoCT}).
+```
+
+The real laboratory result then becomes a second cold empirical test.
+
+### Stage F — post-test joint fit
+
+Only after the cold tests may all tracks be jointly fit for parameter estimation and diagnosis.
+
+The joint fit cannot retroactively turn a failed frozen prediction into a successful unification test.
 
 ## 7. Pantheon+ gate
 
@@ -388,11 +544,9 @@ Derive units and candidate dimensionless groups. Determine whether `beta` and `D
 
 Specify the minimal outputs each track must expose to a joint fitter.
 
-### CTI-04 — quantum + SPARC prototype
+### CTI-04 — SPARC calibration + cross-track prediction prototype
 
-Build a synthetic/two-track hierarchical fit before Pantheon+ is admitted.
-
-Purpose: expose structural incompatibilities early.
+Use SPARC to calibrate the admissible shared/scaling block and use the synthetic quantum benchmarks to validate the prediction machinery and expose structural incompatibilities. Do not count synthetic recovery as empirical cross-track confirmation.
 
 ### CTI-05 — Pantheon readiness audit
 
@@ -400,15 +554,15 @@ Complete the raw-input/covariance pipeline and assess whether the environment-H0
 
 ### CTI-06 — freeze document
 
-Pre-register the bridge, priors, mappings, and failure criteria before revealing/using the held-out Pantheon+ result for cross-track tuning.
+Pre-register each bridge's admissibility basis, the full candidate-bridge list, priors, mappings, nuisance treatment, and failure criteria before revealing/using the held-out Pantheon+ result for cross-track tuning.
 
 ### CTI-07 — held-out third-track test
 
-Run the frozen posterior-predictive Pantheon+ test.
+Run the frozen SPARC-derived posterior-predictive Pantheon+ test without refitting the universal/scaling block.
 
-### CTI-08 — joint all-track diagnostic
+### CTI-08 — prospective laboratory prediction and post-test joint diagnostic
 
-Only after the held-out test, run the full joint fit for parameter estimation and residual diagnosis.
+State the laboratory prediction before real probe data are analyzed. After the cold Pantheon+ and eventual laboratory tests, run the full joint fit only for parameter estimation, residual diagnosis, and next-generation model development.
 
 ## 17. Decision tree
 
@@ -425,14 +579,14 @@ Can a physically justified shared/scaled parameter block be defined?
   yes
    |
    v
-quantum + SPARC prototype
+SPARC calibration + prediction prototype
    |
    +-- incompatible ----> revise theory before Pantheon
    |
  compatible
    |
    v
-freeze cross-track model
+freeze admissible bridge + cross-track model
    |
    v
 held-out Pantheon+ prediction

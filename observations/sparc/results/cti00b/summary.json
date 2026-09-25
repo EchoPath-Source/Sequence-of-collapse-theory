@@ -1,0 +1,14 @@
+{
+  "seed": 20260922,
+  "n_boot": 5000,
+  "n_specifications": 13,
+  "n_primary_age_best_specs": 9,
+  "median_effect_primary_age_best": 0.23768739471168746,
+  "min_effect_primary_age_best": 0.10705336536447539,
+  "max_effect_primary_age_best": 0.28912746900093494,
+  "fraction_same_sign_primary_age_best": 1,
+  "q05_effect_primary_age_best": 0.10705336536447539,
+  "q95_effect_primary_age_best": 0.26470582176042007,
+  "decision": "NOT_AUTOMATICALLY_CLASSIFIED",
+  "reason": "Numerical stability criterion remains to be frozen after common estimand and uncertainty model review."
+}

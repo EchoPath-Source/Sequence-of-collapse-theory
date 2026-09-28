@@ -74,7 +74,14 @@ def main():
     canonical_sign=np.sign(out.loc[out.spec_id=="S01","effect_r"].iloc[0])
     out["same_sign_as_S01"]=out["sign"]==canonical_sign
 
-    rng=np.random.default_rng(SEED)
+    def xorshift32(seed):
+        s = seed & 0xffffffff
+        while True:
+            s ^= (s << 13) & 0xffffffff
+            s ^= (s >> 17)
+            s ^= (s << 5) & 0xffffffff
+            yield (s & 0xffffffff) / 4294967296.0
+
     boot=[]
     for _,s in out.iterrows():
         sid=s.spec_id
@@ -82,8 +89,10 @@ def main():
         _,pred,_,controls,_=spec
         d=df.dropna(subset=[pred,"fdm_outer_mean"]+controls).copy().reset_index(drop=True)
         vals=[]
+        rng=xorshift32(SEED + int(sid[1:]))
         for _ in range(N_BOOT):
-            sample=d.iloc[rng.integers(0,len(d),len(d))]
+            idx=[int(next(rng)*len(d)) for _ in range(len(d))]
+            sample=d.iloc[idx]
             try:
                 _,r,_,_=residual_effect(sample,pred,"fdm_outer_mean",controls); vals.append(r)
             except Exception:

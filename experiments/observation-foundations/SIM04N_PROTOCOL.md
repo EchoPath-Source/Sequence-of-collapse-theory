@@ -1,6 +1,6 @@
 # SIM-04N — Shared-spectrum spatial microscopic bath: preregistered protocol
 
-**Status:** protocol frozen; implementation and numerical results pending.
+**Status:** protocol frozen; first implementation and smoke tests committed; numerical execution and results pending.
 **Claim level:** synthetic methodology only. No evidence of a new physical SoCT memory field.
 
 ## Question and motivation
@@ -51,4 +51,4 @@ A successful shared-spectrum transfer would show **internal cross-wavelength con
 - SIM-04M: explicit single-mode oscillator bath and finite-size recurrence.
 - SIM-04N: shared microscopic spectrum across spatial modes, then a separate locality/transport extension.
 
-**Results:** not yet run or claimed in this protocol commit.
+## First implementation\n\n- `sim04n_shared_spectrum_bath.py`: deterministic four-mode Hamiltonian oscillator bath, shared spectral envelope, one early-time damping fit, held-out mode/time metrics and work-energy ledger.\n- `test_sim04n_shared_spectrum.py`: spectral positivity, energy-closure and timestep-refinement smoke tests.\n\nRun from repository root:\n\n```bash\npython experiments/observation-foundations/sim04n_shared_spectrum_bath.py --json\npython -m unittest discover -s experiments/observation-foundations -p 'test_sim04n*.py'\n```\n\n**Execution status:** code and tests have been committed but have not been run or verified in this session. No numerical result is claimed.\n\n**Remaining protocol work:** alternative bath families, reverse-truth comparisons, independently fitted per-mode diagnostic and a real-space local-bath transport variant are not yet implemented.

@@ -47,6 +47,10 @@ For quarks, the candidate is hidden-dimensional color orientation. For atoms, it
 
 The Sequence of Collapse framework already treats the memory field as multi-scale: collapse events contribute across both time and scale. The Dimensional Bridge Principle adds an architectural question to that model: not only what memory accumulates at each scale, but what hidden bridge-degree allows one scale to become the substrate of the next.
 
+## Recursive recognition across scale (metaphysical cross-link)
+
+The [Recursive Scale Recognition and Selection](../metaphysics/recursive-scale-recognition-and-selection.md) synthesis develops a complementary *interpretive* bridge from local integration to Source/Origin recognition. It distinguishes (1) being a component of a higher system, (2) recursively modeling that relation, and (3) conjectured collective integration above a threshold. In this usage, a bridge-degree may be an informational or organizational capacity, **not necessarily a new spacetime dimension**. This does not change the speculative status of Planck/quantum/galaxy-scale consciousness or validate one physical transition law across all entries in the scale map.
+
 ## Summary
 
 The Dimensional Bridge Principle proposes that emergence across scales requires hidden degrees of freedom. These bridge-degrees are the structural pathways by which a closed lower-scale system becomes a component of a higher-order system. This pattern gives conceptual support to the Quark Projection Hypothesis and to Planck-cell cosmogenesis models, because it suggests quark confinement and cosmic unfolding may be different scale-expressions of the same bridge logic.

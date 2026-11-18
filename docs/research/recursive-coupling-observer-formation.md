@@ -492,6 +492,12 @@ This preserves the current separation between operational observation and consci
 
 ---
 
+## Metaphysical relationship (non-operational)
+
+The separate [Recursive Scale Recognition and Selection](../metaphysics/recursive-scale-recognition-and-selection.md) note explores how RCOF might be interpreted alongside the M2 Nested Memory Consciousness Principle and Source/Echo/Origin. It proposes collective integration and higher-order recognition as a philosophical extension.
+
+**This cross-reference changes none of RCOF's empirical definitions, SIM-RC controls, falsification criteria, or consciousness claim boundary.** Selection in a cognitive system and physical quantum state reduction remain distinct. A successful RCOF result would show useful recursively conditioned behavior, not demonstrate a primordial consciousness field or a cosmic inward memory sweep.
+
 ## 17. Working summary
 
 The proposed path is:

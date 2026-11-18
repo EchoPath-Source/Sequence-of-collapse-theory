@@ -314,6 +314,17 @@ But it harmonizes with the scientific motifs:
 
 ---
 
+## Nested recognition, selection, and collective integration
+
+The companion [Recursive Scale Recognition and Selection synthesis](recursive-scale-recognition-and-selection.md) connects this Source/Echo/Origin vision with two pre-existing concepts:
+
+- **M2** describes a bounded whole of integrated memory experiencing itself at its own scale (philosophical consciousness model).
+- **RCOF** describes recursive causal use of accessible coupling-history records (operational observer-like organization; not proof of consciousness).
+- **Selection** describes discrimination or registration of specific states; cognitive selection and quantum outcome selection must not be conflated.
+- **Collective integration** is proposed as the higher-order threshold for inward memory sweep and expanded self-reference, rather than a single individual's realization.
+
+This creates a nested analogy: localized expression recognizes Source, and Source recognizes Origin. From below the transition can appear as compression of distributed histories; from a greater proposed frame, as recognition of a unity already present. The threshold and recognition claims remain metaphysical until linked to distinct operational observables and independently tested predictions.
+
 ## Relationship to Science-Facing SoCT
 
 The full vision should be layered:

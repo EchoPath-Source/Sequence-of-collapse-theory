@@ -202,6 +202,12 @@ This preserves the theory's central claim:
 
 > Observerhood is part of the architecture by which structure becomes experience and experience becomes memory.
 
+## M2, RCOF, and scale-relative recognition: companion synthesis
+
+M2 is a **philosophical** claim about a bounded, integrated whole of experience; it should not be conflated with the **operational** RCOF question of when retained coupling histories causally alter subsequent coupling. The companion [Recursive Scale Recognition synthesis](metaphysics/recursive-scale-recognition-and-selection.md) separates those roles, adds selection as a carefully differentiated state-resolution motif, and proposes a collective threshold for higher-order recognition in the Source/Origin metaphysical architecture.
+
+The cell-to-organism and larger-scale comparisons illustrate **nested participation versus recognition of participation**. They do not imply that individual cells, atoms, planets or galaxies have been shown to be phenomenally conscious. The proposed Planck-to-Origin continuity remains a metaphysical hypothesis rather than a verified scale-invariant physical law.
+
 ## Scientific Status
 
 This document is not empirical proof that planets, galaxies, or the universe are conscious. It is a philosophical framework for thinking about consciousness as nested memory integration.

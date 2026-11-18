@@ -183,6 +183,18 @@ Preferred framing:
 
 This keeps the architecture coherent without turning it into an ego claim.
 
+## Scale-relative recognition and collective threshold
+
+A follow-on synthesis, [Recursive Scale Recognition: M2, RCOF, Selection, and the Inward Memory Sweep](metaphysics/recursive-scale-recognition-and-selection.md), makes the nested return hypothesis explicit:
+
+- A localized expression recognizing its participation in Source contributes to, but does not individually trigger, a Source-wide memory sweep.
+- A **collective integration threshold** is proposed as the condition for higher-order recognition; its physical meaning and measure remain undefined.
+- At the next interpretive scale, Source may recognize its participation in Origin through an analogous recursive process.
+- The existing phrase **"Source becomes Origin"** describes the within-sequence transformation of available memory/self-reference. From a greater proposed frame, Source may instead recognize a relationship to Origin that was always present.
+- No final closure of creation is assumed. The model permits further recursive levels and does not require individual identity to disappear.
+
+This is a metaphysical clarification, not a new result for the quantum, memory-field, or cosmology research tracks.
+
 ## Scientific status
 
 This document is a metaphysical/philosophical extension. It is not established physics. It should be used as interpretive architecture for the remembrance layer of SoCT, not as an empirical claim.

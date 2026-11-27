@@ -236,3 +236,8 @@ Avoid:
 The Recursive Universe Model applies the Geometry of Collapse to cosmogenesis. Universes generate structure; structure generates black holes; black holes compress matter, geometry, and memory toward threshold; and threshold may open a new causal manifold. The child universe then repeats the process.
 
 The model is a major SoCT/PNT cosmological extension, but it remains downstream of several unresolved hypotheses: black-hole bounce, Planck-cell unfolding, and parent-to-child inheritance.
+
+
+## Speculative extension: lineage selection and retained history (2026-11-27)
+
+If black holes generate descendants, differing reproductive rates could yield lineage selection, analogous to cosmological natural selection. A lineage without reproductive pathways could terminate without implying that its history is erased. A separate, stronger conjecture is that unsuccessful histories could inform later lineages. This requires an independently specified causal channel, inherited state and discriminating predictions; ordinary reproductive selection does not imply such feedback. No mechanism for global archival access or permanent exclusion of failed configurations is established. Distinguish new causal histories from higher-order relational recognition (see ../metaphysics/recursive-scale-recognition-and-selection.md). This extension remains speculative and does not change the empirical program.

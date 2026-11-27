@@ -176,3 +176,8 @@ The Higgs/Planck-substrate extension is already separately bounded in [Higgs Fie
 **Research-safe:** Nested networks can use accessible records of prior coupling to shape future behavior. Whether such dynamics exhibit robust collective integration transitions is testable in classical and computational models. Whether they imply subjective experience, a fundamental consciousness field, or a physical memory-sweep process remains unresolved.
 
 **Guiding line:** The whole need not be manufactured by its parts; a bounded expression may acquire a richer recognition of the larger whole in which it already participates.
+
+
+## Relational graduation — remembrance rather than becoming (2026-11-27)
+
+Within the metaphysical interpretation, Source recognizes its participation in a collection of Sources (Origin); Origin may likewise recognize its participation in a collection of Origins. Graduation is not becoming more but remembering greater belonging. The proposed relation precedes recognition; collective integration remains distinct from individual recognition. Distinguish generational inheritance, in which integrated history conditions a new experiential sequence, from higher-order recognition among integrated wholes. Neither requires erasure of constituent identity. These are philosophical propositions, not physical laws or evidence of consciousness in computational systems.
